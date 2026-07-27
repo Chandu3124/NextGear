@@ -299,6 +299,7 @@ body:not(.dark) .booking-popup button:hover {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  margin-top: 20px;
 }
 
 .feature-card {
@@ -550,6 +551,7 @@ body:not(.dark) .booking-popup button:hover {
   flex-wrap: wrap;
   gap: 15px;
   margin-bottom: 40px;
+  margin-top: 20px;
 }
 
 .simx-chip,
@@ -561,7 +563,8 @@ body:not(.dark) .booking-popup button:hover {
   transition: 0.35s;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 30px;
+  margin-top: 10px;
 }
 
 .simx-chip:hover,

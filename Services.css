@@ -746,7 +746,9 @@ a, button, input, select{
   width:min(420px, calc(100% - 32px));
   background:#ffffff;
   box-shadow:0 25px 70px rgba(0,0,0,.18);
-}
+  margin-left: 500px;
+  margin-top: 100px;
+} 
 
 .booking-popup::backdrop{
   background:rgba(0,0,0,.55);

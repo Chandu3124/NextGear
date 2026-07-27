@@ -117,6 +117,7 @@ button{
   font-size:16px;
   transition:.3s ease;
   cursor:pointer;
+  margin-top: 10px;
 }
 
 .btn-main,

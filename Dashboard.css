@@ -98,10 +98,11 @@ body.rtl-mode .sidebar{
     font-size:28px;
     font-weight:700;
 } */
-.logo{
+/* .logo{
     display:flex;
     align-items:center;
     gap:5px;
+    margin-left: 10px;
 }
 
 .logo img{
@@ -118,6 +119,41 @@ body.rtl-mode .sidebar{
 
 .logo span{
     color:#ff7900;
+} */
+ .logo-wrap{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:22px;
+}
+
+.logo{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  text-decoration:none;
+  text-align:center;
+}
+
+.logo img{
+  width:60px;
+  height:60px;
+  object-fit:contain;
+  flex-shrink:0;
+}
+
+.logo h2{
+  font-size:24px;
+  font-weight:800;
+  letter-spacing:.4px;
+  color:var(--white);
+  line-height:1;
+  margin:0;
+}
+
+.logo span{
+  color:var(--primary);
 }
 
 .menu{
