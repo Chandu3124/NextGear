@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Driving Platform</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+  />
+  <link rel="stylesheet" href="global.css" />
+  <link rel="stylesheet" href="home2.css" />
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <span class="badge1">Smart Driving Platform</span>
+
+      <h1>Master Driving with <span id="typing"></span></h1>
+
+      <p>
+        Practice with AI-powered simulators and theory tests before your real driving test.
+      </p>
+
+      <div class="buttons">
+        <a href="Practice.html" class="btn btn-main">Start Test</a>
+        <a href="Services.html#booking" class="btn btn-outline">Book Demo</a>
+      </div>
+
+      <div class="stats">
+        <div>
+          <h2 id="count">0</h2>
+          <p>Tests Completed</p>
+        </div>
+        <div>
+          <h2>98%</h2>
+          <p>Pass Rate</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dashboard">
+    <div class="dash-text">
+      <span class="tag">Live Analytics</span>
+      <h2>Track Your <span>Driving Progress</span> Instantly</h2>
+      <p>
+        View your performance, upcoming bookings and learning progress in one smart dashboard.
+      </p>
+      <a href="Dashboard.html" class="dash-btn btn-main">View Dashboard</a>
+    </div>
+
+    <div class="dash-card">
+      <div class="chart">
+        <div class="bar b1"></div>
+        <div class="bar b2"></div>
+        <div class="bar b3"></div>
+        <div class="bar b4"></div>
+        <div class="bar b5"></div>
+      </div>
+
+      <div class="info">
+        <div class="box">
+          <h4><i class="fa-solid fa-calendar"></i> Next Booking</h4>
+          <p>25 July • 10:30 AM</p>
+        </div>
+
+        <div class="box progress">
+          <h4>Progress</h4>
+          <div class="line1">
+            <span></span>
+          </div>
+          <strong>82%</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="smart-ready">
+    <div class="smart-wrapper">
+      <div class="smart-heading">
+        <h2>Are You <span>Ready</span> For Your Driving Test?</h2>
+        <p>AI evaluates your driving skills and gives your preparation level.</p>
+      </div>
+
+      <div class="smart-main">
+        <div class="smart-image">
+          <img
+            src="img4.jpg"
+            alt="Man Driving Car Steering Wheel"
+          />
+          <div class="ai-wave"></div>
+          <div class="scan-text">AI SCANNING...</div>
+        </div>
+
+        <div class="smart-panel">
+          <h3>Driving Readiness AI</h3>
+          <p>Select your experience level</p>
+
+          <select id="experience">
+            <option value="1">New Driver</option>
+            <option value="2">Practicing Driver</option>
+            <option value="3">Confident Driver</option>
+          </select>
+
+          <select id="practice">
+            <option value="1">Less Practice</option>
+            <option value="2">Regular Practice</option>
+            <option value="3">Daily Practice</option>
+          </select>
+
+          <button id="readinessBtn" type="button" class="btn-main full-btn">
+            Check Readiness
+          </button>
+
+          <div id="smartResult" class="result-box">
+            <i class="fa-solid fa-chart-line result-icon"></i>
+            <span>Waiting for analysis...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sim-section">
+    <div class="sim-container">
+      <div class="sim-heading">
+        <h2>Experience <span>Simulator</span> In Action</h2>
+        <p>
+          Feel real driving with advanced steering control and road simulation technology.
+        </p>
+      </div>
+
+      <div class="sim-stage">
+        <div class="sim-video">
+          <img
+            src="img5.jpg"
+            alt="Driving Simulator"
+          />
+
+          <div class="sim-overlay">
+            <button class="play-btn" type="button" aria-label="Watch simulator demo">
+              <i class="fa-solid fa-play"></i>
+            </button>
+            <p>Watch Simulator Demo</p>
+          </div>
+        </div>
+
+        <div class="sim-details">
+          <div class="sim-item">
+            <span><i data-lucide="car"></i></span>
+            <h3>Smart Steering</h3>
+            <p>Real steering response with accurate control.</p>
+          </div>
+
+          <div class="sim-item">
+            <span><i data-lucide="road"></i></span>
+            <h3>Road Simulation</h3>
+            <p>Practice different traffic and road conditions.</p>
+          </div>
+
+          <div class="sim-item">
+            <span><i data-lucide="crosshair"></i></span>
+            <h3>Test Environment</h3>
+            <p>Experience real driving test situations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="theory-section">
+    <div class="theory-wrapper">
+      <div class="theory-heading">
+        <h2>Adaptive <span>Theory Test</span> System</h2>
+        <p>AI adjusts questions according to your driving knowledge level.</p>
+      </div>
+
+      <div class="theory-console">
+        <div class="level-area">
+          <h3>Select Difficulty</h3>
+
+          <div class="levels">
+            <button type="button" onclick="setLevel('Easy')">Easy</button>
+            <button type="button" onclick="setLevel('Medium')">Medium</button>
+            <button type="button" onclick="setLevel('Hard')">Hard</button>
+          </div>
+
+          <div class="active-level">
+            <span>Current Level:</span>
+            <span id="levelText">Medium</span>
+          </div>
+        </div>
+
+        <div class="timer-area">
+          <div class="timer-circle">
+            <span id="timer">30</span>
+          </div>
+          <p>Question Timer Preview</p>
+        </div>
+
+        <div class="feedback-area">
+          <h3>Instant AI Feedback</h3>
+          <div id="feedback" class="result-box feedback-box">
+            <i class="fa-solid fa-comments result-icon"></i>
+            <span>Waiting for answer...</span>
+          </div>
+
+          <button type="button" onclick="showFeedback()" class="btn-main submit-btn">
+            Submit Answer
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slot-section">
+    <div class="slot-wrapper">
+      <div class="slot-heading">
+        <h2>Real-Time <span>Slot Booking</span> System</h2>
+        <p>Choose your driving practice time with live availability tracking.</p>
+      </div>
+
+      <div class="slot-area">
+        <div class="calendar-zone">
+          <h3>Select Date</h3>
+
+          <div class="calendar">
+            <div class="day active">22<br /><small>Tue</small></div>
+            <div class="day">23<br /><small>Wed</small></div>
+            <div class="day">24<br /><small>Thu</small></div>
+            <div class="day">25<br /><small>Fri</small></div>
+            <div class="day">26<br /><small>Sat</small></div>
+          </div>
+
+          <div class="availability">
+            <span></span>
+            Only 3 slots left today
+          </div>
+        </div>
+
+        <div class="time-zone">
+          <h3>Available Time</h3>
+
+          <div class="times">
+            <button class="available" type="button">09:00 AM</button>
+            <button class="booked" type="button">10:30 AM</button>
+            <button class="available" type="button">12:00 PM</button>
+            <button class="available" type="button">02:30 PM</button>
+            <button class="booked" type="button">04:00 PM</button>
+            <button class="available" type="button">06:00 PM</button>
+          </div>
+
+          <a href="Services.html#booking" class="confirm-btn btn-main">Confirm Booking</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="perf-section">
+    <div class="perf-wrapper">
+      <div class="perf-heading">
+        <h2>Driving <span>Performance</span> Analytics</h2>
+        <p>AI tracks your progress and identifies areas where you can improve.</p>
+      </div>
+
+      <div class="perf-dashboard">
+        <div class="perf-chart">
+          <h3>Test Scores Over Time</h3>
+
+          <div class="chart-box">
+            <div class="chart-line"></div>
+
+            <div class="chart-point point-one">65%</div>
+            <div class="chart-point point-two">74%</div>
+            <div class="chart-point point-three">86%</div>
+            <div class="chart-point point-four">94%</div>
+          </div>
+
+          <div class="chart-labels">
+            <span>Week 1</span>
+            <span>Week 2</span>
+            <span>Week 3</span>
+            <span>Week 4</span>
+          </div>
+        </div>
+
+        <div class="perf-analysis">
+          <div class="score-circle">
+            <div class="circle-value">88%</div>
+          </div>
+
+          <h3>Overall Readiness</h3>
+          <p>Excellent Improvement <i class="fa-solid fa-car-side"></i></p>
+        </div>
+
+        <div class="perf-weak">
+          <h3>Weak Areas Detection</h3>
+
+          <div class="weak-item">
+            <div class="weak-text">
+              Traffic Signs
+              <span>60%</span>
+            </div>
+
+            <div class="weak-bar">
+              <div class="traffic-progress"></div>
+            </div>
+
+            <small>Needs Improvement</small>
+          </div>
+
+          <div class="weak-item">
+            <div class="weak-text">
+              Parking Skills
+              <span>75%</span>
+            </div>
+
+            <div class="weak-bar">
+              <div class="parking-progress"></div>
+            </div>
+
+            <small>Good Progress</small>
+          </div>
+
+          <div class="weak-item">
+            <div class="weak-text">
+              Road Rules
+              <span>90%</span>
+            </div>
+
+            <div class="weak-bar">
+              <div class="rule-progress"></div>
+            </div>
+
+            <small>Excellent</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="game-section">
+    <div class="game-wrapper">
+      <div class="game-title">
+        <h2>Driving <span>Achievements</span> & Gamification</h2>
+        <p>Complete challenges, improve skills and unlock driving milestones.</p>
+      </div>
+
+      <div class="game-stage">
+        <div class="trophy-zone">
+          <div class="trophy">🏆</div>
+          <div class="spark s1">✨</div>
+          <div class="spark s2">⭐</div>
+          <div class="spark s3">✨</div>
+
+          <h3>Keep Growing!</h3>
+          <p>Your driving journey is improving every day.</p>
+        </div>
+
+        <div class="achievement-zone">
+          <div class="badge">
+            <div class="badge-icon">
+              <i data-lucide="medal"></i>
+            </div>
+            <h3>Test Master</h3>
+            <p>Completed multiple driving assessments</p>
+          </div>
+
+          <div class="badge">
+            <div class="badge-icon">
+              <i data-lucide="car"></i>
+            </div>
+            <h3>Fast Learner</h3>
+            <p>Quick improvement in driving skills</p>
+          </div>
+
+          <div class="badge">
+            <div class="badge-icon">
+              <i data-lucide="flame"></i>
+            </div>
+            <h3>7 Day Streak</h3>
+            <p>Practice consistency achieved</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="streak-area">
+        <h3>Driving Progress Streak</h3>
+
+        <div class="days">
+          <span class="done">1</span>
+          <span class="done">2</span>
+          <span class="done">3</span>
+          <span class="done">4</span>
+          <span class="active">5</span>
+          <span>6</span>
+          <span>7</span>
+        </div>
+
+        <p>5 days continuous practice completed</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-container">
+      <div class="cta-content">
+        <span class="badge2">Smart Driving Platform</span>
+
+        <h2>
+          Start Your
+          <span>Driving Journey</span>
+          Today
+        </h2>
+
+        <p>
+          Learn driving confidently with smart practice, easy booking, and complete access anytime.
+          Your journey towards becoming a skilled driver starts here.
+        </p>
+
+        <a href="Contact.html" class="cta-btn btn-main">Get Started Now →</a>
+      </div>
+
+      <div class="cta-features">
+        <div class="cta-card">
+          <div class="cta-icon">
+            <i data-lucide="phone"></i>
+          </div>
+          <h3>Mobile Friendly</h3>
+          <p>Access lessons and bookings easily from any device.</p>
+        </div>
+
+        <div class="cta-card">
+          <div class="cta-icon">
+            <i data-lucide="alarm-clock-minus"></i>
+          </div>
+          <h3>24/7 Access</h3>
+          <p>Practice and learn whenever you are comfortable.</p>
+        </div>
+
+        <div class="cta-card">
+          <div class="cta-icon">
+            <i data-lucide="car"></i>
+          </div>
+          <h3>Easy Booking</h3>
+          <p>Book simulator sessions quickly and easily.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="home2.js"></script>
+  <script src="component.js"></script>
+</body>
+</html>

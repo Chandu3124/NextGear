@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="global.css" />
+  <link rel="stylesheet" href="Blog.css" />
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <!-- section 1 -->
+  <section class="blog-hero">
+    <div class="blog-hero-container">
+      <div class="blog-hero-content">
+        <span class="blog-tag">
+          <i class="fa-solid fa-car-side"></i>
+          Driving Knowledge Hub
+        </span>
+
+        <h2>
+          Driving Tips &
+          <span>Learning</span>
+          Resources
+        </h2>
+
+        <p>
+          Explore expert driving guides, road safety tips,
+          simulator techniques and smart learning resources
+          to become a confident and responsible driver.
+        </p>
+
+        <div class="blog-search">
+          <input
+            type="text"
+            id="blogSearch"
+            placeholder="Search driving tips, guides..."
+          />
+          <button id="searchBtn" type="button">Search</button>
+        </div>
+
+        <div class="hero-mini-info">
+          <div>
+            <strong>100+</strong>
+            <small>Driving Guides</small>
+          </div>
+
+          <div>
+            <strong>50+</strong>
+            <small>Safety Tips</small>
+          </div>
+
+          <div>
+            <strong>24/7</strong>
+            <small>Learning Support</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-hero-image">
+        <div class="image-card">
+          <img
+            src="img20.jpg"
+            alt="Driving Learning"
+          />
+        </div>
+
+        <div class="floating-card card-one">
+          <i class="fa-solid fa-road"></i>
+          <span>Road Safety</span>
+        </div>
+
+        <div class="floating-card card-two">
+          <i class="fa-solid fa-book-open-reader"></i>
+          <span>Smart Learning</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- section 2 -->
+  <section class="blog-category">
+    <div class="category-container">
+      <div class="category-heading">
+        <span class="category-label">Explore Articles</span>
+
+        <h2>
+          Choose Your
+          <span>Learning</span>
+          Category
+        </h2>
+
+        <p>
+          Select a topic and discover useful driving
+          resources, safety knowledge and preparation
+          guides designed for every learner.
+        </p>
+      </div>
+
+      <div class="category-filter">
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all" type="button">All</button>
+          <button class="filter-btn" data-filter="tips" type="button">Driving Tips</button>
+          <button class="filter-btn" data-filter="rules" type="button">Traffic Rules</button>
+          <button class="filter-btn" data-filter="simulator" type="button">Simulator Training</button>
+          <button class="filter-btn" data-filter="test" type="button">Test Preparation</button>
+        </div>
+
+        <div class="category-results">
+          <div class="result-card" data-category="tips">
+            <h3>Driving Tips</h3>
+            <p>
+              Improve confidence with practical
+              driving techniques.
+            </p>
+          </div>
+
+          <div class="result-card" data-category="rules">
+            <h3>Traffic Rules</h3>
+            <p>
+              Learn road signs and safe traffic habits.
+            </p>
+          </div>
+
+          <div class="result-card" data-category="simulator">
+            <h3>Simulator Training</h3>
+            <p>
+              Practice realistic driving situations safely.
+            </p>
+          </div>
+
+          <div class="result-card" data-category="test">
+            <h3>Test Preparation</h3>
+            <p>
+              Prepare smarter for theory examinations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- section 3 -->
+  <section class="blog-cards-section">
+    <div class="blog-cards-container">
+      <div class="blog-cards-heading">
+        <span>Latest Articles</span>
+        <h2>
+          Driving Knowledge
+          <strong>That Matters</strong>
+        </h2>
+
+        <p>
+          Discover expert guides, safety advice and
+          smart preparation resources to improve your
+          driving journey.
+        </p>
+      </div>
+
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-image">
+            <img
+              src="img21.jpg"
+              alt="Driving Tips"
+            />
+            <span>Driving Tips</span>
+          </div>
+
+          <div class="blog-content">
+            <h3>
+              Essential Driving Habits
+              Every Beginner Needs
+            </h3>
+
+            <p>
+              Learn simple techniques that help
+              new drivers build confidence and
+              improve control.
+            </p>
+
+            <button type="button" class="redirect-detail">Read More →</button>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-image">
+            <img
+              src="img22.jpg"
+              alt="Traffic Rules"
+            />
+            <span>Traffic Rules</span>
+          </div>
+
+          <div class="blog-content">
+            <h3>
+              Understanding Road Signs
+              & Safety Rules
+            </h3>
+
+            <p>
+              Improve your road awareness by
+              understanding important traffic
+              signs and regulations.
+            </p>
+
+            <button type="button" class="redirect-detail">Read More →</button>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-image">
+            <img
+              src="img23.jpg"
+              alt="Simulator Training"
+            />
+            <span>Simulator Training</span>
+          </div>
+
+          <div class="blog-content">
+            <h3>
+              How Simulators Improve
+              Driving Skills
+            </h3>
+
+            <p>
+              Experience realistic situations
+              and practice safer driving methods.
+            </p>
+
+            <button type="button" class="redirect-detail">Read More →</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- section 4 -->
+  <section class="featured-posts">
+    <div class="featured-container">
+      <div class="featured-heading">
+        <span>Featured Articles</span>
+        <h2>
+          Popular Driving
+          <strong>Insights</strong>
+        </h2>
+
+        <p>
+          Explore our most valuable guides
+          created to improve driving skills,
+          safety awareness and test preparation.
+        </p>
+      </div>
+
+      <div class="featured-layout">
+        <article class="main-feature-card">
+          <img
+            src="img26.avif"
+            alt="Driving Mistakes"
+          />
+
+          <div class="feature-overlay">
+            <span>Most Popular</span>
+
+            <h3>
+              Top 10 Driving Mistakes
+              Beginners Make
+            </h3>
+
+            <p>
+              Learn common mistakes new drivers
+              make and discover simple ways
+              to drive with confidence.
+            </p>
+
+            <button type="button" class="redirect-detail">Read Article →</button>
+          </div>
+        </article>
+
+        <div class="side-feature-posts">
+          <article class="small-feature-card">
+            <img
+              src="img24.jpg"
+              alt="Safe Driving"
+            />
+
+            <div>
+              <span>Safety</span>
+              <h4>Smart Road Safety Rules</h4>
+              <button type="button" class="redirect-detail">Read More</button>
+            </div>
+          </article>
+
+          <article class="small-feature-card">
+            <img
+              src="img25.jpg"
+              alt="Simulator"
+            />
+
+            <div>
+              <span>Simulator</span>
+              <h4>Practice Before Real Driving</h4>
+              <button type="button" class="redirect-detail">Read More</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- section 5 -->
+  <section class="newsletter-section">
+    <div class="newsletter-container">
+      <div class="newsletter-content">
+        <span>Stay Updated</span>
+
+        <h2>
+          Subscribe for
+          <strong>Driving Tips</strong>
+        </h2>
+
+        <p>
+          Get expert driving guides, road safety updates,
+          simulator tips and preparation resources
+          directly in your inbox.
+        </p>
+
+        <div class="newsletter-box">
+          <input
+            type="email"
+            id="emailInput"
+            placeholder="Enter your email address"
+          />
+          <button id="subscribeBtn" type="button">Subscribe</button>
+        </div>
+
+        <small id="message"></small>
+      </div>
+
+      <div class="newsletter-side">
+        <div class="tip-card">
+          <div class="tip-icon">
+            <i class="fa-solid fa-car-on"></i>
+          </div>
+          <h3>Drive Smart</h3>
+          <p>
+            Learn better. Practice safer.
+            Become a confident driver.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <script src="Blog.js"></script>
+  <script src="component.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

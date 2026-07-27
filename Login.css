@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+  --primary:#ff7900;
+  --secondary:#081c3a;
+  --white:#fff;
+  --black:#000000;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Poppins,sans-serif;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:
+    linear-gradient(
+      rgba(8,28,58,0.78),
+      rgba(8,28,58,0.78)
+    ),
+    url("img1.avif");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  padding:20px;
+}
+
+.container{
+  width:100%;
+  max-width:400px;
+}
+
+.form-card{
+  background:rgba(255,255,255,0.97);
+  padding:28px 35px;
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,.35);
+}
+
+.logo-wrap{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:22px;
+}
+
+.logo{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  text-decoration:none;
+  text-align:center;
+}
+
+.logo img{
+  width:60px;
+  height:60px;
+  object-fit:contain;
+  flex-shrink:0;
+}
+
+.logo h2{
+  font-size:24px;
+  font-weight:800;
+  letter-spacing:.4px;
+  color:var(--secondary);
+  line-height:1;
+  margin:0;
+}
+
+.logo span{
+  color:var(--primary);
+}
+
+.form-title{
+  text-align:center;
+  color:var(--secondary);
+  margin-bottom:18px;
+  font-size:24px;
+}
+
+.input-box{
+  position:relative;
+  margin-bottom:16px;
+}
+
+.input-box input{
+  width:100%;
+  padding:14px 12px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  outline:none;
+  font-size:16px;
+  color:var(--secondary);
+  background:var(--white);
+}
+
+.input-box input:focus{
+  border-color:var(--primary);
+  box-shadow:0 0 0 3px rgba(255,121,0,.12);
+}
+
+.input-box label{
+  position:absolute;
+  left:12px;
+  top:13px;
+  color:#777;
+  font-size:13px;
+  pointer-events:none;
+  transition:.3s;
+  background:var(--white);
+}
+
+.input-box input:focus + label,
+.input-box input:not(:placeholder-shown) + label{
+  top:-9px;
+  left:10px;
+  font-size:11px;
+  color:var(--primary);
+  padding:0 5px;
+}
+
+button{
+  width:100%;
+  padding:11px;
+  border:none;
+  border-radius:25px;
+  background:var(--primary);
+  color:var(--white);
+  font-size:15px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+
+button:hover{
+  background:var(--secondary);
+}
+
+button:focus-visible,
+.input-box input:focus-visible,
+.switch-btn:focus-visible{
+  outline:2px solid var(--primary);
+  outline-offset:3px;
+}
+
+.switch{
+  text-align:center;
+  margin-top:15px;
+  font-size:13px;
+  color:#555;
+}
+
+.switch-btn{
+  background:none;
+  border:none;
+  color:var(--primary);
+  font-weight:600;
+  cursor:pointer;
+  padding:0;
+  margin-left:4px;
+  width:auto;
+}
+
+.switch-btn:hover{
+  color:var(--secondary);
+  background:none;
+}
+
+.hide{
+  display:none;
+}
+
+#signupForm .input-box{
+  margin-bottom:13px;
+}
+
+#signupForm h2{
+  margin-bottom:15px;
+}
+
+#signupForm button{
+  margin-top:5px;
+}
+
+@media(max-width:450px){
+  .container{
+    width:90%;
+  }
+
+  .form-card{
+    padding:22px 22px;
+  }
+
+  .logo{
+    gap:6px;
+  }
+
+  .logo img{
+    width:52px;
+    height:52px;
+  }
+
+  .logo h2{
+    font-size:21px;
+  }
+
+  .form-title{
+    font-size:22px;
+  }
+}

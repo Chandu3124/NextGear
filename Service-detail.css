@@ -1,0 +1,221 @@
+/*==================================
+        GOOGLE FONT
+==================================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*==================================
+        ROOT VARIABLES
+==================================*/
+:root{
+    --primary:#ff7900;
+    --secondary:#081c3a;
+    --white:#fff;
+}
+
+/*==================================
+        GLOBAL
+==================================*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:var(--white);
+    color:var(--secondary);
+    overflow-x:hidden;
+    line-height:1.8;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/*==================================
+        SERVICE SECTION
+==================================*/
+.service-detail{
+    padding:100px 0;
+    background:var(--white);
+    
+}
+
+.service-detail.light{
+    background:#f8f9fc;
+}
+
+.service-wrapper{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:70px;
+}
+
+.service-image,
+.service-content{
+    flex:1;
+}
+
+.service-image img{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+.service-image img:hover{
+    transform:scale(1.03);
+}
+
+.service-no{
+    display:inline-block;
+    color:var(--primary);
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.service-content h2{
+    font-size:44px;
+    color:var(--secondary);
+    margin-bottom:20px;
+    line-height:1.3;
+}
+
+.service-content h2 span{
+    color:var(--primary);
+}
+
+.service-content p{
+    color:#666;
+    font-size:17px;
+    line-height:1.9;
+    text-align:justify;
+    margin-bottom:18px;
+}
+
+/*==================================
+        RESPONSIVE
+==================================*/
+@media(max-width:992px){
+
+.service-wrapper{
+    flex-direction:column;
+    gap:40px;
+}
+
+.service-content{
+    text-align:center;
+}
+
+.service-content p{
+    text-align:center;
+}
+
+.service-content h2{
+    font-size:34px;
+}
+
+.service-image img{
+    height:350px;
+}
+}
+
+@media(max-width:768px){
+
+.service-detail{
+    padding:70px 0;
+}
+
+.service-content h2{
+    font-size:28px;
+}
+
+.service-image img{
+    height:250px;
+}
+}
+
+/*==================================
+        DARK MODE
+==================================*/
+body.dark{
+    background:#000;
+    color:#f5f5f5; /* default light text */
+}
+
+/* Sections */
+body.dark .service-detail{
+    background:#000;
+}
+
+body.dark .service-detail.light{
+    background:#111;
+}
+
+/* Headings */
+body.dark .service-content h2{
+    color:#ffffff;
+}
+
+/* Orange stays same */
+body.dark .service-content h2 span{
+    color:var(--primary);
+}
+
+body.dark .service-no{
+    color:var(--primary);
+}
+
+/* Paragraphs */
+body.dark .service-content p{
+    color:#e0e0e0;
+}
+
+/* Links */
+body.dark a{
+    color:#ffffff;
+}
+
+/* Images */
+body.dark .service-image img{
+    box-shadow:0 12px 30px rgba(255,255,255,.08);
+}
+
+body.dark img{
+    filter:brightness(.95);
+}
+
+/*==================================
+        SMOOTH TRANSITION
+==================================*/
+body,
+.service-detail,
+.service-detail.light,
+.service-content h2,
+.service-content p,
+.service-image img{
+    transition:background .4s ease,
+               color .4s ease,
+               box-shadow .4s ease,
+               filter .4s ease;
+}
