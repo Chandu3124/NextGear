@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-
     <link rel="stylesheet" href="Dashboard.css" />
 </head>
 <body>
@@ -18,22 +17,18 @@
 
     <div class="container">
         <aside class="sidebar" id="sidebar">
-            <!-- <div class="logo">
-                <i class="fa-solid fa-car-side"></i>
-                <h2>NextGear</h2>
-            </div> -->
             <div class="logo-wrap">
-        <a href="index.html" class="logo" aria-label="NextGear home">
-          <img
-            id="siteLogo"
-            src="logo-dark.png"
-            alt="NextGear logo"
-            data-light-logo="logo-light.png"
-            data-dark-logo="logo-dark.png"
-          />
-          <h2>NEXT<span>GEAR</span></h2>
-        </a>
-      </div>
+                <a href="index.html" class="logo" aria-label="NextGear home">
+                    <img
+                        id="siteLogo"
+                        src="logo-dark.png"
+                        alt="NextGear logo"
+                        data-light-logo="logo-light.png"
+                        data-dark-logo="logo-dark.png"
+                    />
+                    <h2>NEXT<span>GEAR</span></h2>
+                </a>
+            </div>
 
             <ul class="menu">
                 <li class="active" data-section="dashboard">
@@ -92,7 +87,7 @@
 
                     <div class="top-left">
                         <h2>Student Dashboard</h2>
-                        <p>Welcome back 👋 Ready for today's practice?</p>
+                        <p>Welcome back. Ready for today's practice?</p>
                     </div>
                 </div>
 
@@ -112,11 +107,31 @@
                         <span class="badge">3</span>
                     </div>
 
-                    <div class="profile-box">
-                        <img src="https://i.pravatar.cc/100?img=12" alt="Student profile photo" />
-                        <div>
-                            <h4>Student</h4>
-                            <small>NextGear Member</small>
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <button class="profile-box profile-trigger" id="profileTrigger" type="button" aria-expanded="false">
+                            <img src="https://i.pravatar.cc/100?img=12" alt="Student profile photo" />
+                            <div>
+                                <h4>Student</h4>
+                                <small>NextGear Member</small>
+                            </div>
+                            <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+                        </button>
+
+                        <div class="profile-dropdown-menu" id="profileDropdownMenu">
+                            <button type="button" class="dropdown-item" data-section-target="profile">
+                                <i class="fa-solid fa-user"></i>
+                                <span>Profile</span>
+                            </button>
+
+                            <button type="button" class="dropdown-item" data-section-target="settings">
+                                <i class="fa-solid fa-gear"></i>
+                                <span>Settings</span>
+                            </button>
+
+                            <button type="button" class="dropdown-item" id="dropdownLogoutBtn">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                <span>Logout</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -125,7 +140,7 @@
             <section id="dashboard" class="content-section active-section">
                 <div class="welcome-card">
                     <div>
-                        <h1>Welcome to NextGear 🚗</h1>
+                        <h1>Welcome to NextGear</h1>
                         <p>
                             Practice smarter, improve faster, and get ready
                             to pass your driving theory exam with confidence.
@@ -233,10 +248,10 @@
                         <h3>Announcements</h3>
                         <hr>
                         <ul class="announcement-list">
-                            <li>🚗 New Simulator Slots Available</li>
-                            <li>📖 Theory Mock Test Updated</li>
-                            <li>🏆 Complete 5 Sessions to earn a Badge</li>
-                            <li>📅 Next Theory Exam: 30 July 2026</li>
+                            <li><i class="fa-solid fa-car-side list-icon"></i> New Simulator Slots Available</li>
+                            <li><i class="fa-solid fa-book-open list-icon"></i> Theory Mock Test Updated</li>
+                            <li><i class="fa-solid fa-award list-icon"></i> Complete 5 Sessions to earn a Badge</li>
+                            <li><i class="fa-solid fa-calendar-days list-icon"></i> Next Theory Exam: 30 July 2026</li>
                         </ul>
                     </div>
                 </div>
@@ -295,11 +310,11 @@
                     <div class="booking-info">
                         <h3>Booking Guidelines</h3>
                         <ul>
-                            <li>✔ Arrive 15 minutes before your session.</li>
-                            <li>✔ Carry your Student ID.</li>
-                            <li>✔ One booking per time slot.</li>
-                            <li>✔ Cancellation allowed up to 24 hours before.</li>
-                            <li>✔ Practice regularly to improve readiness.</li>
+                            <li><i class="fa-solid fa-circle-check list-icon"></i> Arrive 15 minutes before your session.</li>
+                            <li><i class="fa-solid fa-id-card list-icon"></i> Carry your Student ID.</li>
+                            <li><i class="fa-solid fa-clock list-icon"></i> One booking per time slot.</li>
+                            <li><i class="fa-solid fa-ban list-icon"></i> Cancellation allowed up to 24 hours before.</li>
+                            <li><i class="fa-solid fa-chart-line list-icon"></i> Practice regularly to improve readiness.</li>
                         </ul>
                     </div>
                 </div>
@@ -413,11 +428,11 @@
                     <div class="instruction-card">
                         <h3>Instructions</h3>
                         <ul>
-                            <li>✔ Total Questions : 10</li>
-                            <li>✔ Time : 10 Minutes</li>
-                            <li>✔ One mark for every correct answer.</li>
-                            <li>✔ No negative marking.</li>
-                            <li>✔ Click Submit after completing the test.</li>
+                            <li><i class="fa-solid fa-list-check list-icon"></i> Total Questions : 10</li>
+                            <li><i class="fa-solid fa-hourglass-half list-icon"></i> Time : 10 Minutes</li>
+                            <li><i class="fa-solid fa-check list-icon"></i> One mark for every correct answer.</li>
+                            <li><i class="fa-solid fa-minus list-icon"></i> No negative marking.</li>
+                            <li><i class="fa-solid fa-paper-plane list-icon"></i> Click Submit after completing the test.</li>
                         </ul>
                     </div>
                 </div>
@@ -554,10 +569,10 @@
                 <div class="dashboard-box">
                     <h3>Achievements</h3>
                     <ul class="achievement-list">
-                        <li>🏆 Completed 10 Simulator Sessions</li>
-                        <li>🥇 Highest Theory Score : 96%</li>
-                        <li>🚗 Ready for Final Driving Assessment</li>
-                        <li>🎯 Overall Progress : Excellent</li>
+                        <li><i class="fa-solid fa-trophy list-icon"></i> Completed 10 Simulator Sessions</li>
+                        <li><i class="fa-solid fa-medal list-icon"></i> Highest Theory Score : 96%</li>
+                        <li><i class="fa-solid fa-car list-icon"></i> Ready for Final Driving Assessment</li>
+                        <li><i class="fa-solid fa-bullseye list-icon"></i> Overall Progress : Excellent</li>
                     </ul>
                 </div>
             </section>

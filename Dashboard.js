@@ -8,12 +8,18 @@ const menuToggle = document.getElementById("menuToggle");
 const mobileOverlay = document.getElementById("mobileOverlay");
 
 const logoutBtn = document.getElementById("logoutBtn");
+const dropdownLogoutBtn = document.getElementById("dropdownLogoutBtn");
 const logoutModal = document.getElementById("logoutModal");
 const cancelLogout = document.getElementById("cancelLogout");
 const confirmLogout = document.getElementById("confirmLogout");
 
 const themeToggle = document.getElementById("themeToggle");
 const rtlToggle = document.getElementById("rtlToggle");
+
+const profileDropdown = document.getElementById("profileDropdown");
+const profileTrigger = document.getElementById("profileTrigger");
+const profileDropdownMenu = document.getElementById("profileDropdownMenu");
+const dropdownSectionButtons = document.querySelectorAll(".dropdown-item[data-section-target]");
 
 const bookBtn = document.getElementById("bookBtn");
 const bookingTable = document.getElementById("bookingTable");
@@ -114,6 +120,8 @@ function showSection(sectionId) {
     if (activeMenu) activeMenu.classList.add("active");
     if (activeSection) activeSection.classList.add("active-section");
 
+    closeProfileDropdown();
+
     if (window.innerWidth <= 992) {
         closeSidebar();
     }
@@ -129,6 +137,13 @@ menuItems.forEach(item => {
 document.querySelectorAll(".section-jump-btn").forEach(btn => {
     btn.addEventListener("click", () => {
         showSection(btn.dataset.target);
+    });
+});
+
+dropdownSectionButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const target = btn.getAttribute("data-section-target");
+        showSection(target);
     });
 });
 
@@ -149,23 +164,50 @@ function closeSidebar() {
 menuToggle.addEventListener("click", openSidebar);
 mobileOverlay.addEventListener("click", closeSidebar);
 
-logoutBtn.addEventListener("click", () => {
+function openLogoutModal() {
     logoutModal.style.display = "flex";
-});
+    closeProfileDropdown();
+}
 
-cancelLogout.addEventListener("click", () => {
+function closeLogoutModal() {
     logoutModal.style.display = "none";
-});
+}
+
+logoutBtn.addEventListener("click", openLogoutModal);
+dropdownLogoutBtn.addEventListener("click", openLogoutModal);
+
+cancelLogout.addEventListener("click", closeLogoutModal);
 
 window.addEventListener("click", (e) => {
     if (e.target === logoutModal) {
-        logoutModal.style.display = "none";
+        closeLogoutModal();
+    }
+
+    if (!profileDropdown.contains(e.target)) {
+        closeProfileDropdown();
     }
 });
 
 confirmLogout.addEventListener("click", () => {
     alert("Logged Out Successfully!");
     location.reload();
+});
+
+function openProfileDropdown() {
+    profileDropdown.classList.add("active");
+    profileTrigger.setAttribute("aria-expanded", "true");
+}
+
+function closeProfileDropdown() {
+    profileDropdown.classList.remove("active");
+    profileTrigger.setAttribute("aria-expanded", "false");
+}
+
+profileTrigger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    profileDropdown.classList.toggle("active");
+    const isOpen = profileDropdown.classList.contains("active");
+    profileTrigger.setAttribute("aria-expanded", String(isOpen));
 });
 
 function updateThemeButton() {
@@ -498,7 +540,8 @@ window.addEventListener("load", () => {
     else if (hour < 17) greeting = "Good Afternoon";
     else greeting = "Good Evening";
 
-    document.querySelector(".top-left h2").textContent = `${greeting} 👋`;
+    document.querySelector(".top-left h2").textContent = `${greeting}`;
+    document.querySelector(".top-left p").textContent = "Welcome back. Ready for today's practice?";
 
     loadBookings();
     loadScore();

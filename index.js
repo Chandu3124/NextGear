@@ -1,3 +1,5 @@
+const MOBILE_BREAKPOINT = 768;
+
 const text =
   "Learn confidently with realistic driving simulations and AI-powered theory tests.";
 
@@ -17,25 +19,12 @@ type();
 const hero = document.querySelector(".hero");
 if (hero) {
   hero.addEventListener("mousemove", (e) => {
-    if (document.body.classList.contains("dark")) return;
+    if (document.body.classList.contains("dark") || window.innerWidth <= MOBILE_BREAKPOINT) return;
     const x = (window.innerWidth / 2 - e.pageX) / 35;
     const y = (window.innerHeight / 2 - e.pageY) / 35;
     hero.style.backgroundPosition = `calc(50% + ${x}px) calc(50% + ${y}px)`;
   });
 }
-
-const buttons = document.querySelectorAll(".btn");
-buttons.forEach((button) => {
-  button.addEventListener("mouseenter", () => {
-    if (!document.body.classList.contains("dark")) {
-      button.style.transform = "scale(1.03)";
-    }
-  });
-
-  button.addEventListener("mouseleave", () => {
-    button.style.transform = "scale(1)";
-  });
-});
 
 const reveals = document.querySelectorAll(".reveal");
 function revealSection() {
@@ -53,7 +42,7 @@ revealSection();
 const cards = document.querySelectorAll(".feature-card");
 cards.forEach((card) => {
   card.addEventListener("mousemove", (e) => {
-    if (document.body.classList.contains("dark")) return;
+    if (document.body.classList.contains("dark") || window.innerWidth <= MOBILE_BREAKPOINT) return;
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -67,8 +56,10 @@ cards.forEach((card) => {
 
 const image = document.querySelector(".about-image img");
 let direction = 1;
-if (image) {
-  setInterval(() => {
+let imageFloatInterval;
+
+if (image && window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
+  imageFloatInterval = setInterval(() => {
     image.style.transform = `translateY(${direction * 8}px)`;
     direction *= -1;
   }, 1800);
@@ -118,37 +109,21 @@ function simxCounterAnimation() {
 window.addEventListener("scroll", simxCounterAnimation);
 simxCounterAnimation();
 
-const simxBtn = document.querySelector(".simx-btn");
+const simxBtn = document.getElementById("exploreServicesBtn");
 if (simxBtn) {
-  simxBtn.addEventListener("mousemove", (e) => {
-    if (window.innerWidth < 768) return;
-    const rect = simxBtn.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    simxBtn.style.transform = `translate(${x * 0.12}px, ${y * 0.12}px)`;
-  });
-
-  simxBtn.addEventListener("mouseleave", () => {
-    simxBtn.style.transform = "translate(0,0)";
-  });
-
   simxBtn.addEventListener("click", () => {
-    window.location.href = "Services.html";
+    const target = document.getElementById("services");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
   });
 }
 
-const startBtn = document.getElementById("startTestBtn");
 const timerDisplay = document.getElementById("timer");
 const scoreDisplay = document.getElementById("score");
 
 let time = 0;
 let interval;
-
-if (startBtn && timerDisplay && scoreDisplay) {
-  startBtn.addEventListener("mouseenter", () => {
-    if (startBtn.tagName.toLowerCase() === "a") return;
-  });
-}
 
 function startPreviewCounter() {
   clearInterval(interval);
@@ -195,6 +170,7 @@ function pgxAnimation() {
       const radius = 60;
       const circumference = 2 * Math.PI * radius;
 
+      if (!ring) return;
       ring.style.strokeDasharray = circumference;
       ring.style.strokeDashoffset =
         circumference - (percent / 100) * circumference;
@@ -234,15 +210,20 @@ if (bookingDate) {
         year: "numeric",
       });
 
-      bookingMessage.innerHTML = `Your simulator session is booked for <br><strong>${formattedDate}</strong><br>at <strong>${timeValue}</strong>.`;
-      bookingPopup.classList.add("active");
+      if (bookingMessage) {
+        bookingMessage.innerHTML = `Your simulator session is booked for <br><strong>${formattedDate}</strong><br>at <strong>${timeValue}</strong>.`;
+      }
+
+      if (bookingPopup) {
+        bookingPopup.classList.add("active");
+      }
     });
   }
 
   if (closeBooking) {
     closeBooking.addEventListener("click", function () {
-      bookingPopup.classList.remove("active");
-      bookingForm.reset();
+      if (bookingPopup) bookingPopup.classList.remove("active");
+      if (bookingForm) bookingForm.reset();
       bookingDate.min = today;
     });
   }
@@ -251,7 +232,7 @@ if (bookingDate) {
     bookingPopup.addEventListener("click", function (e) {
       if (e.target === bookingPopup) {
         bookingPopup.classList.remove("active");
-        bookingForm.reset();
+        if (bookingForm) bookingForm.reset();
         bookingDate.min = today;
       }
     });
@@ -265,6 +246,7 @@ const tsPrev = document.querySelector(".ts-prev");
 const tsNext = document.querySelector(".ts-next");
 
 let tsIndex = 0;
+let testimonialsAutoSlide;
 
 function updateTestimonials() {
   if (!tsTrack) return;
@@ -297,7 +279,7 @@ tsDots.forEach((dot, index) => {
 });
 
 if (tsCards.length > 0) {
-  setInterval(() => {
+  testimonialsAutoSlide = setInterval(() => {
     tsIndex++;
     if (tsIndex >= tsCards.length) tsIndex = 0;
     updateTestimonials();
@@ -358,4 +340,16 @@ ctCards.forEach((card) => {
   card.style.opacity = "0";
   card.style.transform = "translateX(-50px)";
   ctObserver.observe(card);
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth <= MOBILE_BREAKPOINT && hero) {
+    hero.style.backgroundPosition = "center";
+  }
+
+  if (window.innerWidth <= MOBILE_BREAKPOINT) {
+    cards.forEach((card) => {
+      card.style.background = document.body.classList.contains("dark") ? "#121212" : "#ffffff";
+    });
+  }
 });

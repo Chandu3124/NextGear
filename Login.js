@@ -5,6 +5,7 @@ const googleLoginBtn = document.getElementById("googleLogin");
 const appleLoginBtn = document.getElementById("appleLogin");
 const googleSignupBtn = document.getElementById("googleSignup");
 const appleSignupBtn = document.getElementById("appleSignup");
+const forgotPasswordLink = document.getElementById("forgotPasswordLink");
 
 const themeToggle = document.getElementById("themeToggle");
 const rtlToggle = document.getElementById("rtlToggle");
@@ -84,6 +85,11 @@ googleSignupBtn.addEventListener("click", function() {
 
 appleSignupBtn.addEventListener("click", function() {
   alert("Apple signup will be added soon");
+});
+
+forgotPasswordLink.addEventListener("click", function(e) {
+  e.preventDefault();
+  alert("Forgot password feature will be added soon");
 });
 
 themeToggle.addEventListener("click", toggleTheme);

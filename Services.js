@@ -65,15 +65,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const heroImage = document.querySelector(".zigzag-frame img");
-  if (heroImage && !prefersReducedMotion) {
-    heroImage.addEventListener("mouseenter", () => {
-      heroImage.style.transform = "scale(1.08)";
-    });
+  const heroBookingBtn = document.getElementById("heroBookingBtn");
+  const bookSimulatorBtn = document.getElementById("bookSimulatorBtn");
+  const bookingSection = document.getElementById("booking");
 
-    heroImage.addEventListener("mouseleave", () => {
-      heroImage.style.transform = "scale(1)";
-    });
+  const scrollToBooking = (event) => {
+    if (!bookingSection) return;
+    event.preventDefault();
+    bookingSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  if (heroBookingBtn && bookingSection) {
+    heroBookingBtn.addEventListener("click", scrollToBooking);
+  }
+
+  if (bookSimulatorBtn && bookingSection) {
+    bookSimulatorBtn.addEventListener("click", scrollToBooking);
   }
 
   const simulatorImage = document.querySelector(".sim-showcase img");
@@ -131,13 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
     growthCircles.forEach((circle) => growthObserver.observe(circle));
   }
 
-  const bookSimulatorBtn = document.getElementById("bookSimulatorBtn");
-  const bookingSection = document.getElementById("booking");
-
-  if (bookSimulatorBtn && bookingSection) {
-    bookSimulatorBtn.addEventListener("click", (event) => {
-      event.preventDefault();
-      bookingSection.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
+  if (window.lucide) {
+    lucide.createIcons();
   }
 });

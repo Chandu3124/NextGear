@@ -12,36 +12,28 @@
         <h2>NEXT<span>GEAR</span></h2>
       </a>
 
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        aria-label="Open menu"
-        aria-expanded="false"
-        aria-controls="primaryMenu"
-        type="button"
-      >
-        <i class="fa-solid fa-bars"></i>
-      </button>
-
       <ul class="menu" id="primaryMenu">
         <li class="dropdown">
           <a href="index.html" data-page="index.html">
             Home
             <i class="fa-solid fa-chevron-down"></i>
           </a>
-
           <ul class="dropdown-menu">
             <li><a href="index.html" data-page="index.html">Home 1</a></li>
             <li><a href="home2.html" data-page="home2.html">Home 2</a></li>
           </ul>
         </li>
 
-        <li><a href="About.html" data-page="about.html">About</a></li>
-        <li><a href="Services.html" data-page="services.html">Services</a></li>
-        <li><a href="Blog.html" data-page="blog.html">Blog</a></li>
-        <li><a href="Contact.html" data-page="contact.html">Contact</a></li>
-        <li><a href="Practice.html" data-page="practice.html">Practice</a></li>
-        <li><a href="Dashboard.html" data-page="dashboard.html">Dashboard</a></li>
+        <li><a href="about.html" data-page="about.html">About</a></li>
+        <li><a href="services.html" data-page="services.html">Services</a></li>
+        <li><a href="blog.html" data-page="blog.html">Blog</a></li>
+        <li><a href="contact.html" data-page="contact.html">Contact</a></li>
+        <li><a href="practice.html" data-page="practice.html">Practice</a></li>
+        <li><a href="dashboard.html" data-page="dashboard.html">Dashboard</a></li>
+
+        <li class="mobile-login-item">
+          <a href="login.html" data-page="login.html">Login</a>
+        </li>
       </ul>
 
       <div class="nav-right">
@@ -53,7 +45,18 @@
           <i class="fa-regular fa-moon"></i>
         </button>
 
-        <a href="login.html" class="login">Login</a>
+        <a href="login.html" class="login desktop-login">Login</a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="primaryMenu"
+          type="button"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
     </nav>
   </div>

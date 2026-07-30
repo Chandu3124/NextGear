@@ -21,6 +21,9 @@
   --footer-dark-muted:#cbd5e1;
   --footer-dark-border:#1f2937;
   --footer-dark-social-bg:#111827;
+
+  --header-height:10vh;
+  --header-min-height:84px;
 }
 
 body.dark{
@@ -51,7 +54,7 @@ body{
   color:var(--text);
   position:relative;
   transition:background .35s ease,color .35s ease;
-  padding-top:100px;
+  padding-top:max(var(--header-height), var(--header-min-height));
 }
 
 a{
@@ -85,6 +88,8 @@ select{
 
 .header{
   width:100%;
+  height:10vh;
+  min-height:84px;
   background:var(--white);
   border-bottom:1px solid var(--light-border);
   position:fixed;
@@ -94,8 +99,15 @@ select{
   transition:background .35s ease,border-color .35s ease;
 }
 
+.header .container{
+  height:100%;
+  display:flex;
+  align-items:center;
+}
+
 .nav{
-  min-height:100px;
+  width:100%;
+  height:100%;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -121,6 +133,7 @@ select{
   letter-spacing:.4px;
   color:var(--secondary);
   transition:color .35s ease;
+  line-height:1;
 }
 
 .logo span,
@@ -134,10 +147,13 @@ select{
   display:flex;
   align-items:center;
   gap:28px;
+  height:100%;
 }
 
 .menu li{
   position:relative;
+  display:flex;
+  align-items:center;
 }
 
 .menu a{
@@ -214,18 +230,22 @@ select{
 
 .dropdown-menu li a{
   display:block;
+  width:100%;
   padding:14px 20px;
   color:var(--secondary);
   font-size:15px;
   font-weight:500;
   transition:all .3s ease;
+  box-sizing:border-box;
 }
 
 .dropdown-menu li a:hover,
 .dropdown-menu li a[aria-current="page"]{
+  display:block;
+  width:100%;
   background:var(--primary);
   color:#fff;
-  padding-left:28px;
+  padding:14px 20px 14px 28px;
 }
 
 .nav-right{
@@ -233,11 +253,12 @@ select{
   align-items:center;
   gap:14px;
   flex-shrink:0;
+  height:100%;
 }
 
 .circle{
-  width:45px;
-  height:45px;
+  width:44px;
+  height:44px;
   border-radius:50%;
   border:none;
   background:var(--circle-bg);
@@ -248,6 +269,7 @@ select{
   align-items:center;
   justify-content:center;
   transition:background .35s ease,color .35s ease,transform .3s ease;
+  flex-shrink:0;
 }
 
 .circle:hover{
@@ -262,15 +284,16 @@ select{
   cursor:pointer;
   background:var(--primary);
   color:#fff;
-  padding:12px 28px;
+  padding:10px 22px;
   border-radius:40px;
-  font-size:16px;
+  font-size:15px;
   font-weight:600;
   transition:background .35s ease,transform .3s ease;
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-height:46px;
+  min-height:42px;
+  line-height:1;
 }
 
 .login:hover{
@@ -280,8 +303,8 @@ select{
 
 .menu-toggle{
   display:none;
-  width:46px;
-  height:46px;
+  width:44px;
+  height:44px;
   border:none;
   border-radius:12px;
   background:var(--circle-bg);
@@ -291,12 +314,22 @@ select{
   font-size:20px;
   cursor:pointer;
   transition:background .35s ease,color .35s ease;
+  flex-shrink:0;
 }
 
 .menu-toggle:hover{
   background:var(--primary);
   color:#fff;
 }
+
+/* IMPORTANT LOGIN VISIBILITY */
+.desktop-login{
+  display:inline-flex;
+}
+.mobile-login-item a{
+  display: none;
+}
+
 
 /* HEADER DARK MODE */
 
@@ -634,21 +667,64 @@ html[dir="rtl"] .footer ul li a:hover{
   }
 }
 
-@media (max-width:860px){
-  body{
-    padding-top:88px;
+@media (min-width:900px) and (max-width:1024px){
+  .container{
+    width:94%;
   }
 
   .nav{
-    min-height:88px;
     gap:14px;
+  }
+
+  .menu{
+    gap:14px;
+  }
+
+  .menu a{
+    font-size:14px;
+  }
+
+  .nav-right{
+    gap:10px;
+  }
+
+  .login{
+    padding:9px 16px;
+    font-size:14px;
+    min-height:40px;
+  }
+
+  .circle,
+  .menu-toggle{
+    width:42px;
+    height:42px;
+  }
+}
+
+@media (max-width:1024px){
+  .nav{
     display:grid;
-    grid-template-columns:auto auto auto;
+    grid-template-columns:minmax(0,1fr) auto;
     align-items:center;
+    gap:14px;
+  }
+
+  .nav-right{
+    gap:10px;
+    height:auto;
   }
 
   .menu-toggle{
     display:flex;
+  }
+
+  .desktop-login{
+    display:none;
+  }
+
+  .mobile-login-item{
+    display:block;
+    width:100%;
   }
 
   .menu{
@@ -656,6 +732,7 @@ html[dir="rtl"] .footer ul li a:hover{
     top:100%;
     left:0;
     width:100%;
+    height:auto;
     background:var(--white);
     border-top:1px solid var(--border);
     border-bottom:1px solid var(--border);
@@ -723,13 +800,26 @@ html[dir="rtl"] .footer ul li a:hover{
     transform:none;
   }
 
-  .nav-right{
-    gap:10px;
+  .mobile-login-item a{
+    width:100%;
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    padding:14px 0;
+    border-bottom:none;
+    color:var(--secondary);
+    font-weight:600;
+    font-size:15px;
+  }
+
+  body.dark .mobile-login-item a{
+    color:var(--nav-dark-text);
   }
 
   .login{
-    padding:10px 20px;
-    font-size:15px;
+    padding:9px 16px;
+    font-size:14px;
+    min-height:40px;
   }
 }
 
@@ -769,42 +859,41 @@ html[dir="rtl"] .footer ul li a:hover{
 }
 
 @media (max-width:640px){
-  body{
-    padding-top:84px;
-  }
-
   .nav{
-    grid-template-columns:1fr auto;
-    grid-template-areas:
-      "logo toggle"
-      "actions actions";
-    padding:14px 0;
-    min-height:auto;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    align-items:center;
+    gap:10px;
   }
 
   .logo{
-    grid-area:logo;
-  }
-
-  .menu-toggle{
-    grid-area:toggle;
-    justify-self:end;
-  }
-
-  .nav-right{
-    grid-area:actions;
-    justify-content:center;
-    width:100%;
+    gap:6px;
+    min-width:0;
   }
 
   .logo img,
   .footer-logo img{
-    width:50px;
+    width:46px;
   }
 
   .logo h2,
   .footer-logo h2{
-    font-size:22px;
+    font-size:18px;
+    line-height:1;
+    white-space:nowrap;
+  }
+
+  .nav-right{
+    gap:8px;
+    justify-content:flex-end;
+    height:auto;
+  }
+
+  .circle,
+  .menu-toggle{
+    width:40px;
+    height:40px;
+    flex:0 0 40px;
   }
 
   .footer-about p,
@@ -817,18 +906,6 @@ html[dir="rtl"] .footer ul li a:hover{
 @media (max-width:480px){
   .container{
     width:92%;
-  }
-
-  .circle,
-  .menu-toggle{
-    width:44px;
-    height:44px;
-  }
-
-  .login{
-    padding:12px 22px;
-    font-size:15px;
-    min-height:44px;
   }
 
   .menu a{

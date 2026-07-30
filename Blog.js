@@ -5,8 +5,6 @@
 
 const searchInput = document.getElementById("blogSearch");
 const searchBtn = document.getElementById("searchBtn");
-const blogImage = document.querySelector(".image-card");
-const floatingCards = document.querySelectorAll(".floating-card");
 
 if (searchBtn && searchInput) {
   searchBtn.addEventListener("click", () => {
@@ -26,29 +24,6 @@ if (searchBtn && searchInput) {
     }
   });
 }
-
-if (blogImage && window.innerWidth > 991) {
-  document.addEventListener("mousemove", (e) => {
-    const x = (window.innerWidth / 2 - e.clientX) / 40;
-    const y = (window.innerHeight / 2 - e.clientY) / 40;
-
-    blogImage.style.transform = `rotate(3deg) translate(${x}px, ${y}px)`;
-  });
-
-  document.addEventListener("mouseleave", () => {
-    blogImage.style.transform = "rotate(3deg)";
-  });
-}
-
-floatingCards.forEach((card) => {
-  card.addEventListener("mouseenter", () => {
-    card.style.animationPlayState = "paused";
-  });
-
-  card.addEventListener("mouseleave", () => {
-    card.style.animationPlayState = "running";
-  });
-});
 
 // section 2
 //==================================

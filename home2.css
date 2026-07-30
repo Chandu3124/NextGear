@@ -8,105 +8,95 @@
   --muted:#64748b;
   --border:#e2e8f0;
   --dark-bg:#000000;
-  --dark-card:#141414;
-  --dark-soft:#1c1c1c;
+  --dark-card:#1a1a1a;
+  --dark-card-2:#202020;
   --dark-text:#f5f5f5;
-  --dark-muted:#e5e7eb;
+  --dark-muted:#d1d5db;
 }
 
-*{
-  margin:0;
-  padding:0;
+.home2-page *{
   box-sizing:border-box;
   font-family:Poppins,sans-serif;
 }
 
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  background:#ffffff;
-  color:var(--secondary);
+.home2-page{
   overflow-x:hidden;
 }
 
-img{
+.home2-page img{
   max-width:100%;
   display:block;
 }
 
-a{
+.home2-page a{
   text-decoration:none;
 }
 
-button{
+.home2-page button,
+.home2-page textarea,
+.home2-page select,
+.home2-page input{
   font-family:Poppins,sans-serif;
 }
 
-.hero{
-  min-height:100vh;
+.home2-page .hero{
+  min-height:90vh;
   display:flex;
   align-items:center;
   padding:120px 8% 80px;
   background:
     linear-gradient(rgba(8,28,58,.72),rgba(8,28,58,.72)),
-    url("img3.avif")
-    center/cover;
+    url("img3.avif") center/cover;
   color:#fff;
 }
 
-.hero-content{
+.home2-page .hero-content{
   max-width:650px;
   animation:up 1s;
 }
 
-.badge1,
-.badge2,
-.tag{
+.home2-page .tag{
   display:inline-block;
   padding:10px 20px;
   border-radius:30px;
   font-weight:600;
+  background:#fff3e8;
+  color:var(--primary);
+  margin-bottom:15px;
 }
 
-.badge1{
-  background:var(--primary);
-  color:var(--white);
-  margin-bottom:20px;
-}
-
-.hero h1{
+.home2-page .hero h1{
   font-size:60px;
   line-height:1.15;
   margin-bottom:20px;
+  color:#ffffff;
 }
 
-#typing{
+.home2-page #typing{
   color:var(--primary);
 }
 
-.hero p{
+.home2-page .hero p{
   font-size:18px;
   line-height:1.8;
   color:#f8fafc;
 }
 
-.buttons{
+.home2-page .buttons{
   margin:35px 0;
   display:flex;
   flex-wrap:wrap;
   gap:15px;
 }
 
-.btn,
-.btn-main,
-.btn-outline,
-.dash-btn,
-.confirm-btn,
-.cta-btn,
-.smart-panel button,
-.feedback-area button{
+.home2-page .btn,
+.home2-page .btn-main,
+.home2-page .btn-outline,
+.home2-page .dash-btn,
+.home2-page .confirm-btn,
+.home2-page .cta-btn,
+.home2-page .smart-panel button,
+.home2-page .submit-btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
@@ -117,62 +107,72 @@ button{
   font-size:16px;
   transition:.3s ease;
   cursor:pointer;
-  margin-top: 10px;
+  margin-top:10px;
 }
 
-.btn-main,
-.dash-btn,
-.confirm-btn,
-.cta-btn,
-.smart-panel button,
-.feedback-area button{
+.home2-page .btn-main,
+.home2-page .dash-btn,
+.home2-page .confirm-btn,
+.home2-page .cta-btn,
+.home2-page .smart-panel button,
+.home2-page .submit-btn{
   background:var(--primary);
   color:var(--white);
   border:none;
 }
 
-.btn-outline,
-.btn{
+.home2-page .hero-primary{
+  background:var(--primary) !important;
+  color:var(--white) !important;
+  border:none !important;
+  box-shadow:none;
+}
+
+.home2-page .btn-outline,
+.home2-page .btn{
   border:2px solid #ffffff;
   color:#ffffff;
   background:transparent;
 }
 
-.btn-main:hover,
-.dash-btn:hover,
-.confirm-btn:hover,
-.cta-btn:hover,
-.smart-panel button:hover,
-.feedback-area button:hover{
-  background:var(--primary-hover);
+body:not(.dark) .home2-page .btn-main:hover,
+body:not(.dark) .home2-page .dash-btn:hover,
+body:not(.dark) .home2-page .confirm-btn:hover,
+body:not(.dark) .home2-page .cta-btn:hover,
+body:not(.dark) .home2-page .smart-panel button:hover,
+body:not(.dark) .home2-page .submit-btn:hover{
+  background:var(--secondary);
+  color:var(--white);
   transform:translateY(-4px);
 }
 
-.btn-outline:hover,
-.btn:hover{
-  background:var(--white);
-  color:var(--primary);
+body:not(.dark) .home2-page .btn-outline:hover,
+body:not(.dark) .home2-page .btn:hover{
+  background:var(--secondary);
+  color:var(--white);
+  border-color:var(--secondary);
   transform:translateY(-4px);
 }
 
-.full-btn{
+.home2-page .full-btn{
   width:100%;
 }
 
-.stats{
+.home2-page .stats{
   display:flex;
   flex-wrap:wrap;
   gap:40px;
   margin-top:20px;
 }
 
-.stats h2{
+.home2-page .stats h2{
   font-size:36px;
   color:var(--primary);
 }
 
-.stats p{
+.home2-page .stats p{
   font-size:15px;
+  color:#f8fafc;
 }
 
 @keyframes up{
@@ -186,18 +186,18 @@ button{
   }
 }
 
-.dashboard,
-.smart-ready,
-.sim-section,
-.theory-section,
-.slot-section,
-.perf-section,
-.game-section{
+.home2-page .dashboard,
+.home2-page .smart-ready,
+.home2-page .sim-section,
+.home2-page .theory-section,
+.home2-page .slot-section,
+.home2-page .perf-section,
+.home2-page .game-section{
   padding:100px 8%;
   background:linear-gradient(135deg,#fff7ed,#ffffff,#fff2dd);
 }
 
-.dashboard{
+.home2-page .dashboard{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:60px;
@@ -205,49 +205,43 @@ button{
   background:var(--light);
 }
 
-.tag{
-  background:#fff3e8;
-  color:var(--primary);
-  margin-bottom:15px;
-}
-
-.dashboard h2,
-.smart-heading h2,
-.sim-heading h2,
-.theory-heading h2,
-.slot-heading h2,
-.perf-heading h2,
-.game-title h2,
-.cta-content h2{
-  font-size:44px;
+.home2-page .dashboard h2,
+.home2-page .smart-heading h2,
+.home2-page .sim-heading h2,
+.home2-page .theory-heading h2,
+.home2-page .slot-heading h2,
+.home2-page .perf-heading h2,
+.home2-page .game-title h2,
+.home2-page .cta-content h2{
+  font-size:42px;
   line-height:1.2;
   color:var(--secondary);
 }
 
-.dashboard h2 span,
-.smart-heading span,
-.sim-heading span,
-.theory-heading span,
-.slot-heading span,
-.perf-heading span,
-.game-title span,
-.cta-content h2 span{
+.home2-page .dashboard h2 span,
+.home2-page .smart-heading span,
+.home2-page .sim-heading span,
+.home2-page .theory-heading span,
+.home2-page .slot-heading span,
+.home2-page .perf-heading span,
+.home2-page .game-title span,
+.home2-page .cta-content h2 span{
   color:var(--primary);
 }
 
-.dashboard p,
-.smart-heading p,
-.sim-heading p,
-.theory-heading p,
-.slot-heading p,
-.perf-heading p,
-.game-title p,
-.cta-content p{
+.home2-page .dashboard p,
+.home2-page .smart-heading p,
+.home2-page .sim-heading p,
+.home2-page .theory-heading p,
+.home2-page .slot-heading p,
+.home2-page .perf-heading p,
+.home2-page .game-title p,
+.home2-page .cta-content p{
   color:var(--muted);
   line-height:1.8;
 }
 
-.dash-card{
+.home2-page .dash-card{
   background:#fff;
   padding:30px;
   border-radius:20px;
@@ -255,7 +249,7 @@ button{
   animation:float 4s infinite ease-in-out;
 }
 
-.chart{
+.home2-page .chart{
   height:180px;
   display:flex;
   align-items:flex-end;
@@ -264,7 +258,7 @@ button{
   margin-bottom:30px;
 }
 
-.bar{
+.home2-page .bar{
   flex:1;
   min-width:35px;
   background:linear-gradient(var(--primary),#ffb347);
@@ -272,34 +266,34 @@ button{
   animation:grow 2s infinite alternate;
 }
 
-.b1{height:70px;}
-.b2{height:120px;}
-.b3{height:90px;}
-.b4{height:150px;}
-.b5{height:110px;}
+.home2-page .b1{height:70px;}
+.home2-page .b2{height:120px;}
+.home2-page .b3{height:90px;}
+.home2-page .b4{height:150px;}
+.home2-page .b5{height:110px;}
 
-.info{
+.home2-page .info{
   display:grid;
   gap:15px;
 }
 
-.box{
+.home2-page .box{
   background:#f8f9fc;
   padding:18px;
   border-radius:15px;
 }
 
-.box h4{
+.home2-page .box h4{
   color:var(--secondary);
   margin-bottom:8px;
 }
 
-.box p{
+.home2-page .box p{
   margin:0;
   color:var(--muted);
 }
 
-.line1{
+.home2-page .line1{
   height:8px;
   background:#ddd;
   border-radius:20px;
@@ -307,7 +301,7 @@ button{
   overflow:hidden;
 }
 
-.line1 span{
+.home2-page .line1 span{
   display:block;
   height:100%;
   width:82%;
@@ -329,27 +323,27 @@ button{
   50%{transform:translateY(-10px);}
 }
 
-.smart-wrapper,
-.sim-container,
-.theory-wrapper,
-.slot-wrapper,
-.perf-wrapper,
-.game-wrapper,
-.cta-container{
+.home2-page .smart-wrapper,
+.home2-page .sim-container,
+.home2-page .theory-wrapper,
+.home2-page .slot-wrapper,
+.home2-page .perf-wrapper,
+.home2-page .game-wrapper,
+.home2-page .cta-container{
   max-width:1200px;
   margin:auto;
 }
 
-.smart-heading,
-.sim-heading,
-.theory-heading,
-.slot-heading,
-.perf-heading,
-.game-title{
+.home2-page .smart-heading,
+.home2-page .sim-heading,
+.home2-page .theory-heading,
+.home2-page .slot-heading,
+.home2-page .perf-heading,
+.home2-page .game-title{
   text-align:center;
 }
 
-.smart-main{
+.home2-page .smart-main{
   display:flex;
   align-items:center;
   justify-content:center;
@@ -357,7 +351,7 @@ button{
   margin-top:60px;
 }
 
-.smart-image{
+.home2-page .smart-image{
   position:relative;
   width:450px;
   height:330px;
@@ -366,14 +360,14 @@ button{
   animation:imageFloat 4s infinite;
 }
 
-.smart-image img{
+.home2-page .smart-image img{
   width:100%;
   height:100%;
   object-fit:cover;
   filter:brightness(.9);
 }
 
-.ai-wave{
+.home2-page .ai-wave{
   position:absolute;
   width:250px;
   height:250px;
@@ -384,7 +378,7 @@ button{
   animation:wavePulse 2s infinite;
 }
 
-.scan-text{
+.home2-page .scan-text{
   position:absolute;
   bottom:25px;
   left:50%;
@@ -398,22 +392,22 @@ button{
   white-space:nowrap;
 }
 
-.smart-panel{
+.home2-page .smart-panel{
   width:380px;
 }
 
-.smart-panel h3{
+.home2-page .smart-panel h3{
   font-size:30px;
   color:var(--secondary);
   margin-bottom:10px;
 }
 
-.smart-panel p{
+.home2-page .smart-panel p{
   color:#555;
   margin-bottom:10px;
 }
 
-.smart-panel select{
+.home2-page .smart-panel select{
   width:100%;
   padding:15px 18px;
   margin:10px 0;
@@ -424,9 +418,9 @@ button{
   outline:none;
 }
 
-.result-box{
-  margin-top:25px;
-  padding:18px 20px;
+.home2-page .result-box{
+  margin-top:18px;
+  padding:14px 18px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -435,11 +429,11 @@ button{
   font-weight:600;
   color:var(--secondary);
   background:#fff;
-  border-radius:25px;
-  min-height:64px;
+  border-radius:18px;
+  min-height:56px;
 }
 
-.result-icon{
+.home2-page .result-icon{
   color:var(--primary);
   font-size:20px;
   flex-shrink:0;
@@ -450,21 +444,15 @@ button{
 }
 
 @keyframes wavePulse{
-  0%{
-    transform:scale(.8);
-    opacity:.8;
-  }
-  100%{
-    transform:scale(1.4);
-    opacity:0;
-  }
+  0%{transform:scale(.8);opacity:.8;}
+  100%{transform:scale(1.4);opacity:0;}
 }
 
 @keyframes textBlink{
   50%{opacity:.4;}
 }
 
-.sim-stage{
+.home2-page .sim-stage{
   margin-top:60px;
   display:grid;
   grid-template-columns:1.3fr .7fr;
@@ -472,7 +460,7 @@ button{
   align-items:center;
 }
 
-.sim-video{
+.home2-page .sim-video{
   height:430px;
   position:relative;
   overflow:hidden;
@@ -481,18 +469,18 @@ button{
   animation:videoFloat 5s infinite;
 }
 
-.sim-video img{
+.home2-page .sim-video img{
   height:100%;
   width:100%;
   object-fit:cover;
   transition:.6s;
 }
 
-.sim-video:hover img{
+.home2-page .sim-video:hover img{
   transform:scale(1.12);
 }
 
-.sim-overlay{
+.home2-page .sim-overlay{
   position:absolute;
   inset:0;
   display:flex;
@@ -505,7 +493,7 @@ button{
   text-align:center;
 }
 
-.play-btn{
+.home2-page .play-btn{
   height:90px;
   width:90px;
   border-radius:50%;
@@ -521,83 +509,93 @@ button{
   justify-content:center;
 }
 
-.play-btn:hover{
-  background:var(--white);
-  color:var(--primary);
+.home2-page .play-btn svg,
+.home2-page .sim-item svg,
+.home2-page .badge-icon svg{
+  width:42px;
+  height:42px;
+  stroke-width:2.2;
+}
+
+.home2-page .play-btn:hover{
   transform:scale(1.1);
 }
 
-.sim-overlay p{
+.home2-page .sim-overlay p{
   font-size:20px;
   font-weight:600;
   margin-top:18px;
   color:#ffffff;
 }
 
-.sim-item{
-  margin-bottom:35px;
-  padding-left:24px;
-  border-left:4px solid var(--primary);
+.home2-page .sim-item{
+  margin-bottom:18px;
+  padding:18px 20px;
+  border-radius:18px;
+  background:#ffffff;
+  box-shadow:0 10px 24px rgba(8,28,58,.08);
   transition:.4s;
 }
 
-.sim-item:hover{
+.home2-page .sim-item:hover{
   transform:translateX(10px);
 }
 
-.sim-item span{
-  font-size:35px;
+.home2-page .sim-item span{
   color:var(--primary);
+  display:inline-flex;
 }
 
-.sim-item h3{
+.home2-page .sim-item h3{
   color:var(--secondary);
   margin:10px 0;
 }
 
-.sim-item p{
+.home2-page .sim-item p{
   color:#666;
 }
 
 @keyframes playPulse{
-  50%{
-    box-shadow:0 0 0 25px #ff790033;
-  }
+  50%{box-shadow:0 0 0 25px #ff790033;}
 }
 
 @keyframes videoFloat{
   50%{transform:translateY(-12px);}
 }
 
-.theory-console{
-  margin-top:70px;
+.home2-page .theory-console.compact-theory{
+  margin-top:42px;
   display:grid;
-  grid-template-columns:1fr .8fr 1fr;
-  gap:40px;
-  align-items:start;
+  grid-template-columns:1.05fr .7fr 1.4fr;
+  gap:16px;
+  align-items:center;
+  background:#ffffff;
+  padding:18px;
+  border-radius:24px;
+  box-shadow:0 14px 34px rgba(8,28,58,.08);
 }
 
-.level-area h3,
-.feedback-area h3,
-.calendar-zone h3,
-.time-zone h3,
-.perf-chart h3,
-.perf-weak h3,
-.streak-area h3{
-  font-size:25px;
+.home2-page .level-strip,
+.home2-page .timer-strip,
+.home2-page .feedback-strip{
+  min-width:0;
+}
+
+.home2-page .level-strip h3{
+  font-size:22px;
   color:var(--secondary);
+  margin-bottom:12px;
 }
 
-.levels{
+.home2-page .levels{
   display:flex;
   flex-wrap:wrap;
-  gap:18px;
-  margin-top:25px;
+  gap:10px;
 }
 
-.levels button{
-  padding:14px 28px;
-  border-radius:40px;
+.home2-page .levels button{
+  padding:12px 18px;
+  border-radius:32px;
   border:2px solid var(--primary);
   background:transparent;
   color:var(--secondary);
@@ -606,17 +604,17 @@ button{
   transition:.4s;
 }
 
-.levels button:hover,
-.levels button.active-level-btn{
+.home2-page .levels button:hover,
+.home2-page .levels button.active-level-btn{
   background:var(--primary);
   color:var(--white);
-  transform:translateY(-4px);
-  box-shadow:0 10px 25px #ff790044;
+  transform:translateY(-2px);
+  box-shadow:0 8px 18px #ff790044;
 }
 
-.active-level{
-  margin-top:24px;
-  font-size:18px;
+.home2-page .active-level{
+  margin-top:12px;
+  font-size:16px;
   color:#555;
   display:flex;
   gap:8px;
@@ -624,25 +622,28 @@ button{
   flex-wrap:wrap;
 }
 
-.active-level #levelText{
+.home2-page .active-level #levelText{
   color:var(--primary);
   font-weight:700;
 }
 
-.timer-area{
+.home2-page .timer-strip{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
   text-align:center;
-  position:relative;
 }
 
-.timer-circle{
-  height:150px;
-  width:150px;
+.home2-page .timer-circle{
+  height:118px;
+  width:118px;
   border-radius:50%;
-  border:8px solid var(--primary);
+  border:7px solid var(--primary);
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:45px;
+  font-size:34px;
   font-weight:700;
   color:var(--secondary);
   position:relative;
@@ -652,52 +653,79 @@ button{
   z-index:1;
 }
 
-.timer-circle:before{
+.home2-page .timer-circle:before{
   content:"";
   position:absolute;
-  inset:-18px;
+  inset:-12px;
   border-radius:50%;
   border:2px dashed var(--primary);
   animation:rotateTimer 8s linear infinite;
   z-index:-1;
 }
 
-.timer-circle:after{
+.home2-page .timer-circle:after{
   content:"";
   position:absolute;
-  inset:-8px;
+  inset:-6px;
   border-radius:50%;
   border:2px solid #ff790055;
   animation:innerPulse 2s infinite;
 }
 
-.timer-area p{
-  margin-top:35px;
+.home2-page .timer-strip p{
+  margin-top:16px;
   color:#666;
-  font-size:16px;
+  font-size:15px;
 }
 
-.feedback-area{
+.home2-page .feedback-strip{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:10px 12px;
+  align-items:center;
+}
+
+.home2-page .answer-label{
+  grid-column:1 / -1;
+  font-size:15px;
+  font-weight:600;
+  color:var(--secondary);
+}
+
+.home2-page .answer-input{
   width:100%;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
+  min-height:52px;
+  max-height:90px;
+  resize:none;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px 16px;
+  outline:none;
+  font-size:14px;
+  color:var(--secondary);
+  background:#fff;
 }
 
-.feedback-box{
+.home2-page .answer-input:focus{
+  border-color:var(--primary);
+  box-shadow:0 0 0 4px rgba(255,121,0,.12);
+}
+
+.home2-page .feedback-box{
+  grid-column:1 / -1;
   width:100%;
   justify-content:flex-start;
   text-align:left;
+  margin-top:0;
 }
 
-.submit-btn{
-  margin-top:16px;
+.home2-page .submit-btn{
+  margin-top:0;
+  min-width:140px;
 }
 
 @keyframes timerGlow{
-  50%{
-    box-shadow:0 0 35px #ff790055;
-  }
+  50%{box-shadow:0 0 35px #ff790055;}
 }
 
 @keyframes rotateTimer{
@@ -705,13 +733,10 @@ button{
 }
 
 @keyframes innerPulse{
-  50%{
-    transform:scale(1.08);
-    opacity:.5;
-  }
+  50%{transform:scale(1.08);opacity:.5;}
 }
 
-.slot-area{
+.home2-page .slot-area{
   margin-top:70px;
   display:flex;
   justify-content:space-around;
@@ -719,14 +744,14 @@ button{
   gap:70px;
 }
 
-.calendar{
+.home2-page .calendar{
   display:flex;
   flex-wrap:wrap;
   gap:15px;
   margin-top:30px;
 }
 
-.day{
+.home2-page .day{
   height:75px;
   width:65px;
   border-radius:35px;
@@ -742,19 +767,19 @@ button{
   animation:dayFloat 3s infinite;
 }
 
-.day:hover,
-.day.active{
+.home2-page .day:hover,
+.home2-page .day.active{
   background:var(--primary);
   color:white;
   transform:translateY(-6px);
   border-color:var(--primary);
 }
 
-.day small{
+.home2-page .day small{
   font-size:12px;
 }
 
-.availability{
+.home2-page .availability{
   margin-top:35px;
   font-weight:600;
   color:var(--secondary);
@@ -763,7 +788,7 @@ button{
   gap:12px;
 }
 
-.availability span{
+.home2-page .availability span{
   height:15px;
   width:15px;
   background:#22c55e;
@@ -771,14 +796,14 @@ button{
   animation:livePulse 1s infinite;
 }
 
-.times{
+.home2-page .times{
   display:grid;
   grid-template-columns:repeat(2,minmax(140px,1fr));
   gap:20px;
   margin-top:30px;
 }
 
-.times button{
+.home2-page .times button{
   padding:15px;
   border-radius:30px;
   font-weight:600;
@@ -787,20 +812,20 @@ button{
   border:2px solid transparent;
 }
 
-.available{
+.home2-page .available{
   background:#dcfce7;
   border-color:#22c55e;
   color:#166534;
 }
 
-.available:hover,
-.available.selected{
+.home2-page .available:hover,
+.home2-page .available.selected{
   background:#22c55e;
   color:white;
   transform:scale(1.05);
 }
 
-.booked{
+.home2-page .booked{
   background:#fee2e2;
   border-color:#ef4444;
   color:#991b1b;
@@ -808,23 +833,20 @@ button{
   cursor:not-allowed;
 }
 
-.confirm-btn{
+.home2-page .confirm-btn{
   margin-top:35px;
   width:100%;
 }
 
 @keyframes livePulse{
-  50%{
-    transform:scale(1.5);
-    opacity:.5;
-  }
+  50%{transform:scale(1.5);opacity:.5;}
 }
 
 @keyframes dayFloat{
   50%{transform:translateY(-5px);}
 }
 
-.perf-dashboard{
+.home2-page .perf-dashboard{
   margin-top:70px;
   display:grid;
   grid-template-columns:1.2fr .8fr 1fr;
@@ -832,7 +854,7 @@ button{
   align-items:center;
 }
 
-.chart-box{
+.home2-page .chart-box{
   height:280px;
   border-left:3px solid var(--secondary);
   border-bottom:3px solid var(--secondary);
@@ -840,19 +862,11 @@ button{
   margin-top:30px;
 }
 
-.chart-line{
-  position:absolute;
-  height:5px;
-  width:85%;
-  background:var(--primary);
-  top:50%;
-  left:6%;
-  transform:rotate(-28deg);
-  transform-origin:left;
-  animation:drawChart 2s ease;
+.home2-page .chart-line{
+  display:none;
 }
 
-.chart-point{
+.home2-page .chart-point{
   height:55px;
   width:55px;
   border-radius:50%;
@@ -867,12 +881,12 @@ button{
   animation:pointMove 2s infinite;
 }
 
-.point-one{ bottom:50px; left:10%; }
-.point-two{ bottom:95px; left:35%; }
-.point-three{ bottom:145px; left:60%; }
-.point-four{ bottom:195px; left:85%; }
+.home2-page .point-one{ bottom:50px; left:10%; }
+.home2-page .point-two{ bottom:95px; left:35%; }
+.home2-page .point-three{ bottom:145px; left:60%; }
+.home2-page .point-four{ bottom:195px; left:85%; }
 
-.chart-labels{
+.home2-page .chart-labels{
   display:flex;
   justify-content:space-around;
   gap:10px;
@@ -881,11 +895,11 @@ button{
   flex-wrap:wrap;
 }
 
-.perf-analysis{
+.home2-page .perf-analysis{
   text-align:center;
 }
 
-.score-circle{
+.home2-page .score-circle{
   height:190px;
   width:190px;
   border-radius:50%;
@@ -897,7 +911,7 @@ button{
   animation:rotateScore 2s ease;
 }
 
-.circle-value{
+.home2-page .circle-value{
   height:140px;
   width:140px;
   border-radius:50%;
@@ -910,22 +924,22 @@ button{
   color:var(--secondary);
 }
 
-.perf-analysis h3{
+.home2-page .perf-analysis h3{
   color:var(--secondary);
   margin-top:25px;
 }
 
-.perf-analysis p{
+.home2-page .perf-analysis p{
   color:var(--primary);
   font-weight:600;
   margin-top:10px;
 }
 
-.weak-item{
+.home2-page .weak-item{
   margin-top:30px;
 }
 
-.weak-text{
+.home2-page .weak-text{
   display:flex;
   justify-content:space-between;
   gap:16px;
@@ -933,7 +947,7 @@ button{
   color:var(--secondary);
 }
 
-.weak-bar{
+.home2-page .weak-bar{
   height:12px;
   background:#ffe6cc;
   border-radius:20px;
@@ -941,25 +955,21 @@ button{
   margin-top:10px;
 }
 
-.traffic-progress,
-.parking-progress,
-.rule-progress{
+.home2-page .traffic-progress,
+.home2-page .parking-progress,
+.home2-page .rule-progress{
   height:100%;
   background:var(--primary);
   border-radius:20px;
   animation:fillProgress 2s ease;
 }
 
-.traffic-progress{width:60%;}
-.parking-progress{width:75%;}
-.rule-progress{width:90%;}
+.home2-page .traffic-progress{width:60%;}
+.home2-page .parking-progress{width:75%;}
+.home2-page .rule-progress{width:90%;}
 
-.weak-item small{
+.home2-page .weak-item small{
   color:#666;
-}
-
-@keyframes drawChart{
-  from{width:0;}
 }
 
 @keyframes fillProgress{
@@ -974,7 +984,7 @@ button{
   from{transform:rotate(-180deg);}
 }
 
-.game-stage{
+.home2-page .game-stage{
   margin-top:70px;
   display:flex;
   justify-content:space-around;
@@ -982,56 +992,56 @@ button{
   gap:60px;
 }
 
-.trophy-zone{
+.home2-page .trophy-zone{
   text-align:center;
   position:relative;
 }
 
-.trophy{
+.home2-page .trophy{
   font-size:120px;
   animation:trophyMove 3s infinite;
   filter:drop-shadow(0 15px 20px #ff790055);
 }
 
-.trophy-zone h3{
+.home2-page .trophy-zone h3{
   color:var(--secondary);
   font-size:28px;
 }
 
-.trophy-zone p{
+.home2-page .trophy-zone p{
   color:#666;
   margin-top:10px;
 }
 
-.spark{
+.home2-page .spark{
   position:absolute;
   font-size:35px;
   animation:sparkMove 2s infinite;
 }
 
-.s1{top:0; left:40px;}
-.s2{right:30px; top:50px;}
-.s3{bottom:40px; left:80px;}
+.home2-page .s1{top:0; left:40px;}
+.home2-page .s2{right:30px; top:50px;}
+.home2-page .s3{bottom:40px; left:80px;}
 
-.achievement-zone{
+.home2-page .achievement-zone{
   display:flex;
   gap:35px;
   flex-wrap:wrap;
   justify-content:center;
 }
 
-.badge{
+.home2-page .badge{
   text-align:center;
   width:160px;
   transition:.5s;
   animation:badgeFloat 4s infinite;
 }
 
-.badge:hover{
+.home2-page .badge:hover{
   transform:translateY(-15px) scale(1.08);
 }
 
-.badge-icon{
+.home2-page .badge-icon{
   height:96px;
   width:96px;
   margin:auto;
@@ -1044,31 +1054,31 @@ button{
   box-shadow:0 15px 30px #ff790033;
 }
 
-.badge-icon svg{
+.home2-page .badge-icon svg{
   width:42px;
   height:42px;
   stroke-width:2.2;
   color:var(--primary);
 }
 
-.badge h3{
+.home2-page .badge h3{
   color:var(--secondary);
   font-size:18px;
   margin-top:14px;
 }
 
-.badge p{
+.home2-page .badge p{
   font-size:14px;
   color:#666;
   margin-top:8px;
 }
 
-.streak-area{
+.home2-page .streak-area{
   margin-top:80px;
   text-align:center;
 }
 
-.days{
+.home2-page .days{
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
@@ -1076,7 +1086,7 @@ button{
   margin-top:30px;
 }
 
-.days span{
+.home2-page .days span{
   height:50px;
   width:50px;
   border-radius:50%;
@@ -1087,611 +1097,911 @@ button{
   color:#777;
 }
 
-.days .done{
+.home2-page .days .done{
   background:#ffedd5;
   border-color:var(--primary);
   color:var(--primary);
   animation:dayPop 2s infinite;
 }
 
-.days .active{
+.home2-page .days .active{
   background:var(--primary);
   color:white;
   transform:scale(1.15);
 }
 
-.streak-area p{
+.home2-page .streak-area p{
   margin-top:20px;
   color:var(--secondary);
   font-weight:600;
 }
 
 @keyframes trophyMove{
-  50%{
-    transform:translateY(-20px) rotate(5deg);
-  }
+  50%{transform:translateY(-20px) rotate(5deg);}
 }
 
 @keyframes sparkMove{
-  50%{
-    transform:scale(1.4);
-    opacity:.5;
-  }
+  50%{transform:scale(1.4);opacity:.5;}
 }
 
 @keyframes badgeFloat{
-  50%{
-    transform:translateY(-10px);
-  }
+  50%{transform:translateY(-10px);}
 }
 
 @keyframes dayPop{
-  50%{
-    box-shadow:0 0 25px #ff790055;
-  }
+  50%{box-shadow:0 0 25px #ff790055;}
 }
 
-.cta-section{
-  padding:90px 8%;
+.home2-page .cta-section{
+  padding:72px 8%;
   background:#f8fafc;
 }
 
-.cta-container{
+.home2-page .simple-cta{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:50px;
+  gap:28px;
+  padding:34px 38px;
+  background:#ffffff;
+  border-radius:24px;
+  box-shadow:0 16px 40px rgba(8,28,58,.08);
 }
 
-.cta-content{
+.home2-page .cta-content{
   flex:1;
 }
 
-.badge2{
-  background:rgba(255,121,0,.12);
-  color:var(--primary);
-  margin-bottom:20px;
-  font-size:14px;
-}
-
-.cta-content p{
-  margin-top:20px;
-  max-width:550px;
+.home2-page .cta-content p{
+  margin-top:14px;
+  max-width:640px;
   font-size:17px;
 }
 
-.cta-btn{
-  margin-top:30px;
-}
-
-.cta-features{
-  flex:1;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.cta-card{
-  background:var(--primary);
-  color:var(--white);
-  padding:30px 20px;
-  border-radius:22px;
-  text-align:center;
-  transition:.3s;
-}
-
-.cta-card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 15px 30px rgba(255,121,0,.3);
-}
-
-.cta-icon{
-  width:60px;
-  height:60px;
-  margin:auto;
+.home2-page .cta-actions{
   display:flex;
   align-items:center;
-  justify-content:center;
-  background:var(--white);
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.home2-page .cta-btn{
+  margin-top:0;
+}
+
+.home2-page .cta-secondary{
+  border-color:var(--primary);
   color:var(--primary);
-  border-radius:50%;
+  background:transparent;
+  margin-top:0;
 }
 
-.cta-icon svg{
-  width:28px;
-  height:28px;
+/* DARK MODE ONLY FOR HOME2 SECTIONS */
+body.dark .home2-page{
+  background: var(--dark-bg);
 }
 
-.cta-card h3{
-  margin-top:20px;
-  font-size:20px;
-  color:#ffffff;
+body.dark .home2-page .dashboard,
+body.dark .home2-page .smart-ready,
+body.dark .home2-page .sim-section,
+body.dark .home2-page .theory-section,
+body.dark .home2-page .slot-section,
+body.dark .home2-page .perf-section,
+body.dark .home2-page .game-section,
+body.dark .home2-page .cta-section{
+  background:var(--dark-bg);
 }
 
-.cta-card p{
-  margin-top:12px;
-  font-size:14px;
-  line-height:1.5;
-  color:#fff7ed;
+body.dark .home2-page .hero{
+  background:
+    linear-gradient(rgba(0,0,0,.80),rgba(0,0,0,.80)),
+    url("img3.avif") center/cover;
 }
 
-/* ==========================
-   DARK MODE
-========================== */
-
-body.dark{
-  background:#000000;
+body.dark .home2-page .dashboard,
+body.dark .home2-page .smart-ready,
+body.dark .home2-page .sim-section,
+body.dark .home2-page .theory-section,
+body.dark .home2-page .slot-section,
+body.dark .home2-page .perf-section,
+body.dark .home2-page .game-section,
+body.dark .home2-page .cta-section,
+body.dark .home2-page .dashboard *,
+body.dark .home2-page .smart-ready *,
+body.dark .home2-page .sim-section *,
+body.dark .home2-page .theory-section *,
+body.dark .home2-page .slot-section *,
+body.dark .home2-page .perf-section *,
+body.dark .home2-page .game-section *,
+body.dark .home2-page .cta-section *{
   color:var(--dark-text);
 }
 
-/* section backgrounds */
-body.dark .dashboard,
-body.dark .smart-ready,
-body.dark .sim-section,
-body.dark .theory-section,
-body.dark .slot-section,
-body.dark .perf-section,
-body.dark .game-section,
-body.dark .cta-section{
-  background:#000000;
-}
-
-/* hero background */
-body.dark .hero{
-  background:
-    linear-gradient(rgba(0,0,0,.80),rgba(0,0,0,.80)),
-    url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80")
-    center/cover;
-}
-
-/* all text light by default */
-body.dark,
-body.dark p,
-body.dark span,
-body.dark small,
-body.dark li,
-body.dark a,
-body.dark label,
-body.dark strong,
-body.dark h1,
-body.dark h2,
-body.dark h3,
-body.dark h4,
-body.dark h5,
-body.dark h6{
-  color:var(--dark-text) !important;
-}
-
-/* orange highlight text */
-body.dark h1 span,
-body.dark h2 span,
-body.dark h3 span,
-body.dark h4 span,
-body.dark h5 span,
-body.dark h6 span,
-body.dark #typing,
-body.dark .tag,
-body.dark .badge1,
-body.dark .badge2,
-body.dark #levelText,
-body.dark .result-icon{
+body.dark .home2-page #typing,
+body.dark .home2-page .tag,
+body.dark .home2-page .result-icon,
+body.dark .home2-page #levelText,
+body.dark .home2-page .stats h2,
+body.dark .home2-page .dashboard h2 span,
+body.dark .home2-page .smart-heading h2 span,
+body.dark .home2-page .sim-heading h2 span,
+body.dark .home2-page .theory-heading h2 span,
+body.dark .home2-page .slot-heading h2 span,
+body.dark .home2-page .perf-heading h2 span,
+body.dark .home2-page .game-title h2 span,
+body.dark .home2-page .cta-content h2 span{
   color:var(--primary) !important;
 }
 
-/* readable softer light text */
-body.dark .dashboard p,
-body.dark .smart-heading p,
-body.dark .smart-panel p,
-body.dark .sim-heading p,
-body.dark .sim-item p,
-body.dark .theory-heading p,
-body.dark .timer-area p,
-body.dark .active-level,
-body.dark #feedback,
-body.dark #smartResult,
-body.dark .slot-heading p,
-body.dark .availability,
-body.dark .chart-labels,
-body.dark .weak-item small,
-body.dark .game-title p,
-body.dark .trophy-zone p,
-body.dark .badge p,
-body.dark .cta-content p,
-body.dark .stats p,
-body.dark .box p,
-body.dark .cta-card p{
+body.dark .home2-page .dash-card,
+body.dark .home2-page .box,
+body.dark .home2-page .result-box,
+body.dark .home2-page .timer-circle,
+body.dark .home2-page .day,
+body.dark .home2-page .badge-icon,
+body.dark .home2-page .circle-value,
+body.dark .home2-page .smart-panel select,
+body.dark .home2-page .theory-console.compact-theory,
+body.dark .home2-page .sim-item,
+body.dark .home2-page .simple-cta,
+body.dark .home2-page .answer-input{
+  background:var(--dark-card);
+  color:var(--dark-text) !important;
+  box-shadow:0 12px 30px rgba(0,0,0,.35);
+}
+
+body.dark .home2-page .smart-panel select,
+body.dark .home2-page .answer-input{
+  border:1px solid #333;
+}
+
+body.dark .home2-page .smart-panel select option{
+  background:#181818;
+  color:#ffffff;
+}
+
+body.dark .home2-page .box p,
+body.dark .home2-page .dashboard p,
+body.dark .home2-page .smart-heading p,
+body.dark .home2-page .smart-panel p,
+body.dark .home2-page .sim-heading p,
+body.dark .home2-page .sim-item p,
+body.dark .home2-page .theory-heading p,
+body.dark .home2-page .slot-heading p,
+body.dark .home2-page .availability,
+body.dark .home2-page .chart-labels,
+body.dark .home2-page .weak-item small,
+body.dark .home2-page .game-title p,
+body.dark .home2-page .trophy-zone p,
+body.dark .home2-page .badge p,
+body.dark .home2-page .cta-content p,
+body.dark .home2-page .timer-strip p,
+body.dark .home2-page .active-level{
   color:var(--dark-muted) !important;
 }
 
-/* icons follow current text color */
-body.dark i,
-body.dark svg{
-  color:currentColor;
+body.dark .home2-page .line1,
+body.dark .home2-page .weak-bar{
+  background:#333;
 }
 
-/* cards and surfaces */
-body.dark .dash-card,
-body.dark .box,
-body.dark .result-box,
-body.dark .timer-circle,
-body.dark .day,
-body.dark .badge-icon,
-body.dark .circle-value,
-body.dark .smart-panel select{
-  background:var(--dark-card);
-  color:var(--dark-text) !important;
-  box-shadow:0 12px 30px rgba(0,0,0,.45);
+body.dark .home2-page .line1 span,
+body.dark .home2-page .traffic-progress,
+body.dark .home2-page .parking-progress,
+body.dark .home2-page .rule-progress,
+body.dark .home2-page .chart-point{
+  background:var(--primary);
 }
 
-/* keep card titles bright */
-body.dark .box h4,
-body.dark .perf-analysis h3,
-body.dark .weak-text,
-body.dark .calendar-zone h3,
-body.dark .time-zone h3,
-body.dark .perf-chart h3,
-body.dark .perf-weak h3,
-body.dark .streak-area h3,
-body.dark .trophy-zone h3,
-body.dark .cta-card h3,
-body.dark .sim-item h3,
-body.dark .smart-panel h3,
-body.dark .feedback-area h3,
-body.dark .level-area h3{
-  color:#ffffff !important;
+body.dark .home2-page .chart-box{
+  border-left:3px solid #666;
+  border-bottom:3px solid #666;
 }
 
-/* tags */
-body.dark .tag,
-body.dark .badge1,
-body.dark .badge2{
-  background:rgba(255,121,0,.18);
+body.dark .home2-page .score-circle{
+  background:conic-gradient(var(--primary) 88%, #2a2a2a 0);
 }
 
-/* lines and progress */
-body.dark .line1,
-body.dark .weak-bar{
-  background:#303030;
-}
-
-body.dark .line1 span,
-body.dark .traffic-progress,
-body.dark .parking-progress,
-body.dark .rule-progress,
-body.dark .chart-line,
-body.dark .chart-point{
-  background:#ff7900;
-}
-
-/* chart axes */
-body.dark .chart-box{
-  border-left:3px solid #555;
-  border-bottom:3px solid #555;
-}
-
-/* circular score */
-body.dark .score-circle{
-  background:conic-gradient(#ff7900 88%, #303030 0);
-}
-
-body.dark .circle-value{
+body.dark .home2-page .circle-value{
   background:#181818;
   color:#ffffff !important;
 }
 
-/* buttons */
-body.dark .btn-outline,
-body.dark .btn{
+body.dark .home2-page .btn-outline,
+body.dark .home2-page .btn,
+body.dark .home2-page .cta-secondary{
   border-color:#ff7900;
   color:#ffffff !important;
 }
 
-body.dark .btn-outline:hover,
-body.dark .btn:hover{
+body.dark .home2-page .btn-outline:hover,
+body.dark .home2-page .btn:hover,
+body.dark .home2-page .cta-secondary:hover{
   background:#ff7900;
   color:#ffffff !important;
+  border-color:#ff7900;
 }
 
-/* selects */
-body.dark .smart-panel select{
-  border:1px solid #303030;
+body.dark .home2-page .btn-main:hover,
+body.dark .home2-page .dash-btn:hover,
+body.dark .home2-page .confirm-btn:hover,
+body.dark .home2-page .cta-btn:hover,
+body.dark .home2-page .smart-panel button:hover,
+body.dark .home2-page .submit-btn:hover{
+  background:var(--primary-hover);
+  transform:translateY(-4px);
 }
 
-body.dark .smart-panel select option{
-  background:#181818;
-  color:#ffffff;
-}
-
-/* slots */
-body.dark .available{
+body.dark .home2-page .available{
   background:#14532d;
   border-color:#22c55e;
   color:#dcfce7 !important;
 }
 
-body.dark .available:hover,
-body.dark .available.selected{
+body.dark .home2-page .available:hover,
+body.dark .home2-page .available.selected{
   background:#22c55e;
   color:#ffffff !important;
 }
 
-body.dark .booked{
+body.dark .home2-page .booked{
   background:#4c1d1d;
   border-color:#ef4444;
   color:#fecaca !important;
 }
 
-/* calendar circles */
-body.dark .day{
+body.dark .home2-page .day{
   border-color:#303030;
 }
 
-body.dark .day:hover,
-body.dark .day.active{
+body.dark .home2-page .day:hover,
+body.dark .home2-page .day.active{
   background:#ff7900;
   border-color:#ff7900;
   color:#ffffff !important;
 }
 
-/* streak circles */
-body.dark .days span{
+body.dark .home2-page .days span{
   background:#181818;
   border:2px solid #303030;
   color:var(--dark-muted) !important;
 }
 
-body.dark .days .done{
+body.dark .home2-page .days .done{
   background:#262626;
   border-color:#ff7900;
   color:#ff7900 !important;
 }
 
-body.dark .days .active{
+body.dark .home2-page .days .active{
   background:#ff7900;
   color:#ffffff !important;
 }
 
-/* overlay */
-body.dark .sim-overlay{
+body.dark .home2-page .sim-overlay{
   background:rgba(0,0,0,.7);
 }
 
-body.dark .sim-overlay p{
+body.dark .home2-page .sim-overlay p{
   color:#ffffff !important;
 }
 
-/* cta cards */
-body.dark .cta-card{
-  background:#ff7900;
-}
-
-body.dark .cta-icon{
-  background:#ffffff;
-  color:#ff7900 !important;
-}
-
-body.dark .cta-card h3{
-  color:#ffffff !important;
-}
-
-body.dark .cta-card p{
-  color:#fff5eb !important;
-}
-
-/* image tone */
-body.dark .sim-video img,
-body.dark .smart-image img{
-  filter:brightness(.9);
-}
-
-/* scrollbar */
-body.dark::-webkit-scrollbar{
-  width:10px;
-}
-
-body.dark::-webkit-scrollbar-track{
-  background:#000000;
-}
-
-body.dark::-webkit-scrollbar-thumb{
-  background:#ff7900;
-  border-radius:10px;
-}
-
-body.dark::-webkit-scrollbar-thumb:hover{
-  background:#ff8d1f;
-}
-
-/* transitions */
-body.dark *,
-body.dark *::before,
-body.dark *::after{
-  transition:
-    background-color .35s ease,
-    color .35s ease,
-    border-color .35s ease,
-    box-shadow .35s ease,
-    transform .35s ease;
-}
-
-/* ==========================
-   RESPONSIVE
-========================== */
-
-@media (max-width:1100px){
-  .perf-dashboard{
-    grid-template-columns:1fr;
-  }
-
-  .cta-container{
-    flex-direction:column;
-    text-align:center;
-  }
-
-  .cta-content p{
-    margin-inline:auto;
-  }
-
-  .cta-features{
-    grid-template-columns:repeat(2,1fr);
-    width:100%;
-  }
-}
-
-@media (max-width:950px){
-  .dashboard,
-  .sim-stage,
-  .theory-console{
-    grid-template-columns:1fr;
-  }
-
-  .dashboard{
-    text-align:center;
-  }
-
-  .smart-main,
-  .slot-area,
-  .game-stage{
-    flex-direction:column;
-  }
-
-  .smart-panel,
-  .smart-image,
-  .feedback-area{
-    width:100%;
-  }
-
-  .sim-video{
-    height:340px;
-  }
-}
-
-@media (max-width:768px){
-  .hero{
-    padding:110px 6% 70px;
+/* Compact laptop / Nest Hub */
+@media (max-width:1024px){
+  .home2-page .hero{
     min-height:auto;
+    padding:90px 6% 56px;
   }
 
-  .dashboard,
-  .smart-ready,
-  .sim-section,
-  .theory-section,
-  .slot-section,
-  .perf-section,
-  .game-section,
-  .cta-section{
-    padding:80px 6%;
+  .home2-page .hero h1{
+    font-size:48px;
   }
 
-  .hero h1,
-  .dashboard h2,
-  .smart-heading h2,
-  .sim-heading h2,
-  .theory-heading h2,
-  .slot-heading h2,
-  .perf-heading h2,
-  .game-title h2,
-  .cta-content h2{
-    font-size:34px;
+  .home2-page .dashboard,
+  .home2-page .smart-ready,
+  .home2-page .sim-section,
+  .home2-page .theory-section,
+  .home2-page .slot-section,
+  .home2-page .perf-section,
+  .home2-page .game-section,
+  .home2-page .cta-section{
+    padding:72px 6%;
   }
 
-  .buttons,
-  .stats{
+  .home2-page .smart-main,
+  .home2-page .slot-area,
+  .home2-page .game-stage{
+    gap:40px;
+  }
+
+  .home2-page .perf-dashboard{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  .home2-page .simple-cta{
     flex-direction:column;
+    align-items:flex-start;
+    padding:28px;
+  }
+
+  .home2-page .cta-actions{
+    width:100%;
+  }
+
+  .home2-page .theory-console.compact-theory{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  .home2-page .feedback-strip{
+    grid-template-columns:1fr;
+  }
+
+  .home2-page .submit-btn{
+    width:100%;
+  }
+}
+
+/* Nest Hub exact fix */
+@media (max-width:1024px) and (max-height:650px){
+  .home2-page .hero{
+    min-height:auto;
+    padding:72px 5% 42px;
     align-items:flex-start;
   }
 
-  .chart{
-    gap:10px;
+  .home2-page .hero-content{
+    max-width:720px;
   }
 
-  .bar{
-    min-width:24px;
+  .home2-page .hero h1{
+    font-size:40px;
+    line-height:1.15;
+    margin-bottom:14px;
   }
 
-  .times{
+  .home2-page .hero p{
+    font-size:15px;
+    line-height:1.6;
+  }
+
+  .home2-page .buttons{
+    margin:24px 0;
+  }
+
+  .home2-page .dashboard,
+  .home2-page .smart-ready,
+  .home2-page .sim-section,
+  .home2-page .theory-section,
+  .home2-page .slot-section,
+  .home2-page .perf-section,
+  .home2-page .game-section,
+  .home2-page .cta-section{
+    padding:52px 5%;
+  }
+
+  .home2-page .smart-main,
+  .home2-page .slot-area,
+  .home2-page .game-stage{
+    gap:24px;
+  }
+
+  .home2-page .smart-image{
+    height:260px;
+  }
+
+  .home2-page .sim-video{
+    height:260px;
+  }
+
+  .home2-page .perf-dashboard{
     grid-template-columns:1fr;
+    gap:24px;
+    margin-top:42px;
   }
 
-  .cta-features{
-    grid-template-columns:1fr;
+  .home2-page .chart-box{
+    height:220px;
+    margin-top:18px;
   }
 
-  .achievement-zone{
+  .home2-page .chart-point{
+    width:42px;
+    height:42px;
+    font-size:11px;
+  }
+
+  .home2-page .point-one{ bottom:28px; left:8%; }
+  .home2-page .point-two{ bottom:65px; left:32%; }
+  .home2-page .point-three{ bottom:105px; left:57%; }
+  .home2-page .point-four{ bottom:142px; left:80%; }
+
+  .home2-page .chart-labels{
+    margin-top:12px;
+    font-size:13px;
+    gap:8px;
+  }
+
+  .home2-page .score-circle{
+    width:150px;
+    height:150px;
+  }
+
+  .home2-page .circle-value{
+    width:108px;
+    height:108px;
+    font-size:28px;
+  }
+
+  .home2-page .simple-cta{
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
     gap:20px;
+    padding:22px 24px;
+    border-radius:18px;
+  }
+
+  .home2-page .cta-content h2{
+    font-size:30px;
+    line-height:1.2;
+  }
+
+  .home2-page .cta-content p{
+    font-size:15px;
+    margin-top:10px;
+    max-width:520px;
+    line-height:1.6;
+  }
+
+  .home2-page .cta-actions{
+    flex-shrink:0;
+    gap:12px;
+    justify-content:flex-end;
+  }
+
+  .home2-page .cta-btn,
+  .home2-page .cta-secondary{
+    min-height:46px;
+    padding:12px 20px;
+    font-size:14px;
+    margin-top:0;
   }
 }
 
-@media (max-width:600px){
-  .hero h1{
-    font-size:30px;
+/* iPad mini / tablets */
+@media (max-width:768px){
+  .home2-page .hero{
+    padding:100px 6% 64px;
+    min-height:auto;
   }
 
-  .hero p,
-  .dashboard p,
-  .smart-heading p,
-  .sim-heading p,
-  .theory-heading p,
-  .slot-heading p,
-  .perf-heading p,
-  .game-title p,
-  .cta-content p{
-    font-size:15px;
+  .home2-page .hero h1{
+    font-size:38px;
   }
 
-  .smart-image{
-    height:280px;
+  .home2-page .hero p{
+    font-size:16px;
+    line-height:1.7;
   }
 
-  .ai-wave{
-    width:180px;
-    height:180px;
-    top:45px;
+  .home2-page .dashboard,
+  .home2-page .smart-ready,
+  .home2-page .sim-section,
+  .home2-page .theory-section,
+  .home2-page .slot-section,
+  .home2-page .perf-section,
+  .home2-page .game-section,
+  .home2-page .cta-section{
+    padding:64px 5%;
+  }
+
+  .home2-page .dashboard,
+  .home2-page .sim-stage{
+    grid-template-columns:1fr;
+    gap:34px;
+  }
+
+  .home2-page .dashboard{
+    text-align:center;
+  }
+
+  .home2-page .dashboard h2,
+  .home2-page .smart-heading h2,
+  .home2-page .sim-heading h2,
+  .home2-page .theory-heading h2,
+  .home2-page .slot-heading h2,
+  .home2-page .perf-heading h2,
+  .home2-page .game-title h2,
+  .home2-page .cta-content h2{
+    font-size:34px;
+  }
+
+  .home2-page .smart-main,
+  .home2-page .slot-area,
+  .home2-page .game-stage{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .home2-page .smart-panel,
+  .home2-page .smart-image{
+    width:100%;
+    max-width:100%;
+  }
+
+  .home2-page .smart-image{
+    height:300px;
+  }
+
+  .home2-page .ai-wave{
+    width:200px;
+    height:200px;
+    top:50px;
     left:50%;
     transform:translateX(-50%);
   }
 
-  .scan-text{
-    font-size:12px;
-    padding:8px 16px;
+  .home2-page .sim-video{
+    height:300px;
   }
 
-  .play-btn{
-    width:75px;
-    height:75px;
-    font-size:24px;
+  .home2-page .buttons,
+  .home2-page .stats{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:18px;
   }
 
-  .timer-circle{
-    width:130px;
-    height:130px;
-    font-size:36px;
+  .home2-page .times{
+    grid-template-columns:1fr 1fr;
   }
 
-  .chart-point{
-    width:44px;
-    height:44px;
+  .home2-page .achievement-zone{
+    gap:20px;
+  }
+
+  .home2-page .calendar{
+    justify-content:flex-start;
+  }
+
+  .home2-page .chart-point{
+    width:46px;
+    height:46px;
     font-size:11px;
   }
 
-  .days{
+  .home2-page .score-circle{
+    width:170px;
+    height:170px;
+  }
+
+  .home2-page .circle-value{
+    width:126px;
+    height:126px;
+    font-size:32px;
+  }
+
+  .home2-page .simple-cta{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .home2-page .cta-actions{
+    width:100%;
+    justify-content:flex-start;
+  }
+}
+
+/* Samsung Galaxy S8+ and small phones */
+@media (max-width:480px){
+  .home2-page .hero{
+    padding:92px 5% 48px;
+  }
+
+  .home2-page .hero h1{
+    font-size:30px;
+    line-height:1.2;
+  }
+
+  .home2-page .hero p,
+  .home2-page .dashboard p,
+  .home2-page .smart-heading p,
+  .home2-page .sim-heading p,
+  .home2-page .theory-heading p,
+  .home2-page .slot-heading p,
+  .home2-page .perf-heading p,
+  .home2-page .game-title p,
+  .home2-page .cta-content p{
+    font-size:15px;
+    line-height:1.7;
+  }
+
+  .home2-page .dashboard,
+  .home2-page .smart-ready,
+  .home2-page .sim-section,
+  .home2-page .theory-section,
+  .home2-page .slot-section,
+  .home2-page .perf-section,
+  .home2-page .game-section,
+  .home2-page .cta-section{
+    padding:56px 4.5%;
+  }
+
+  .home2-page .dashboard h2,
+  .home2-page .smart-heading h2,
+  .home2-page .sim-heading h2,
+  .home2-page .theory-heading h2,
+  .home2-page .slot-heading h2,
+  .home2-page .perf-heading h2,
+  .home2-page .game-title h2,
+  .home2-page .cta-content h2{
+    font-size:28px;
+    line-height:1.25;
+  }
+
+  .home2-page .buttons{
+    width:100%;
     gap:12px;
   }
 
-  .days span{
-    width:42px;
-    height:42px;
+  .home2-page .buttons .btn,
+  .home2-page .buttons .btn-main,
+  .home2-page .buttons .btn-outline,
+  .home2-page .cta-actions a,
+  .home2-page .cta-actions .cta-btn,
+  .home2-page .cta-actions .btn{
+    width:100%;
   }
 
-  .calendar{
+  .home2-page .btn,
+  .home2-page .btn-main,
+  .home2-page .btn-outline,
+  .home2-page .dash-btn,
+  .home2-page .confirm-btn,
+  .home2-page .cta-btn,
+  .home2-page .smart-panel button,
+  .home2-page .submit-btn{
+    min-height:48px;
+    padding:12px 20px;
+    font-size:15px;
+  }
+
+  .home2-page .dash-card{
+    padding:20px;
+    border-radius:16px;
+  }
+
+  .home2-page .chart{
+    height:150px;
+    gap:10px;
+  }
+
+  .home2-page .bar{
+    min-width:24px;
+  }
+
+  .home2-page .smart-image{
+    height:260px;
+    border-radius:26px;
+  }
+
+  .home2-page .ai-wave{
+    width:160px;
+    height:160px;
+    top:44px;
+  }
+
+  .home2-page .scan-text{
+    font-size:12px;
+    padding:8px 14px;
+    bottom:16px;
+  }
+
+  .home2-page .smart-panel h3{
+    font-size:24px;
+  }
+
+  .home2-page .sim-video{
+    height:240px;
+    border-radius:26px;
+  }
+
+  .home2-page .play-btn{
+    width:72px;
+    height:72px;
+    font-size:22px;
+  }
+
+  .home2-page .play-btn svg{
+    width:30px;
+    height:30px;
+  }
+
+  .home2-page .sim-overlay p{
+    font-size:16px;
+  }
+
+  .home2-page .sim-item{
+    padding:16px;
+  }
+
+  .home2-page .sim-item svg{
+    width:28px;
+    height:28px;
+  }
+
+  .home2-page .level-strip h3{
+    font-size:20px;
+  }
+
+  .home2-page .levels button{
+    flex:1 1 100%;
+    width:100%;
     justify-content:center;
+  }
+
+  .home2-page .timer-circle{
+    width:96px;
+    height:96px;
+    font-size:26px;
+    border-width:6px;
+  }
+
+  .home2-page .answer-input{
+    min-height:48px;
+    font-size:14px;
+  }
+
+  .home2-page .calendar{
+    justify-content:center;
+    gap:12px;
+  }
+
+  .home2-page .day{
+    width:58px;
+    height:68px;
+    border-radius:28px;
+    font-size:14px;
+  }
+
+  .home2-page .times{
+    grid-template-columns:1fr;
+  }
+
+  .home2-page .times button{
+    width:100%;
+  }
+
+  .home2-page .availability{
+    font-size:14px;
+  }
+
+  .home2-page .chart-box{
+    height:220px;
+  }
+
+  .home2-page .chart-point{
+    width:40px;
+    height:40px;
+    font-size:10px;
+  }
+
+  .home2-page .point-one{ bottom:35px; left:8%; }
+  .home2-page .point-two{ bottom:75px; left:33%; }
+  .home2-page .point-three{ bottom:115px; left:58%; }
+  .home2-page .point-four{ bottom:150px; left:80%; }
+
+  .home2-page .chart-labels{
+    font-size:13px;
+    gap:8px;
+  }
+
+  .home2-page .score-circle{
+    width:150px;
+    height:150px;
+  }
+
+  .home2-page .circle-value{
+    width:110px;
+    height:110px;
+    font-size:28px;
+  }
+
+  .home2-page .weak-text{
+    font-size:14px;
+    align-items:flex-start;
+  }
+
+  .home2-page .trophy{
+    font-size:88px;
+  }
+
+  .home2-page .trophy-zone h3{
+    font-size:22px;
+  }
+
+  .home2-page .badge{
+    width:140px;
+  }
+
+  .home2-page .badge-icon{
+    width:82px;
+    height:82px;
+  }
+
+  .home2-page .badge-icon svg{
+    width:34px;
+    height:34px;
+  }
+
+  .home2-page .days{
+    gap:12px;
+  }
+
+  .home2-page .days span{
+    width:42px;
+    height:42px;
+    font-size:13px;
+  }
+
+  .home2-page .simple-cta{
+    padding:20px;
+    border-radius:18px;
+  }
+
+  .home2-page .cta-actions{
+    flex-direction:column;
+    align-items:stretch;
+    width:100%;
+  }
+}
+
+/* Extra small phones */
+@media (max-width:390px){
+  .home2-page .hero h1{
+    font-size:28px;
+  }
+
+  .home2-page .dashboard h2,
+  .home2-page .smart-heading h2,
+  .home2-page .sim-heading h2,
+  .home2-page .theory-heading h2,
+  .home2-page .slot-heading h2,
+  .home2-page .perf-heading h2,
+  .home2-page .game-title h2,
+  .home2-page .cta-content h2{
+    font-size:26px;
+  }
+
+  .home2-page .smart-image{
+    height:240px;
+  }
+
+  .home2-page .sim-video{
+    height:220px;
+  }
+
+  .home2-page .ai-wave{
+    width:145px;
+    height:145px;
+  }
+
+  .home2-page .scan-text{
+    font-size:11px;
+  }
+
+  .home2-page .day{
+    width:54px;
+    height:64px;
   }
 }
 
 @media (prefers-reduced-motion: reduce){
-  *,
-  *::before,
-  *::after{
+  .home2-page *,
+  .home2-page *::before,
+  .home2-page *::after{
     animation:none !important;
     transition:none !important;
     scroll-behavior:auto !important;

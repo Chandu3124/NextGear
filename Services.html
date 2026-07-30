@@ -22,61 +22,77 @@
 
   <!-- section 1 -->
   <section class="services-hero">
-    <div class="services-container">
+    <div class="hero-overlay"></div>
+
+    <div class="services-container hero-layout">
       <div class="services-content reveal hero-reveal-left">
         <span class="service-tag">Professional Driving Solutions</span>
 
-        <h1>Our <span>Driving Services</span></h1>
+        <h1>Smart <span>Driving Services</span></h1>
 
         <p>
-          Smart simulator training, AI-powered theory practice and
-          personalized coaching to help every learner become confident,
-          skilled and road-ready.
+          Simulator training, theory practice and guided coaching
+          to help learners become confident and road-ready.
         </p>
 
-        <div class="service-list">
+        <div class="service-list compact-list">
           <div class="service-item">
             <span><i class="fa-solid fa-car-side"></i></span>
-            Simulator Based Learning
+            Simulator Learning
           </div>
 
           <div class="service-item">
             <span><i class="fa-solid fa-book-open-reader"></i></span>
-            Smart Theory Preparation
+            Theory Practice
           </div>
 
           <div class="service-item">
             <span><i class="fa-solid fa-chart-line"></i></span>
-            Performance Tracking
+            Progress Tracking
           </div>
 
           <div class="service-item">
             <span><i class="fa-solid fa-calendar-check"></i></span>
-            Flexible Session Booking
+            Easy Booking
           </div>
         </div>
 
-        <a href="Service-detail.html" class="service-btn">
-          Explore Services
-        </a>
+        <div class="hero-actions">
+          <a href="Service-detail.html" class="service-btn">
+            Explore Services
+          </a>
+
+          <a href="#booking" class="service-btn secondary-hero-btn" id="heroBookingBtn">
+            Book Now
+          </a>
+        </div>
       </div>
 
       <div class="services-image reveal hero-reveal-right">
-        <div class="zigzag-frame">
-          <img
-            src="img14.avif"
-            alt="Driving dashboard and learning environment"
-          />
-        </div>
+        <div class="hero-glass-card">
+          <div class="hero-mini-stat">
+            <i data-lucide="car-front"></i>
+            <div>
+              <strong>1000+</strong>
+              <span>Happy Learners</span>
+            </div>
+          </div>
 
-        <div class="floating-card card-left">
-          <h3>1000+</h3>
-          <p>Happy Learners</p>
-        </div>
+          <div class="hero-mini-stat">
+            <i data-lucide="badge-check"></i>
+            <div>
+              <strong>95%</strong>
+              <span>Pass Rate</span>
+            </div>
+          </div>
 
-        <div class="floating-card card-right">
-          <h3>95%</h3>
-          <p>Pass Rate</p>
+          <div class="hero-mini-stat">
+            <i data-lucide="calendar-range"></i>
+            <div>
+              <strong>Flexible</strong>
+              <span>Session Slots</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -110,7 +126,9 @@
             Practice realistic driving situations using our advanced
             driving simulator before taking your vehicle onto real roads.
           </p>
-          <a href="Service-detail.html">Learn More →</a>
+          <a href="Service-detail.html" class="text-link">
+            Learn More <i data-lucide="arrow-right"></i>
+          </a>
         </div>
       </div>
 
@@ -129,7 +147,9 @@
             Improve your knowledge using intelligent mock tests with
             instant feedback and detailed explanations.
           </p>
-          <a href="Service-detail.html">Learn More →</a>
+          <a href="Service-detail.html" class="text-link">
+            Learn More <i data-lucide="arrow-right"></i>
+          </a>
         </div>
       </div>
 
@@ -148,7 +168,9 @@
             Reserve your simulator sessions online with an easy,
             flexible and user-friendly booking experience.
           </p>
-          <a href="Service-detail.html">Learn More →</a>
+          <a href="Service-detail.html" class="text-link">
+            Learn More <i data-lucide="arrow-right"></i>
+          </a>
         </div>
       </div>
 
@@ -167,7 +189,9 @@
             Monitor your learning journey with detailed reports,
             performance scores and personalized improvement tips.
           </p>
-          <a href="Service-detail.html">Learn More →</a>
+          <a href="Service-detail.html" class="text-link">
+            Learn More <i data-lucide="arrow-right"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -445,20 +469,19 @@
         <h2>Start Your <span>Driving Journey</span> Today</h2>
 
         <p>
-          Begin your journey with smart simulator
-          training, theory preparation, and expert
-          guidance to become a confident driver.
+          Begin your journey with smart simulator training,
+          theory preparation and expert guidance.
         </p>
+      </div>
 
-        <div class="cta-buttons">
-          <a href="#booking" class="primary-btn" id="bookSimulatorBtn">
-            Book Simulator
-          </a>
+      <div class="cta-buttons">
+        <a href="#booking" class="primary-btn" id="bookSimulatorBtn">
+          Book Simulator
+        </a>
 
-          <a href="Practice.html" class="secondary-btn" id="takeTestBtn">
-            Take Test
-          </a>
-        </div>
+        <a href="Practice.html" class="secondary-btn" id="takeTestBtn">
+          Take Test
+        </a>
       </div>
 
       <div class="journey-stats">
@@ -486,7 +509,9 @@
   <script src="component.js"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
-    lucide.createIcons();
+    if (window.lucide) {
+      lucide.createIcons();
+    }
   </script>
 </body>
 </html>

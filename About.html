@@ -1,521 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
-    />
-
-    <link rel="stylesheet" href="global.css" />
-    <link rel="stylesheet" href="About.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+  />
+  <link rel="stylesheet" href="global.css" />
+  <link rel="stylesheet" href="About.css" />
 </head>
-<body class="about-page">
-    <div id="navbar"></div>
+<body class="about-page light-mode">
+    
+  <div id="navbar"></div>
 
-    <!-- section 1 -->
-    <section class="story-section">
-        <div class="story-wrapper">
-            <div class="story-left">
-                <span class="story-tag">Our Journey</span>
+  <main class="about-main">
+    <section class="story-section hero-story">
+      <div class="hero-backdrop">
+        <img
+          src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1600&q=80"
+          alt="Driving practice car on road"
+          width="1600"
+          height="1000"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+      <div class="hero-overlay"></div>
 
-                <h2>Our <span>Story</span></h2>
+      <div class="story-wrapper hero-layout">
+        <div class="story-left hero-copy reveal active">
+          <span class="story-tag">Our Journey</span>
+          <h2>Our <span>Story</span></h2>
+          <p class="story-intro">
+            Learning to drive should be exciting, safe, and stress-free.
+            We created this platform to help every learner gain confidence
+            before stepping onto real roads.
+          </p>
 
-                <p class="story-intro">
-                    Learning to drive should be exciting, safe, and stress-free.
-                    We created this platform to help every learner gain confidence
-                    before stepping onto real roads.
+          <div class="story-list compact-story-list">
+            <div class="story-item reveal">
+              <div class="icon">01</div>
+              <div class="content">
+                <h3>Who We Are</h3>
+                <p>
+                  A modern driving education platform combining intelligent
+                  simulators with easy-to-understand theory learning for beginners.
                 </p>
-
-                <div class="story-list">
-                    <div class="story-item reveal">
-                        <div class="icon">01</div>
-                        <div class="content">
-                            <h3>Who We Are</h3>
-                            <p>
-                                A modern driving education platform combining
-                                intelligent simulators with easy-to-understand
-                                theory learning for beginners.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="story-item reveal">
-                        <div class="icon">02</div>
-                        <div class="content">
-                            <h3>Why We Started</h3>
-                            <p>
-                                Many learners feel nervous during their first
-                                driving experience. We built a safer environment
-                                where anyone can practice without fear.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="story-item reveal">
-                        <div class="icon">03</div>
-                        <div class="content">
-                            <h3>Our Solution</h3>
-                            <p>
-                                Realistic driving simulation, smart theory tests,
-                                and performance tracking help learners become
-                                confident and road-ready.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
 
-            <div class="story-right">
-                <div class="story-circle"></div>
-
-                <div class="story-card main-card">
-                    <img
-                        src="img6.avif"
-                        alt="Driving Simulator"
-                        loading="lazy"
-                    />
-                </div>
-
-                <div class="floating-box box1">
-                    <i data-lucide="shield-check"></i>
-                    <span>Safe Practice</span>
-                </div>
-
-                <div class="floating-box box2">
-                    <i data-lucide="target"></i>
-                    <span>Build Confidence</span>
-                </div>
-
-                <div class="floating-box box3">
-                    <i data-lucide="badge-check"></i>
-                    <span>Road Ready</span>
-                </div>
-
-                <div class="experience">
-                    <h3>100%</h3>
-                    <p>Learning Focused</p>
-                </div>
+            <div class="story-item reveal">
+              <div class="icon">02</div>
+              <div class="content">
+                <h3>Why We Started</h3>
+                <p>
+                  Many learners feel nervous during their first driving experience.
+                  We built a safer environment where anyone can practice without fear.
+                </p>
+              </div>
             </div>
+
+            <div class="story-item reveal">
+              <div class="icon">03</div>
+              <div class="content">
+                <h3>Our Solution</h3>
+                <p>
+                  Realistic driving simulation, smart theory tests, and performance
+                  tracking help learners become confident and road-ready.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="story-right hero-side reveal active">
+          <div class="hero-stats-card">
+            <div class="floating-box box1">
+              <i data-lucide="shield-check"></i>
+              <span>Safe Practice</span>
+            </div>
+
+            <div class="floating-box box2">
+              <i data-lucide="target"></i>
+              <span>Build Confidence</span>
+            </div>
+
+            <div class="floating-box box3">
+              <i data-lucide="badge-check"></i>
+              <span>Road Ready</span>
+            </div>
+
+            <div class="experience">
+              <h3>100%</h3>
+              <p>Learning Focused</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- section 2 -->
     <section class="mission-section">
-        <div class="mission-container">
-            <div class="mission-heading">
-                <span class="mission-tag">Driving With Purpose</span>
-                <h2>Mission <span>&</span> Vision</h2>
-                <p>
-                    We are committed to creating confident, responsible drivers
-                    through smart technology, realistic simulation and modern
-                    driving education.
-                </p>
-            </div>
-
-            <div class="mission-layout">
-                <div class="mv-card mission-card reveal">
-                    <div class="mv-icon">
-                        <i data-lucide="target"></i>
-                    </div>
-                    <h3>Our Mission</h3>
-                    <p>
-                        Help every learner overcome driving fear through
-                        realistic practice, expert guidance and interactive
-                        simulator training that builds confidence safely.
-                    </p>
-                </div>
-
-                <div class="center-core">
-                    <div class="core-ring ring1"></div>
-                    <div class="core-ring ring2"></div>
-                    <div class="core-circle">
-                        <i data-lucide="car-front"></i>
-                    </div>
-                </div>
-
-                <div class="mv-card vision-card reveal">
-                    <div class="mv-icon">
-                        <i data-lucide="rocket"></i>
-                    </div>
-                    <h3>Our Vision</h3>
-                    <p>
-                        Build a smarter future where technology makes
-                        driving education safer, faster and more accessible
-                        for every aspiring driver.
-                    </p>
-                </div>
-            </div>
-
-            <div class="mission-features">
-                <div class="feature reveal">
-                    <span><i data-lucide="brain-circuit"></i></span>
-                    Smart Learning
-                </div>
-
-                <div class="feature reveal">
-                    <span><i data-lucide="shield"></i></span>
-                    Safe Practice
-                </div>
-
-                <div class="feature reveal">
-                    <span><i data-lucide="car"></i></span>
-                    Real Road Confidence
-                </div>
-
-                <div class="feature reveal">
-                    <span><i data-lucide="sparkles"></i></span>
-                    Future Ready Skills
-                </div>
-            </div>
+      <div class="mission-container">
+        <div class="mission-heading">
+          <span class="mission-tag">Driving With Purpose</span>
+          <h2>Mission <span>&</span> Vision</h2>
+          <p>
+            We are committed to creating confident, responsible drivers through smart
+            technology, realistic simulation and modern driving education.
+          </p>
         </div>
+
+        <div class="mission-layout">
+          <div class="mv-card mission-card reveal">
+            <div class="mv-icon"><i data-lucide="target"></i></div>
+            <h3>Our Mission</h3>
+            <p>
+              Help every learner overcome driving fear through realistic practice,
+              expert guidance and interactive simulator training that builds confidence safely.
+            </p>
+          </div>
+
+          <div class="center-core reveal">
+            <div class="core-ring ring1"></div>
+            <div class="core-ring ring2"></div>
+            <div class="core-circle"><i data-lucide="car-front"></i></div>
+          </div>
+
+          <div class="mv-card vision-card reveal">
+            <div class="mv-icon"><i data-lucide="rocket"></i></div>
+            <h3>Our Vision</h3>
+            <p>
+              Build a smarter future where technology makes driving education safer,
+              faster and more accessible for every aspiring driver.
+            </p>
+          </div>
+        </div>
+
+        <div class="mission-features">
+          <div class="feature reveal"><span><i data-lucide="brain-circuit"></i></span>Smart Learning</div>
+          <div class="feature reveal"><span><i data-lucide="shield"></i></span>Safe Practice</div>
+          <div class="feature reveal"><span><i data-lucide="car"></i></span>Real Road Confidence</div>
+          <div class="feature reveal"><span><i data-lucide="sparkles"></i></span>Future Ready Skills</div>
+        </div>
+      </div>
     </section>
 
-    <!-- section 3 -->
     <section class="offer-section">
-        <div class="offer-container">
-            <div class="offer-heading">
-                <span class="offer-tag">Our Services</span>
-                <h2>What We <span>Offer</span></h2>
-                <p>
-                    Experience a smarter way to learn driving through interactive
-                    training, intelligent assessments and seamless digital services.
-                </p>
-            </div>
-
-            <div class="offer-road">
-                <div class="road-line"></div>
-
-                <div class="offer-card left reveal">
-                    <div class="offer-number">01</div>
-                    <div class="offer-content">
-                        <h3><i data-lucide="car-front"></i> Driving Simulator</h3>
-                        <p>
-                            Learn vehicle control in a realistic virtual
-                            environment before driving on actual roads.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="offer-card right reveal">
-                    <div class="offer-number">02</div>
-                    <div class="offer-content">
-                        <h3><i data-lucide="file-text"></i> Theory Mock Tests</h3>
-                        <p>
-                            Practice unlimited road sign, traffic rule and
-                            licence-style mock examinations.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="offer-card left reveal">
-                    <div class="offer-number">03</div>
-                    <div class="offer-content">
-                        <h3><i data-lucide="chart-column"></i> Progress Tracking</h3>
-                        <p>
-                            Monitor your learning journey with detailed
-                            performance reports and improvement insights.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="offer-card right reveal">
-                    <div class="offer-number">04</div>
-                    <div class="offer-content">
-                        <h3><i data-lucide="calendar-days"></i> Booking System</h3>
-                        <p>
-                            Schedule simulator sessions and theory exams
-                            with an easy online booking experience.
-                        </p>
-                    </div>
-                </div>
-            </div>
+      <div class="offer-container">
+        <div class="offer-heading">
+          <span class="offer-tag">Our Services</span>
+          <h2>What We <span>Offer</span></h2>
+          <p>
+            Experience a smarter way to learn driving through interactive training,
+            intelligent assessments and seamless digital services.
+          </p>
         </div>
+
+        <div class="offer-road">
+          <div class="road-line"></div>
+
+          <div class="offer-card left reveal">
+            <div class="offer-number">01</div>
+            <div class="offer-content">
+              <h3><i data-lucide="car-front"></i> Driving Simulator</h3>
+              <p>Learn vehicle control in a realistic virtual environment before driving on actual roads.</p>
+            </div>
+          </div>
+
+          <div class="offer-card right reveal">
+            <div class="offer-number">02</div>
+            <div class="offer-content">
+              <h3><i data-lucide="file-text"></i> Theory Mock Tests</h3>
+              <p>Practice unlimited road sign, traffic rule and licence-style mock examinations.</p>
+            </div>
+          </div>
+
+          <div class="offer-card left reveal">
+            <div class="offer-number">03</div>
+            <div class="offer-content">
+              <h3><i data-lucide="chart-column"></i> Progress Tracking</h3>
+              <p>Monitor your learning journey with detailed performance reports and improvement insights.</p>
+            </div>
+          </div>
+
+          <div class="offer-card right reveal">
+            <div class="offer-number">04</div>
+            <div class="offer-content">
+              <h3><i data-lucide="calendar-days"></i> Booking System</h3>
+              <p>Schedule simulator sessions and theory exams with an easy online booking experience.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- section 4 -->
     <section class="choose-section">
-        <div class="choose-container">
-            <div class="choose-heading">
-                <span class="choose-tag">Why Drivers Trust Us</span>
-                <h2>Why Choose <span>Us</span></h2>
-                <p>
-                    Learn smarter with realistic simulator training, intelligent
-                    assessments and a seamless learning experience designed for
-                    every future driver.
-                </p>
-            </div>
-
-            <div class="choose-grid">
-                <div class="choose-item reveal">
-                    <div class="choose-image">
-                        <img src="img7.jpg"
-                        alt="Driving Simulator" loading="lazy">
-                    </div>
-
-                    <div class="choose-content">
-                        <h3>Realistic Simulator Experience</h3>
-                        <p>
-                            Practice real driving situations safely using our
-                            advanced simulator technology before entering the road.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="choose-item reveal">
-                    <div class="choose-content">
-                        <h3>Smart Test System</h3>
-                        <p>
-                            Interactive theory exams with instant feedback,
-                            scoring and performance analysis.
-                        </p>
-                    </div>
-
-                    <div class="choose-image">
-                        <img src="img8.avif"
-                        alt="Smart Test" loading="lazy">
-                    </div>
-                </div>
-
-                <div class="choose-item reveal">
-                    <div class="choose-image">
-                        <img src="img9.jpg"
-                        alt="Booking System" loading="lazy">
-                    </div>
-
-                    <div class="choose-content">
-                        <h3>Easy Online Booking</h3>
-                        <p>
-                            Reserve simulator sessions and theory tests anytime
-                            through a fast and convenient booking system.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="choose-item reveal">
-                    <div class="choose-content">
-                        <h3>Performance Tracking</h3>
-                        <p>
-                            Track every practice session with detailed reports,
-                            progress charts and personalized recommendations.
-                        </p>
-                    </div>
-
-                    <div class="choose-image">
-                        <img src="img10.avif"
-                        alt="Performance Tracking" loading="lazy">
-                    </div>
-                </div>
-            </div>
+      <div class="choose-container">
+        <div class="choose-heading">
+          <span class="choose-tag">Why Drivers Trust Us</span>
+          <h2>Why Choose <span>Us</span></h2>
+          <p>
+            Learn smarter with realistic simulator training, intelligent assessments
+            and a seamless learning experience designed for every future driver.
+          </p>
         </div>
+
+        <div class="choose-grid">
+          <div class="choose-item reveal">
+            <div class="choose-image">
+              <img src="img7.jpg" alt="Driving Simulator" width="900" height="600" loading="lazy" />
+            </div>
+            <div class="choose-content">
+              <h3>Realistic Simulator Experience</h3>
+              <p>Practice real driving situations safely using our advanced simulator technology before entering the road.</p>
+            </div>
+          </div>
+
+          <div class="choose-item reveal">
+            <div class="choose-content">
+              <h3>Smart Test System</h3>
+              <p>Interactive theory exams with instant feedback, scoring and performance analysis.</p>
+            </div>
+            <div class="choose-image">
+              <img src="img8.avif" alt="Smart Test" width="900" height="600" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="choose-item reveal">
+            <div class="choose-image">
+              <img src="img9.jpg" alt="Booking System" width="900" height="600" loading="lazy" />
+            </div>
+            <div class="choose-content">
+              <h3>Easy Online Booking</h3>
+              <p>Reserve simulator sessions and theory tests anytime through a fast and convenient booking system.</p>
+            </div>
+          </div>
+
+          <div class="choose-item reveal">
+            <div class="choose-content">
+              <h3>Performance Tracking</h3>
+              <p>Track every practice session with detailed reports, progress charts and personalized recommendations.</p>
+            </div>
+            <div class="choose-image">
+              <img src="img10.avif" alt="Performance Tracking" width="900" height="600" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- section 5 -->
     <section class="team-showcase">
-        <div class="team-show-container">
-            <div class="team-show-heading">
-                <span class="team-show-tag">Our Experts</span>
-                <h2>Meet Our <span>Team</span></h2>
-                <p>
-                    A dedicated team combining driving expertise, simulator
-                    technology and smart assessment methods to create a better
-                    learning experience.
-                </p>
-            </div>
-
-            <div class="team-members">
-                <div class="team-profile reveal">
-                    <div class="profile-image">
-                        <img src="img11.jpg"
-                        alt="Driving Instructor" loading="lazy">
-                    </div>
-
-                    <h3>Rahul Sharma</h3>
-                    <span>Senior Driving Instructor</span>
-                    <p>
-                        Guides learners with practical driving skills,
-                        safety techniques and confidence-building sessions.
-                    </p>
-                </div>
-
-                <div class="team-profile reveal">
-                    <div class="profile-image">
-                        <img src="img12.jpg"
-                        alt="Simulator Specialist" loading="lazy">
-                    </div>
-
-                    <h3>Priya Verma</h3>
-                    <span>Simulator Technology Specialist</span>
-                    <p>
-                        Develops realistic simulator experiences and
-                        smart training solutions for modern learners.
-                    </p>
-                </div>
-
-                <div class="team-profile reveal">
-                    <div class="profile-image">
-                        <img src="img13.jpg"
-                        alt="Theory Trainer" loading="lazy">
-                    </div>
-
-                    <h3>Arjun Patel</h3>
-                    <span>Theory & Assessment Trainer</span>
-                    <p>
-                        Creates effective mock tests, theory programs and
-                        performance improvement strategies.
-                    </p>
-                </div>
-            </div>
+      <div class="team-show-container">
+        <div class="team-show-heading">
+          <span class="team-show-tag">Our Experts</span>
+          <h2>Meet Our <span>Team</span></h2>
+          <p>
+            A dedicated team combining driving expertise, simulator technology and smart
+            assessment methods to create a better learning experience.
+          </p>
         </div>
+
+        <div class="team-members">
+          <div class="team-profile reveal">
+            <div class="profile-image">
+              <img src="img11.jpg" alt="Driving Instructor" width="600" height="600" loading="lazy" />
+            </div>
+            <h3>Rahul Sharma</h3>
+            <span>Senior Driving Instructor</span>
+            <p>Guides learners with practical driving skills, safety techniques and confidence-building sessions.</p>
+          </div>
+
+          <div class="team-profile reveal">
+            <div class="profile-image">
+              <img src="img12.jpg" alt="Simulator Specialist" width="600" height="600" loading="lazy" />
+            </div>
+            <h3>Priya Verma</h3>
+            <span>Simulator Technology Specialist</span>
+            <p>Develops realistic simulator experiences and smart training solutions for modern learners.</p>
+          </div>
+
+          <div class="team-profile reveal">
+            <div class="profile-image">
+              <img src="img13.jpg" alt="Theory Trainer" width="600" height="600" loading="lazy" />
+            </div>
+            <h3>Arjun Patel</h3>
+            <span>Theory & Assessment Trainer</span>
+            <p>Creates effective mock tests, theory programs and performance improvement strategies.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- section 6 -->
     <section class="impact-section">
-        <div class="impact-container">
-            <div class="impact-heading">
-                <span class="impact-tag">Our Success Story</span>
-                <h2>Our <span>Impact</span> & Achievements</h2>
-                <p>
-                    Our mission is reflected through thousands of successful
-                    learners, improved driving confidence and smarter training
-                    experiences.
-                </p>
-            </div>
-
-            <div class="impact-dashboard">
-                <div class="impact-box reveal">
-                    <div class="impact-icon">
-                        <i data-lucide="users"></i>
-                    </div>
-                    <h3 class="counter" data-target="1000">0</h3>
-                    <span>Students Trained</span>
-                    <p>
-                        Learners successfully improved their driving skills
-                        with expert guidance.
-                    </p>
-                </div>
-
-                <div class="impact-box reveal">
-                    <div class="impact-icon">
-                        <i data-lucide="trophy"></i>
-                    </div>
-                    <h3><span class="counter" data-target="95">0</span>%</h3>
-                    <span>Pass Rate</span>
-                    <p>
-                        High success rate through smart theory tests and
-                        personalised practice.
-                    </p>
-                </div>
-
-                <div class="impact-box reveal">
-                    <div class="impact-icon">
-                        <i data-lucide="car-front"></i>
-                    </div>
-                    <h3 class="counter" data-target="500">0</h3>
-                    <span>Simulator Sessions</span>
-                    <p>
-                        Hundreds of realistic simulator sessions completed
-                        safely by learners.
-                    </p>
-                </div>
-            </div>
-
-            <div class="impact-progress reveal">
-                <div class="progress-item">
-                    <div class="progress-title">
-                        <span>Driving Confidence</span>
-                        <b>95%</b>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" data-width="95%"></div>
-                    </div>
-                </div>
-
-                <div class="progress-item">
-                    <div class="progress-title">
-                        <span>Learning Satisfaction</span>
-                        <b>98%</b>
-                    </div>
-
-                    <div class="progress-bar">
-                        <div class="progress-fill" data-width="98%"></div>
-                    </div>
-                </div>
-            </div>
+      <div class="impact-container">
+        <div class="impact-heading">
+          <span class="impact-tag">Our Success Story</span>
+          <h2>Our <span>Impact</span> & Achievements</h2>
+          <p>
+            Our mission is reflected through thousands of successful learners,
+            improved driving confidence and smarter training experiences.
+          </p>
         </div>
+
+        <div class="impact-dashboard">
+          <div class="impact-box reveal">
+            <div class="impact-icon"><i data-lucide="users"></i></div>
+            <h3 class="counter" data-target="1000">0</h3>
+            <span>Students Trained</span>
+            <p>Learners successfully improved their driving skills with expert guidance.</p>
+          </div>
+
+          <div class="impact-box reveal">
+            <div class="impact-icon"><i data-lucide="trophy"></i></div>
+            <h3><span class="counter" data-target="95">0</span>%</h3>
+            <span>Pass Rate</span>
+            <p>High success rate through smart theory tests and personalised practice.</p>
+          </div>
+
+          <div class="impact-box reveal">
+            <div class="impact-icon"><i data-lucide="car-front"></i></div>
+            <h3 class="counter" data-target="500">0</h3>
+            <span>Simulator Sessions</span>
+            <p>Hundreds of realistic simulator sessions completed safely by learners.</p>
+          </div>
+        </div>
+
+        <div class="impact-progress reveal">
+          <div class="progress-item">
+            <div class="progress-title"><span>Driving Confidence</span><b>95%</b></div>
+            <div class="progress-bar"><div class="progress-fill" data-width="95%"></div></div>
+          </div>
+
+          <div class="progress-item">
+            <div class="progress-title"><span>Learning Satisfaction</span><b>98%</b></div>
+            <div class="progress-bar"><div class="progress-fill" data-width="98%"></div></div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- section 7 -->
     <section class="cta-section">
-        <div class="cta-container">
-            <div class="cta-content reveal">
-                <span class="cta-tag">Ready To Drive?</span>
-
-                <h2>
-                    Start Your
-                    <span>Driving Journey</span>
-                    Today
-                </h2>
-
-                <p>
-                    Build confidence, improve your skills and become a smarter
-                    driver with our realistic simulator training and intelligent
-                    theory testing platform.
-                </p>
-
-                <div class="cta-buttons">
-                    <a href="Services.html" class="cta-btn primary-btn">
-                        Book Session
-                    </a>
-
-                    <a href="Practice.html" class="cta-btn secondary-btn">
-                        Take Test
-                    </a>
-                </div>
-            </div>
-
-            <div class="journey-box reveal">
-                <div class="road-track">
-                    <span class="road-dot dot-one"></span>
-                    <span class="road-dot dot-two"></span>
-                    <span class="road-dot dot-three"></span>
-
-                    <div class="car-marker">
-                        <i data-lucide="car-front"></i>
-                    </div>
-                </div>
-
-                <div class="journey-info">
-                    <div>
-                        <strong>Practice</strong>
-                        <small>Simulator</small>
-                    </div>
-
-                    <div>
-                        <strong>Learn</strong>
-                        <small>Theory</small>
-                    </div>
-
-                    <div>
-                        <strong>Achieve</strong>
-                        <small>License</small>
-                    </div>
-                </div>
-            </div>
+      <div class="cta-container cta-horizontal">
+        <div class="cta-content reveal">
+          <span class="cta-tag">Ready To Drive?</span>
+          <h2>Start Your <span>Driving Journey</span> Today</h2>
+          <p>
+            Build confidence, improve your skills and become a smarter driver with our
+            realistic simulator training and intelligent theory testing platform.
+          </p>
         </div>
+
+        <div class="journey-box reveal simple-journey-box">
+          <div class="journey-step">
+            <i data-lucide="monitor-play"></i>
+            <div><strong>Practice</strong><small>Simulator</small></div>
+          </div>
+          <div class="journey-arrow"><i data-lucide="arrow-right"></i></div>
+          <div class="journey-step">
+            <i data-lucide="book-open-check"></i>
+            <div><strong>Learn</strong><small>Theory</small></div>
+          </div>
+          <div class="journey-arrow"><i data-lucide="arrow-right"></i></div>
+          <div class="journey-step">
+            <i data-lucide="badge-check"></i>
+            <div><strong>Achieve</strong><small>License</small></div>
+          </div>
+        </div>
+
+        <div class="cta-buttons reveal">
+          <a href="Services.html" class="cta-btn primary-btn">Book Session</a>
+          <a href="Practice.html" class="cta-btn secondary-btn">Take Test</a>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <div id="footer"></div>
+  <div id="footer"></div>
 
-    <script src="About.js"></script>
-    <script src="component.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>lucide.createIcons();</script>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="About.js"></script>
+  <script src="component.js"></script>
 </body>
 </html>

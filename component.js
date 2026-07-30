@@ -42,10 +42,8 @@ Promise.all([
     function updateLogoByTheme(isDark) {
       [headerLogo, footerLogo].forEach((logo) => {
         if (!logo) return;
-
         const lightLogo = logo.dataset.lightLogo;
         const darkLogo = logo.dataset.darkLogo;
-
         logo.src = isDark ? darkLogo : lightLogo;
       });
     }
@@ -83,11 +81,19 @@ Promise.all([
       const currentPath = window.location.pathname.split("/").pop().toLowerCase() || "index.html";
       const navLinks = document.querySelectorAll(".menu a[data-page]");
 
+      let mappedPage = currentPath;
+
+      if (currentPath === "service-detail.html") {
+        mappedPage = "services.html";
+      } else if (currentPath === "blog-detail.html") {
+        mappedPage = "blog.html";
+      }
+
       navLinks.forEach((link) => {
         const linkPage = (link.dataset.page || "").toLowerCase();
         link.removeAttribute("aria-current");
 
-        if (linkPage === currentPath) {
+        if (linkPage === mappedPage) {
           link.setAttribute("aria-current", "page");
 
           const parentDropdown = link.closest(".dropdown");
@@ -101,6 +107,10 @@ Promise.all([
       });
     }
 
+    function closeAllDropdowns() {
+      dropdowns.forEach((dropdown) => dropdown.classList.remove("open"));
+    }
+
     function closeMobileMenu() {
       if (primaryMenu && menuToggle) {
         primaryMenu.classList.remove("active");
@@ -108,6 +118,7 @@ Promise.all([
         menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
         menuToggle.setAttribute("aria-label", "Open menu");
       }
+      closeAllDropdowns();
     }
 
     if (menuToggle && primaryMenu) {
@@ -118,6 +129,10 @@ Promise.all([
           ? '<i class="fa-solid fa-xmark"></i>'
           : '<i class="fa-solid fa-bars"></i>';
         menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+
+        if (!isOpen) {
+          closeAllDropdowns();
+        }
       });
     }
 
@@ -127,9 +142,13 @@ Promise.all([
 
       if (trigger && submenu) {
         trigger.addEventListener("click", (e) => {
-          if (window.innerWidth <= 860) {
+          if (window.innerWidth <= 1024) {
             e.preventDefault();
-            dropdown.classList.toggle("open");
+            const isOpen = dropdown.classList.contains("open");
+            closeAllDropdowns();
+            if (!isOpen) {
+              dropdown.classList.add("open");
+            }
           }
         });
       }
@@ -137,8 +156,13 @@ Promise.all([
 
     document.querySelectorAll(".menu a").forEach((link) => {
       link.addEventListener("click", () => {
-        if (window.innerWidth <= 860 && !link.closest(".dropdown-menu")) {
-          closeMobileMenu();
+        if (window.innerWidth <= 1024) {
+          const insideDropdownMenu = link.closest(".dropdown-menu");
+          const isDropdownTrigger = link.parentElement.classList.contains("dropdown");
+
+          if (insideDropdownMenu || !isDropdownTrigger) {
+            closeMobileMenu();
+          }
         }
       });
     });
@@ -172,9 +196,8 @@ Promise.all([
     setActiveMenu();
 
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 860) {
+      if (window.innerWidth > 1024) {
         closeMobileMenu();
-        dropdowns.forEach((dropdown) => dropdown.classList.remove("open"));
       }
     });
   })
