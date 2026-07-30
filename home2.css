@@ -53,6 +53,7 @@
 .home2-page .hero-content{
   max-width:650px;
   animation:up 1s;
+  margin-top: -10px;
 }
 
 .home2-page .tag{

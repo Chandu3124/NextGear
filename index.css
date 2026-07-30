@@ -63,16 +63,25 @@ select:focus-visible {
   min-height: 90vh;
   max-height: 90vh;
   width: 100%;
-  background-image: url("img1.avif");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 110px 8% 70px;
   overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("img1.avif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  transform: none !important;
+  transition: none !important;
 }
 
 .overlay {
@@ -176,9 +185,7 @@ body:not(.dark) .start-btn:hover,
 body:not(.dark) .booking-btn:hover,
 body:not(.dark) .ct-btn:hover,
 body:not(.dark) .booking-popup button:hover,
-body:not(.dark) .ts-nav:hover,
-body:not(.dark) .ts-prev:hover,
-body:not(.dark) .ts-next:hover,
+
 body:not(.dark) #closeBooking:hover,
 body:not(.dark) #ctBookingBtn:hover,
 body:not(.dark) #exploreServicesBtn:hover,
@@ -443,6 +450,7 @@ body:not(.dark) .btn.secondary:hover {
   transform: translateY(80px);
   transition: 0.8s;
 }
+
 
 .service-wrapper.active .service-box {
   opacity: 1;
@@ -1328,9 +1336,6 @@ body.dark .start-btn:hover,
 body.dark .booking-btn:hover,
 body.dark .ct-btn:hover,
 body.dark .booking-popup button:hover,
-body.dark .ts-nav:hover,
-body.dark .ts-prev:hover,
-body.dark .ts-next:hover,
 body.dark #closeBooking:hover,
 body.dark #ctBookingBtn:hover,
 body.dark #exploreServicesBtn:hover,

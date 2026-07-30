@@ -326,10 +326,10 @@ select{
 .desktop-login{
   display:inline-flex;
 }
-.mobile-login-item a{
-  display: none;
-}
 
+.mobile-login-item a{
+  display:none;
+}
 
 /* HEADER DARK MODE */
 
@@ -390,16 +390,17 @@ body.dark .login:hover{
 
 .footer-grid{
   display:grid;
-  grid-template-columns:2.1fr 1.1fr 1.1fr 1.4fr;
-  gap:56px;
-  padding:60px 0 40px;
+  grid-template-columns:2.05fr 1fr 1fr 1.35fr;
+  gap:40px;
+  padding:52px 0 32px;
+  align-items:flex-start;
 }
 
 .footer-logo{
   display:flex;
   align-items:center;
   gap:8px;
-  margin-bottom:30px;
+  margin-bottom:22px;
 }
 
 .footer-logo img{
@@ -416,8 +417,8 @@ body.dark .login:hover{
 
 .footer-about p{
   color:var(--muted);
-  line-height:1.9;
-  font-size:17px;
+  line-height:1.8;
+  font-size:16px;
   max-width:500px;
   transition:color .35s ease;
 }
@@ -430,35 +431,44 @@ body.dark .login:hover{
   transition:color .35s ease;
 }
 
+.footer-sub-links h4{
+  color:var(--secondary);
+  font-size:17px;
+  font-weight:700;
+  margin:24px 0 14px;
+  transition:color .35s ease;
+}
+
 .line{
   width:46px;
   height:4px;
   background:var(--primary);
   border-radius:50px;
-  margin-bottom:28px;
+  margin-bottom:24px;
 }
 
 .footer nav ul,
 .footer section ul{
   display:flex;
   flex-direction:column;
-  gap:16px;
+  gap:14px;
 }
 
 .footer ul li a{
   color:var(--muted);
   font-size:15px;
   font-weight:400;
+  line-height:1.5;
   transition:color .3s ease,padding-left .3s ease;
 }
 
 .footer ul li a:hover{
   color:var(--primary);
-  padding-left:8px;
+  padding-left:6px;
 }
 
 .contact{
-  gap:18px;
+  gap:16px;
 }
 
 .contact li{
@@ -466,15 +476,15 @@ body.dark .login:hover{
   align-items:flex-start;
   gap:12px;
   color:var(--muted);
-  font-size:16px;
-  line-height:1.7;
+  font-size:15px;
+  line-height:1.6;
 }
 
 .contact li i{
   width:20px;
   color:var(--primary);
-  font-size:18px;
-  margin-top:4px;
+  font-size:17px;
+  margin-top:3px;
   flex-shrink:0;
 }
 
@@ -490,8 +500,8 @@ body.dark .login:hover{
 
 .socials{
   display:flex;
-  gap:16px;
-  margin-top:35px;
+  gap:14px;
+  margin-top:26px;
   flex-wrap:wrap;
 }
 
@@ -513,17 +523,25 @@ body.dark .login:hover{
   background:var(--primary);
   color:#fff;
   border-color:var(--primary);
-  transform:translateY(-5px);
+  transform:translateY(-4px);
+}
+
+.footer-contact-wrap{
+  min-width:0;
+}
+
+.footer-sub-links ul{
+  gap:12px;
 }
 
 .footer-bottom{
-  margin-top:8px;
-  padding:20px 5%;
+  margin-top:4px;
+  padding:18px 5%;
   border-top:1px solid var(--border);
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:20px;
+  gap:16px;
   flex-wrap:wrap;
 }
 
@@ -535,7 +553,7 @@ body.dark .login:hover{
 .footer-bottom-links{
   display:flex;
   align-items:center;
-  gap:20px;
+  gap:18px;
   flex-wrap:wrap;
 }
 
@@ -557,7 +575,8 @@ body.dark .footer{
 }
 
 body.dark .footer-logo h2,
-body.dark .footer h3{
+body.dark .footer h3,
+body.dark .footer-sub-links h4{
   color:var(--footer-dark-heading);
 }
 
@@ -639,7 +658,7 @@ html[dir="rtl"] .dropdown-menu{
 
 html[dir="rtl"] .footer ul li a:hover{
   padding-left:0;
-  padding-right:8px;
+  padding-right:6px;
 }
 
 /* RESPONSIVE */
@@ -659,11 +678,11 @@ html[dir="rtl"] .footer ul li a:hover{
 
   .footer-grid{
     grid-template-columns:1fr 1fr;
-    gap:46px;
+    gap:36px;
   }
 
   .footer h3{
-    font-size:24px;
+    font-size:22px;
   }
 }
 
@@ -827,7 +846,8 @@ html[dir="rtl"] .footer ul li a:hover{
   .footer-grid{
     grid-template-columns:1fr;
     text-align:center;
-    gap:36px;
+    gap:30px;
+    padding:42px 0 24px;
   }
 
   .footer-logo,
@@ -840,12 +860,16 @@ html[dir="rtl"] .footer ul li a:hover{
   }
 
   .line{
-    margin:0 auto 24px;
+    margin:0 auto 20px;
   }
 
   .contact li{
     justify-content:center;
     text-align:left;
+  }
+
+  .footer-sub-links h4{
+    margin:22px 0 12px;
   }
 
   .footer-bottom{
@@ -913,15 +937,32 @@ html[dir="rtl"] .footer ul li a:hover{
   }
 
   .footer-grid{
-    padding:45px 0 30px;
-    gap:30px;
+    padding:36px 0 22px;
+    gap:24px;
   }
 
   .footer h3{
-    font-size:22px;
+    font-size:20px;
+  }
+
+  .footer-sub-links h4{
+    font-size:16px;
+  }
+
+  .footer-about p,
+  .contact li,
+  .footer ul li a,
+  .footer-bottom p,
+  .footer-bottom a{
+    font-size:14px;
+  }
+
+  .socials{
+    gap:12px;
+    margin-top:20px;
   }
 
   .footer-bottom-links{
-    gap:12px 18px;
+    gap:10px 16px;
   }
 }

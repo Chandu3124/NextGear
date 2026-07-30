@@ -38,12 +38,18 @@ Promise.all([
     const dropdowns = document.querySelectorAll(".dropdown");
     const headerLogo = document.getElementById("siteLogo");
     const footerLogo = document.getElementById("footerLogo");
+    const footerYear = document.getElementById("footerYear");
+
+    if (footerYear) {
+      footerYear.textContent = new Date().getFullYear();
+    }
 
     function updateLogoByTheme(isDark) {
       [headerLogo, footerLogo].forEach((logo) => {
         if (!logo) return;
         const lightLogo = logo.dataset.lightLogo;
         const darkLogo = logo.dataset.darkLogo;
+        if (!lightLogo || !darkLogo) return;
         logo.src = isDark ? darkLogo : lightLogo;
       });
     }
@@ -61,6 +67,7 @@ Promise.all([
           "aria-label",
           isDark ? "Switch to light mode" : "Switch to dark mode"
         );
+        themeBtn.setAttribute("aria-pressed", String(isDark));
       }
     }
 
@@ -74,11 +81,13 @@ Promise.all([
           "aria-label",
           isRTL ? "Switch to left to right layout" : "Switch to right to left layout"
         );
+        rtlBtn.setAttribute("aria-pressed", String(isRTL));
       }
     }
 
     function setActiveMenu() {
-      const currentPath = window.location.pathname.split("/").pop().toLowerCase() || "index.html";
+      const currentPath =
+        window.location.pathname.split("/").pop().toLowerCase() || "index.html";
       const navLinks = document.querySelectorAll(".menu a[data-page]");
 
       let mappedPage = currentPath;
@@ -108,7 +117,13 @@ Promise.all([
     }
 
     function closeAllDropdowns() {
-      dropdowns.forEach((dropdown) => dropdown.classList.remove("open"));
+      dropdowns.forEach((dropdown) => {
+        dropdown.classList.remove("open");
+        const trigger = dropdown.querySelector(":scope > a");
+        if (trigger) {
+          trigger.setAttribute("aria-expanded", "false");
+        }
+      });
     }
 
     function closeMobileMenu() {
@@ -136,18 +151,28 @@ Promise.all([
       });
     }
 
-    dropdowns.forEach((dropdown) => {
+    dropdowns.forEach((dropdown, index) => {
       const trigger = dropdown.querySelector(":scope > a");
       const submenu = dropdown.querySelector(".dropdown-menu");
 
       if (trigger && submenu) {
+        if (!submenu.id) {
+          submenu.id = `dropdown-menu-${index + 1}`;
+        }
+
+        trigger.setAttribute("aria-haspopup", "true");
+        trigger.setAttribute("aria-expanded", "false");
+        trigger.setAttribute("aria-controls", submenu.id);
+
         trigger.addEventListener("click", (e) => {
           if (window.innerWidth <= 1024) {
             e.preventDefault();
             const isOpen = dropdown.classList.contains("open");
             closeAllDropdowns();
+
             if (!isOpen) {
               dropdown.classList.add("open");
+              trigger.setAttribute("aria-expanded", "true");
             }
           }
         });
@@ -165,6 +190,19 @@ Promise.all([
           }
         }
       });
+    });
+
+    document.addEventListener("click", (e) => {
+      const clickedInsideMenu = e.target.closest(".nav");
+      if (!clickedInsideMenu && window.innerWidth <= 1024) {
+        closeMobileMenu();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeMobileMenu();
+      }
     });
 
     const savedDirection = safeStorage.get("direction") || "ltr";

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NextGear | Privacy Policy</title>
+  <link rel="stylesheet" href="PP.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="top-actions">
+    <button class="circle-btn" id="rtlToggle" type="button" aria-label="Toggle RTL">
+      <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M4 7h11M4 12h16M4 17h11" />
+        <path d="M18 5l2 2-2 2" />
+        <path d="M18 15l2 2-2 2" />
+      </svg>
+    </button>
+
+    <button class="circle-btn" id="themeToggle" type="button" aria-label="Toggle dark mode">
+      <svg class="btn-icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79Z" />
+      </svg>
+
+      <svg class="btn-icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="4"></circle>
+        <path d="M12 2v2.2M12 19.8V22M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M2 12h2.2M19.8 12H22M4.93 19.07l1.56-1.56M17.51 6.49l1.56-1.56"></path>
+      </svg>
+    </button>
+  </div>
+
+  <section class="policy-page">
+    <div class="container">
+      <div class="policy-card">
+        <div class="brand-row">
+          <a href="index.html" class="logo" aria-label="NextGear home">
+            <img
+              id="siteLogo"
+              src="logo-light.png"
+              alt="NextGear logo"
+              data-light-logo="logo-light.png"
+              data-dark-logo="logo-dark.png"
+            />
+            <h2>NEXT<span>GEAR</span></h2>
+          </a>
+        </div>
+
+        <span class="policy-tag">NextGear Policy</span>
+        <h1>Privacy Policy</h1>
+        <p class="intro">
+          This Privacy Policy explains how NextGear collects, uses, stores, and protects user information when you visit our website or use our driving-related services.
+        </p>
+
+        <div class="policy-section">
+          <h2>1. Information We Collect</h2>
+          <p>We may collect your name, phone number, email address, booking details, and any information you submit through contact forms or registration sections.</p>
+        </div>
+
+        <div class="policy-section">
+          <h2>2. How We Use Your Information</h2>
+          <p>Your information is used to respond to enquiries, manage bookings, improve our services, and provide updates related to learning sessions, support, or website usage.</p>
+        </div>
+
+        <div class="policy-section">
+          <h2>3. Data Protection</h2>
+          <p>We take reasonable measures to keep your information secure and protected from unauthorized access, misuse, or disclosure.</p>
+        </div>
+
+        <div class="policy-section">
+          <h2>4. Third-Party Services</h2>
+          <p>Some parts of our website may use third-party tools such as maps, analytics, or embedded content. These services may collect limited technical data based on their own policies.</p>
+        </div>
+
+        <div class="policy-section">
+          <h2>5. Your Rights</h2>
+          <p>You may request updates or removal of your personal information by contacting us directly through the support details available on our website.</p>
+        </div>
+
+        <div class="policy-section">
+          <h2>6. Policy Updates</h2>
+          <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with the revised effective date.</p>
+        </div>
+
+        <p class="effective-date">Effective Date: 30 July 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const themeToggle = document.getElementById("themeToggle");
+    const rtlToggle = document.getElementById("rtlToggle");
+    const siteLogo = document.getElementById("siteLogo");
+
+    function updateLogoByTheme() {
+      const isDark = document.body.classList.contains("dark");
+      siteLogo.src = isDark ? siteLogo.dataset.darkLogo : siteLogo.dataset.lightLogo;
+    }
+
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      updateLogoByTheme();
+    });
+
+    rtlToggle.addEventListener("click", () => {
+      const html = document.documentElement;
+      html.setAttribute("dir", html.getAttribute("dir") === "rtl" ? "ltr" : "rtl");
+    });
+
+    updateLogoByTheme();
+  </script>
+</body>
+</html>
