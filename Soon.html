@@ -124,6 +124,15 @@
       stroke-linejoin:round;
     }
 
+    .rtl-text-btn{
+      width:auto;
+      min-width:46px;
+      padding:0 14px;
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.4px;
+    }
+
     .card{
       width:min(100%, 520px);
       background:var(--card);
@@ -267,6 +276,12 @@
         height:42px;
       }
 
+      .rtl-text-btn{
+        min-width:42px;
+        padding:0 12px;
+        font-size:12px;
+      }
+
       .icon-btn svg{
         width:17px;
         height:17px;
@@ -307,18 +322,12 @@
       <button
         type="button"
         id="rtlToggle"
-        class="icon-btn"
+        class="icon-btn rtl-text-btn"
         aria-label="Switch to right to left layout"
         aria-pressed="false"
         title="Toggle RTL"
       >
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M7 7h10"></path>
-          <path d="M11 12h6"></path>
-          <path d="M7 17h10"></path>
-          <path d="M7 12l-3-3"></path>
-          <path d="M7 12l-3 3"></path>
-        </svg>
+        RTL
       </button>
 
       <button
@@ -436,21 +445,7 @@
           isRTL ? "Switch to left to right layout" : "Switch to right to left layout"
         );
         rtlBtn.setAttribute("aria-pressed", String(isRTL));
-        rtlBtn.innerHTML = isRTL
-          ? `<svg viewBox="0 0 24 24" aria-hidden="true">
-               <path d="M17 7H7"></path>
-               <path d="M13 12H7"></path>
-               <path d="M17 17H7"></path>
-               <path d="M17 12l3-3"></path>
-               <path d="M17 12l3 3"></path>
-             </svg>`
-          : `<svg viewBox="0 0 24 24" aria-hidden="true">
-               <path d="M7 7h10"></path>
-               <path d="M11 12h6"></path>
-               <path d="M7 17h10"></path>
-               <path d="M7 12l-3-3"></path>
-               <path d="M7 12l-3 3"></path>
-             </svg>`;
+        rtlBtn.textContent = isRTL ? "LTR" : "RTL";
       }
     }
 

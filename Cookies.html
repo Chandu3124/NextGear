@@ -12,11 +12,7 @@
 <body>
   <div class="top-actions">
     <button class="circle-btn" id="rtlToggle" type="button" aria-label="Toggle RTL">
-      <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M4 7h11M4 12h16M4 17h11" />
-        <path d="M18 5l2 2-2 2" />
-        <path d="M18 15l2 2-2 2" />
-      </svg>
+      RTL
     </button>
 
     <button class="circle-btn" id="themeToggle" type="button" aria-label="Toggle dark mode">
@@ -98,17 +94,25 @@
       siteLogo.src = isDark ? siteLogo.dataset.darkLogo : siteLogo.dataset.lightLogo;
     }
 
+    function setDirection(direction) {
+      const isRTL = direction === "rtl";
+      document.documentElement.setAttribute("dir", direction);
+      rtlToggle.textContent = isRTL ? "LTR" : "RTL";
+    }
+
     themeToggle.addEventListener("click", () => {
       document.body.classList.toggle("dark");
       updateLogoByTheme();
     });
 
     rtlToggle.addEventListener("click", () => {
-      const html = document.documentElement;
-      html.setAttribute("dir", html.getAttribute("dir") === "rtl" ? "ltr" : "rtl");
+      const currentDir = document.documentElement.getAttribute("dir") || "ltr";
+      const newDir = currentDir === "rtl" ? "ltr" : "rtl";
+      setDirection(newDir);
     });
 
     updateLogoByTheme();
+    setDirection(document.documentElement.getAttribute("dir") || "ltr");
   </script>
 </body>
 </html>

@@ -77,6 +77,7 @@ Promise.all([
       document.body.classList.toggle("rtl", isRTL);
 
       if (rtlBtn) {
+        rtlBtn.textContent = isRTL ? "LTR" : "RTL";
         rtlBtn.setAttribute(
           "aria-label",
           isRTL ? "Switch to left to right layout" : "Switch to right to left layout"
