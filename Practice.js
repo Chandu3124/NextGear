@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   const startBtn = document.querySelector(".start-practice");
-  const buttons = document.querySelectorAll(".btn");
   const revealItems = document.querySelectorAll(".reveal-item");
 
   const qText = document.getElementById("questionText");
@@ -79,16 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
       questionsSection.scrollIntoView({ behavior: "smooth" });
     });
   }
-
-  buttons.forEach((btn) => {
-    btn.addEventListener("mouseenter", () => {
-      btn.style.transform = "translateY(-3px)";
-    });
-
-    btn.addEventListener("mouseleave", () => {
-      btn.style.transform = "translateY(0)";
-    });
-  });
 
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(

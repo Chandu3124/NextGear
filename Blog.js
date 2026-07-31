@@ -1,34 +1,27 @@
-// section 1
-//==================================
-//       BLOG HERO JAVASCRIPT
-//==================================
-
 const searchInput = document.getElementById("blogSearch");
 const searchBtn = document.getElementById("searchBtn");
+const searchMessage = document.getElementById("searchMessage");
 
-if (searchBtn && searchInput) {
-  searchBtn.addEventListener("click", () => {
+if (searchBtn && searchInput && searchMessage) {
+  const runSearch = () => {
     const value = searchInput.value.trim();
 
     if (value !== "") {
-      alert("Searching resources for: " + value);
+      searchMessage.textContent = `Showing resources for: ${value}`;
     } else {
-      alert("Please enter a driving topic to search");
+      searchMessage.textContent = "Please enter a driving topic to search";
     }
-  });
+  };
+
+  searchBtn.addEventListener("click", runSearch);
 
   searchInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
       event.preventDefault();
-      searchBtn.click();
+      runSearch();
     }
   });
 }
-
-// section 2
-//==================================
-//   BLOG CATEGORY FILTER SCRIPT
-//==================================
 
 const filterButtons = document.querySelectorAll(".filter-btn");
 const resultCards = document.querySelectorAll(".result-card");
@@ -52,11 +45,6 @@ filterButtons.forEach((button) => {
   });
 });
 
-// section 3 & 4
-//==================================
-//   BLOG DETAIL REDIRECT SCRIPT
-//==================================
-
 const redirectButtons = document.querySelectorAll(".redirect-detail");
 
 redirectButtons.forEach((button) => {
@@ -65,40 +53,34 @@ redirectButtons.forEach((button) => {
   });
 });
 
-// section 5
-//==================================
-//   NEWSLETTER SUBSCRIBE SCRIPT
-//==================================
-
 const subscribeBtn = document.getElementById("subscribeBtn");
 const emailInput = document.getElementById("emailInput");
 const message = document.getElementById("message");
 
 if (subscribeBtn && emailInput && message) {
-  subscribeBtn.addEventListener("click", () => {
+  const subscribeUser = () => {
     const email = emailInput.value.trim();
 
     if (email === "") {
       message.textContent = "Please enter your email address";
-      message.style.color = "#ff7900";
       return;
     }
 
     if (!emailInput.checkValidity()) {
       message.textContent = "Please enter a valid email";
-      message.style.color = "#ff7900";
       return;
     }
 
     message.textContent = "Thank you! You are subscribed for driving tips";
-    message.style.color = "#ff7900";
     emailInput.value = "";
-  });
+  };
+
+  subscribeBtn.addEventListener("click", subscribeUser);
 
   emailInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
       event.preventDefault();
-      subscribeBtn.click();
+      subscribeUser();
     }
   });
 }

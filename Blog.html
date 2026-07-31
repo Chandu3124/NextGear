@@ -23,8 +23,6 @@
 
   <!-- section 1 -->
   <section class="blog-hero">
-    <div class="blog-hero-overlay"></div>
-
     <div class="blog-hero-container">
       <div class="blog-hero-content">
         <span class="blog-tag">
@@ -32,11 +30,11 @@
           Driving Knowledge Hub
         </span>
 
-        <h2>
+        <h1>
           Driving Tips &
           <span>Learning</span>
           Resources
-        </h2>
+        </h1>
 
         <p>
           Explore expert driving guides, road safety tips,
@@ -48,27 +46,13 @@
           <input
             type="text"
             id="blogSearch"
+            aria-label="Search driving guides"
             placeholder="Search driving tips, guides..."
           />
           <button id="searchBtn" type="button">Search</button>
         </div>
 
-        <div class="hero-mini-info">
-          <div>
-            <strong>100+</strong>
-            <small>Driving Guides</small>
-          </div>
-
-          <div>
-            <strong>50+</strong>
-            <small>Safety Tips</small>
-          </div>
-
-          <div>
-            <strong>24/7</strong>
-            <small>Learning Support</small>
-          </div>
-        </div>
+        <small id="searchMessage" class="search-message" aria-live="polite"></small>
       </div>
     </div>
   </section>
@@ -104,31 +88,22 @@
         <div class="category-results">
           <div class="result-card" data-category="tips">
             <h3>Driving Tips</h3>
-            <p>
-              Improve confidence with practical
-              driving techniques.
-            </p>
+            <p>Improve confidence with practical driving techniques.</p>
           </div>
 
           <div class="result-card" data-category="rules">
             <h3>Traffic Rules</h3>
-            <p>
-              Learn road signs and safe traffic habits.
-            </p>
+            <p>Learn road signs and safe traffic habits.</p>
           </div>
 
           <div class="result-card" data-category="simulator">
             <h3>Simulator Training</h3>
-            <p>
-              Practice realistic driving situations safely.
-            </p>
+            <p>Practice realistic driving situations safely.</p>
           </div>
 
           <div class="result-card" data-category="test">
             <h3>Test Preparation</h3>
-            <p>
-              Prepare smarter for theory examinations.
-            </p>
+            <p>Prepare smarter for theory examinations.</p>
           </div>
         </div>
       </div>
@@ -155,66 +130,46 @@
       <div class="blog-grid">
         <article class="blog-card">
           <div class="blog-image">
-            <img src="img21.jpg" alt="Driving Tips" />
+            <img src="img21.jpg" alt="Driving Tips" width="600" height="400" />
             <span>Driving Tips</span>
           </div>
 
           <div class="blog-content">
-            <h3>
-              Essential Driving Habits
-              Every Beginner Needs
-            </h3>
-
+            <h3>Essential Driving Habits Every Beginner Needs</h3>
             <p>
-              Learn simple techniques that help
-              new drivers build confidence and
-              improve control.
+              Learn simple techniques that help new drivers build confidence and improve control.
             </p>
-
-            <button type="button" class="redirect-detail">Read More →</button>
+            <button type="button" class="redirect-detail">Explore More →</button>
           </div>
         </article>
 
         <article class="blog-card">
           <div class="blog-image">
-            <img src="img22.jpg" alt="Traffic Rules" />
+            <img src="img22.jpg" alt="Traffic Rules" width="600" height="400" />
             <span>Traffic Rules</span>
           </div>
 
           <div class="blog-content">
-            <h3>
-              Understanding Road Signs
-              & Safety Rules
-            </h3>
-
+            <h3>Understanding Road Signs & Safety Rules</h3>
             <p>
-              Improve your road awareness by
-              understanding important traffic
-              signs and regulations.
+              Improve your road awareness by understanding important traffic signs and regulations.
             </p>
-
-            <button type="button" class="redirect-detail">Read More →</button>
+            <button type="button" class="redirect-detail">Explore More →</button>
           </div>
         </article>
 
         <article class="blog-card">
           <div class="blog-image">
-            <img src="img23.jpg" alt="Simulator Training" />
+            <img src="img23.jpg" alt="Simulator Training" width="600" height="400" />
             <span>Simulator Training</span>
           </div>
 
           <div class="blog-content">
-            <h3>
-              How Simulators Improve
-              Driving Skills
-            </h3>
-
+            <h3>How Simulators Improve Driving Skills</h3>
             <p>
-              Experience realistic situations
-              and practice safer driving methods.
+              Experience realistic situations and practice safer driving methods.
             </p>
-
-            <button type="button" class="redirect-detail">Read More →</button>
+            <button type="button" class="redirect-detail">Explore More →</button>
           </div>
         </article>
       </div>
@@ -232,52 +187,42 @@
         </h2>
 
         <p>
-          Explore our most valuable guides
-          created to improve driving skills,
+          Explore our most valuable guides created to improve driving skills,
           safety awareness and test preparation.
         </p>
       </div>
 
       <div class="featured-layout">
         <article class="main-feature-card">
-          <img src="img26.avif" alt="Driving Mistakes" />
+          <img src="img26.avif" alt="Driving Mistakes" width="900" height="700" />
 
           <div class="feature-overlay">
             <span>Most Popular</span>
-
-            <h3>
-              Top 10 Driving Mistakes
-              Beginners Make
-            </h3>
-
+            <h3>Top 10 Driving Mistakes Beginners Make</h3>
             <p>
-              Learn common mistakes new drivers
-              make and discover simple ways
+              Learn common mistakes new drivers make and discover simple ways
               to drive with confidence.
             </p>
-
-            <button type="button" class="redirect-detail">Read Article →</button>
+            <button type="button" class="redirect-detail">Explore More →</button>
           </div>
         </article>
 
         <div class="side-feature-posts">
           <article class="small-feature-card">
-            <img src="img24.jpg" alt="Safe Driving" />
-
+            <img src="img24.jpg" alt="Safe Driving" width="600" height="400" />
             <div>
               <span>Safety</span>
               <h4>Smart Road Safety Rules</h4>
-              <button type="button" class="redirect-detail">Read More</button>
+              <button type="button" class="redirect-detail">Explore More</button>
             </div>
           </article>
 
           <article class="small-feature-card">
-            <img src="img25.jpg" alt="Simulator" />
-
+            <img src="img25.jpg" alt="Simulator" width="600" height="400" />
             <div>
               <span>Simulator</span>
               <h4>Practice Before Real Driving</h4>
-              <button type="button" class="redirect-detail">Read More</button>
+              <button type="button" class="redirect-detail">Explore More</button>
             </div>
           </article>
         </div>
@@ -298,20 +243,20 @@
 
         <p>
           Get expert driving guides, road safety updates,
-          simulator tips and preparation resources
-          directly in your inbox.
+          simulator tips and preparation resources directly in your inbox.
         </p>
 
         <div class="newsletter-box">
           <input
             type="email"
             id="emailInput"
+            aria-label="Enter your email address"
             placeholder="Enter your email address"
           />
           <button id="subscribeBtn" type="button">Subscribe</button>
         </div>
 
-        <small id="message"></small>
+        <small id="message" aria-live="polite"></small>
       </div>
 
       <div class="newsletter-side">

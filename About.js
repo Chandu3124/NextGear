@@ -6,8 +6,8 @@ if (aboutRoot) {
   const progressBars = aboutRoot.querySelectorAll('.progress-fill');
   const impactSection = aboutRoot.querySelector('.impact-section');
   const body = document.body;
-  const motionReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
+  const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let motionReduced = motionQuery.matches;
   let countersStarted = false;
 
   const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -45,11 +45,9 @@ if (aboutRoot) {
   function startCounters() {
     counters.forEach((counter) => {
       const target = Number(counter.dataset.target || 0);
-      if (motionReduced) {
-        counter.textContent = target;
-      } else {
-        animateCounter(counter, target);
-      }
+      counter.textContent = motionReduced ? target : 0;
+      if (!motionReduced) animateCounter(counter, target);
+      if (motionReduced) counter.textContent = target;
     });
 
     progressBars.forEach((bar) => {
@@ -118,16 +116,22 @@ if (aboutRoot) {
 
   setupThemeToggle();
 
+  if (motionQuery.addEventListener) {
+    motionQuery.addEventListener('change', (event) => {
+      motionReduced = event.matches;
+    });
+  }
+
   if (!motionReduced) {
     aboutRoot.querySelectorAll('.floating-box').forEach((box, index) => {
       box.animate(
         [
           { transform: 'translateY(0px)' },
-          { transform: 'translateY(-8px)' },
+          { transform: 'translateY(-6px)' },
           { transform: 'translateY(0px)' }
         ],
         {
-          duration: 2600 + index * 250,
+          duration: 2400 + index * 220,
           iterations: Infinity,
           easing: 'ease-in-out'
         }
