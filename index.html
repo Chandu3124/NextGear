@@ -1,590 +1,598 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NextGear</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NextGear</title>
+  <link rel="icon" type="image/png" sizes="184x184" href="logo-light.png" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+  <link rel="stylesheet" href="global.css" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <div id="navbar"></div>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
-    />
+  <main id="main-content">
+    <section class="hero">
+      <div class="overlay"></div>
 
-    <link rel="stylesheet" href="global.css" />
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <div id="navbar"></div>
+      <div class="hero-content">
+        <span class="hero-tag section-tag">SMART DRIVING LEARNING</span>
 
-    <main id="main-content">
-      <section class="hero">
-        <div class="overlay"></div>
+        <h1>
+          Master Driving with
+          <span>Simulator & Smart Tests</span>
+        </h1>
 
-        <div class="hero-content">
-          <span class="hero-tag section-tag">SMART DRIVING LEARNING</span>
+        <p id="typing"></p>
 
-          <h1>
-            Master Driving with
-            <span>Simulator & Smart Tests</span>
-          </h1>
+        <div class="buttons">
+          <a href="#booking" class="btn primary" id="heroBookBtn">Book Simulator</a>
+          <a href="Test.html" class="btn secondary" id="heroStartTestBtn">Start Test</a>
+        </div>
 
-          <p id="typing"></p>
-
-          <div class="buttons">
-            <a href="#booking" class="btn primary" id="heroBookBtn">Book Simulator</a>
-            <a href="practice.html" class="btn secondary" id="heroStartTestBtn">Start Test</a>
+        <div class="hero-mini-info">
+          <div class="hero-mini-card">
+            <strong>Safe Practice</strong>
+            <span>Train before real-road driving</span>
           </div>
 
-          <div class="hero-mini-info">
-            <div class="hero-mini-card">
-              <strong>Safe Practice</strong>
-              <span>Train before real-road driving</span>
-            </div>
-
-            <div class="hero-mini-card">
-              <strong>Mock Tests</strong>
-              <span>Boost confidence with quick theory sessions</span>
-            </div>
+          <div class="hero-mini-card">
+            <strong>Mock Tests</strong>
+            <span>Boost confidence with quick theory sessions</span>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="about" id="about">
-        <div class="about-container">
-          <div class="about-image reveal">
-            <img src="imh2.avif" alt="Driving Training" />
-          </div>
-
-          <div class="about-content reveal">
-            <span class="section-tag">ABOUT OUR CENTER</span>
-
-            <h2>
-              Learn Safe Driving with
-              <span>Modern Simulator Training</span>
-            </h2>
-
-            <p>
-              Our Driving Simulator & Smart Test Center helps learners build
-              confidence before getting behind the wheel. Using advanced
-              simulator technology and interactive theory tests, we create a
-              realistic driving experience in a completely safe environment.
-            </p>
-
-            <div class="about-features">
-              <div class="feature-card">
-                <h3>Realistic Simulator</h3>
-                <p>Experience real-road situations without any risk.</p>
-              </div>
-
-              <div class="feature-card">
-                <h3>Build Confidence</h3>
-                <p>Practice repeatedly until you drive confidently.</p>
-              </div>
-
-              <div class="feature-card">
-                <h3>Smart Theory Tests</h3>
-                <p>Prepare for your driving exam with interactive quizzes.</p>
-              </div>
-            </div>
-          </div>
+    <section class="about" id="about">
+      <div class="about-container">
+        <div class="about-image reveal">
+          <img src="imh2.avif" alt="Driving Training" />
         </div>
-      </section>
 
-      <section class="service-zone" id="services">
-        <div class="service-title">
-          <span>OUR SERVICES</span>
-          <h2>Complete <span>Learning Experience</span> for Every Driver</h2>
+        <div class="about-content reveal">
+          <span class="section-tag">ABOUT OUR CENTER</span>
+
+          <h2>
+            Learn Safe Driving with
+            <span>Modern Simulator Training</span>
+          </h2>
+
           <p>
-            We combine smart technology, practical simulator sessions, expert
-            guidance, and progress analysis to help learners become safe and
-            confident drivers.
+            Our Driving Simulator & Smart Test Center helps learners build confidence before
+            getting behind the wheel. Using advanced simulator technology and interactive
+            theory tests, we create a realistic driving experience in a completely safe environment.
           </p>
-        </div>
 
-        <div class="service-wrapper">
-          <div class="line-progress"></div>
-
-          <article class="service-box">
-            <div class="hexagon"><i data-lucide="car"></i></div>
-            <h3>Driving Simulator Training</h3>
-            <p>
-              Practice realistic road situations in a safe virtual environment
-              before driving on public roads.
-            </p>
-          </article>
-
-          <article class="service-box">
-            <div class="hexagon"><i data-lucide="book-open"></i></div>
-            <h3>Theory Test Practice</h3>
-            <p>
-              Improve your knowledge with mock driving exams, traffic signs, and
-              road safety quizzes.
-            </p>
-          </article>
-
-          <article class="service-box">
-            <div class="hexagon"><i data-lucide="chart-column"></i></div>
-            <h3>Performance Tracking</h3>
-            <p>
-              Analyze every practice session using detailed reports and
-              improvement statistics.
-            </p>
-          </article>
-
-          <article class="service-box">
-            <div class="hexagon"><i data-lucide="badge-check"></i></div>
-            <h3>Expert Guidance</h3>
-            <p>
-              Learn from certified instructors who provide personalized tips and
-              continuous support.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="simx-section" id="simulator">
-        <div class="simx-container">
-          <div class="simx-visual">
-            <div class="simx-main-card">
-              <img src="img3.avif" alt="Driving Simulator" />
-              <div class="simx-status">● Simulator Running</div>
+          <div class="about-features">
+            <div class="feature-card">
+              <h3>Realistic Simulator</h3>
+              <p>Experience real-road situations without any risk.</p>
             </div>
 
-            <div class="simx-floating simx-one">
-              <i data-lucide="route"></i> Urban Traffic
-            </div>
-            <div class="simx-floating simx-two">
-              <i data-lucide="cloud-rain-wind"></i> Rain Mode
-            </div>
-            <div class="simx-floating simx-three">
-              <i data-lucide="circle-parking"></i> Parking Test
+            <div class="feature-card">
+              <h3>Build Confidence</h3>
+              <p>Practice repeatedly until you drive confidently.</p>
             </div>
 
-            <div class="simx-orbit"></div>
-          </div>
-
-          <div class="simx-content">
-            <span class="simx-tag">DRIVING SIMULATOR</span>
-
-            <h2>
-              Practice Every <span>Driving Situation</span> Before You Drive on
-              Real Roads
-            </h2>
-
-            <p>
-              Experience highways, city traffic, parking, night driving, rain,
-              emergency braking, and difficult road conditions inside our
-              advanced driving simulator.
-            </p>
-
-            <div class="simx-benefits">
-              <div class="simx-chip">
-                <i data-lucide="shield-check"></i><span>Safe Practice</span>
-              </div>
-              <div class="simx-chip">
-                <i data-lucide="car-front"></i><span>Real Driving Feel</span>
-              </div>
-              <div class="simx-chip">
-                <i data-lucide="moon-star"></i><span>Night Driving</span>
-              </div>
-              <div class="simx-chip">
-                <i data-lucide="traffic-cone"></i><span>Traffic Signals</span>
-              </div>
+            <div class="feature-card">
+              <h3>Smart Theory Tests</h3>
+              <p>Prepare for your driving exam with interactive quizzes.</p>
             </div>
-
-            <div class="simx-stats">
-              <div class="simx-stat">
-                <h3 class="counter" data-target="25">0</h3>
-                <span>Driving Scenarios</span>
-              </div>
-
-              <div class="simx-stat">
-                <h3 class="counter" data-target="100">0</h3>
-                <span>Safe Practice</span>
-              </div>
-
-              <div class="simx-stat">
-                <h3 class="counter" data-target="95">0</h3>
-                <span>Real Feel %</span>
-              </div>
-            </div>
-
-            <button class="simx-btn" id="exploreServicesBtn" type="button">
-              Explore Simulator
-            </button>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="theory-section" id="theory-test">
-        <h2 class="section-title">
-          <span class="black">Theory Test</span> <span>Practice</span>
-        </h2>
-
-        <p class="section-subtitle">
-          We provide structured theory test practice sessions to help you
-          prepare confidently.
+    <section class="service-zone" id="services">
+      <div class="service-title">
+        <span>OUR SERVICES</span>
+        <h2>Complete <span>Learning Experience</span> for Every Driver</h2>
+        <p>
+          We combine smart technology, practical simulator sessions, expert guidance,
+          and progress analysis to help learners become safe and confident drivers.
         </p>
+      </div>
 
-        <div class="theory-box">
-          <div class="theory-info">
-            <h3>Mock Test Environment</h3>
-            <p>
-              Practice timed theory exams and track your readiness before
-              attempting the real test.
-            </p>
+      <div class="service-wrapper">
+        <div class="line-progress"></div>
 
-            <a href="practice.html" id="startTestBtn" class="simx-btn theory-btn">Start Mock Test</a>
+        <article class="service-box">
+          <div class="hexagon"><i data-lucide="car"></i></div>
+          <h3>Driving Simulator Training</h3>
+          <p>Practice realistic road situations in a safe virtual environment before driving on public roads.</p>
+        </article>
+
+        <article class="service-box">
+          <div class="hexagon"><i data-lucide="book-open"></i></div>
+          <h3>Theory Test Practice</h3>
+          <p>Improve your knowledge with mock driving exams, traffic signs, and road safety quizzes.</p>
+        </article>
+
+        <article class="service-box">
+          <div class="hexagon"><i data-lucide="chart-column"></i></div>
+          <h3>Performance Tracking</h3>
+          <p>Analyze every practice session using detailed reports and improvement statistics.</p>
+        </article>
+
+        <article class="service-box">
+          <div class="hexagon"><i data-lucide="badge-check"></i></div>
+          <h3>Expert Guidance</h3>
+          <p>Learn from certified instructors who provide personalized tips and continuous support.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="simx-section" id="simulator">
+      <div class="simx-container">
+        <div class="simx-visual">
+          <div class="simx-main-card">
+            <img src="img3.avif" alt="Driving Simulator" />
+            <div class="simx-status">● Simulator Running</div>
           </div>
 
-          <div class="theory-panel">
-            <div class="panel-card">
-              <h4>Timer</h4>
-              <span id="timer">00:00</span>
+          <div class="simx-floating simx-one">
+            <i data-lucide="route"></i> Urban Traffic
+          </div>
+          <div class="simx-floating simx-two">
+            <i data-lucide="cloud-rain-wind"></i> Rain Mode
+          </div>
+          <div class="simx-floating simx-three">
+            <i data-lucide="circle-parking"></i> Parking Test
+          </div>
+
+          <div class="simx-orbit"></div>
+        </div>
+
+        <div class="simx-content">
+          <span class="simx-tag">DRIVING SIMULATOR</span>
+
+          <h2>
+            Practice Every <span>Driving Situation</span> Before You Drive on Real Roads
+          </h2>
+
+          <p>
+            Experience highways, city traffic, parking, night driving, rain,
+            emergency braking, and difficult road conditions inside our advanced driving simulator.
+          </p>
+
+          <div class="simx-benefits">
+            <div class="simx-chip"><i data-lucide="shield-check"></i><span>Safe Practice</span></div>
+            <div class="simx-chip"><i data-lucide="car-front"></i><span>Real Driving Feel</span></div>
+            <div class="simx-chip"><i data-lucide="moon-star"></i><span>Night Driving</span></div>
+            <div class="simx-chip"><i data-lucide="traffic-cone"></i><span>Traffic Signals</span></div>
+          </div>
+
+          <div class="simx-stats">
+            <div class="simx-stat">
+              <h3>
+                <span class="counter stat-number" data-target="25">0</span><span class="stat-symbol">+</span>
+              </h3>
+              <span>Driving Scenarios</span>
             </div>
 
-            <div class="panel-card">
-              <h4>Score Preview</h4>
-              <span id="score">0%</span>
+            <div class="simx-stat">
+              <h3>
+                <span class="counter stat-number" data-target="100">0</span><span class="stat-symbol">%</span>
+              </h3>
+              <span>Safe Practice</span>
+            </div>
+
+            <div class="simx-stat">
+              <h3>
+                <span class="counter stat-number" data-target="95">0</span><span class="stat-symbol">%</span>
+              </h3>
+              <span>Real Feel</span>
+            </div>
+          </div>
+
+          <button class="simx-btn" id="exploreServicesBtn" type="button">Explore Simulator</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="theory-section" id="theory-test">
+      <h2 class="section-title">
+        <span class="black">Theory Test</span> <span>Practice</span>
+      </h2>
+
+      <p class="section-subtitle">
+        We provide structured theory test practice sessions to help you prepare confidently.
+      </p>
+
+      <div class="theory-box">
+        <div class="theory-info">
+          <h3>Mock Test Environment</h3>
+          <p>
+            Practice timed theory exams and track your readiness before attempting the real test.
+          </p>
+
+          <a href="Test.html" id="startTestBtn" class="simx-btn theory-btn">Start Mock Test</a>
+        </div>
+
+        <div class="theory-panel">
+          <div class="panel-card">
+            <h4>Timer</h4>
+            <span id="timer">00:00</span>
+          </div>
+
+          <div class="panel-card">
+            <h4>Score Preview</h4>
+            <span id="score">0%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pgx-section" id="progress">
+      <div class="pgx-heading">
+        <span>LEARNING PROGRESS</span>
+        <h2>Track Your <span>Driving Readiness</span></h2>
+        <p>
+          Monitor your improvement through practical simulator sessions,
+          theory practice, and expert evaluations before your driving test.
+        </p>
+      </div>
+
+      <div class="pgx-container">
+        <div class="pgx-bars">
+          <div class="pgx-item">
+            <div class="pgx-info">
+              <span>Simulator Practice</span>
+              <span>90%</span>
+            </div>
+            <div class="pgx-track">
+              <div class="pgx-fill" data-width="90"></div>
+            </div>
+          </div>
+
+          <div class="pgx-item">
+            <div class="pgx-info">
+              <span>Theory Knowledge</span>
+              <span>82%</span>
+            </div>
+            <div class="pgx-track">
+              <div class="pgx-fill" data-width="82"></div>
+            </div>
+          </div>
+
+          <div class="pgx-item">
+            <div class="pgx-info">
+              <span>Road Awareness</span>
+              <span>76%</span>
+            </div>
+            <div class="pgx-track">
+              <div class="pgx-fill" data-width="76"></div>
+            </div>
+          </div>
+
+          <div class="pgx-item">
+            <div class="pgx-info">
+              <span>Parking Skills</span>
+              <span>68%</span>
+            </div>
+            <div class="pgx-track">
+              <div class="pgx-fill" data-width="68"></div>
             </div>
           </div>
         </div>
-      </section>
 
-      <section class="pgx-section" id="progress">
-        <div class="pgx-heading">
-          <span>LEARNING PROGRESS</span>
-          <h2>Track Your <span>Driving Readiness</span></h2>
+        <div class="pgx-levels">
+          <div class="pgx-circle" data-percent="35">
+            <svg width="150" height="150">
+              <circle class="pgx-bg" cx="75" cy="75" r="60"></circle>
+              <circle class="pgx-ring" cx="75" cy="75" r="60"></circle>
+            </svg>
+            <div class="pgx-text">
+              <strong>35%</strong>
+              <small>Beginner</small>
+            </div>
+          </div>
+
+          <div class="pgx-circle" data-percent="70">
+            <svg width="150" height="150">
+              <circle class="pgx-bg" cx="75" cy="75" r="60"></circle>
+              <circle class="pgx-ring" cx="75" cy="75" r="60"></circle>
+            </svg>
+            <div class="pgx-text">
+              <strong>70%</strong>
+              <small>Intermediate</small>
+            </div>
+          </div>
+
+          <div class="pgx-circle" data-percent="100">
+            <svg width="150" height="150">
+              <circle class="pgx-bg" cx="75" cy="75" r="60"></circle>
+              <circle class="pgx-ring" cx="75" cy="75" r="60"></circle>
+            </svg>
+            <div class="pgx-text">
+              <strong>100%</strong>
+              <small>Ready</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING SECTION MOVED ABOVE BOOKING -->
+    <section class="pricing-section" id="pricing">
+      <div class="pricing-header">
+        <span class="pricing-tag">PRICING PLANS</span>
+        <h2>Choose Your <span>Learning Plan</span></h2>
+        <p>
+          Flexible simulator and theory packages designed for beginners,
+          regular learners, and students preparing for their final test.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="pricing-card">
+          <span class="pricing-badge">Starter</span>
+          <h3>Single Session</h3>
+          <div class="pricing-price">₹499 <small>/ session</small></div>
+          <ul class="pricing-features">
+            <li><i data-lucide="check"></i><span>1 simulator session</span></li>
+            <li><i data-lucide="check"></i><span>Basic driving scenarios</span></li>
+            <li><i data-lucide="check"></i><span>Quick performance review</span></li>
+            <li><i data-lucide="check"></i><span>Theory test access</span></li>
+          </ul>
+          <a href="#booking" class="pricing-btn">Book Starter</a>
+        </article>
+
+        <article class="pricing-card pricing-card-featured">
+          <span class="pricing-badge featured-badge">Most Popular</span>
+          <h3>Smart Learner</h3>
+          <div class="pricing-price">₹1,999 <small>/ 5 sessions</small></div>
+          <ul class="pricing-features">
+            <li><i data-lucide="check"></i><span>5 simulator sessions</span></li>
+            <li><i data-lucide="check"></i><span>Parking + traffic practice</span></li>
+            <li><i data-lucide="check"></i><span>Progress tracking report</span></li>
+            <li><i data-lucide="check"></i><span>Unlimited mock theory tests</span></li>
+          </ul>
+          <a href="#booking" class="pricing-btn">Choose Smart Learner</a>
+        </article>
+
+        <article class="pricing-card">
+          <span class="pricing-badge">Pro</span>
+          <h3>Test Ready Pack</h3>
+          <div class="pricing-price">₹3,499 <small>/ 10 sessions</small></div>
+          <ul class="pricing-features">
+            <li><i data-lucide="check"></i><span>10 simulator sessions</span></li>
+            <li><i data-lucide="check"></i><span>Advanced road situations</span></li>
+            <li><i data-lucide="check"></i><span>Instructor guidance</span></li>
+            <li><i data-lucide="check"></i><span>Full theory preparation</span></li>
+          </ul>
+          <a href="#booking" class="pricing-btn">Choose Pro</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="booking-section" id="booking">
+      <div class="booking-container">
+        <div class="booking-left">
+          <span class="booking-tag">Simulator Booking</span>
+
+          <h2>Book Your <span>Driving Simulator</span> Session</h2>
+
           <p>
-            Monitor your improvement through practical simulator sessions,
-            theory practice, and expert evaluations before your driving test.
+            Select your preferred date and time to reserve your driving simulator experience.
+            Practice confidently before hitting the real roads.
+          </p>
+
+          <div class="booking-features">
+            <div class="booking-feature">
+              <i data-lucide="calendar-check-2"></i><span>Flexible Schedule</span>
+            </div>
+            <div class="booking-feature">
+              <i data-lucide="clock-3"></i><span>Smart Time Slots</span>
+            </div>
+            <div class="booking-feature">
+              <i data-lucide="circle-check-big"></i><span>Instant Confirmation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="booking-card">
+          <h3>Reserve Now</h3>
+
+          <form id="bookingForm">
+            <div class="booking-input">
+              <label for="bookingDate">Select Date</label>
+              <input type="date" id="bookingDate" required />
+            </div>
+
+            <div class="booking-input">
+              <label for="bookingTime">Select Time</label>
+              <select id="bookingTime" required>
+                <option value="">Choose Time</option>
+                <option>09:00 AM</option>
+                <option>10:00 AM</option>
+                <option>11:00 AM</option>
+                <option>12:00 PM</option>
+                <option>02:00 PM</option>
+                <option>03:00 PM</option>
+                <option>04:00 PM</option>
+                <option>05:00 PM</option>
+              </select>
+            </div>
+
+            <button type="submit" class="booking-btn">Confirm Booking</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="booking-popup" id="bookingPopup">
+        <div class="booking-popup-box">
+          <div class="booking-check">✓</div>
+          <h3>Booking Confirmed!</h3>
+          <p id="bookingMessage"></p>
+          <button id="closeBooking" type="button">Close</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="ts-section" id="testimonials">
+      <div class="ts-header">
+        <span class="ts-tag">Student Reviews</span>
+        <h2>What Our <span>Students Say</span></h2>
+        <p>
+          Hear from learners who gained confidence through our driving simulator
+          and smart theory practice tests.
+        </p>
+      </div>
+
+      <div class="ts-slider">
+        <button class="ts-nav ts-prev" type="button" aria-label="Previous testimonial">&#10094;</button>
+
+        <div class="ts-wrapper">
+          <div class="ts-track">
+            <div class="ts-card">
+              <div class="ts-stars ts-center-stars">
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+              </div>
+
+              <p class="ts-text ts-center-text">
+                "The driving simulator helped me overcome my fear of driving.
+                The realistic experience made me confident before my road test."
+              </p>
+
+              <div class="ts-user ts-center-user">
+                <div class="ts-avatar">A</div>
+                <div class="ts-user-meta">
+                  <h4>Arjun Kumar</h4>
+                  <span>Driving Student</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="ts-card">
+              <div class="ts-stars ts-center-stars">
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+              </div>
+
+              <p class="ts-text ts-center-text">
+                "The theory practice tests were amazing. I passed my learner's exam
+                on my first attempt with full confidence."
+              </p>
+
+              <div class="ts-user ts-center-user">
+                <div class="ts-avatar">S</div>
+                <div class="ts-user-meta">
+                  <h4>Sneha Reddy</h4>
+                  <span>Theory Test Student</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="ts-card">
+              <div class="ts-stars ts-center-stars">
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+              </div>
+
+              <p class="ts-text ts-center-text">
+                "Booking sessions was simple and the instructors were very supportive.
+                Highly recommended for beginners."
+              </p>
+
+              <div class="ts-user ts-center-user">
+                <div class="ts-avatar">R</div>
+                <div class="ts-user-meta">
+                  <h4>Rahul Sharma</h4>
+                  <span>Simulator Learner</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="ts-nav ts-next" type="button" aria-label="Next testimonial">&#10095;</button>
+      </div>
+
+      <div class="ts-dots">
+        <span class="ts-dot active"></span>
+        <span class="ts-dot"></span>
+        <span class="ts-dot"></span>
+      </div>
+    </section>
+
+    <section class="ct-section" id="contact">
+      <div class="ct-container">
+        <div class="ct-header">
+          <span class="ct-tag">Contact Us</span>
+          <h2>Get in Touch With Our <span>Driving Experts</span></h2>
+          <p>
+            Have questions about simulator training or theory tests?
+            Contact us and take your first step towards confident driving.
           </p>
         </div>
 
-        <div class="pgx-container">
-          <div class="pgx-bars">
-            <div class="pgx-item">
-              <div class="pgx-info">
-                <span>Simulator Practice</span>
-                <span>90%</span>
-              </div>
-              <div class="pgx-track">
-                <div class="pgx-fill" data-width="90"></div>
+        <div class="ct-content">
+          <div class="ct-details">
+            <div class="ct-card">
+              <div class="ct-icon"><i data-lucide="map-pin"></i></div>
+              <div>
+                <h3>Location</h3>
+                <p>NextGear Driving Simulator Center, Hyderabad, India</p>
               </div>
             </div>
 
-            <div class="pgx-item">
-              <div class="pgx-info">
-                <span>Theory Knowledge</span>
-                <span>82%</span>
-              </div>
-              <div class="pgx-track">
-                <div class="pgx-fill" data-width="82"></div>
+            <div class="ct-card">
+              <div class="ct-icon"><i data-lucide="phone"></i></div>
+              <div>
+                <h3>Phone</h3>
+                <p>+91 83417 33996</p>
               </div>
             </div>
 
-            <div class="pgx-item">
-              <div class="pgx-info">
-                <span>Road Awareness</span>
-                <span>76%</span>
-              </div>
-              <div class="pgx-track">
-                <div class="pgx-fill" data-width="76"></div>
-              </div>
-            </div>
-
-            <div class="pgx-item">
-              <div class="pgx-info">
-                <span>Parking Skills</span>
-                <span>68%</span>
-              </div>
-              <div class="pgx-track">
-                <div class="pgx-fill" data-width="68"></div>
+            <div class="ct-card">
+              <div class="ct-icon"><i data-lucide="mail"></i></div>
+              <div>
+                <h3>Email</h3>
+                <p>info@nextgear.com</p>
               </div>
             </div>
           </div>
 
-          <div class="pgx-levels">
-            <div class="pgx-circle" data-percent="35">
-              <svg width="150" height="150">
-                <circle class="pgx-bg" cx="75" cy="75" r="60"></circle>
-                <circle class="pgx-ring" cx="75" cy="75" r="60"></circle>
-              </svg>
-              <div class="pgx-text">
-                <strong>35%</strong>
-                <small>Beginner</small>
-              </div>
-            </div>
-
-            <div class="pgx-circle" data-percent="70">
-              <svg width="150" height="150">
-                <circle class="pgx-bg" cx="75" cy="75" r="60"></circle>
-                <circle class="pgx-ring" cx="75" cy="75" r="60"></circle>
-              </svg>
-              <div class="pgx-text">
-                <strong>70%</strong>
-                <small>Intermediate</small>
-              </div>
-            </div>
-
-            <div class="pgx-circle" data-percent="100">
-              <svg width="150" height="150">
-                <circle class="pgx-bg" cx="75" cy="75" r="60"></circle>
-                <circle class="pgx-ring" cx="75" cy="75" r="60"></circle>
-              </svg>
-              <div class="pgx-text">
-                <strong>100%</strong>
-                <small>Ready</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="booking-section" id="booking">
-        <div class="booking-container">
-          <div class="booking-left">
-            <span class="booking-tag">Simulator Booking</span>
-
-            <h2>Book Your <span>Driving Simulator</span> Session</h2>
-
-            <p>
-              Select your preferred date and time to reserve your driving
-              simulator experience. Practice confidently before hitting the real
-              roads.
-            </p>
-
-            <div class="booking-features">
-              <div class="booking-feature">
-                <i data-lucide="calendar-check-2"></i><span>Flexible Schedule</span>
-              </div>
-              <div class="booking-feature">
-                <i data-lucide="clock-3"></i><span>Smart Time Slots</span>
-              </div>
-              <div class="booking-feature">
-                <i data-lucide="circle-check-big"></i><span>Instant Confirmation</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="booking-card">
-            <h3>Reserve Now</h3>
-
-            <form id="bookingForm">
-              <div class="booking-input">
-                <label for="bookingDate">Select Date</label>
-                <input type="date" id="bookingDate" required />
-              </div>
-
-              <div class="booking-input">
-                <label for="bookingTime">Select Time</label>
-                <select id="bookingTime" required>
-                  <option value="">Choose Time</option>
-                  <option>09:00 AM</option>
-                  <option>10:00 AM</option>
-                  <option>11:00 AM</option>
-                  <option>12:00 PM</option>
-                  <option>02:00 PM</option>
-                  <option>03:00 PM</option>
-                  <option>04:00 PM</option>
-                  <option>05:00 PM</option>
-                </select>
-              </div>
-
-              <button type="submit" class="booking-btn">Confirm Booking</button>
-            </form>
+          <div class="ct-map">
+            <iframe
+              src="https://maps.google.com/maps?q=hyderabad&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              loading="lazy"
+              title="Hyderabad location map"
+            ></iframe>
           </div>
         </div>
 
-        <div class="booking-popup" id="bookingPopup">
-          <div class="booking-popup-box">
-            <div class="booking-check">✓</div>
-            <h3>Booking Confirmed!</h3>
-            <p id="bookingMessage"></p>
-            <button id="closeBooking" type="button">Close</button>
-          </div>
+        <div class="ct-cta">
+          <h3>Ready to Become a Confident Driver?</h3>
+          <p>Book your simulator session today and start learning smarter.</p>
+          <button class="ct-btn" id="ctBookingBtn" type="button">Book Your Session</button>
         </div>
-      </section>
+      </div>
+    </section>
+  </main>
 
-      <section class="ts-section" id="testimonials">
-        <div class="ts-header">
-          <span class="ts-tag">Student Reviews</span>
-          <h2>What Our <span>Students Say</span></h2>
-          <p>
-            Hear from learners who gained confidence through our driving
-            simulator and smart theory practice tests.
-          </p>
-        </div>
+  <div id="footer"></div>
 
-        <div class="ts-slider">
-          <button
-            class="ts-nav ts-prev"
-            type="button"
-            aria-label="Previous testimonial"
-          >
-            &#10094;
-          </button>
-
-          <div class="ts-wrapper">
-            <div class="ts-track">
-              <div class="ts-card">
-                <div class="ts-stars ts-center-stars">
-                  <i data-lucide="star"></i>
-                  <i data-lucide="star"></i>
-                  <i data-lucide="star"></i>
-                  <i data-lucide="star"></i>
-                  <i data-lucide="star"></i>
-                </div>
-
-                <p class="ts-text ts-center-text">
-                  "The driving simulator helped me overcome my fear of driving.
-                  The realistic experience made me confident before my road
-                  test."
-                </p>
-
-                <div class="ts-user ts-center-user">
-                  <div class="ts-avatar">A</div>
-                  <div class="ts-user-meta">
-                    <h4>Arjun Kumar</h4>
-                    <span>Driving Student</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="ts-card">
-                <div class="ts-stars ts-center-stars">
-                  <i data-lucide="star"></i>
-                  <i data-lucide="star"></i>
-                  <i data-lucide="star"></i>
-                  <i data-lucide="star"></i>
-                  <i data-lucide="star"></i>
-                </div>
-
-                <p class="ts-text ts-center-text">
-                  "The theory practice tests were amazing. I passed my learner's
-                  exam on my first attempt with full confidence."
-                </p>
-
-                <div class="ts-user ts-center-user">
-                  <div class="ts-avatar">S</div>
-                  <div class="ts-user-meta">
-                    <h4>Sneha Reddy</h4>
-                    <span>Theory Test Student</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="ts-card">
-                <div class="ts-stars ts-center-stars">
-                  <i data-lucide="star"></i>
-                  <i data-lucide="star"></i>
-                  <i data-lucide="star"></i>
-                  <i data-lucide="star"></i>
-                  <i data-lucide="star"></i>
-                </div>
-
-                <p class="ts-text ts-center-text">
-                  "Booking sessions was simple and the instructors were very
-                  supportive. Highly recommended for beginners."
-                </p>
-
-                <div class="ts-user ts-center-user">
-                  <div class="ts-avatar">R</div>
-                  <div class="ts-user-meta">
-                    <h4>Rahul Sharma</h4>
-                    <span>Simulator Learner</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <button
-            class="ts-nav ts-next"
-            type="button"
-            aria-label="Next testimonial"
-          >
-            &#10095;
-          </button>
-        </div>
-
-        <div class="ts-dots">
-          <span class="ts-dot active"></span>
-          <span class="ts-dot"></span>
-          <span class="ts-dot"></span>
-        </div>
-      </section>
-
-      <section class="ct-section" id="contact">
-        <div class="ct-container">
-          <div class="ct-header">
-            <span class="ct-tag">Contact Us</span>
-            <h2>Get in Touch With Our <span>Driving Experts</span></h2>
-            <p>
-              Have questions about simulator training or theory tests? Contact
-              us and take your first step towards confident driving.
-            </p>
-          </div>
-
-          <div class="ct-content">
-            <div class="ct-details">
-              <div class="ct-card">
-                <div class="ct-icon"><i data-lucide="map-pin"></i></div>
-                <div>
-                  <h3>Location</h3>
-                  <p>NextGear Driving Simulator Center, Hyderabad, India</p>
-                </div>
-              </div>
-
-              <div class="ct-card">
-                <div class="ct-icon"><i data-lucide="phone"></i></div>
-                <div>
-                  <h3>Phone</h3>
-                  <p>+91 83417 33996</p>
-                </div>
-              </div>
-
-              <div class="ct-card">
-                <div class="ct-icon"><i data-lucide="mail"></i></div>
-                <div>
-                  <h3>Email</h3>
-                  <p>info@nextgear.com</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="ct-map">
-              <iframe
-                src="https://maps.google.com/maps?q=hyderabad&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                loading="lazy"
-                title="Hyderabad location map"
-              ></iframe>
-            </div>
-          </div>
-
-          <div class="ct-cta">
-            <h3>Ready to Become a Confident Driver?</h3>
-            <p>Book your simulator session today and start learning smarter.</p>
-            <button class="ct-btn" id="ctBookingBtn" type="button">
-              Book Your Session
-            </button>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <div id="footer"></div>
-
-    <script src="index.js"></script>
-    <script src="component.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-      lucide.createIcons();
-    </script>
-  </body>
+  <script src="index.js"></script>
+  <script src="component.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
 </html>

@@ -9,6 +9,7 @@ if (aboutRoot) {
   const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
   let motionReduced = motionQuery.matches;
   let countersStarted = false;
+  let floatingAnimations = [];
 
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
@@ -116,15 +117,10 @@ if (aboutRoot) {
 
   setupThemeToggle();
 
-  if (motionQuery.addEventListener) {
-    motionQuery.addEventListener('change', (event) => {
-      motionReduced = event.matches;
-    });
-  }
-
-  if (!motionReduced) {
+  function startFloatingAnimation() {
+    floatingAnimations = [];
     aboutRoot.querySelectorAll('.floating-box').forEach((box, index) => {
-      box.animate(
+      const animation = box.animate(
         [
           { transform: 'translateY(0px)' },
           { transform: 'translateY(-6px)' },
@@ -136,7 +132,32 @@ if (aboutRoot) {
           easing: 'ease-in-out'
         }
       );
+      floatingAnimations.push(animation);
     });
+  }
+
+  function stopFloatingAnimation() {
+    floatingAnimations.forEach((animation) => animation.cancel());
+    floatingAnimations = [];
+  }
+
+  if (!motionReduced) {
+    startFloatingAnimation();
+  }
+
+  const motionHandler = (event) => {
+    motionReduced = event.matches;
+    if (motionReduced) {
+      stopFloatingAnimation();
+    } else if (!floatingAnimations.length) {
+      startFloatingAnimation();
+    }
+  };
+
+  if (motionQuery.addEventListener) {
+    motionQuery.addEventListener('change', motionHandler);
+  } else if (motionQuery.addListener) {
+    motionQuery.addListener(motionHandler);
   }
 
   if (window.lucide) {

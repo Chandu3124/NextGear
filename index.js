@@ -4,110 +4,105 @@ const text =
   "Learn confidently with realistic driving simulations and AI-powered theory tests.";
 
 const typing = document.getElementById("typing");
-let index = 0;
+let i = 0;
 
-function type() {
+function typeEffect() {
   if (!typing) return;
-  if (index < text.length) {
-    typing.textContent += text.charAt(index);
-    index++;
-    setTimeout(type, 40);
+  if (i < text.length) {
+    typing.innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeEffect, 45);
   }
 }
-type();
+typeEffect();
 
 const revealElements = document.querySelectorAll(".reveal");
-window.addEventListener("scroll", () => {
-  revealElements.forEach((el) => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      el.classList.add("active");
+const serviceWrapper = document.querySelector(".service-wrapper");
+const pgxFills = document.querySelectorAll(".pgx-fill");
+const pgxCircles = document.querySelectorAll(".pgx-circle");
+
+function animateOnScroll() {
+  const triggerBottom = window.innerHeight * 0.85;
+
+  revealElements.forEach((element) => {
+    const top = element.getBoundingClientRect().top;
+    if (top < triggerBottom) {
+      element.classList.add("active");
     }
   });
-});
 
-const serviceWrapper = document.querySelector(".service-wrapper");
-const serviceBoxes = document.querySelectorAll(".service-box");
-
-window.addEventListener("scroll", () => {
-  if (!serviceWrapper) return;
-  const top = serviceWrapper.getBoundingClientRect().top;
-  if (top < window.innerHeight - 120) {
-    serviceWrapper.classList.add("active");
+  if (serviceWrapper) {
+    const wrapperTop = serviceWrapper.getBoundingClientRect().top;
+    if (wrapperTop < triggerBottom) {
+      serviceWrapper.classList.add("active");
+    }
   }
-});
 
-serviceBoxes.forEach((card) => {
-  card.addEventListener("mouseenter", () => {
-    card.classList.add("is-hovered");
+  pgxFills.forEach((fill) => {
+    const top = fill.getBoundingClientRect().top;
+    if (top < triggerBottom && !fill.dataset.animated) {
+      fill.style.width = `${fill.dataset.width}%`;
+      fill.dataset.animated = "true";
+    }
   });
 
-  card.addEventListener("mouseleave", () => {
-    card.classList.remove("is-hovered");
+  pgxCircles.forEach((circle) => {
+    const top = circle.getBoundingClientRect().top;
+    if (top < triggerBottom && !circle.dataset.animated) {
+      const percent = Number(circle.dataset.percent);
+      const ring = circle.querySelector(".pgx-ring");
+      const radius = 60;
+      const circumference = 2 * Math.PI * radius;
+      const offset = circumference - (percent / 100) * circumference;
+
+      if (ring) {
+        ring.style.strokeDasharray = circumference;
+        ring.style.strokeDashoffset = offset;
+      }
+
+      circle.dataset.animated = "true";
+    }
   });
-});
+}
+
+window.addEventListener("scroll", animateOnScroll);
+window.addEventListener("load", animateOnScroll);
 
 const counters = document.querySelectorAll(".counter");
-let started = false;
+let counterStarted = false;
 
-window.addEventListener("scroll", () => {
-  const simSection = document.querySelector(".simx-section");
-  if (!simSection || started) return;
+function runCounters() {
+  if (counterStarted) return;
+
+  const simSection = document.querySelector(".simx-stats");
+  if (!simSection) return;
 
   const top = simSection.getBoundingClientRect().top;
-  if (top < window.innerHeight - 100) {
+  if (top < window.innerHeight * 0.9) {
     counters.forEach((counter) => {
-      const target = +counter.dataset.target;
-      let count = 0;
-      const speed = target / 80;
+      const target = Number(counter.dataset.target);
+      let current = 0;
+      const increment = Math.ceil(target / 60);
 
       const updateCounter = () => {
-        count += speed;
-        if (count < target) {
-          counter.textContent = Math.floor(count);
-          requestAnimationFrame(updateCounter);
-        } else {
+        current += increment;
+        if (current >= target) {
           counter.textContent = target;
+        } else {
+          counter.textContent = current;
+          requestAnimationFrame(updateCounter);
         }
       };
 
       updateCounter();
     });
 
-    started = true;
+    counterStarted = true;
   }
-});
+}
 
-const pgxFills = document.querySelectorAll(".pgx-fill");
-window.addEventListener("scroll", () => {
-  const pgxSection = document.querySelector(".pgx-section");
-  if (!pgxSection) return;
-
-  const top = pgxSection.getBoundingClientRect().top;
-  if (top < window.innerHeight - 100) {
-    pgxFills.forEach((fill) => {
-      fill.style.width = fill.dataset.width + "%";
-    });
-  }
-});
-
-const circles = document.querySelectorAll(".pgx-circle");
-window.addEventListener("scroll", () => {
-  const levels = document.querySelector(".pgx-levels");
-  if (!levels) return;
-
-  const top = levels.getBoundingClientRect().top;
-  if (top < window.innerHeight - 100) {
-    circles.forEach((circle) => {
-      const percent = circle.dataset.percent;
-      const ring = circle.querySelector(".pgx-ring");
-      const radius = 60;
-      const circumference = 2 * Math.PI * radius;
-      const offset = circumference - (percent / 100) * circumference;
-      ring.style.strokeDashoffset = offset;
-    });
-  }
-});
+window.addEventListener("scroll", runCounters);
+window.addEventListener("load", runCounters);
 
 const bookingForm = document.getElementById("bookingForm");
 const bookingPopup = document.getElementById("bookingPopup");
@@ -143,66 +138,98 @@ if (bookingPopup) {
   });
 }
 
+const heroBookBtn = document.getElementById("heroBookBtn");
+const ctBookingBtn = document.getElementById("ctBookingBtn");
+const exploreServicesBtn = document.getElementById("exploreServicesBtn");
+
+function scrollToBooking() {
+  const bookingSection = document.getElementById("booking");
+  if (bookingSection) {
+    bookingSection.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
+if (heroBookBtn) {
+  heroBookBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    scrollToBooking();
+  });
+}
+
+if (ctBookingBtn) {
+  ctBookingBtn.addEventListener("click", scrollToBooking);
+}
+
+if (exploreServicesBtn) {
+  exploreServicesBtn.addEventListener("click", () => {
+    const simulator = document.getElementById("simulator");
+    if (simulator) {
+      simulator.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+}
+
+const score = document.getElementById("score");
+const timer = document.getElementById("timer");
+
+let seconds = 0;
+
+function updateTheoryPreview() {
+  if (timer) {
+    const mins = String(Math.floor(seconds / 60)).padStart(2, "0");
+    const secs = String(seconds % 60).padStart(2, "0");
+    timer.textContent = `${mins}:${secs}`;
+  }
+
+  if (score) {
+    const previewScore = Math.min(100, Math.floor(seconds / 2));
+    score.textContent = `${previewScore}%`;
+  }
+
+  seconds++;
+}
+
+setInterval(updateTheoryPreview, 1000);
+
 const track = document.querySelector(".ts-track");
 const dots = document.querySelectorAll(".ts-dot");
 const prevBtn = document.querySelector(".ts-prev");
 const nextBtn = document.querySelector(".ts-next");
+const cards = document.querySelectorAll(".ts-card");
+
 let currentSlide = 0;
 
-function updateSlider() {
-  if (!track) return;
+function updateSlider(index) {
+  if (!track || !dots.length || !cards.length) return;
+
+  currentSlide = index;
   track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
   dots.forEach((dot) => dot.classList.remove("active"));
-  if (dots[currentSlide]) dots[currentSlide].classList.add("active");
+  dots[currentSlide].classList.add("active");
 }
 
 if (nextBtn) {
   nextBtn.addEventListener("click", () => {
-    currentSlide = (currentSlide + 1) % dots.length;
-    updateSlider();
+    currentSlide = (currentSlide + 1) % cards.length;
+    updateSlider(currentSlide);
   });
 }
 
 if (prevBtn) {
   prevBtn.addEventListener("click", () => {
-    currentSlide = (currentSlide - 1 + dots.length) % dots.length;
-    updateSlider();
+    currentSlide = (currentSlide - 1 + cards.length) % cards.length;
+    updateSlider(currentSlide);
   });
 }
 
 dots.forEach((dot, index) => {
-  dot.addEventListener("click", () => {
-    currentSlide = index;
-    updateSlider();
-  });
+  dot.addEventListener("click", () => updateSlider(index));
 });
 
 setInterval(() => {
-  if (window.innerWidth > MOBILE_BREAKPOINT && dots.length) {
-    currentSlide = (currentSlide + 1) % dots.length;
-    updateSlider();
+  if (window.innerWidth > MOBILE_BREAKPOINT && cards.length) {
+    currentSlide = (currentSlide + 1) % cards.length;
+    updateSlider(currentSlide);
   }
-}, 5000);
-
-const heroBookBtn = document.getElementById("heroBookBtn");
-const ctBookingBtn = document.getElementById("ctBookingBtn");
-const exploreServicesBtn = document.getElementById("exploreServicesBtn");
-
-if (heroBookBtn) {
-  heroBookBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    document.querySelector("#booking")?.scrollIntoView({ behavior: "smooth" });
-  });
-}
-
-if (ctBookingBtn) {
-  ctBookingBtn.addEventListener("click", () => {
-    document.querySelector("#booking")?.scrollIntoView({ behavior: "smooth" });
-  });
-}
-
-if (exploreServicesBtn) {
-  exploreServicesBtn.addEventListener("click", () => {
-    document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" });
-  });
-}
+}, 4500);

@@ -171,7 +171,8 @@ select:focus-visible {
 .booking-btn,
 .ct-btn,
 .booking-popup button,
-.ts-nav {
+.ts-nav,
+.pricing-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -182,13 +183,15 @@ select:focus-visible {
   font-weight: 600;
   border: 2px solid transparent;
   cursor: pointer;
+  min-height: 44px;
 }
 
 .btn.primary,
 .simx-btn,
 .start-btn,
 .booking-btn,
-.booking-popup button {
+.booking-popup button,
+.pricing-btn {
   background: var(--primary-color);
   color: #111111;
 }
@@ -227,6 +230,7 @@ body:not(.dark) .start-btn:hover,
 body:not(.dark) .booking-btn:hover,
 body:not(.dark) .ct-btn:hover,
 body:not(.dark) .booking-popup button:hover,
+body:not(.dark) .pricing-btn:hover,
 body:not(.dark) #closeBooking:hover,
 body:not(.dark) #ctBookingBtn:hover,
 body:not(.dark) #exploreServicesBtn:hover,
@@ -244,50 +248,6 @@ body:not(.dark) .btn.secondary:hover {
   background: var(--secondary-color);
   color: var(--text-light);
   border-color: var(--secondary-color);
-}
-
-.scroll-down {
-  position: absolute;
-  bottom: 22px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-.scroll-down span {
-  display: block;
-  width: 30px;
-  height: 50px;
-  border: 2px solid var(--text-light);
-  border-radius: 30px;
-  position: relative;
-}
-
-.scroll-down span::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 10px;
-  width: 6px;
-  height: 6px;
-  background: var(--text-light);
-  border-radius: 50%;
-  transform: translateX(-50%);
-  animation: scroll 2s infinite;
-}
-
-@keyframes scroll {
-  0% {
-    opacity: 0;
-    top: 10px;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    top: 28px;
-  }
 }
 
 @keyframes fadeUp {
@@ -340,7 +300,8 @@ body:not(.dark) .btn.secondary:hover {
 .booking-tag,
 .ts-tag,
 .ct-tag,
-.pgx-heading > span {
+.pgx-heading > span,
+.pricing-tag {
   display: inline-block;
   background: rgba(255, 121, 0, 0.12);
   color: var(--primary-color);
@@ -358,7 +319,8 @@ body:not(.dark) .btn.secondary:hover {
 .booking-left h2,
 .ts-header h2,
 .ct-header h2,
-.section-title {
+.section-title,
+.pricing-header h2 {
   font-size: 43px;
   color: var(--text-dark);
   line-height: 1.2;
@@ -372,7 +334,8 @@ body:not(.dark) .btn.secondary:hover {
 .booking-left h2 span,
 .ts-header h2 span,
 .ct-header h2 span,
-.section-title span:last-child {
+.section-title span:last-child,
+.pricing-header h2 span {
   color: var(--primary-color);
 }
 
@@ -383,7 +346,8 @@ body:not(.dark) .btn.secondary:hover {
 .booking-left p,
 .ts-header p,
 .ct-header p,
-.section-subtitle {
+.section-subtitle,
+.pricing-header p {
   font-size: 18px;
   line-height: 1.8;
   color: #666;
@@ -440,7 +404,8 @@ body:not(.dark) .btn.secondary:hover {
 .booking-section,
 .ts-section,
 .ct-section,
-.theory-section {
+.theory-section,
+.pricing-section {
   padding: 110px 8%;
 }
 
@@ -451,7 +416,8 @@ body:not(.dark) .btn.secondary:hover {
 .service-title,
 .pgx-heading,
 .ts-header,
-.ct-header {
+.ct-header,
+.pricing-header {
   text-align: center;
   max-width: 760px;
   margin: auto auto 70px;
@@ -518,15 +484,6 @@ body:not(.dark) .btn.secondary:hover {
   box-shadow: 0 20px 45px rgba(255, 121, 0, 0.18);
 }
 
-.service-box:hover .hexagon {
-  transform: scale(1.06);
-  box-shadow: 0 10px 24px rgba(255, 121, 0, 0.25);
-}
-
-.service-box:hover h3 {
-  color: var(--primary-color);
-}
-
 .hexagon {
   width: 90px;
   height: 90px;
@@ -550,7 +507,6 @@ body:not(.dark) .btn.secondary:hover {
   font-size: 24px;
   margin-bottom: 15px;
   color: var(--text-dark);
-  transition: color 0.35s ease;
 }
 
 .service-box p {
@@ -593,10 +549,6 @@ body:not(.dark) .btn.secondary:hover {
 .simx-main-card img {
   width: 100%;
   transition: 0.8s;
-}
-
-.simx-main-card:hover img {
-  transform: scale(1.05);
 }
 
 .simx-status {
@@ -671,19 +623,6 @@ body:not(.dark) .btn.secondary:hover {
   margin-top: 10px;
 }
 
-.simx-chip:hover,
-.booking-feature:hover {
-  background: rgba(255, 121, 0, 0.08);
-  color: var(--primary-color);
-  transform: translateY(-4px);
-}
-
-.simx-chip svg,
-.booking-feature svg {
-  width: 18px;
-  height: 18px;
-}
-
 .simx-stats {
   display: flex;
   gap: 40px;
@@ -694,10 +633,34 @@ body:not(.dark) .btn.secondary:hover {
 .simx-stat h3 {
   font-size: 40px;
   color: var(--primary-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  white-space: nowrap;
+}
+
+.stat-number {
+  display: inline-block;
+  line-height: 1;
+}
+
+.stat-symbol {
+  display: inline-block;
+  font-size: 0.8em;
+  line-height: 1;
+  font-weight: 800;
+  margin-left: 2px;
+  position: relative;
+  top: -1px;
 }
 
 .simx-stat span {
   color: #666;
+}
+
+.simx-stat > span {
+  display: block;
+  margin-top: 8px;
 }
 
 @keyframes simxFloat {
@@ -756,10 +719,6 @@ body:not(.dark) .btn.secondary:hover {
   max-width: 520px;
 }
 
-.start-btn {
-  border-radius: 8px;
-}
-
 .theory-panel {
   display: flex;
   gap: 20px;
@@ -777,8 +736,8 @@ body:not(.dark) .btn.secondary:hover {
 
 .panel-card span {
   font-size: 28px;
-  font-weight: bold;
   color: #ff7900;
+  font-weight: 700;
 }
 
 .pgx-section {
@@ -887,6 +846,96 @@ body:not(.dark) .btn.secondary:hover {
 .pgx-text small {
   color: #777;
   font-weight: 600;
+}
+
+.pricing-section {
+  background: #ffffff;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.pricing-card {
+  background: var(--card-light);
+  border: 1px solid rgba(255, 121, 0, 0.16);
+  border-radius: 24px;
+  padding: 34px 28px;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  position: relative;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 24px 46px rgba(255, 121, 0, 0.16);
+  border-color: rgba(255, 121, 0, 0.28);
+}
+
+.pricing-card-featured {
+  border: 2px solid var(--primary-color);
+  transform: translateY(-8px);
+}
+
+.pricing-badge {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 121, 0, 0.1);
+  color: var(--primary-color);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.featured-badge {
+  background: var(--primary-color);
+  color: #111111;
+}
+
+.pricing-card h3 {
+  font-size: 28px;
+  color: var(--text-dark);
+  margin-bottom: 14px;
+}
+
+.pricing-price {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 24px;
+}
+
+.pricing-price small {
+  font-size: 15px;
+  font-weight: 600;
+  color: #666;
+}
+
+.pricing-features {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.pricing-features li svg {
+  width: 18px;
+  height: 18px;
+  color: var(--primary-color);
+  flex-shrink: 0;
 }
 
 .booking-section {
@@ -1062,115 +1111,73 @@ body:not(.dark) .btn.secondary:hover {
   justify-content: center;
 }
 
-.ts-stars svg {
-  width: 22px;
-  height: 22px;
-  fill: currentColor;
-  stroke: currentColor;
-}
-
 .ts-text {
   font-size: 18px;
   line-height: 1.9;
   color: #555;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
 }
 
 .ts-center-text {
-  max-width: 640px;
-  margin-inline: auto;
   text-align: center;
 }
 
 .ts-user {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 16px;
 }
 
 .ts-center-user {
   justify-content: center;
-  text-align: center;
-}
-
-.ts-user-meta {
-  text-align: left;
 }
 
 .ts-avatar {
   width: 65px;
   height: 65px;
-  background: var(--primary-color);
-  color: var(--text-light);
   border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), #ffb067);
+  color: #111111;
+  font-weight: 700;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   font-size: 24px;
-  font-weight: bold;
-  animation: tsPulse 2.5s infinite;
 }
 
-.ts-user h4 {
-  margin-bottom: 6px;
+.ts-user-meta h4 {
+  font-size: 20px;
   color: var(--text-dark);
+  margin-bottom: 4px;
 }
 
-.ts-user span {
-  color: #888;
+.ts-user-meta span {
+  color: #777;
 }
 
 .ts-dots {
-  margin-top: 45px;
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
+  margin-top: 32px;
 }
 
 .ts-dot {
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  background: #d8d8d8;
+  background: #d7d7d7;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .ts-dot.active {
   background: var(--primary-color);
-  transform: scale(1.3);
-}
-
-@keyframes tsPulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.08);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.ts-show {
-  animation: tsReveal 0.8s ease;
-}
-
-@keyframes tsReveal {
-  from {
-    opacity: 0;
-    transform: translateY(60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  transform: scale(1.2);
 }
 
 .ct-section {
-  background: var(--section-light);
-  overflow: hidden;
+  background: linear-gradient(180deg, #ffffff 0%, #fff8f2 100%);
 }
 
 .ct-container {
@@ -1180,56 +1187,47 @@ body:not(.dark) .btn.secondary:hover {
 
 .ct-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  align-items: center;
+  grid-template-columns: 420px 1fr;
+  gap: 40px;
+  align-items: stretch;
 }
 
 .ct-details {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
+  display: grid;
+  gap: 20px;
 }
 
 .ct-card {
   background: var(--card-light);
-  padding: 25px;
-  border-radius: 20px;
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
   display: flex;
   align-items: center;
-  gap: 25px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-  transition: 0.4s;
-  animation: ctSlide 1s ease;
-}
-
-.ct-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 45px rgba(255, 121, 0, 0.18);
+  gap: 18px;
 }
 
 .ct-icon {
-  width: 65px;
-  height: 65px;
-  background: var(--primary-color);
-  color: var(--text-light);
-  border-radius: 50%;
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  background: rgba(255, 121, 0, 0.12);
+  color: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
-  transition: 0.4s;
   flex-shrink: 0;
 }
 
-.ct-card:hover .ct-icon {
-  transform: rotate(10deg) scale(1.08);
+.ct-icon svg {
+  width: 24px;
+  height: 24px;
 }
 
 .ct-card h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
   color: var(--text-dark);
-  margin-bottom: 8px;
-  font-size: 22px;
 }
 
 .ct-card p {
@@ -1238,239 +1236,193 @@ body:not(.dark) .btn.secondary:hover {
 }
 
 .ct-map {
-  height: 420px;
-  border-radius: 25px;
+  min-height: 420px;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
-  transition: 0.4s;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.09);
 }
 
 .ct-map iframe {
   width: 100%;
   height: 100%;
-  border: none;
+  border: 0;
 }
 
 .ct-cta {
-  margin-top: 80px;
-  background: var(--primary-color);
-  padding: 60px 35px;
-  border-radius: 25px;
+  margin-top: 70px;
+  background: linear-gradient(180deg, #ffffff 0%, #fff8f2 100%);
+  color: var(--text-dark);
+  border-radius: 30px;
+  padding: 52px;
   text-align: center;
-  box-shadow: 0 20px 45px rgba(255, 121, 0, 0.35);
-  animation: ctReveal 1s ease;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
 }
 
 .ct-cta h3 {
-  font-size: clamp(1.8rem, 3vw, 2.3rem);
-  color: var(--text-light);
-  margin-bottom: 15px;
+  font-size: 2.25rem;
+  margin-bottom: 12px;
+  color: var(--text-dark);
 }
 
 .ct-cta p {
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.8;
-  margin-bottom: 30px;
-}
-
-.ct-cta .ct-btn {
-  background: #ffffff;
-  color: var(--secondary-color);
-  border: 2px solid #ffffff;
-}
-
-.ct-cta .ct-btn:hover {
-  background: var(--secondary-color);
-  color: var(--text-light);
-  border-color: var(--secondary-color);
-  transform: translateY(-4px);
-  box-shadow: 0 14px 28px rgba(8, 28, 58, 0.22);
-}
-
-@keyframes ctSlide {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes ctReveal {
-  from {
-    opacity: 0;
-    transform: translateY(60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  color: #666;
+  margin-bottom: 24px;
+  font-size: 17px;
 }
 
 body.dark {
-  --primary-color: #ff7900;
-  --secondary-color: #121212;
-  --text-dark: #f5f5f5;
-  --text-light: #dcdcdc;
-  --overlay-color: rgba(0, 0, 0, 0.75);
-  --shadow-color: rgba(255, 121, 0, 0.45);
-  --card-light: #121212;
-  --section-light: #000000;
-  --section-soft: #000000;
-  background: #000000;
-  color: #f5f5f5;
+  background: var(--dark-bg);
+  color: var(--text-light);
 }
 
 body.dark .about,
-body.dark .service-zone,
 body.dark .simx-section,
-body.dark .theory-section,
 body.dark .pgx-section,
 body.dark .booking-section,
 body.dark .ts-section,
-body.dark .ct-section {
-  background: #000000;
-}
-
-body.dark h1,
-body.dark h2,
-body.dark h3,
-body.dark h4,
-body.dark .feature-card h3,
-body.dark .feature-card p,
-body.dark .service-box h3,
-body.dark .service-box p,
-body.dark .simx-stat span,
-body.dark .pgx-info,
-body.dark .pgx-text strong,
-body.dark .pgx-text small,
-body.dark .ts-user h4,
-body.dark .ts-user span,
-body.dark .ct-card h3,
-body.dark .ct-card p,
-body.dark .theory-info h3,
-body.dark .theory-info p,
-body.dark .section-title .black,
-body.dark .section-subtitle,
-body.dark .hero-mini-card strong,
-body.dark .hero-mini-card span {
-  color: #ffffff;
-}
-
-body.dark p,
-body.dark .about-content p,
-body.dark .service-title p,
-body.dark .simx-content p,
-body.dark .pgx-heading p,
-body.dark .booking-left p,
-body.dark .ts-text,
-body.dark .ct-header p {
-  color: var(--dark-muted);
+body.dark .ct-section,
+body.dark .service-zone,
+body.dark .theory-section,
+body.dark .pricing-section {
+  background: var(--dark-bg);
 }
 
 body.dark .feature-card,
 body.dark .service-box,
 body.dark .simx-main-card,
 body.dark .simx-floating,
-body.dark .booking-card,
+body.dark .simx-chip,
 body.dark .booking-feature,
+body.dark .panel-card,
+body.dark .booking-card,
+body.dark .booking-popup-box,
 body.dark .ts-card,
 body.dark .ct-card,
-body.dark .panel-card,
-body.dark .booking-popup-box,
-body.dark .theory-box,
-body.dark .simx-chip,
-body.dark .ts-nav {
+body.dark .pricing-card {
   background: var(--dark-card);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  color: var(--text-light);
+  box-shadow: none;
 }
 
-body.dark .hero-mini-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 121, 0, 0.2);
+body.dark .about-content h2,
+body.dark .service-title h2,
+body.dark .simx-content h2,
+body.dark .pgx-heading h2,
+body.dark .booking-left h2,
+body.dark .ts-header h2,
+body.dark .ct-header h2,
+body.dark .section-title,
+body.dark .pricing-header h2,
+body.dark .feature-card h3,
+body.dark .service-box h3,
+body.dark .booking-card h3,
+body.dark .ts-user-meta h4,
+body.dark .ct-card h3,
+body.dark .theory-info h3,
+body.dark .pgx-text strong,
+body.dark .pricing-card h3 {
+  color: #ffffff;
 }
 
-body.dark .feature-card,
-body.dark .service-box,
-body.dark .simx-chip,
-body.dark .booking-feature,
+body.dark .about-content p,
+body.dark .service-title p,
+body.dark .simx-content p,
+body.dark .pgx-heading p,
+body.dark .booking-left p,
+body.dark .ts-header p,
+body.dark .ct-header p,
+body.dark .section-subtitle,
+body.dark .feature-card p,
+body.dark .service-box p,
+body.dark .simx-stat > span,
+body.dark .theory-info p,
+body.dark .ts-text,
+body.dark .ct-card p,
+body.dark .pricing-header p,
+body.dark .pricing-features li,
+body.dark .pricing-price small {
+  color: var(--dark-muted);
+}
+
 body.dark .theory-box {
-  border-color: rgba(255, 121, 0, 0.2);
+  background: var(--dark-card);
+  border-color: var(--primary-color);
 }
 
-body.dark .btn:hover,
-body.dark .simx-btn:hover,
-body.dark .start-btn:hover,
-body.dark .booking-btn:hover,
-body.dark .ct-btn:hover,
-body.dark .booking-popup button:hover,
-body.dark #closeBooking:hover,
-body.dark #ctBookingBtn:hover,
-body.dark #exploreServicesBtn:hover,
-body.dark #heroBookBtn:hover,
-body.dark #heroStartTestBtn:hover,
-body.dark #startTestBtn:hover {
-  background: inherit;
-  color: inherit;
-  border-color: inherit;
-  box-shadow: inherit;
-  transform: none;
-}
-
-body.dark input,
-body.dark select {
-  background: #222;
-  color: #fff;
-  border-color: #333;
-}
-
-body.dark input::placeholder {
-  color: #aaa;
-}
-
-body.dark .secondary {
-  border-color: #fff;
-  color: #fff;
-}
-
-body.dark .secondary:hover {
-  background: transparent;
-  color: #fff;
-  transform: none;
-}
-
-body.dark .about-image img,
-body.dark .simx-main-card img {
-  filter: brightness(0.75);
+body.dark .panel-card {
+  background: #081c3a;
 }
 
 body.dark .pgx-track,
 body.dark .pgx-bg {
-  stroke: #333;
-  background: #333;
+  background: #1e1e1e;
+  stroke: #242424;
+}
+body.dark .pgx-info{
+  color: var(--card-light);
 }
 
+body.dark .booking-input input,
+body.dark .booking-input select {
+  background: #0d0d0d;
+  color: #ffffff;
+  border-color: #252525;
+}
+
+body.dark .ts-dot {
+  background: #444;
+}
+body.dark .ts-nav{
+  background-color: #111111;
+  color: white;
+}
+
+body.dark .ts-dot.active {
+  background: var(--primary-color);
+}
+
+body.dark .btn.secondary {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+body.dark .simx-status {
+  background: #0f0f0f;
+  color: #4ade80;
+}
+
+body.dark .pricing-card {
+  border-color: rgba(255, 121, 0, 0.2);
+}
+
+body.dark .pricing-card-featured {
+  border-color: var(--primary-color);
+}
 body.dark .ct-cta {
-  background: #ff7900;
+  background: #111111;
+  color: #f4f4f4;
+}
+
+body.dark .ct-cta h3 {
+  color: #ffffff;
+}
+
+body.dark .ct-cta p {
+  color: #d9d9d9;
 }
 
 body.dark .ct-btn {
-  background: #111;
-  color: #ff7900;
-  border-color: #111;
+  background: var(--primary-color);
+  color: #111111;
+  border-color: var(--primary-color);
 }
+/* IMPORTANT:
+   CTA ni disturb cheyyakunda light style lone unchadam kosam
+   dark mode lo .ct-cta ki separate dark background ivvaledu */
 
 @media (max-width: 1100px) {
-  .service-wrapper {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .line-progress {
-    display: none;
-  }
-
+  .service-wrapper,
+  .pricing-grid,
   .about-container,
   .simx-container,
   .pgx-container,
@@ -1479,28 +1431,52 @@ body.dark .ct-btn {
     grid-template-columns: 1fr;
   }
 
+  .about-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .line-progress {
+    display: none;
+  }
+
   .simx-content,
   .about-content,
-  .booking-left {
+  .booking-left,
+  .service-title,
+  .pgx-heading,
+  .pricing-header,
+  .ts-header,
+  .ct-header {
     text-align: center;
   }
 
   .simx-benefits,
   .simx-stats,
-  .booking-features {
+  .booking-features,
+  .hero-mini-info {
     justify-content: center;
   }
 
-  .ct-map {
-    height: 360px;
+  .pricing-grid {
+    max-width: 760px;
+  }
+
+  .pricing-card-featured {
+    transform: none;
+  }
+
+  .booking-container,
+  .ct-content,
+  .pgx-container,
+  .simx-container,
+  .about-container {
+    gap: 42px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 820px) {
   .hero {
-    height: 90vh;
-    min-height: 90vh;
-    padding: 120px 6% 70px;
+    padding: 120px 6% 72px;
     justify-content: flex-start;
   }
 
@@ -1512,16 +1488,27 @@ body.dark .ct-btn {
   }
 
   .hero p {
-    margin-inline: 0;
     max-width: 520px;
+    margin-inline: 0;
   }
 
-  .hero-mini-info {
-    justify-content: flex-start;
-  }
-
+  .hero-mini-info,
   .buttons {
     justify-content: flex-start;
+  }
+
+  .hero .buttons {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 14px;
+  }
+
+  .hero .buttons .btn {
+    width: auto;
+    min-width: 190px;
+    padding: 15px 24px;
+    font-size: 15px;
   }
 
   .about-content h2,
@@ -1531,35 +1518,25 @@ body.dark .ct-btn {
   .booking-left h2,
   .ts-header h2,
   .ct-header h2,
-  .section-title {
+  .section-title,
+  .pricing-header h2 {
     font-size: 38px;
   }
 
-  .simx-visual {
-    min-height: 460px;
-  }
-
   .simx-orbit {
-    width: 380px;
-    height: 380px;
-  }
-
-  .booking-container,
-  .ct-content,
-  .pgx-container,
-  .simx-container,
-  .about-container {
-    gap: 40px;
+    width: 390px;
+    height: 390px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .hero,
   .about,
   .service-zone,
   .simx-section,
   .theory-section,
   .pgx-section,
+  .pricing-section,
   .booking-section,
   .ts-section,
   .ct-section {
@@ -1568,171 +1545,35 @@ body.dark .ct-btn {
   }
 
   .hero {
-    height: 90vh;
-    min-height: 90vh;
-    max-height: 90vh;
-    padding-top: 115px;
-    padding-bottom: 70px;
-    align-items: center;
+    min-height: 100vh;
+    height: auto;
+    max-height: none;
+    padding-top: 108px;
+    padding-bottom: 56px;
     justify-content: center;
+    align-items: center;
   }
 
   .hero-content {
-    text-align: center;
-    align-items: center;
     max-width: 100%;
     margin-left: 0;
-  }
-
-  .hero p {
-    margin-inline: auto;
-    max-width: 100%;
-    margin-bottom: 24px;
-  }
-
-  .hero-mini-info {
-    justify-content: center;
-    width: 100%;
-    margin-top: 20px;
-  }
-
-  .hero-mini-card {
-    width: min(100%, 320px);
-  }
-
-  .buttons {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .btn,
-  .simx-btn,
-  .start-btn,
-  .booking-btn,
-  .ct-btn {
-    width: 100%;
-  }
-
-  .about-features,
-  .service-wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  .about-image img {
-    height: 360px;
-  }
-
-  .about-content h2,
-  .service-title h2,
-  .simx-content h2,
-  .pgx-heading h2,
-  .booking-left h2,
-  .ts-header h2,
-  .ct-header h2,
-  .section-title {
-    font-size: 34px;
-  }
-
-  .simx-visual {
-    min-height: 430px;
-  }
-
-  .simx-orbit {
-    width: 320px;
-    height: 320px;
-  }
-
-  .simx-floating {
-    font-size: 14px;
-    padding: 12px 16px;
-  }
-
-  .theory-box {
-    flex-direction: column;
     text-align: center;
-    padding: 28px 20px;
-  }
-
-  .theory-panel {
-    justify-content: center;
-    width: 100%;
-  }
-
-  .panel-card {
-    width: 140px;
-    padding: 24px 18px;
-  }
-
-  .pgx-info {
-    font-size: 15px;
-  }
-
-  .booking-card {
-    padding: 30px 22px;
-  }
-
-  .ts-slider {
-    gap: 15px;
-  }
-
-  .ts-card {
-    padding: 30px 22px;
-  }
-
-  .ts-text {
-    font-size: 16px;
-  }
-
-  .ts-user-meta {
-    text-align: center;
-  }
-
-  .ts-nav {
-    width: 44px;
-    height: 44px;
-    font-size: 20px;
-    flex-shrink: 0;
-  }
-
-  .ct-card {
-    flex-direction: column;
-    text-align: center;
-    gap: 18px;
-  }
-
-  .ct-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 24px;
-  }
-
-  .ct-cta {
-    padding: 40px 20px;
-  }
-}
-
-@media (min-width: 321px) and (max-width: 420px) {
-  .hero {
-    height: 90vh;
-    min-height: 90vh;
-    max-height: 90vh;
-    padding: 104px 5% 58px;
-  }
-
-  .hero-content {
-    max-width: 100%;
+    align-items: center;
   }
 
   .hero h1 {
-    font-size: clamp(2rem, 7vw, 2.55rem);
+    font-size: clamp(2rem, 7vw, 2.9rem);
+    line-height: 1.15;
     margin-bottom: 16px;
   }
 
   .hero p {
     font-size: 0.98rem;
-    line-height: 1.6;
-    min-height: 58px;
-    margin-bottom: 20px;
+    line-height: 1.65;
+    min-height: auto;
+    max-width: 100%;
+    margin-inline: auto;
+    margin-bottom: 22px;
   }
 
   .hero-tag {
@@ -1741,7 +1582,37 @@ body.dark .ct-btn {
     margin-bottom: 14px;
   }
 
+  .buttons {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .btn,
+  .simx-btn,
+  .start-btn,
+  .booking-btn,
+  .ct-btn,
+  .pricing-btn,
+  .booking-popup button {
+    width: 100%;
+    min-height: 48px;
+    padding: 14px 18px;
+    font-size: 15px;
+  }
+
+  .hero-mini-info {
+    width: 100%;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 18px;
+  }
+
   .hero-mini-card {
+    width: 100%;
+    min-width: 0;
+    max-width: 320px;
     padding: 12px 14px;
     border-radius: 14px;
   }
@@ -1754,179 +1625,578 @@ body.dark .ct-btn {
     font-size: 12px;
   }
 
-  .btn,
-  .simx-btn,
-  .start-btn,
-  .booking-btn,
-  .ct-btn,
-  .booking-popup button {
-    padding: 14px 20px;
-    font-size: 15px;
+  .about-container,
+  .simx-container,
+  .pgx-container,
+  .booking-container,
+  .ct-content,
+  .pricing-grid,
+  .service-wrapper,
+  .about-features {
+    grid-template-columns: 1fr;
   }
 
-  .scroll-down {
-    bottom: 14px;
+  .about-image img {
+    height: 340px;
   }
 
-  .scroll-down span {
-    width: 26px;
-    height: 42px;
-  }
-
-  .section-title,
   .about-content h2,
   .service-title h2,
   .simx-content h2,
   .pgx-heading h2,
   .booking-left h2,
   .ts-header h2,
-  .ct-header h2 {
-    font-size: 30px;
+  .ct-header h2,
+  .section-title,
+  .pricing-header h2 {
+    font-size: 32px;
+    line-height: 1.2;
   }
 
-  .service-zone,
-  .simx-section,
-  .theory-section,
-  .pgx-section,
-  .booking-section,
-  .ts-section,
-  .ct-section,
-  .about {
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
-}
-
-@media (max-width: 576px) {
-  .simx-stats {
-    flex-direction: column;
-    gap: 18px;
-  }
-
-  .simx-floating {
-    position: static;
-    animation: none;
-    margin-bottom: 12px;
+  .about-content p,
+  .service-title p,
+  .simx-content p,
+  .pgx-heading p,
+  .booking-left p,
+  .ts-header p,
+  .ct-header p,
+  .section-subtitle,
+  .pricing-header p {
+    font-size: 16px;
+    line-height: 1.75;
   }
 
   .simx-visual {
+    min-height: auto;
     display: grid;
-    gap: 14px;
     justify-items: center;
+    gap: 14px;
+  }
+
+  .simx-main-card {
+    width: min(100%, 360px);
   }
 
   .simx-orbit {
     display: none;
   }
 
-  .panel-card {
+  .simx-floating {
+    position: static;
+    animation: none;
+    width: fit-content;
+    max-width: 100%;
+    font-size: 14px;
+    padding: 11px 14px;
+    margin-bottom: 0;
+  }
+
+  .simx-benefits,
+  .booking-features,
+  .simx-stats {
+    justify-content: center;
+  }
+
+  .simx-chip,
+  .booking-feature {
     width: 100%;
+    justify-content: center;
+    border-radius: 16px;
+    padding: 14px 16px;
+  }
+
+  .simx-stat {
+    text-align: center;
+  }
+
+  .simx-stat h3 {
+    justify-content: center;
+    font-size: 34px;
+  }
+
+  .theory-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px 18px;
+    gap: 24px;
+  }
+
+  .theory-info p {
+    max-width: 100%;
   }
 
   .theory-panel {
+    width: 100%;
+    justify-content: center;
     flex-direction: column;
   }
 
-  .booking-popup-box {
-    padding: 30px 20px;
+  .panel-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 22px 18px;
+  }
+
+  .pgx-info {
+    font-size: 15px;
+    gap: 10px;
+  }
+
+  .pgx-levels {
+    gap: 20px;
+  }
+
+  .booking-card {
+    padding: 28px 18px;
+    border-radius: 22px;
+  }
+
+  .booking-card h3 {
+    font-size: 26px;
+    margin-bottom: 24px;
+  }
+
+  .booking-input input,
+  .booking-input select {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .pricing-card {
+    padding: 28px 20px;
+    border-radius: 20px;
+  }
+
+  .pricing-card h3 {
+    font-size: 24px;
+  }
+
+  .pricing-price {
+    font-size: 32px;
   }
 
   .ts-slider {
     flex-direction: column;
+    gap: 14px;
   }
 
   .ts-nav {
     display: none;
   }
 
+  .ts-card {
+    padding: 28px 20px;
+  }
+
+  .ts-text {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .ts-user,
+  .ts-center-user {
+    justify-content: center;
+  }
+
+  .ts-user-meta {
+    text-align: center;
+  }
+
+  .ct-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+    padding: 22px 18px;
+  }
+
   .ct-map {
     height: 280px;
+    min-height: 280px;
+  }
+
+  .ct-cta {
+    margin-top: 56px;
+    padding: 38px 18px;
+  }
+
+  .ct-cta h3 {
+    font-size: 1.8rem;
   }
 }
 
-@media (min-width: 740px) and (max-width: 768px) {
+@media (max-width: 360px) {
+  .hero,
+  .about,
+  .service-zone,
+  .simx-section,
+  .theory-section,
+  .pgx-section,
+  .pricing-section,
+  .booking-section,
+  .ts-section,
+  .ct-section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
   .hero {
-    padding-top: 110px;
-    padding-bottom: 60px;
+    padding-top: 98px;
+    padding-bottom: 44px;
+    min-height: auto;
+  }
+
+  .hero-content {
+    max-width: 100%;
   }
 
   .hero h1 {
-    font-size: clamp(2.2rem, 5vw, 3rem);
+    font-size: 1.9rem;
+    line-height: 1.14;
+    margin-bottom: 14px;
   }
 
   .hero p {
-    max-width: 620px;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+
+  .hero-tag,
+  .section-tag,
+  .service-title > span,
+  .simx-tag,
+  .booking-tag,
+  .ts-tag,
+  .ct-tag,
+  .pgx-heading > span,
+  .pricing-tag {
+    font-size: 11px;
+    padding: 8px 14px;
+  }
+
+  .buttons {
+    gap: 10px;
+  }
+
+  .btn,
+  .simx-btn,
+  .start-btn,
+  .booking-btn,
+  .ct-btn,
+  .pricing-btn,
+  .booking-popup button,
+  .theory-btn {
+    width: 100%;
+    padding: 13px 14px;
+    font-size: 14px;
+    min-height: 46px;
+  }
+
+  .hero-mini-info {
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .hero-mini-card {
+    max-width: 100%;
+    padding: 11px 12px;
+    border-radius: 12px;
+  }
+
+  .hero-mini-card strong {
+    font-size: 13px;
+  }
+
+  .hero-mini-card span {
+    font-size: 11px;
+  }
+
+  .about-image img {
+    height: 280px;
+    border-radius: 18px;
+  }
+
+  .about-content h2,
+  .service-title h2,
+  .simx-content h2,
+  .pgx-heading h2,
+  .booking-left h2,
+  .ts-header h2,
+  .ct-header h2,
+  .section-title,
+  .pricing-header h2 {
+    font-size: 27px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+  }
+
+  .about-content p,
+  .service-title p,
+  .simx-content p,
+  .pgx-heading p,
+  .booking-left p,
+  .ts-header p,
+  .ct-header p,
+  .section-subtitle,
+  .pricing-header p,
+  .service-box p,
+  .feature-card p,
+  .ts-text,
+  .ct-card p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .service-box,
+  .feature-card,
+  .pricing-card,
+  .ts-card,
+  .booking-card,
+  .ct-card,
+  .theory-box {
+    border-radius: 18px;
+  }
+
+  .service-box {
+    padding: 24px 16px;
+  }
+
+  .service-box h3,
+  .feature-card h3,
+  .pricing-card h3,
+  .theory-info h3,
+  .ct-card h3 {
+    font-size: 20px;
+  }
+
+  .hexagon {
+    width: 74px;
+    height: 74px;
+    margin-bottom: 18px;
+  }
+
+  .hexagon svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .simx-main-card {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 20px;
+  }
+
+  .simx-status {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    font-size: 12px;
+    padding: 10px 12px;
+    text-align: center;
+  }
+
+  .simx-floating {
+    width: 100%;
+    justify-content: center;
+    font-size: 13px;
+    padding: 10px 12px;
+    border-radius: 14px;
+  }
+
+  .simx-chip,
+  .booking-feature {
+    padding: 12px 14px;
+    font-size: 13px;
+    gap: 10px;
+  }
+
+  .simx-stats {
+    gap: 16px;
+    justify-content: space-between;
+  }
+
+  .simx-stat {
+    flex: 1 1 100%;
+  }
+
+  .simx-stat h3 {
+    font-size: 29px;
+  }
+
+  .stat-symbol {
+    font-size: 0.78em;
+  }
+
+  .theory-box {
+    padding: 18px 14px;
+    gap: 18px;
+  }
+
+  .panel-card {
+    padding: 18px 14px;
+    width: 100%;
+  }
+
+  .panel-card h4 {
+    font-size: 15px;
+  }
+
+  .panel-card span {
+    font-size: 24px;
+  }
+
+  .pgx-item {
+    margin-bottom: 24px;
+  }
+
+  .pgx-info {
+    font-size: 14px;
+  }
+
+  .pgx-track {
+    height: 12px;
+  }
+
+  .pgx-circle {
+    width: 120px;
+    height: 120px;
+  }
+
+  .pgx-circle svg {
+    width: 120px;
+    height: 120px;
+  }
+
+  .pgx-text strong {
+    font-size: 22px;
+  }
+
+  .pgx-text small {
+    font-size: 12px;
+  }
+
+  .pricing-card {
+    padding: 22px 16px;
+  }
+
+  .pricing-price {
+    font-size: 27px;
+    margin-bottom: 18px;
+  }
+
+  .pricing-price small {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+  }
+
+  .pricing-features {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .pricing-features li {
+    font-size: 14px;
+    align-items: flex-start;
+  }
+
+  .booking-card {
+    padding: 22px 14px;
+  }
+
+  .booking-card h3 {
+    font-size: 23px;
+    margin-bottom: 20px;
+  }
+
+  .booking-input {
+    margin-bottom: 18px;
+  }
+
+  .booking-input label {
+    font-size: 14px;
+  }
+
+  .booking-input input,
+  .booking-input select {
+    padding: 13px 12px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+
+  .booking-popup-box {
+    padding: 28px 18px;
+    border-radius: 18px;
+  }
+
+  .booking-check {
+    width: 64px;
+    height: 64px;
+    font-size: 28px;
+  }
+
+  .ts-card {
+    padding: 22px 16px;
+  }
+
+  .ts-avatar {
+    width: 54px;
+    height: 54px;
+    font-size: 20px;
+  }
+
+  .ts-user-meta h4 {
+    font-size: 17px;
+  }
+
+  .ct-card {
+    padding: 18px 14px;
+  }
+
+  .ct-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+  }
+
+  .ct-map {
+    height: 240px;
+    min-height: 240px;
+    border-radius: 18px;
+  }
+
+  .ct-cta {
+    padding: 30px 14px;
+    border-radius: 20px;
+    margin-top: 42px;
+  }
+
+  .ct-cta h3 {
+    font-size: 1.45rem;
+  }
+
+  .ct-cta p {
+    font-size: 14px;
+    line-height: 1.7;
   }
 }
 
-@media (min-width: 360px) and (max-width: 380px) {
+@media (min-width: 361px) and (max-width: 384px) {
   .hero {
     padding-top: 102px;
-    padding-bottom: 54px;
+    padding-bottom: 50px;
   }
 
   .hero h1 {
-    font-size: clamp(1.9rem, 7vw, 2.35rem);
+    font-size: 2.1rem;
   }
 
   .hero p {
     font-size: 0.95rem;
-    min-height: 54px;
-  }
-
-  .theory-box,
-  .booking-card,
-  .ts-card {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-}
-
-@media (min-width: 1000px) and (max-height: 650px) {
-  .hero {
-    height: 90vh;
-    min-height: 90vh;
-    max-height: 90vh;
-    padding-top: 92px;
-    padding-bottom: 42px;
-  }
-
-  .hero-content {
-    max-width: 640px;
-    margin-left: 0;
-  }
-
-  .hero-tag {
-    margin-bottom: 14px;
-  }
-
-  .hero h1 {
-    font-size: clamp(2.15rem, 3.2vw, 3rem);
-    margin-bottom: 14px;
-  }
-
-  .hero p {
-    font-size: 0.98rem;
-    margin-bottom: 20px;
-    min-height: 28px;
-    max-width: 540px;
-  }
-
-  .hero-mini-info {
-    margin-top: 18px;
   }
 
   .hero-mini-card {
-    padding: 12px 16px;
-  }
-
-  .btn,
-  .simx-btn,
-  .start-btn,
-  .booking-btn,
-  .ct-btn {
-    padding: 13px 26px;
-    font-size: 15px;
+    max-width: 100%;
   }
 
   .about-content h2,
@@ -1936,113 +2206,85 @@ body.dark .ct-btn {
   .booking-left h2,
   .ts-header h2,
   .ct-header h2,
-  .section-title {
-    font-size: 38px;
+  .section-title,
+  .pricing-header h2 {
+    font-size: 29px;
   }
 
-  .service-zone,
-  .simx-section,
-  .theory-section,
-  .pgx-section,
-  .booking-section,
-  .ts-section,
-  .ct-section,
-  .about {
-    padding-top: 84px;
-    padding-bottom: 84px;
+  .simx-stat h3 {
+    font-size: 32px;
   }
 }
 
-@media (min-width: 900px) and (max-width: 1024px) and (max-height: 650px) {
+@media (min-width: 385px) and (max-width: 430px) {
   .hero {
-    height: 90vh;
-    min-height: 90vh;
-    max-height: 90vh;
-    padding-top: 98px;
-    padding-bottom: 48px;
-    align-items: center;
-    justify-content: flex-start;
+    padding-top: 104px;
+    padding-bottom: 52px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 0.97rem;
+  }
+
+  .hero-mini-card {
+    max-width: 330px;
+  }
+
+  .about-content h2,
+  .service-title h2,
+  .simx-content h2,
+  .pgx-heading h2,
+  .booking-left h2,
+  .ts-header h2,
+  .ct-header h2,
+  .section-title,
+  .pricing-header h2 {
+    font-size: 30px;
+  }
+
+  .simx-main-card {
+    width: min(100%, 380px);
+  }
+}
+
+@media (max-width: 932px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding-top: 92px;
+    padding-bottom: 36px;
   }
 
   .hero-content {
     max-width: 620px;
-    text-align: left;
     align-items: flex-start;
-    margin-inline: 0;
-  }
-
-  .hero h1 {
-    font-size: clamp(2.2rem, 4vw, 3.1rem);
-    margin-bottom: 16px;
+    text-align: left;
   }
 
   .hero p {
-    font-size: 1rem;
-    margin-bottom: 22px;
-    min-height: 28px;
     max-width: 540px;
     margin-inline: 0;
   }
 
-  .hero-mini-info {
-    justify-content: flex-start;
-  }
-
+  .hero-mini-info,
   .buttons {
     justify-content: flex-start;
   }
 
-  .about-content h2,
-  .service-title h2,
-  .simx-content h2,
-  .pgx-heading h2,
-  .booking-left h2,
-  .ts-header h2,
-  .ct-header h2,
-  .section-title {
-    font-size: 39px;
+  .buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .btn,
   .simx-btn,
   .start-btn,
   .booking-btn,
-  .ct-btn {
-    padding: 13px 26px;
-    font-size: 15px;
-  }
-
-  .service-zone,
-  .simx-section,
-  .theory-section,
-  .pgx-section,
-  .booking-section,
-  .ts-section,
-  .ct-section,
-  .about {
-    padding-top: 84px;
-    padding-bottom: 84px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-
-  .reveal,
-  .service-box,
-  .ct-card,
-  .ts-show {
-    opacity: 1 !important;
-    transform: none !important;
+  .ct-btn,
+  .pricing-btn {
+    width: auto;
   }
 }

@@ -1,4 +1,5 @@
 const contactStatus = document.getElementById("contactStatus");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 const statusMessages = [
   "Our team is available now",
@@ -8,7 +9,7 @@ const statusMessages = [
 
 let statusIndex = 0;
 
-if (contactStatus) {
+if (contactStatus && !prefersReducedMotion) {
   setInterval(() => {
     statusIndex++;
     if (statusIndex >= statusMessages.length) {
@@ -31,16 +32,16 @@ document.addEventListener("DOMContentLoaded", () => {
     ".location-content, .map-frame, .faq-left, .faq-right"
   );
 
+  function goToServices() {
+    window.location.href = "Services.html";
+  }
+
   if (bookBtn) {
-    bookBtn.addEventListener("click", () => {
-      window.location.href = "Services.html";
-    });
+    bookBtn.addEventListener("click", goToServices);
   }
 
   if (serviceBtn) {
-    serviceBtn.addEventListener("click", () => {
-      window.location.href = "Services.html";
-    });
+    serviceBtn.addEventListener("click", goToServices);
   }
 
   contactItems.forEach((item) => {
@@ -57,7 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    item.addEventListener("click", openItemAction);
+    item.addEventListener("click", (e) => {
+      if (e.target.closest("a")) return;
+      openItemAction();
+    });
 
     item.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
@@ -69,8 +73,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (form && button) {
     inputs.forEach((input) => {
+      if (input.value.trim() !== "") {
+        input.parentElement.classList.add("active");
+      }
+
       input.addEventListener("focus", () => {
         input.parentElement.classList.add("active");
+      });
+
+      input.addEventListener("input", () => {
+        if (input.value.trim() !== "") {
+          input.parentElement.classList.add("active");
+        } else {
+          input.parentElement.classList.remove("active");
+        }
       });
 
       input.addEventListener("blur", () => {
@@ -81,6 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     button.addEventListener("click", function (e) {
+      if (prefersReducedMotion) return;
+
       const ripple = document.createElement("span");
       ripple.classList.add("ripple");
 
@@ -153,6 +171,8 @@ document.addEventListener("DOMContentLoaded", () => {
   faqItems.forEach((item) => {
     const question = item.querySelector(".faq-question");
 
+    if (!question) return;
+
     question.addEventListener("click", () => {
       const isActive = item.classList.contains("active");
 
@@ -164,9 +184,16 @@ document.addEventListener("DOMContentLoaded", () => {
         item.classList.add("active");
       }
     });
+
+    question.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        question.click();
+      }
+    });
   });
 
-  if (bookingContent) {
+  if (bookingContent && !prefersReducedMotion) {
     const bookingSection = document.querySelector(".booking-cta");
 
     const bookingObserver = new IntersectionObserver(
@@ -181,9 +208,11 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     bookingObserver.observe(bookingSection);
+  } else if (bookingContent) {
+    bookingContent.classList.add("show");
   }
 
-  if (revealElements.length) {
+  if (revealElements.length && !prefersReducedMotion) {
     const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -198,6 +227,10 @@ document.addEventListener("DOMContentLoaded", () => {
     revealElements.forEach((element) => {
       revealObserver.observe(element);
     });
+  } else {
+    revealElements.forEach((element) => {
+      element.classList.add("show");
+    });
   }
 
   function showMessage(text, color) {
@@ -207,32 +240,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const toast = document.createElement("div");
     toast.className = "contact-toast";
     toast.textContent = text;
-
-    toast.style.position = "fixed";
-    toast.style.top = "30px";
-    toast.style.right = "20px";
-    toast.style.maxWidth = "calc(100% - 40px)";
     toast.style.background = color;
-    toast.style.color = "#fff";
-    toast.style.padding = "16px 22px";
-    toast.style.borderRadius = "12px";
-    toast.style.fontWeight = "600";
-    toast.style.boxShadow = "0 12px 30px rgba(0,0,0,.25)";
-    toast.style.zIndex = "99999";
-    toast.style.transform = "translateX(350px)";
-    toast.style.transition = ".4s";
+    toast.setAttribute("role", "alert");
+    toast.setAttribute("aria-live", "assertive");
 
     document.body.appendChild(toast);
 
-    setTimeout(() => {
+    if (prefersReducedMotion) {
       toast.style.transform = "translateX(0)";
-    }, 50);
+    } else {
+      setTimeout(() => {
+        toast.style.transform = "translateX(0)";
+      }, 50);
+    }
 
     setTimeout(() => {
-      toast.style.transform = "translateX(350px)";
-      setTimeout(() => {
+      if (prefersReducedMotion) {
         toast.remove();
-      }, 400);
+      } else {
+        toast.style.transform = "translateX(350px)";
+        setTimeout(() => {
+          toast.remove();
+        }, 400);
+      }
     }, 3000);
   }
 });

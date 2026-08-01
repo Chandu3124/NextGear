@@ -675,6 +675,31 @@ body {
     max-width: 520px;
   }
 
+  .hero-buttons {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .hero-buttons .btn,
+  .hero-buttons .submit-btn {
+    width: auto;
+    flex: 0 0 auto;
+  }
+
+  .question-actions {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .question-actions .btn,
+  .question-actions .submit-btn {
+    width: auto;
+    flex: 0 0 auto;
+  }
+
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -731,6 +756,16 @@ body {
 
   .hero-points p {
     font-size: 13px;
+  }
+
+  .how-steps {
+    justify-content: center;
+  }
+
+  .how-steps .step {
+    flex: 0 1 calc(33.333% - 17px);
+    max-width: calc(33.333% - 17px);
+    min-width: calc(33.333% - 17px);
   }
 }
 

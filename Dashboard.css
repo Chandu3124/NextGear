@@ -55,6 +55,18 @@ textarea{
     font:inherit;
 }
 
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.profile-trigger:focus-visible,
+.dropdown-item:focus-visible,
+.top-action-btn:focus-visible,
+.icon-btn:focus-visible{
+    outline:3px solid var(--primary);
+    outline-offset:3px;
+}
+
 .container{
     display:flex;
     min-height:100vh;

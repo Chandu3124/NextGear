@@ -59,7 +59,7 @@ button{
   padding:150px 8% 40px;
   background:
   linear-gradient(rgba(8,28,58,.72), rgba(8,28,58,.78)),
-  url("https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1600&q=80");
+  url("https://images.unsplash.com/photo-1493238792000-8113da705763?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-position:center center;
   background-size:cover;
   background-repeat:no-repeat;
@@ -767,7 +767,7 @@ body.dark{
 body.dark .blog-hero{
  background:
     linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.86)),
-    url("https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1600&q=80");
+    url("https://images.unsplash.com/photo-1493238792000-8113da705763?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-position:center center;
   background-size:cover;
   background-repeat:no-repeat;

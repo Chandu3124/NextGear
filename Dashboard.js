@@ -18,7 +18,6 @@ const rtlToggle = document.getElementById("rtlToggle");
 
 const profileDropdown = document.getElementById("profileDropdown");
 const profileTrigger = document.getElementById("profileTrigger");
-const profileDropdownMenu = document.getElementById("profileDropdownMenu");
 const dropdownSectionButtons = document.querySelectorAll(".dropdown-item[data-section-target]");
 
 const bookBtn = document.getElementById("bookBtn");
@@ -52,54 +51,54 @@ const completedSessions = document.getElementById("completedSessions");
 
 const questions = [
     {
-        question:"What does a RED traffic signal indicate?",
-        options:["Stop","Go","Speed Up","Turn Left"],
-        answer:"Stop"
+        question: "What does a RED traffic signal indicate?",
+        options: ["Stop", "Go", "Speed Up", "Turn Left"],
+        answer: "Stop"
     },
     {
-        question:"What should you do before changing lanes?",
-        options:["Honk","Check Mirrors","Accelerate","Brake Suddenly"],
-        answer:"Check Mirrors"
+        question: "What should you do before changing lanes?",
+        options: ["Honk", "Check Mirrors", "Accelerate", "Brake Suddenly"],
+        answer: "Check Mirrors"
     },
     {
-        question:"Maximum speed should always depend on?",
-        options:["Road Conditions","Music","Passengers","Vehicle Color"],
-        answer:"Road Conditions"
+        question: "Maximum speed should always depend on?",
+        options: ["Road Conditions", "Music", "Passengers", "Vehicle Color"],
+        answer: "Road Conditions"
     },
     {
-        question:"Seat belts are?",
-        options:["Optional","Only for Driver","Mandatory","Only Highway"],
-        answer:"Mandatory"
+        question: "Seat belts are?",
+        options: ["Optional", "Only for Driver", "Mandatory", "Only Highway"],
+        answer: "Mandatory"
     },
     {
-        question:"Yellow traffic light means?",
-        options:["Go Fast","Slow Down & Prepare to Stop","Stop Immediately","Turn Right"],
-        answer:"Slow Down & Prepare to Stop"
+        question: "Yellow traffic light means?",
+        options: ["Go Fast", "Slow Down & Prepare to Stop", "Stop Immediately", "Turn Right"],
+        answer: "Slow Down & Prepare to Stop"
     },
     {
-        question:"Who has priority at a pedestrian crossing?",
-        options:["Cars","Pedestrians","Bikes","Buses"],
-        answer:"Pedestrians"
+        question: "Who has priority at a pedestrian crossing?",
+        options: ["Cars", "Pedestrians", "Bikes", "Buses"],
+        answer: "Pedestrians"
     },
     {
-        question:"What should you do at a STOP sign?",
-        options:["Slow Down","Stop Completely","Ignore","Honk"],
-        answer:"Stop Completely"
+        question: "What should you do at a STOP sign?",
+        options: ["Slow Down", "Stop Completely", "Ignore", "Honk"],
+        answer: "Stop Completely"
     },
     {
-        question:"Using a mobile phone while driving is?",
-        options:["Safe","Recommended","Dangerous","Allowed Anytime"],
-        answer:"Dangerous"
+        question: "Using a mobile phone while driving is?",
+        options: ["Safe", "Recommended", "Dangerous", "Allowed Anytime"],
+        answer: "Dangerous"
     },
     {
-        question:"Safe driving requires maintaining?",
-        options:["Safe Distance","Maximum Speed","Loud Music","High RPM"],
-        answer:"Safe Distance"
+        question: "Safe driving requires maintaining?",
+        options: ["Safe Distance", "Maximum Speed", "Loud Music", "High RPM"],
+        answer: "Safe Distance"
     },
     {
-        question:"Driving under alcohol influence is?",
-        options:["Safe","Illegal","Recommended","Normal"],
-        answer:"Illegal"
+        question: "Driving under alcohol influence is?",
+        options: ["Safe", "Illegal", "Recommended", "Normal"],
+        answer: "Illegal"
     }
 ];
 
@@ -147,9 +146,11 @@ dropdownSectionButtons.forEach(btn => {
     });
 });
 
-startLearningBtn.addEventListener("click", () => {
-    showSection("theory");
-});
+if (startLearningBtn) {
+    startLearningBtn.addEventListener("click", () => {
+        showSection("theory");
+    });
+}
 
 function openSidebar() {
     sidebar.classList.add("open");
@@ -161,8 +162,8 @@ function closeSidebar() {
     mobileOverlay.classList.remove("show");
 }
 
-menuToggle.addEventListener("click", openSidebar);
-mobileOverlay.addEventListener("click", closeSidebar);
+if (menuToggle) menuToggle.addEventListener("click", openSidebar);
+if (mobileOverlay) mobileOverlay.addEventListener("click", closeSidebar);
 
 function openLogoutModal() {
     logoutModal.style.display = "flex";
@@ -173,25 +174,26 @@ function closeLogoutModal() {
     logoutModal.style.display = "none";
 }
 
-logoutBtn.addEventListener("click", openLogoutModal);
-dropdownLogoutBtn.addEventListener("click", openLogoutModal);
-
-cancelLogout.addEventListener("click", closeLogoutModal);
+if (logoutBtn) logoutBtn.addEventListener("click", openLogoutModal);
+if (dropdownLogoutBtn) dropdownLogoutBtn.addEventListener("click", openLogoutModal);
+if (cancelLogout) cancelLogout.addEventListener("click", closeLogoutModal);
 
 window.addEventListener("click", (e) => {
     if (e.target === logoutModal) {
         closeLogoutModal();
     }
 
-    if (!profileDropdown.contains(e.target)) {
+    if (profileDropdown && !profileDropdown.contains(e.target)) {
         closeProfileDropdown();
     }
 });
 
-confirmLogout.addEventListener("click", () => {
-    alert("Logged Out Successfully!");
-    location.reload();
-});
+if (confirmLogout) {
+    confirmLogout.addEventListener("click", () => {
+        alert("Logged Out Successfully!");
+        location.reload();
+    });
+}
 
 function openProfileDropdown() {
     profileDropdown.classList.add("active");
@@ -203,12 +205,17 @@ function closeProfileDropdown() {
     profileTrigger.setAttribute("aria-expanded", "false");
 }
 
-profileTrigger.addEventListener("click", (e) => {
-    e.stopPropagation();
-    profileDropdown.classList.toggle("active");
-    const isOpen = profileDropdown.classList.contains("active");
-    profileTrigger.setAttribute("aria-expanded", String(isOpen));
-});
+if (profileTrigger) {
+    profileTrigger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const isOpen = profileDropdown.classList.contains("active");
+        if (isOpen) {
+            closeProfileDropdown();
+        } else {
+            openProfileDropdown();
+        }
+    });
+}
 
 function updateThemeButton() {
     const icon = themeToggle.querySelector("i");
@@ -228,9 +235,11 @@ function applyTheme(isDark) {
     updateThemeButton();
 }
 
-themeToggle.addEventListener("click", () => {
-    applyTheme(!body.classList.contains("dark-mode"));
-});
+if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+        applyTheme(!body.classList.contains("dark-mode"));
+    });
+}
 
 function updateRTLButton() {
     const icon = rtlToggle.querySelector("i");
@@ -252,9 +261,11 @@ function applyRTL(enabled) {
     updateRTLButton();
 }
 
-rtlToggle.addEventListener("click", () => {
-    applyRTL(!body.classList.contains("rtl-mode"));
-});
+if (rtlToggle) {
+    rtlToggle.addEventListener("click", () => {
+        applyRTL(!body.classList.contains("rtl-mode"));
+    });
+}
 
 function formatDate(dateValue) {
     const date = new Date(dateValue);
@@ -336,34 +347,36 @@ function updateBookingSummary() {
     badge.textContent = total;
 }
 
-bookBtn.addEventListener("click", () => {
-    const vehicle = document.getElementById("vehicle").value;
-    const date = document.getElementById("bookingDate").value;
-    const time = document.getElementById("bookingTime").value;
-    const instructor = document.getElementById("instructor").value;
+if (bookBtn) {
+    bookBtn.addEventListener("click", () => {
+        const vehicle = document.getElementById("vehicle").value;
+        const date = document.getElementById("bookingDate").value;
+        const time = document.getElementById("bookingTime").value;
+        const instructor = document.getElementById("instructor").value;
 
-    if (date === "") {
-        alert("Please select booking date.");
-        return;
-    }
+        if (date === "") {
+            alert("Please select booking date.");
+            return;
+        }
 
-    const newBooking = {
-        vehicle,
-        date: formatDate(date),
-        time,
-        instructor,
-        status: "Upcoming"
-    };
+        const newBooking = {
+            vehicle,
+            date: formatDate(date),
+            time,
+            instructor,
+            status: "Upcoming"
+        };
 
-    renderBookingRow(newBooking, true);
-    saveBookings();
-    updateBookingSummary();
-    updateProgress();
+        renderBookingRow(newBooking, true);
+        saveBookings();
+        updateBookingSummary();
+        updateProgress();
 
-    document.getElementById("bookingDate").value = "";
-    alert("Simulator Session Booked Successfully!");
-    showSection("mybookings");
-});
+        document.getElementById("bookingDate").value = "";
+        alert("Simulator Session Booked Successfully!");
+        showSection("mybookings");
+    });
+}
 
 document.addEventListener("click", (e) => {
     if (e.target.classList.contains("cancel-btn")) {
@@ -380,13 +393,17 @@ document.addEventListener("click", (e) => {
     }
 });
 
-saveProfileBtn.addEventListener("click", () => {
-    alert("Profile Updated Successfully.");
-});
+if (saveProfileBtn) {
+    saveProfileBtn.addEventListener("click", () => {
+        alert("Profile Updated Successfully.");
+    });
+}
 
-saveSettingsBtn.addEventListener("click", () => {
-    alert("Settings Saved Successfully.");
-});
+if (saveSettingsBtn) {
+    saveSettingsBtn.addEventListener("click", () => {
+        alert("Settings Saved Successfully.");
+    });
+}
 
 function loadQuestion() {
     const current = questions[currentQuestion];
@@ -446,15 +463,8 @@ function updateProgress() {
     dashboardTheoryProgress.textContent = `${savedScore}%`;
 }
 
-function finishTest() {
-    if (quizFinished) return;
-
-    const selected = document.querySelector(".option.active");
-    if (selected && selected.textContent === questions[currentQuestion].answer) {
-        score++;
-    }
-
-    const percentage = Math.round((score / questions.length) * 100);
+function completeQuiz(scoreValue) {
+    const percentage = Math.round((scoreValue / questions.length) * 100);
     quizFinished = true;
     clearInterval(countdown);
 
@@ -465,47 +475,50 @@ function finishTest() {
     submitTestBtn.disabled = true;
     nextQuestionBtn.disabled = true;
 
-    alert(`Test Completed!\n\nYour Score : ${score}/${questions.length}\nPercentage : ${percentage}%`);
+    alert(`Test Completed!\n\nYour Score : ${scoreValue}/${questions.length}\nPercentage : ${percentage}%`);
     showSection("scores");
 }
 
-nextQuestionBtn.addEventListener("click", () => {
+function finishTest() {
     if (quizFinished) return;
 
     const selected = document.querySelector(".option.active");
-    if (!selected) {
-        alert("Please select an answer.");
-        return;
-    }
-
-    if (selected.textContent === questions[currentQuestion].answer) {
+    if (selected && selected.textContent === questions[currentQuestion].answer) {
         score++;
     }
 
-    currentQuestion++;
+    completeQuiz(score);
+}
 
-    if (currentQuestion < questions.length) {
-        loadQuestion();
-    } else {
-        const percentage = Math.round((score / questions.length) * 100);
-        quizFinished = true;
-        clearInterval(countdown);
+if (nextQuestionBtn) {
+    nextQuestionBtn.addEventListener("click", () => {
+        if (quizFinished) return;
 
-        saveScore(percentage);
-        loadScore();
-        updateProgress();
+        const selected = document.querySelector(".option.active");
+        if (!selected) {
+            alert("Please select an answer.");
+            return;
+        }
 
-        submitTestBtn.disabled = true;
-        nextQuestionBtn.disabled = true;
+        if (selected.textContent === questions[currentQuestion].answer) {
+            score++;
+        }
 
-        alert(`Congratulations!\n\nYour Score : ${percentage}%`);
-        showSection("scores");
-    }
-});
+        currentQuestion++;
 
-submitTestBtn.addEventListener("click", () => {
-    finishTest();
-});
+        if (currentQuestion < questions.length) {
+            loadQuestion();
+        } else {
+            completeQuiz(score);
+        }
+    });
+}
+
+if (submitTestBtn) {
+    submitTestBtn.addEventListener("click", () => {
+        finishTest();
+    });
+}
 
 function startTimer() {
     countdown = setInterval(() => {
@@ -533,15 +546,11 @@ function startTimer() {
 }
 
 window.addEventListener("load", () => {
-    const hour = new Date().getHours();
-    let greeting = "Welcome";
-
-    if (hour < 12) greeting = "Good Morning";
-    else if (hour < 17) greeting = "Good Afternoon";
-    else greeting = "Good Evening";
-
-    document.querySelector(".top-left h2").textContent = `${greeting}`;
+    document.querySelector(".top-left h2").textContent = "Hello Chandra shekar";
     document.querySelector(".top-left p").textContent = "Welcome back. Ready for today's practice?";
+
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    applyTheme(prefersDark);
 
     loadBookings();
     loadScore();

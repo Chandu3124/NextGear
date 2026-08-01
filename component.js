@@ -74,7 +74,6 @@ Promise.all([
     function setDirection(direction) {
       const isRTL = direction === "rtl";
       document.documentElement.setAttribute("dir", direction);
-      document.body.classList.toggle("rtl", isRTL);
 
       if (rtlBtn) {
         rtlBtn.textContent = isRTL ? "LTR" : "RTL";
@@ -184,9 +183,11 @@ Promise.all([
       link.addEventListener("click", () => {
         if (window.innerWidth <= 1024) {
           const insideDropdownMenu = link.closest(".dropdown-menu");
-          const isDropdownTrigger = link.parentElement.classList.contains("dropdown");
+          const isTopLevelDropdownTrigger =
+            link.closest(".dropdown") &&
+            link.closest(".dropdown")?.querySelector(":scope > a") === link;
 
-          if (insideDropdownMenu || !isDropdownTrigger) {
+          if (insideDropdownMenu || !isTopLevelDropdownTrigger) {
             closeMobileMenu();
           }
         }
