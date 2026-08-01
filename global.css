@@ -57,6 +57,10 @@ body{
   padding-top:max(var(--header-height), var(--header-min-height));
 }
 
+body.menu-open{
+  overflow:hidden;
+}
+
 a{
   text-decoration:none;
 }
@@ -331,7 +335,8 @@ select{
   flex-shrink:0;
 }
 
-.menu-toggle:hover{
+.menu-toggle:hover,
+.menu-toggle[aria-expanded="true"]{
   background:var(--primary);
   color:#fff;
   border-color:var(--primary);
@@ -723,6 +728,7 @@ html[dir="rtl"] .footer ul li a:hover{
 
   .nav-right{
     gap:10px;
+    height:auto;
   }
 
   .login{

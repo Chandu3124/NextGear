@@ -463,22 +463,6 @@ body:not(.dark) .btn.secondary:hover {
   transform: translateY(0);
 }
 
-.service-wrapper.active .service-box:nth-child(2) {
-  transition-delay: 0.2s;
-}
-
-.service-wrapper.active .service-box:nth-child(3) {
-  transition-delay: 0.4s;
-}
-
-.service-wrapper.active .service-box:nth-child(4) {
-  transition-delay: 0.6s;
-}
-
-.service-wrapper.active .service-box:nth-child(5) {
-  transition-delay: 0.8s;
-}
-
 .service-box:hover {
   transform: translateY(-12px);
   box-shadow: 0 20px 45px rgba(255, 121, 0, 0.18);
@@ -494,7 +478,6 @@ body:not(.dark) .btn.secondary:hover {
   justify-content: center;
   align-items: center;
   color: var(--text-light);
-  transition: 0.5s;
 }
 
 .hexagon svg {
@@ -1358,6 +1341,7 @@ body.dark .pgx-bg {
   background: #1e1e1e;
   stroke: #242424;
 }
+
 body.dark .pgx-info{
   color: var(--card-light);
 }
@@ -1372,6 +1356,7 @@ body.dark .booking-input select {
 body.dark .ts-dot {
   background: #444;
 }
+
 body.dark .ts-nav{
   background-color: #111111;
   color: white;
@@ -1398,6 +1383,7 @@ body.dark .pricing-card {
 body.dark .pricing-card-featured {
   border-color: var(--primary-color);
 }
+
 body.dark .ct-cta {
   background: #111111;
   color: #f4f4f4;
@@ -1416,9 +1402,6 @@ body.dark .ct-btn {
   color: #111111;
   border-color: var(--primary-color);
 }
-/* IMPORTANT:
-   CTA ni disturb cheyyakunda light style lone unchadam kosam
-   dark mode lo .ct-cta ki separate dark background ivvaledu */
 
 @media (max-width: 1100px) {
   .service-wrapper,
@@ -2183,100 +2166,42 @@ body.dark .ct-btn {
 
 @media (min-width: 361px) and (max-width: 384px) {
   .hero {
-    padding-top: 102px;
-    padding-bottom: 50px;
-  }
-
-  .hero h1 {
-    font-size: 2.1rem;
-  }
-
-  .hero p {
-    font-size: 0.95rem;
-  }
-
-  .hero-mini-card {
-    max-width: 100%;
-  }
-
-  .about-content h2,
-  .service-title h2,
-  .simx-content h2,
-  .pgx-heading h2,
-  .booking-left h2,
-  .ts-header h2,
-  .ct-header h2,
-  .section-title,
-  .pricing-header h2 {
-    font-size: 29px;
-  }
-
-  .simx-stat h3 {
-    font-size: 32px;
-  }
-}
-
-@media (min-width: 385px) and (max-width: 430px) {
-  .hero {
-    padding-top: 104px;
-    padding-bottom: 52px;
-  }
-
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero p {
-    font-size: 0.97rem;
-  }
-
-  .hero-mini-card {
-    max-width: 330px;
-  }
-
-  .about-content h2,
-  .service-title h2,
-  .simx-content h2,
-  .pgx-heading h2,
-  .booking-left h2,
-  .ts-header h2,
-  .ct-header h2,
-  .section-title,
-  .pricing-header h2 {
-    font-size: 30px;
-  }
-
-  .simx-main-card {
-    width: min(100%, 380px);
-  }
-}
-
-@media (max-width: 932px) and (orientation: landscape) {
-  .hero {
-    min-height: auto;
-    padding-top: 92px;
-    padding-bottom: 36px;
+    padding-top: 100px;
+    padding-bottom: 42px;
+    min-height: 100vh;
+    height: auto;
+    max-height: none;
+    justify-content: center;
+    align-items: center;
   }
 
   .hero-content {
-    max-width: 620px;
-    align-items: flex-start;
-    text-align: left;
+    max-width: 100%;
+    margin-left: 0;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.12;
+    margin-bottom: 12px;
   }
 
   .hero p {
-    max-width: 540px;
-    margin-inline: 0;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    min-height: auto;
+    max-width: 100%;
+    margin-inline: auto;
+    margin-bottom: 16px;
   }
 
-  .hero-mini-info,
   .buttons {
-    justify-content: flex-start;
-  }
-
-  .buttons {
-    flex-direction: row;
-    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
   }
 
   .btn,
@@ -2284,7 +2209,83 @@ body.dark .ct-btn {
   .start-btn,
   .booking-btn,
   .ct-btn,
-  .pricing-btn {
-    width: auto;
+  .pricing-btn,
+  .booking-popup button {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .hero-mini-info {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 14px;
+  }
+
+  .hero-mini-card {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: none;
+    padding: 9px 8px;
+    border-radius: 12px;
+  }
+
+  .hero-mini-card strong {
+    font-size: 11px;
+    line-height: 1.15;
+    margin-bottom: 2px;
+  }
+
+  .hero-mini-card span {
+    font-size: 9px;
+    line-height: 1.3;
+  }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 740px) and (orientation: portrait) {
+  .pgx-section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .pgx-container {
+    gap: 24px;
+  }
+
+  .pgx-levels {
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pgx-circle {
+    width: 98px;
+    height: 98px;
+  }
+
+  .pgx-circle svg {
+    width: 98px;
+    height: 98px;
+  }
+
+  .pgx-bg,
+  .pgx-ring {
+    cx: 49;
+    cy: 49;
+    r: 39;
+    stroke-width: 8;
+  }
+
+  .pgx-text strong {
+    font-size: 17px;
+  }
+
+  .pgx-text small {
+    font-size: 10px;
   }
 }

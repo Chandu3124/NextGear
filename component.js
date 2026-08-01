@@ -87,8 +87,9 @@ Promise.all([
 
     function setActiveMenu() {
       const currentPath =
-        window.location.pathname.split("/").pop().toLowerCase() || "index.html";
-      const navLinks = document.querySelectorAll(".menu a[data-page]");
+        (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
+
+      const navLinks = document.querySelectorAll(".menu a[data-page], .menu a[href]");
 
       let mappedPage = currentPath;
 
@@ -99,10 +100,15 @@ Promise.all([
       }
 
       navLinks.forEach((link) => {
-        const linkPage = (link.dataset.page || "").toLowerCase();
         link.removeAttribute("aria-current");
 
-        if (linkPage === mappedPage) {
+        const dataPage = (link.dataset.page || "").toLowerCase();
+        const hrefPage = (link.getAttribute("href") || "")
+          .split("/")
+          .pop()
+          .toLowerCase();
+
+        if (dataPage === mappedPage || hrefPage === mappedPage) {
           link.setAttribute("aria-current", "page");
 
           const parentDropdown = link.closest(".dropdown");
@@ -133,6 +139,8 @@ Promise.all([
         menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
         menuToggle.setAttribute("aria-label", "Open menu");
       }
+
+      document.body.classList.remove("menu-open");
       closeAllDropdowns();
     }
 
@@ -144,6 +152,7 @@ Promise.all([
           ? '<i class="fa-solid fa-xmark"></i>'
           : '<i class="fa-solid fa-bars"></i>';
         menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+        document.body.classList.toggle("menu-open", isOpen);
 
         if (!isOpen) {
           closeAllDropdowns();
@@ -167,6 +176,7 @@ Promise.all([
         trigger.addEventListener("click", (e) => {
           if (window.innerWidth <= 1024) {
             e.preventDefault();
+
             const isOpen = dropdown.classList.contains("open");
             closeAllDropdowns();
 
@@ -183,9 +193,10 @@ Promise.all([
       link.addEventListener("click", () => {
         if (window.innerWidth <= 1024) {
           const insideDropdownMenu = link.closest(".dropdown-menu");
+          const parentDropdown = link.closest(".dropdown");
           const isTopLevelDropdownTrigger =
-            link.closest(".dropdown") &&
-            link.closest(".dropdown")?.querySelector(":scope > a") === link;
+            parentDropdown &&
+            parentDropdown.querySelector(":scope > a") === link;
 
           if (insideDropdownMenu || !isTopLevelDropdownTrigger) {
             closeMobileMenu();
@@ -195,9 +206,14 @@ Promise.all([
     });
 
     document.addEventListener("click", (e) => {
-      const clickedInsideMenu = e.target.closest(".nav");
-      if (!clickedInsideMenu && window.innerWidth <= 1024) {
-        closeMobileMenu();
+      const clickedInsideNav = e.target.closest(".nav");
+
+      if (!clickedInsideNav) {
+        closeAllDropdowns();
+
+        if (window.innerWidth <= 1024) {
+          closeMobileMenu();
+        }
       }
     });
 
@@ -237,6 +253,7 @@ Promise.all([
 
     window.addEventListener("resize", () => {
       if (window.innerWidth > 1024) {
+        document.body.classList.remove("menu-open");
         closeMobileMenu();
       }
     });

@@ -51,7 +51,7 @@ function animateOnScroll() {
     if (top < triggerBottom && !circle.dataset.animated) {
       const percent = Number(circle.dataset.percent);
       const ring = circle.querySelector(".pgx-ring");
-      const radius = 60;
+      const radius = window.innerWidth <= 740 ? 39 : 60;
       const circumference = 2 * Math.PI * radius;
       const offset = circumference - (percent / 100) * circumference;
 
