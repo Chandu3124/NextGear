@@ -85,36 +85,43 @@ Promise.all([
       }
     }
 
-    function setActiveMenu() {
-      const currentPath =
-        (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
+    function normalizeFile(path) {
+      return (path || "")
+        .split("?")[0]
+        .split("#")[0]
+        .split("/")
+        .pop()
+        .toLowerCase();
+    }
 
-      const navLinks = document.querySelectorAll(".menu a[data-page], .menu a[href]");
+    function setActiveMenu() {
+      const currentPath = normalizeFile(window.location.pathname) || "index.html";
+      const navLinks = document.querySelectorAll(".menu a");
 
       let mappedPage = currentPath;
-
-      if (currentPath === "service-detail.html") {
-        mappedPage = "services.html";
-      } else if (currentPath === "blog-detail.html") {
-        mappedPage = "blog.html";
-      }
+      if (currentPath === "service-detail.html") mappedPage = "services.html";
+      if (currentPath === "blog-detail.html") mappedPage = "blog.html";
 
       navLinks.forEach((link) => {
         link.removeAttribute("aria-current");
+        link.classList.remove("active");
 
-        const dataPage = (link.dataset.page || "").toLowerCase();
-        const hrefPage = (link.getAttribute("href") || "")
-          .split("/")
-          .pop()
-          .toLowerCase();
+        const dataPage = normalizeFile(link.dataset.page);
+        const hrefPage = normalizeFile(link.getAttribute("href"));
 
-        if (dataPage === mappedPage || hrefPage === mappedPage) {
+        if (
+          dataPage === mappedPage ||
+          hrefPage === mappedPage ||
+          hrefPage === dataPage
+        ) {
+          link.classList.add("active");
           link.setAttribute("aria-current", "page");
 
           const parentDropdown = link.closest(".dropdown");
           if (parentDropdown) {
             const mainLink = parentDropdown.querySelector(":scope > a");
-            if (mainLink && !mainLink.hasAttribute("aria-current")) {
+            if (mainLink) {
+              mainLink.classList.add("active");
               mainLink.setAttribute("aria-current", "page");
             }
           }
@@ -154,9 +161,7 @@ Promise.all([
         menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
         document.body.classList.toggle("menu-open", isOpen);
 
-        if (!isOpen) {
-          closeAllDropdowns();
-        }
+        if (!isOpen) closeAllDropdowns();
       });
     }
 
@@ -165,9 +170,7 @@ Promise.all([
       const submenu = dropdown.querySelector(".dropdown-menu");
 
       if (trigger && submenu) {
-        if (!submenu.id) {
-          submenu.id = `dropdown-menu-${index + 1}`;
-        }
+        if (!submenu.id) submenu.id = `dropdown-menu-${index + 1}`;
 
         trigger.setAttribute("aria-haspopup", "true");
         trigger.setAttribute("aria-expanded", "false");
@@ -218,9 +221,7 @@ Promise.all([
     });
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        closeMobileMenu();
-      }
+      if (e.key === "Escape") closeMobileMenu();
     });
 
     const savedDirection = safeStorage.get("direction") || "ltr";
