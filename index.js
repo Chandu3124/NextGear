@@ -8,12 +8,14 @@ let i = 0;
 
 function typeEffect() {
   if (!typing) return;
+
   if (i < text.length) {
     typing.innerHTML += text.charAt(i);
     i++;
     setTimeout(typeEffect, 45);
   }
 }
+
 typeEffect();
 
 const revealElements = document.querySelectorAll(".reveal");
@@ -26,6 +28,7 @@ function animateOnScroll() {
 
   revealElements.forEach((element) => {
     const top = element.getBoundingClientRect().top;
+
     if (top < triggerBottom) {
       element.classList.add("active");
     }
@@ -33,6 +36,7 @@ function animateOnScroll() {
 
   if (serviceWrapper) {
     const wrapperTop = serviceWrapper.getBoundingClientRect().top;
+
     if (wrapperTop < triggerBottom) {
       serviceWrapper.classList.add("active");
     }
@@ -40,6 +44,7 @@ function animateOnScroll() {
 
   pgxFills.forEach((fill) => {
     const top = fill.getBoundingClientRect().top;
+
     if (top < triggerBottom && !fill.dataset.animated) {
       fill.style.width = `${fill.dataset.width}%`;
       fill.dataset.animated = "true";
@@ -48,16 +53,26 @@ function animateOnScroll() {
 
   pgxCircles.forEach((circle) => {
     const top = circle.getBoundingClientRect().top;
+
     if (top < triggerBottom && !circle.dataset.animated) {
       const percent = Number(circle.dataset.percent);
       const ring = circle.querySelector(".pgx-ring");
       const radius = window.innerWidth <= 740 ? 39 : 60;
       const circumference = 2 * Math.PI * radius;
-      const offset = circumference - (percent / 100) * circumference;
 
       if (ring) {
         ring.style.strokeDasharray = circumference;
-        ring.style.strokeDashoffset = offset;
+
+        if (percent >= 100) {
+          ring.style.strokeDashoffset = 0;
+          ring.style.strokeLinecap = "butt";
+          ring.classList.add("full-ring");
+          circle.classList.add("is-full");
+        } else {
+          const offset = circumference - (percent / 100) * circumference;
+          ring.style.strokeDashoffset = offset;
+          ring.style.strokeLinecap = "round";
+        }
       }
 
       circle.dataset.animated = "true";
@@ -78,6 +93,7 @@ function runCounters() {
   if (!simSection) return;
 
   const top = simSection.getBoundingClientRect().top;
+
   if (top < window.innerHeight * 0.9) {
     counters.forEach((counter) => {
       const target = Number(counter.dataset.target);
@@ -86,6 +102,7 @@ function runCounters() {
 
       const updateCounter = () => {
         current += increment;
+
         if (current >= target) {
           counter.textContent = target;
         } else {
@@ -144,6 +161,7 @@ const exploreServicesBtn = document.getElementById("exploreServicesBtn");
 
 function scrollToBooking() {
   const bookingSection = document.getElementById("booking");
+
   if (bookingSection) {
     bookingSection.scrollIntoView({ behavior: "smooth" });
   }
@@ -163,6 +181,7 @@ if (ctBookingBtn) {
 if (exploreServicesBtn) {
   exploreServicesBtn.addEventListener("click", () => {
     const simulator = document.getElementById("simulator");
+
     if (simulator) {
       simulator.scrollIntoView({ behavior: "smooth" });
     }
@@ -206,7 +225,10 @@ function updateSlider(index) {
   track.style.transform = `translateX(-${currentSlide * 100}%)`;
 
   dots.forEach((dot) => dot.classList.remove("active"));
-  dots[currentSlide].classList.add("active");
+
+  if (dots[currentSlide]) {
+    dots[currentSlide].classList.add("active");
+  }
 }
 
 if (nextBtn) {

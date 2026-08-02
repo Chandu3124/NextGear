@@ -138,7 +138,7 @@
   background:transparent;
 }
 
-body:not(.dark) .home2-page .btn-main:hover,
+body:not(.dark) .home2-page .btn-main:hover, 
 body:not(.dark) .home2-page .dash-btn:hover,
 body:not(.dark) .home2-page .confirm-btn:hover,
 body:not(.dark) .home2-page .cta-btn:hover,
@@ -1349,7 +1349,7 @@ body.dark .home2-page .circle-value{
 body.dark .home2-page .btn-outline,
 body.dark .home2-page .btn,
 body.dark .home2-page .cta-secondary{
-  border-color:#ff7900;
+  border:2px solid rgba(255,255,255,.92);
   color:#ffffff !important;
 }
 
