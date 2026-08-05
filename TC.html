@@ -1,119 +1,201 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" dir="ltr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NextGear | Terms & Conditions</title>
-  <link rel="icon" type="image/png" sizes="184x184" href="logo-light.png">
-  <link rel="stylesheet" href="TC.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-</head>
-<body>
-  <div class="top-actions">
-    <button class="circle-btn" id="rtlToggle" type="button" aria-label="Toggle RTL">
-      RTL
-    </button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NextGear | Terms & Conditions</title>
+    <link rel="icon" type="image/png" sizes="184x184" href="logo-light.png" />
+    <link rel="stylesheet" href="TC.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="top-actions">
+      <button
+        class="circle-btn"
+        id="rtlToggle"
+        type="button"
+        aria-label="Toggle RTL"
+      >
+        RTL
+      </button>
 
-    <button class="circle-btn" id="themeToggle" type="button" aria-label="Toggle dark mode">
-      <svg class="btn-icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79Z" />
-      </svg>
+      <button
+        class="circle-btn"
+        id="themeToggle"
+        type="button"
+        aria-label="Toggle dark mode"
+      >
+        <svg
+          class="btn-icon icon-moon"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79Z" />
+        </svg>
 
-      <svg class="btn-icon icon-sun" viewBox="0 0 24 0 24 24" aria-hidden="true" focusable="false">
-        <circle cx="12" cy="12" r="4"></circle>
-        <path d="M12 2v2.2M12 19.8V22M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M2 12h2.2M19.8 12H22M4.93 19.07l1.56-1.56M17.51 6.49l1.56-1.56"></path>
-      </svg>
-    </button>
-  </div>
-
-  <section class="policy-page">
-    <div class="container">
-      <div class="policy-card">
-        <div class="brand-row">
-          <a href="index.html" class="logo" aria-label="NextGear home">
-            <img
-              id="siteLogo"
-              src="logo-light.png"
-              alt="NextGear logo"
-              data-light-logo="logo-light.png"
-              data-dark-logo="logo-dark.png"
-            />
-            <h2>NEXT<span>GEAR</span></h2>
-          </a>
-        </div>
-
-        <span class="policy-tag">NextGear Policy</span>
-        <h1>Terms & Conditions</h1>
-        <p class="intro">
-          These Terms & Conditions govern your use of the NextGear website and related services. By accessing or using our platform, you agree to follow these terms.
-        </p>
-
-        <div class="policy-section">
-          <h2>1. Use of Services</h2>
-          <p>Users must use our website and services only for lawful purposes. Any misuse, false booking, or harmful activity is strictly prohibited.</p>
-        </div>
-
-        <div class="policy-section">
-          <h2>2. Booking Responsibility</h2>
-          <p>Users are responsible for providing correct booking details, contact information, and availability while using any training or support service.</p>
-        </div>
-
-        <div class="policy-section">
-          <h2>3. Content Accuracy</h2>
-          <p>We aim to keep all website content accurate and updated, but we do not guarantee that all information will always be complete, error-free, or current.</p>
-        </div>
-
-        <div class="policy-section">
-          <h2>4. Service Changes</h2>
-          <p>NextGear may modify, pause, or discontinue any service, feature, or website content at any time without prior notice.</p>
-        </div>
-
-        <div class="policy-section">
-          <h2>5. Intellectual Property</h2>
-          <p>All content, branding, design, text, and graphics on this website belong to NextGear unless stated otherwise and may not be copied without permission.</p>
-        </div>
-
-        <div class="policy-section">
-          <h2>6. Limitation of Liability</h2>
-          <p>NextGear is not responsible for indirect loss, delays, technical interruptions, or damages resulting from website access or service usage.</p>
-        </div>
-
-        <p class="effective-date">Effective Date: 30 July 2026</p>
-      </div>
+        <svg
+          class="btn-icon icon-sun"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <circle cx="12" cy="12" r="4"></circle>
+          <path
+            d="M12 2v2.2M12 19.8V22M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M2 12h2.2M19.8 12H22M4.93 19.07l1.56-1.56M17.51 6.49l1.56-1.56"
+          ></path>
+        </svg>
+      </button>
     </div>
-  </section>
 
-  <script>
-    const themeToggle = document.getElementById("themeToggle");
-    const rtlToggle = document.getElementById("rtlToggle");
-    const siteLogo = document.getElementById("siteLogo");
+    <section class="policy-page">
+      <div class="container">
+        <div class="policy-card">
+          <div class="brand-row">
+            <a href="index.html" class="logo" aria-label="NextGear home">
+              <img
+                id="siteLogo"
+                src="logo-light.png"
+                alt="NextGear logo"
+                data-light-logo="logo-light.png"
+                data-dark-logo="logo-dark.png"
+              />
+              <h2>NEXT<span>GEAR</span></h2>
+            </a>
+          </div>
 
-    function updateLogoByTheme() {
-      const isDark = document.body.classList.contains("dark");
-      siteLogo.src = isDark ? siteLogo.dataset.darkLogo : siteLogo.dataset.lightLogo;
-    }
+          <span class="policy-tag">NextGear Policy</span>
+          <h1>Terms & Conditions</h1>
+          <p class="intro">
+            These Terms & Conditions govern your use of the NextGear website and
+            related services. By accessing or using our platform, you agree to
+            follow these terms.
+          </p>
 
-    function setDirection(direction) {
-      const isRTL = direction === "rtl";
-      document.documentElement.setAttribute("dir", direction);
-      rtlToggle.textContent = isRTL ? "LTR" : "RTL";
-    }
+          <div class="policy-section">
+            <h2>1. Use of Services</h2>
+            <p>
+              Users must use our website and services only for lawful purposes.
+              Any misuse, false booking, or harmful activity is strictly
+              prohibited.
+            </p>
+          </div>
 
-    themeToggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      updateLogoByTheme();
-    });
+          <div class="policy-section">
+            <h2>2. Booking Responsibility</h2>
+            <p>
+              Users are responsible for providing correct booking details,
+              contact information, and availability while using any training or
+              support service.
+            </p>
+          </div>
 
-    rtlToggle.addEventListener("click", () => {
-      const currentDir = document.documentElement.getAttribute("dir") || "ltr";
-      const newDir = currentDir === "rtl" ? "ltr" : "rtl";
-      setDirection(newDir);
-    });
+          <div class="policy-section">
+            <h2>3. Content Accuracy</h2>
+            <p>
+              We aim to keep all website content accurate and updated, but we do
+              not guarantee that all information will always be complete,
+              error-free, or current.
+            </p>
+          </div>
 
-    updateLogoByTheme();
-    setDirection(document.documentElement.getAttribute("dir") || "ltr");
-  </script>
-</body>
+          <div class="policy-section">
+            <h2>4. Service Changes</h2>
+            <p>
+              NextGear may modify, pause, or discontinue any service, feature,
+              or website content at any time without prior notice.
+            </p>
+          </div>
+
+          <div class="policy-section">
+            <h2>5. Intellectual Property</h2>
+            <p>
+              All content, branding, design, text, and graphics on this website
+              belong to NextGear unless stated otherwise and may not be copied
+              without permission.
+            </p>
+          </div>
+
+          <div class="policy-section">
+            <h2>6. Limitation of Liability</h2>
+            <p>
+              NextGear is not responsible for indirect loss, delays, technical
+              interruptions, or damages resulting from website access or service
+              usage.
+            </p>
+          </div>
+
+          <p class="effective-date">Effective Date: 30 July 2026</p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const themeToggle = document.getElementById("themeToggle");
+        const rtlToggle = document.getElementById("rtlToggle");
+        const siteLogo = document.getElementById("siteLogo");
+
+        function updateLogoByTheme(isDark) {
+          if (!siteLogo) return;
+          const lightLogo = siteLogo.dataset.lightLogo;
+          const darkLogo = siteLogo.dataset.darkLogo;
+          if (!lightLogo || !darkLogo) return;
+          siteLogo.src = isDark ? darkLogo : lightLogo;
+        }
+
+        function setTheme(theme) {
+          const isDark = theme === "dark";
+          document.body.classList.toggle("dark", isDark);
+          updateLogoByTheme(isDark);
+
+          if (themeToggle) {
+            themeToggle.innerHTML = isDark
+              ? '<svg class="btn-icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2.2M12 19.8V22M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M2 12h2.2M19.8 12H22M4.93 19.07l1.56-1.56M17.51 6.49l1.56-1.56"></path></svg>'
+              : '<svg class="btn-icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79Z" /></svg>';
+          }
+
+          localStorage.setItem("theme", theme);
+        }
+
+        function setDirection(direction) {
+          const isRTL = direction === "rtl";
+          document.documentElement.setAttribute("dir", direction);
+          if (rtlToggle) rtlToggle.textContent = isRTL ? "LTR" : "RTL";
+          localStorage.setItem("direction", direction);
+        }
+
+        const savedTheme =
+          localStorage.getItem("theme") ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+
+        const savedDirection = localStorage.getItem("direction") || "ltr";
+
+        setTheme(savedTheme);
+        setDirection(savedDirection);
+
+        themeToggle?.addEventListener("click", () => {
+          const nextTheme = document.body.classList.contains("dark")
+            ? "light"
+            : "dark";
+          setTheme(nextTheme);
+        });
+
+        rtlToggle?.addEventListener("click", () => {
+          const nextDir =
+            document.documentElement.getAttribute("dir") === "rtl"
+              ? "ltr"
+              : "rtl";
+          setDirection(nextDir);
+        });
+      });
+    </script>
+  </body>
 </html>

@@ -815,6 +815,7 @@ body.dark-mode .input-group textarea{
     grid-template-columns:repeat(3,1fr);
     gap:22px;
     margin-top:28px;
+    margin-bottom: 20px;
 }
 
 .summary-card,

@@ -44,18 +44,20 @@
   height:90vh;
   min-height:90vh;
   display:flex;
-  align-items:center;
+  align-items: center;
   padding:120px 8% 80px;
   background:
     linear-gradient(rgba(8,28,58,.72),rgba(8,28,58,.72)),
     url("img3.avif") center/cover;
   color:#fff;
+  justify-content: flex-end;
 }
 
 .home2-page .hero-content{
   max-width:650px;
   animation:up 1s;
   margin-top:-10px;
+ 
 }
 
 .home2-page .tag{

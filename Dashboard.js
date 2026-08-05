@@ -544,7 +544,14 @@ function startTimer() {
         timer.textContent = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
     }, 1000);
 }
+document.getElementById("confirmLogout")?.addEventListener("click", () => {
+  window.location.href = "Login.html";
+});
 
+document.getElementById("cancelLogout")?.addEventListener("click", () => {
+  const modal = document.getElementById("logoutModal");
+  if (modal) modal.style.display = "none";
+});
 window.addEventListener("load", () => {
     document.querySelector(".top-left h2").textContent = "Hello Chandra shekar";
     document.querySelector(".top-left p").textContent = "Welcome back. Ready for today's practice?";
