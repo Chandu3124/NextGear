@@ -131,6 +131,7 @@ Promise.all([
       const isRTL = direction === "rtl";
 
       document.documentElement.setAttribute("dir", direction);
+      
  
       if (rtlBtn) {
 
@@ -505,9 +506,35 @@ Promise.all([
         safeStorage.set("theme", newTheme);
 
       });
-
+F
     }
- 
+ document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme =
+        localStorage.getItem("theme") || "light";
+
+    const savedDirection =
+        localStorage.getItem("direction") || "ltr";
+
+    document.body.classList.toggle(
+        "dark",
+        savedTheme === "dark"
+    );
+
+    document.body.classList.toggle(
+        "dark-mode",
+        savedTheme === "dark"
+    );
+
+    document.documentElement.setAttribute(
+        "dir",
+        savedDirection
+    );
+
+    document.body.classList.toggle(
+        "rtl-mode",
+        savedDirection === "rtl"
+    );
+});
     setActiveMenu();
  
     window.addEventListener("resize", () => {
