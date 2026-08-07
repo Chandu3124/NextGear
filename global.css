@@ -934,17 +934,7 @@ button:focus-visible {
 
 /* RTL */
 
-/* html[dir="rtl"] .menu,
-html[dir="rtl"] .nav-right,
-html[dir="rtl"] .logo,
-html[dir="rtl"] .footer-logo,
-html[dir="rtl"] .socials {
-  flex-direction: row-reverse;
-} */
 
-html[dir="rtl"] .contact li {
-  flex-direction: row-reverse;
-}
 
 html[dir="rtl"] .dropdown-menu {
   left: auto;
