@@ -252,7 +252,11 @@ select {
 
   position: relative;
 }
-
+.dropdown-menu li a.active,
+.dropdown-menu li a[aria-current="page"] {
+  background: var(--primary);
+  color: #fff;
+}
 .menu > li > a.active::after,
 .menu > li > a[aria-current="page"]::after {
   content: "";

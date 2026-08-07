@@ -181,6 +181,17 @@ body.rtl-mode .menu li.active{
 body.rtl-mode .main-content{
     margin-left:0;
     margin-right:260px;
+    font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.4px;
+  width:44px;
+    height:44px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .topbar{
@@ -377,6 +388,7 @@ body.rtl-mode .dropdown-item{
     outline:none;
     cursor:pointer;
     transition:.3s ease;
+    
 }
 
 .icon-btn{
@@ -403,6 +415,9 @@ body.rtl-mode .dropdown-item{
     border:1px solid var(--border);
     font-size:14px;
     font-weight:600;
+    width:44px;
+    height:44px;
+    justify-content:center;
 }
 
 body.dark-mode .icon-btn,
@@ -815,7 +830,7 @@ body.dark-mode .input-group textarea{
     grid-template-columns:repeat(3,1fr);
     gap:22px;
     margin-top:28px;
-    margin-bottom: 20px;
+    margin-bottom:20px;
 }
 
 .summary-card,

@@ -50,7 +50,7 @@
     linear-gradient(rgba(8,28,58,.72),rgba(8,28,58,.72)),
     url("img3.avif") center/cover;
   color:#fff;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .home2-page .hero-content{

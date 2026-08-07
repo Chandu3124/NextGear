@@ -3,16 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>NextGear Login</title>
 
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="184x184"
-    href="logo-light.png"
-  />
-
+  <link rel="icon" type="image/png" sizes="184x184" href="logo-light.png" />
   <link rel="stylesheet" href="Login.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,10 +21,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   />
 </head>
-
 <body>
-
-  <!-- Page Controls -->
   <div class="page-controls">
     <button
       type="button"
@@ -54,11 +44,8 @@
     </button>
   </div>
 
-  <!-- Main Container -->
   <div class="container">
     <div class="form-card">
-
-      <!-- Logo -->
       <div class="logo-wrap">
         <a href="index.html" class="logo" aria-label="NextGear home">
           <img
@@ -68,44 +55,38 @@
             data-light-logo="logo-light.png"
             data-dark-logo="logo-dark.png"
           />
-
           <h2>NEXT<span>GEAR</span></h2>
         </a>
       </div>
 
-      <!-- Login Form -->
       <form id="loginForm">
         <h2 class="form-title">Student Login</h2>
 
         <div class="input-box">
+          <label for="loginEmail" class="input-label">Email Address</label>
           <input
             type="email"
             id="loginEmail"
             name="email"
-            placeholder=" "
+            placeholder="Enter your email"
             required
           />
-          <label for="loginEmail">Email Address</label>
         </div>
 
         <div class="input-box">
+          <label for="loginPassword" class="input-label">Password</label>
           <input
             type="password"
             id="loginPassword"
             name="password"
-            placeholder=" "
+            placeholder="Enter your password"
             required
           />
-          <label for="loginPassword">Password</label>
         </div>
 
         <div class="remember-row">
           <label class="remember-me" for="rememberMe">
-            <input
-              type="checkbox"
-              id="rememberMe"
-              name="rememberMe"
-            />
+            <input type="checkbox" id="rememberMe" name="rememberMe" />
             <span>Remember me</span>
           </label>
 
@@ -114,11 +95,8 @@
           </a>
         </div>
 
-        <button type="submit" class="main-btn">
-          Login
-        </button>
+        <button type="submit" class="main-btn">Login</button>
 
-        <!-- Login Social Buttons -->
         <div class="social-login">
           <div class="social-divider">
             <span>or continue with</span>
@@ -147,87 +125,74 @@
           </button>
         </div>
 
-        <!-- Switch to Signup -->
         <p class="switch">
           New Student?
-          <button
-            type="button"
-            class="switch-btn"
-            id="showSignupBtn"
-          >
+          <button type="button" class="switch-btn" id="showSignupBtn">
             Create Account
           </button>
         </p>
       </form>
 
-      <!-- Signup Form -->
       <form id="signupForm" class="hide">
         <h2 class="form-title">Create Account</h2>
 
         <div class="input-box">
+          <label for="signupName" class="input-label">Full Name</label>
           <input
             type="text"
             id="signupName"
             name="fullName"
-            placeholder=" "
+            placeholder="Enter your full name"
             required
           />
-          <label for="signupName">Full Name</label>
         </div>
 
         <div class="input-box">
+          <label for="signupEmail" class="input-label">Email Address</label>
           <input
             type="email"
             id="signupEmail"
             name="signupEmail"
-            placeholder=" "
+            placeholder="Enter your email"
             required
           />
-          <label for="signupEmail">Email Address</label>
         </div>
 
         <div class="input-box">
+          <label for="signupPhone" class="input-label">Phone Number</label>
           <input
             type="tel"
             id="signupPhone"
             name="phone"
-            placeholder=" "
+            placeholder="Enter your phone number"
             required
           />
-          <label for="signupPhone">Phone Number</label>
         </div>
 
         <div class="input-box">
+          <label for="signupLicense" class="input-label">Learner License Number</label>
           <input
             type="text"
             id="signupLicense"
             name="license"
-            placeholder=" "
+            placeholder="Enter license number"
             required
           />
-          <label for="signupLicense">
-            Learner License Number
-          </label>
         </div>
 
         <div class="input-box">
+          <label for="signupPassword" class="input-label">Create Password</label>
           <input
             type="password"
             id="signupPassword"
             name="signupPassword"
-            placeholder=" "
+            placeholder="Create your password"
             required
           />
-          <label for="signupPassword">
-            Create Password
-          </label>
         </div>
 
-        <button type="submit" class="main-btn">
-          Register
-        </button>
+        <button type="submit" class="main-btn">Register</button>
 
-        <!-- Signup Social Buttons -->
         <div class="social-login">
           <div class="social-divider">
             <span>or continue with</span>
@@ -256,19 +221,13 @@
           </button>
         </div>
 
-        <!-- Switch to Login -->
         <p class="switch">
           Already have an account?
-          <button
-            type="button"
-            class="switch-btn"
-            id="showLoginBtn"
-          >
+          <button type="button" class="switch-btn" id="showLoginBtn">
             Login
           </button>
         </p>
       </form>
-
     </div>
   </div>
 

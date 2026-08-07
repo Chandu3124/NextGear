@@ -4,11 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NextGear Student Dashboard</title>
-    <link rel="icon" type="image/png" sizes="184x184" href="logo-light.png">
+    <link rel="icon" type="image/png" sizes="184x184" href="logo-light.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
     <link rel="stylesheet" href="Dashboard.css" />
 </head>
 <body>
@@ -20,7 +26,7 @@
                 <a href="index.html" class="logo" aria-label="NextGear home">
                     <img
                         id="siteLogo"
-                        src="logo-dark.png"
+                        src="logo-light.png"
                         alt="NextGear logo"
                         data-light-logo="logo-light.png"
                         data-dark-logo="logo-dark.png"
@@ -80,7 +86,13 @@
         <main class="main-content">
             <header class="topbar">
                 <div class="topbar-left-wrap">
-                    <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu">
+                    <button
+                        class="icon-btn menu-toggle"
+                        id="menuToggle"
+                        aria-label="Open menu"
+                        aria-expanded="false"
+                        type="button"
+                    >
                         <i class="fa-solid fa-bars"></i>
                     </button>
 
@@ -91,14 +103,26 @@
                 </div>
 
                 <div class="top-right">
-                    <button class="top-action-btn" id="rtlToggle" type="button">
-                        <i class="fa-solid fa-right-left"></i>
+                    <button
+                        class="top-action-btn"
+                        id="rtlToggle"
+                        type="button"
+                        aria-label="Switch to right to left layout"
+                        aria-pressed="false"
+                    >
+                        <!-- <i class="fa-solid fa-right-left"></i> -->
                         <span>RTL</span>
                     </button>
 
-                    <button class="top-action-btn" id="themeToggle" type="button">
+                    <button
+                        class="top-action-btn"
+                        id="themeToggle"
+                        type="button"
+                        aria-label="Switch to dark mode"
+                        aria-pressed="false"
+                    >
                         <i class="fa-solid fa-moon"></i>
-                        <span>Dark</span>
+                        <!-- <span>Dark</span> -->
                     </button>
 
                     <div class="notification">
@@ -107,7 +131,13 @@
                     </div>
 
                     <div class="profile-dropdown" id="profileDropdown">
-                        <button class="profile-box profile-trigger" id="profileTrigger" type="button" aria-expanded="false" aria-controls="profileDropdownMenu">
+                        <button
+                            class="profile-box profile-trigger"
+                            id="profileTrigger"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="profileDropdownMenu"
+                        >
                             <img src="https://i.pravatar.cc/100?img=12" alt="Student profile photo" />
                             <div>
                                 <h4>Student</h4>
@@ -194,7 +224,7 @@
                 <div class="dashboard-grid">
                     <div class="dashboard-box">
                         <h3>Upcoming Simulator Session</h3>
-                        <hr>
+                        <hr />
                         <p><strong>Date :</strong> 28 July 2026</p>
                         <p><strong>Time :</strong> 10:00 AM</p>
                         <p><strong>Vehicle :</strong> Manual Car</p>
@@ -204,7 +234,7 @@
 
                     <div class="dashboard-box">
                         <h3>Recent Theory Scores</h3>
-                        <hr>
+                        <hr />
                         <table>
                             <tr>
                                 <th>Test</th>
@@ -229,13 +259,13 @@
                 <div class="dashboard-grid">
                     <div class="dashboard-box">
                         <h3>Learning Progress</h3>
-                        <hr>
+                        <hr />
                         <p>Simulator Progress</p>
                         <div class="progress">
                             <div class="progress-bar" id="dashboardSimulatorProgress" style="width:75%;">75%</div>
                         </div>
 
-                        <br>
+                        <br />
 
                         <p>Theory Progress</p>
                         <div class="progress">
@@ -245,7 +275,7 @@
 
                     <div class="dashboard-box">
                         <h3>Announcements</h3>
-                        <hr>
+                        <hr />
                         <ul class="announcement-list">
                             <li><i class="fa-solid fa-car-side list-icon"></i> New Simulator Slots Available</li>
                             <li><i class="fa-solid fa-book-open list-icon"></i> Theory Mock Test Updated</li>
@@ -346,7 +376,7 @@
                                 <td>10:00 AM</td>
                                 <td>David Wilson</td>
                                 <td><span class="status upcoming">Upcoming</span></td>
-                                <td><button class="cancel-btn">Cancel</button></td>
+                                <td><button class="cancel-btn" type="button">Cancel</button></td>
                             </tr>
 
                             <tr>
@@ -355,7 +385,7 @@
                                 <td>02:00 PM</td>
                                 <td>Sarah Lee</td>
                                 <td><span class="status completed">Completed</span></td>
-                                <td><button class="view-btn">View</button></td>
+                                <td><button class="view-btn" type="button">View</button></td>
                             </tr>
 
                             <tr>
@@ -364,7 +394,7 @@
                                 <td>11:00 AM</td>
                                 <td>John Smith</td>
                                 <td><span class="status completed">Completed</span></td>
-                                <td><button class="view-btn">View</button></td>
+                                <td><button class="view-btn" type="button">View</button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -419,8 +449,8 @@
                         </div>
 
                         <div class="test-buttons">
-                            <button id="nextQuestion" class="primary-btn">Next Question</button>
-                            <button id="submitTest" class="secondary-btn">Submit Test</button>
+                            <button id="nextQuestion" class="primary-btn" type="button">Next Question</button>
+                            <button id="submitTest" class="secondary-btn" type="button">Submit Test</button>
                         </div>
                     </div>
 
@@ -587,19 +617,19 @@
                 <div class="profile-container">
                     <div class="profile-card">
                         <img src="https://i.pravatar.cc/180?img=12" alt="Student profile picture" />
-                        <h2>John Anderson</h2>
+                        <h2>Chandra Shekar</h2>
                         <p>Student ID : NG1024</p>
                     </div>
 
                     <div class="profile-details">
                         <div class="input-group">
                             <label for="fullName">Full Name</label>
-                            <input id="fullName" type="text" value="John Anderson" />
+                            <input id="fullName" type="text" value="Chandra Shekar" />
                         </div>
 
                         <div class="input-group">
                             <label for="email">Email</label>
-                            <input id="email" type="email" value="john@gmail.com" />
+                            <input id="email" type="email" value="chandra@gmail.com" />
                         </div>
 
                         <div class="input-group">
@@ -612,7 +642,7 @@
                             <textarea id="address" rows="4">Hyderabad, Telangana</textarea>
                         </div>
 
-                        <button class="primary-btn" id="saveProfileBtn">Save Changes</button>
+                        <button class="primary-btn" id="saveProfileBtn" type="button">Save Changes</button>
                     </div>
                 </div>
             </section>
@@ -650,7 +680,7 @@
                         </label>
                     </div>
 
-                    <button class="primary-btn" id="saveSettingsBtn">Save Settings</button>
+                    <button class="primary-btn" id="saveSettingsBtn" type="button">Save Settings</button>
                 </div>
             </section>
         </main>
@@ -663,8 +693,8 @@
             <p>Are you sure you want to logout?</p>
 
             <div class="logout-buttons">
-                <button id="confirmLogout" class="primary-btn">Yes, Logout</button>
-                <button id="cancelLogout" class="secondary-btn">Cancel</button>
+                <button id="confirmLogout" class="primary-btn" type="button">Yes, Logout</button>
+                <button id="cancelLogout" class="secondary-btn" type="button">Cancel</button>
             </div>
         </div>
     </div>
