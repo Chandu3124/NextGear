@@ -75,13 +75,24 @@
 
         <div class="input-box">
           <label for="loginPassword" class="input-label">Password</label>
-          <input
-            type="password"
-            id="loginPassword"
-            name="password"
-            placeholder="Enter your password"
-            required
-          />
+          <div class="password-wrap">
+            <input
+              type="password"
+              id="loginPassword"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+            <button
+              type="button"
+              class="password-toggle"
+              data-target="loginPassword"
+              aria-label="Show password"
+              aria-pressed="false"
+            >
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
         </div>
 
         <div class="remember-row">
@@ -182,13 +193,24 @@
 
         <div class="input-box">
           <label for="signupPassword" class="input-label">Create Password</label>
-          <input
-            type="password"
-            id="signupPassword"
-            name="signupPassword"
-            placeholder="Create your password"
-            required
-          />
+          <div class="password-wrap">
+            <input
+              type="password"
+              id="signupPassword"
+              name="signupPassword"
+              placeholder="Create your password"
+              required
+            />
+            <button
+              type="button"
+              class="password-toggle"
+              data-target="signupPassword"
+              aria-label="Show password"
+              aria-pressed="false"
+            >
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
         </div>
 
         <button type="submit" class="main-btn">Register</button>

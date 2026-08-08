@@ -227,6 +227,7 @@ select:focus-visible {
   border-radius: 50px;
   padding: 16px 38px;
   max-width: 100%;
+  margin-top: 22px;
 }
 
 .ts-nav {
@@ -483,8 +484,10 @@ body:not(.dark) .btn.secondary:hover {
     transform 0.45s ease,
     box-shadow 0.45s ease,
     background-color 0.35s ease,
+    border-color 0.35s ease,
     opacity 0.8s ease;
   min-width: 0;
+  border: 2px solid transparent;
 }
 
 .service-wrapper.active .service-box {
@@ -511,6 +514,7 @@ body:not(.dark) .btn.secondary:hover {
 .service-box:hover {
   transform: translateY(-12px);
   box-shadow: 0 20px 45px rgba(255, 121, 0, 0.18);
+  border-color: var(--primary-color);
 }
 
 .hexagon {
@@ -696,11 +700,8 @@ body:not(.dark) .btn.secondary:hover {
   top: -1px;
 }
 
-.simx-stat span {
-  color: #666;
-}
-
 .simx-stat > span {
+  color: #666;
   display: block;
   margin-top: 8px;
 }
@@ -1479,7 +1480,6 @@ body.dark .ct-btn {
 }
 
 /* Samsung Galaxy S8+ */
-
 @media screen and (max-width: 480px) {
   body {
     overflow-x: clip;
@@ -1496,71 +1496,52 @@ body.dark .ct-btn {
   .theory-section,
   .pricing-section {
     padding-left: 20px;
-
     padding-right: 20px;
   }
 
   .hero {
     height: auto;
-
     min-height: 100vh;
-
     max-height: none;
-
     padding-top: 110px;
-
     padding-bottom: 60px;
-
     justify-content: center;
   }
 
   .hero-content {
     max-width: 100%;
-
     margin-left: 0;
   }
 
   .hero h1 {
     font-size: 32px;
-
     line-height: 1.15;
-
     margin-bottom: 18px;
   }
 
   .hero p {
     font-size: 15px;
-
     line-height: 1.7;
-
     min-height: auto;
-
     margin-bottom: 22px;
   }
 
   .hero-mini-info {
     gap: 12px;
-
     margin-top: 18px;
   }
 
   .hero-mini-card {
     min-width: 0;
-
     width: 100%;
-
     max-width: 100%;
-
     padding: 14px 16px;
   }
 
   .buttons {
     flex-direction: column;
-
     gap: 14px;
-
     width: 100%;
-
     align-items: stretch;
   }
 
@@ -1573,11 +1554,8 @@ body.dark .ct-btn {
   .pricing-btn,
   .theory-btn {
     width: 100%;
-
     max-width: 100%;
-
     padding: 14px 22px;
-
     font-size: 15px;
   }
 
@@ -1590,9 +1568,7 @@ body.dark .ct-btn {
   .pgx-heading > span,
   .pricing-tag {
     font-size: 12px;
-
     padding: 8px 16px;
-
     margin-bottom: 16px;
   }
 
@@ -1606,9 +1582,7 @@ body.dark .ct-btn {
   .section-title,
   .pricing-header h2 {
     font-size: 30px;
-
     line-height: 1.2;
-
     margin-bottom: 18px;
   }
 
@@ -1623,33 +1597,27 @@ body.dark .ct-btn {
   .pricing-header p,
   .ts-text {
     font-size: 15px;
-
     line-height: 1.7;
   }
 
   .about {
     padding-top: 70px;
-
     padding-bottom: 70px;
   }
 
   .about-container {
     grid-template-columns: 1fr;
-
     gap: 35px;
   }
 
   .about-image img {
     height: 340px;
-
     border-radius: 20px;
   }
 
   .about-features {
     grid-template-columns: 1fr;
-
     gap: 16px;
-
     margin-top: 18px;
   }
 
@@ -1666,7 +1634,6 @@ body.dark .ct-btn {
   .theory-section,
   .pricing-section {
     padding-top: 75px;
-
     padding-bottom: 75px;
   }
 
@@ -1680,7 +1647,6 @@ body.dark .ct-btn {
 
   .service-wrapper {
     grid-template-columns: 1fr;
-
     gap: 22px;
   }
 
@@ -1690,23 +1656,18 @@ body.dark .ct-btn {
 
   .service-box {
     padding: 28px 20px;
-
     opacity: 1;
-
     transform: translateY(0);
   }
 
   .hexagon {
     width: 76px;
-
     height: 76px;
-
     margin-bottom: 20px;
   }
 
   .hexagon svg {
     width: 34px;
-
     height: 34px;
   }
 
@@ -1716,13 +1677,11 @@ body.dark .ct-btn {
 
   .service-box p {
     font-size: 15px;
-
     line-height: 1.7;
   }
 
   .simx-container {
     grid-template-columns: 1fr;
-
     gap: 40px;
   }
 
@@ -1732,31 +1691,22 @@ body.dark .ct-btn {
 
   .simx-main-card {
     width: 100%;
-
     max-width: 320px;
-
     margin: 0 auto;
   }
 
   .simx-orbit {
     width: min(320px, 100%);
-
     height: min(320px, 100%);
   }
 
   .simx-floating {
     position: static;
-
     width: 100%;
-
     max-width: 100%;
-
     justify-content: center;
-
     border-radius: 18px;
-
     padding: 12px 16px;
-
     animation: none;
   }
 
@@ -1768,28 +1718,21 @@ body.dark .ct-btn {
 
   .simx-benefits {
     gap: 12px;
-
     margin-bottom: 26px;
   }
 
   .simx-chip,
   .booking-feature {
     width: 100%;
-
     max-width: 100%;
-
     justify-content: center;
-
     padding: 12px 16px;
-
     border-radius: 16px;
   }
 
   .simx-stats {
     gap: 20px;
-
     margin-bottom: 28px;
-
     flex-direction: column;
   }
 
@@ -1799,11 +1742,8 @@ body.dark .ct-btn {
 
   .theory-box {
     flex-direction: column;
-
     align-items: flex-start;
-
     padding: 24px 20px;
-
     gap: 24px;
   }
 
@@ -1813,27 +1753,22 @@ body.dark .ct-btn {
 
   .theory-info p {
     max-width: 100%;
-
     font-size: 15px;
   }
 
   .theory-panel {
     width: 100%;
-
     gap: 14px;
   }
 
   .panel-card {
     width: 100%;
-
     max-width: 100%;
-
     padding: 22px;
   }
 
   .pgx-container {
     grid-template-columns: 1fr;
-
     gap: 36px;
   }
 
@@ -1843,13 +1778,14 @@ body.dark .ct-btn {
 
   .pgx-info {
     font-size: 14px;
-
     gap: 10px;
   }
-.pgx-text{
-  text-align: center;
-  align-items: center;
-}
+
+  .pgx-text {
+    text-align: center;
+    align-items: center;
+  }
+
   .pgx-track {
     height: 12px;
   }
@@ -1860,7 +1796,6 @@ body.dark .ct-btn {
 
   .pgx-circle {
     width: 120px;
-
     height: 120px;
   }
 
@@ -1870,18 +1805,14 @@ body.dark .ct-btn {
 
   .pricing-grid {
     grid-template-columns: 1fr;
-
     gap: 22px;
-
     align-items: stretch;
   }
 
   .pricing-card,
   .pricing-card-featured {
     transform: none;
-
     padding: 28px 22px;
-
     height: 100%;
   }
 
@@ -1891,27 +1822,22 @@ body.dark .ct-btn {
 
   .pricing-price {
     font-size: 32px;
-
     margin-bottom: 20px;
   }
 
   .booking-container {
     grid-template-columns: 1fr;
-
     gap: 36px;
   }
 
   .booking-card {
     padding: 28px 20px;
-
     border-radius: 22px;
-
     animation: none;
   }
 
   .booking-card h3 {
     font-size: 24px;
-
     margin-bottom: 24px;
   }
 
@@ -1922,7 +1848,6 @@ body.dark .ct-btn {
   .booking-input input,
   .booking-input select {
     padding: 14px;
-
     font-size: 15px;
   }
 
@@ -1932,27 +1857,22 @@ body.dark .ct-btn {
 
   .ts-slider {
     display: block;
-
     overflow: hidden;
   }
 
   .ts-wrapper {
     max-width: 100%;
-
     width: 100%;
   }
 
   .ts-card {
     padding: 28px 20px;
-
     border-radius: 20px;
-
     width: 100%;
   }
 
   .ts-stars {
     justify-content: center;
-
     margin-bottom: 18px;
   }
 
@@ -1962,9 +1882,7 @@ body.dark .ct-btn {
 
   .ts-user {
     flex-direction: column;
-
     text-align: center;
-
     gap: 12px;
   }
 
@@ -1974,21 +1892,17 @@ body.dark .ct-btn {
 
   .ct-content {
     grid-template-columns: 1fr;
-
     gap: 26px;
   }
 
   .ct-card {
     padding: 18px;
-
     border-radius: 18px;
   }
 
   .ct-icon {
     width: 48px;
-
     height: 48px;
-
     border-radius: 14px;
   }
 
@@ -1998,21 +1912,17 @@ body.dark .ct-btn {
 
   .ct-card p {
     font-size: 14px;
-
     line-height: 1.6;
   }
 
   .ct-map {
     min-height: 280px;
-
     border-radius: 18px;
   }
 
   .ct-cta {
     margin-top: 40px;
-
     padding: 28px 20px;
-
     border-radius: 22px;
   }
 
@@ -2022,12 +1932,9 @@ body.dark .ct-btn {
 
   .ct-cta p {
     font-size: 15px;
-
     line-height: 1.7;
   }
 }
-
-/* iPad Mini */
 
 @media screen and (min-width: 768px) and (max-width: 820px) {
   .hero,
@@ -2041,25 +1948,19 @@ body.dark .ct-btn {
   .theory-section,
   .pricing-section {
     padding-left: 5%;
-
     padding-right: 5%;
   }
 
   .hero {
     height: auto;
-
     min-height: 82vh;
-
     max-height: none;
-
     padding-top: 120px;
-
     padding-bottom: 70px;
   }
 
   .hero-content {
     max-width: 620px;
-
     margin-left: 0;
   }
 
@@ -2069,7 +1970,6 @@ body.dark .ct-btn {
 
   .hero p {
     font-size: 16px;
-
     min-height: auto;
   }
 
@@ -2079,7 +1979,6 @@ body.dark .ct-btn {
 
   .hero-mini-card {
     min-width: calc(50% - 7px);
-
     max-width: 100%;
   }
 
@@ -2096,21 +1995,17 @@ body.dark .ct-btn {
   .pricing-btn,
   .theory-btn {
     padding: 15px 30px;
-
     font-size: 16px;
-
     max-width: 100%;
   }
 
   .about {
     padding-top: 85px;
-
     padding-bottom: 85px;
   }
 
   .about-container {
     grid-template-columns: 1fr;
-
     gap: 45px;
   }
 
@@ -2131,7 +2026,6 @@ body.dark .ct-btn {
   .theory-section,
   .pricing-section {
     padding-top: 90px;
-
     padding-bottom: 90px;
   }
 
@@ -2149,7 +2043,6 @@ body.dark .ct-btn {
 
   .service-wrapper {
     grid-template-columns: repeat(2, 1fr);
-
     gap: 24px;
   }
 
@@ -2159,9 +2052,7 @@ body.dark .ct-btn {
 
   .service-box {
     opacity: 1;
-
     transform: translateY(0);
-
     padding: 30px 22px;
   }
 
@@ -2170,19 +2061,16 @@ body.dark .ct-btn {
   .booking-container,
   .ct-content {
     grid-template-columns: 1fr;
-
     gap: 45px;
   }
 
   .simx-visual {
     min-height: 460px;
-
     order: -1;
   }
 
   .simx-orbit {
     width: min(400px, 100%);
-
     height: min(400px, 100%);
   }
 
@@ -2192,9 +2080,7 @@ body.dark .ct-btn {
 
   .simx-floating {
     padding: 13px 18px;
-
     font-size: 14px;
-
     max-width: 100%;
   }
 
@@ -2208,42 +2094,32 @@ body.dark .ct-btn {
 
   .theory-box {
     flex-direction: column;
-
     align-items: flex-start;
-
     padding: 32px;
   }
 
   .theory-panel {
     width: 100%;
-
     justify-content: flex-start;
   }
 
   .panel-card {
     width: 170px;
-
     max-width: 100%;
   }
 
   .pricing-grid {
     grid-template-columns: 1fr;
-
     max-width: 700px;
-
     gap: 24px;
-
     align-items: stretch;
   }
 
   .pricing-card,
   .pricing-card-featured {
     transform: none;
-
     height: 100%;
-
     display: flex;
-
     flex-direction: column;
   }
 
@@ -2253,9 +2129,7 @@ body.dark .ct-btn {
 
   .booking-card {
     max-width: 100%;
-
     padding: 36px 28px;
-
     animation: none;
   }
 
@@ -2273,12 +2147,9 @@ body.dark .ct-btn {
 
   .ct-cta {
     margin-top: 50px;
-
     padding: 40px 32px;
   }
 }
-
-/* iPad Pro 11" */
 
 @media screen and (min-width: 821px) and (max-width: 1024px) {
   .hero,
@@ -2292,25 +2163,19 @@ body.dark .ct-btn {
   .theory-section,
   .pricing-section {
     padding-left: 6%;
-
     padding-right: 6%;
   }
 
   .hero {
     min-height: 85vh;
-
     max-height: none;
-
     height: auto;
-
     padding-top: 125px;
-
     padding-bottom: 75px;
   }
 
   .hero-content {
     max-width: 640px;
-
     margin-left: 0;
   }
 
@@ -2320,19 +2185,16 @@ body.dark .ct-btn {
 
   .hero p {
     min-height: auto;
-
     font-size: 17px;
   }
 
   .hero-mini-card {
     min-width: 210px;
-
     max-width: 100%;
   }
 
   .about-container {
     grid-template-columns: 1fr;
-
     gap: 50px;
   }
 
@@ -2342,7 +2204,6 @@ body.dark .ct-btn {
 
   .about-features {
     grid-template-columns: repeat(3, 1fr);
-
     gap: 18px;
   }
 
@@ -2360,7 +2221,6 @@ body.dark .ct-btn {
 
   .service-wrapper {
     grid-template-columns: repeat(2, 1fr);
-
     gap: 26px;
   }
 
@@ -2370,7 +2230,6 @@ body.dark .ct-btn {
 
   .service-box {
     opacity: 1;
-
     transform: translateY(0);
   }
 
@@ -2378,19 +2237,16 @@ body.dark .ct-btn {
   .pgx-container,
   .booking-container {
     grid-template-columns: 1fr;
-
     gap: 50px;
   }
 
   .simx-visual {
     order: -1;
-
     min-height: 500px;
   }
 
   .simx-orbit {
     width: min(430px, 100%);
-
     height: min(430px, 100%);
   }
 
@@ -2404,17 +2260,13 @@ body.dark .ct-btn {
 
   .theory-box {
     flex-direction: column;
-
     align-items: flex-start;
-
     padding: 34px;
   }
 
   .pricing-grid {
     grid-template-columns: repeat(2, 1fr);
-
     gap: 24px;
-
     align-items: stretch;
   }
 
@@ -2425,11 +2277,8 @@ body.dark .ct-btn {
   .pricing-card,
   .pricing-card-featured {
     transform: none;
-
     height: 100%;
-
     display: flex;
-
     flex-direction: column;
   }
 
@@ -2439,11 +2288,8 @@ body.dark .ct-btn {
 
   .booking-card {
     width: 100%;
-
     max-width: 620px;
-
     margin: 0 auto;
-
     animation: none;
   }
 
@@ -2457,7 +2303,6 @@ body.dark .ct-btn {
 
   .ct-content {
     grid-template-columns: 1fr;
-
     gap: 30px;
   }
 
@@ -2470,20 +2315,13 @@ body.dark .ct-btn {
   }
 }
 
-/* Nest Hub */
-
 @media screen and (width: 1024px) and (height: 600px) {
   .hero {
     min-height: 100vh;
-
     height: 100vh;
-
     max-height: 100vh;
-
     padding-top: 90px;
-
     padding-bottom: 40px;
-
     align-items: center;
   }
 
@@ -2493,33 +2331,25 @@ body.dark .ct-btn {
 
   .hero h1 {
     font-size: 34px;
-
     margin-bottom: 14px;
   }
 
   .hero p {
     font-size: 15px;
-
     line-height: 1.6;
-
     margin-bottom: 18px;
-
     min-height: auto;
-
     max-width: 520px;
   }
 
   .hero-mini-info {
     gap: 10px;
-
     margin-top: 16px;
   }
 
   .hero-mini-card {
     min-width: 160px;
-
     max-width: 100%;
-
     padding: 12px 14px;
   }
 
@@ -2544,11 +2374,8 @@ body.dark .ct-btn {
   .pricing-btn,
   .theory-btn {
     padding: 12px 24px;
-
     font-size: 14px;
-
     min-height: 40px;
-
     max-width: 100%;
   }
 
@@ -2562,7 +2389,6 @@ body.dark .ct-btn {
   .theory-section,
   .pricing-section {
     padding-top: 70px;
-
     padding-bottom: 70px;
   }
 
@@ -2576,7 +2402,6 @@ body.dark .ct-btn {
   .section-title,
   .pricing-header h2 {
     font-size: 34px;
-
     margin-bottom: 18px;
   }
 
@@ -2590,7 +2415,6 @@ body.dark .ct-btn {
   .section-subtitle,
   .pricing-header p {
     font-size: 16px;
-
     line-height: 1.7;
   }
 
@@ -2619,7 +2443,6 @@ body.dark .ct-btn {
 
   .service-box p {
     font-size: 15px;
-
     line-height: 1.7;
   }
 
@@ -2629,7 +2452,6 @@ body.dark .ct-btn {
 
   .simx-orbit {
     width: min(380px, 100%);
-
     height: min(380px, 100%);
   }
 
@@ -2639,9 +2461,7 @@ body.dark .ct-btn {
 
   .simx-floating {
     padding: 12px 16px;
-
     font-size: 13px;
-
     max-width: 100%;
   }
 
@@ -2655,24 +2475,19 @@ body.dark .ct-btn {
 
   .panel-card {
     width: 130px;
-
     max-width: 100%;
-
     padding: 20px;
   }
 
   .pricing-grid {
     gap: 22px;
-
     align-items: stretch;
   }
 
   .pricing-card,
   .pricing-card-featured {
     height: 100%;
-
     display: flex;
-
     flex-direction: column;
   }
 
@@ -2698,7 +2513,6 @@ body.dark .ct-btn {
 
   .booking-card h3 {
     font-size: 25px;
-
     margin-bottom: 24px;
   }
 
@@ -2709,7 +2523,6 @@ body.dark .ct-btn {
   .booking-input input,
   .booking-input select {
     padding: 14px;
-
     font-size: 15px;
   }
 
@@ -2723,23 +2536,18 @@ body.dark .ct-btn {
 
   .ts-text {
     font-size: 16px;
-
     line-height: 1.8;
-
     margin-bottom: 22px;
   }
 
   .ts-nav {
     width: 48px;
-
     height: 48px;
-
     font-size: 22px;
   }
 
   .ct-content {
     grid-template-columns: 360px 1fr;
-
     gap: 24px;
   }
 
@@ -2753,7 +2561,6 @@ body.dark .ct-btn {
 
   .ct-cta {
     margin-top: 45px;
-
     padding: 36px 28px;
   }
 

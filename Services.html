@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services</title>
-<link rel="icon" type="image/png" sizes="184x184" href="logo-light.png">
+  <link rel="icon" type="image/png" sizes="184x184" href="logo-light.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet"
@@ -20,7 +23,6 @@
 <body>
   <div id="navbar"></div>
 
-  <!-- section 1 -->
   <section class="services-hero">
     <div class="hero-overlay"></div>
 
@@ -28,7 +30,7 @@
       <div class="services-content reveal hero-reveal-left">
         <span class="service-tag">Professional Driving Solutions</span>
 
-        <h1>Smart <span>Driving Services</span></h1>
+        <h1>Smart <span class="brand-accent">Driving Services</span></h1>
 
         <p>
           Simulator training, theory practice and guided coaching
@@ -98,12 +100,11 @@
     </div>
   </section>
 
-  <!-- section 2 -->
   <section class="core-services">
     <div class="core-container">
       <div class="core-heading reveal">
         <span class="core-tag">Professional Training</span>
-        <h2>Our <span>Core Services</span></h2>
+        <h2>Our <span class="brand-accent">Core Services</span></h2>
         <p>
           Discover our complete range of smart driving services designed
           to build confidence, improve skills and help every learner
@@ -113,10 +114,7 @@
 
       <div class="service-row reveal">
         <div class="service-image">
-          <img
-            src="img15.jpg"
-            alt="Simulator training session"
-          />
+          <img src="img15.jpg" alt="Simulator training session" />
         </div>
 
         <div class="service-content">
@@ -136,10 +134,7 @@
 
       <div class="service-row reverse reveal">
         <div class="service-image">
-          <img
-            src="img16.jpg"
-            alt="Theory test preparation"
-          />
+          <img src="img16.jpg" alt="Theory test preparation" />
         </div>
 
         <div class="service-content">
@@ -158,10 +153,7 @@
 
       <div class="service-row reveal">
         <div class="service-image">
-          <img
-            src="img17.jpg"
-            alt="Online booking system"
-          />
+          <img src="img17.jpg" alt="Online booking system" />
         </div>
 
         <div class="service-content">
@@ -180,10 +172,7 @@
 
       <div class="service-row reverse reveal">
         <div class="service-image">
-          <img
-            src="img18.jpg"
-            alt="Student progress tracking"
-          />
+          <img src="img18.jpg" alt="Student progress tracking" />
         </div>
 
         <div class="service-content">
@@ -202,11 +191,10 @@
     </div>
   </section>
 
-  <!-- section 3 -->
   <section class="sim-modern">
     <div class="sim-modern-container">
       <div class="sim-heading reveal">
-        <h2>Driving <span>Simulator</span> Training</h2>
+        <h2>Driving <span class="brand-accent">Simulator</span> Training</h2>
         <p>
           Experience safe and realistic driving practice
           with advanced simulation technology.
@@ -214,10 +202,7 @@
       </div>
 
       <div class="sim-showcase reveal">
-        <img
-          src="img19.jpg"
-          alt="Driving simulator setup"
-        />
+        <img src="img19.jpg" alt="Driving simulator setup" />
 
         <div class="sim-overlay">
           <h3>Smart Driving Practice</h3>
@@ -256,7 +241,6 @@
     </div>
   </section>
 
-  <!-- section 4 -->
   <section class="theory-section">
     <div class="theory-container">
       <div class="theory-visual reveal">
@@ -299,7 +283,7 @@
       </div>
 
       <div class="theory-content reveal">
-        <h2>Theory Test <span>Practice</span></h2>
+        <h2>Theory Test <span class="brand-accent">Practice</span></h2>
 
         <p>
           Prepare for driving theory exams with smart
@@ -334,11 +318,10 @@
     </div>
   </section>
 
-  <!-- section 5 -->
   <section class="easy-booking-section" id="booking">
     <div class="easy-booking-container">
       <div class="easy-booking-intro reveal">
-        <h2>Easy <span>Booking</span> System</h2>
+        <h2>Easy <span class="brand-accent">Booking</span> System</h2>
 
         <p>
           Schedule your driving sessions quickly with
@@ -408,7 +391,6 @@
     </div>
   </section>
 
-  <!-- popup -->
   <dialog id="bookingPopup" class="booking-popup" aria-labelledby="bookingPopupTitle">
     <div class="popup-content">
       <div class="popup-icon">
@@ -420,11 +402,10 @@
     </div>
   </dialog>
 
-  <!-- section 6 -->
   <section class="growth-section">
     <div class="growth-container">
       <div class="growth-title reveal">
-        <h2>Performance <span>Tracking</span> & Analysis</h2>
+        <h2>Performance <span class="brand-accent">Tracking</span> & Analysis</h2>
         <p>
           We track student performance, analyse skills,
           and provide guidance to improve driving ability.
@@ -467,11 +448,10 @@
     </div>
   </section>
 
-  <!-- section 7 -->
   <section class="cta-journey-section">
     <div class="cta-journey-container reveal">
       <div class="cta-content">
-        <h2>Start Your <span>Driving Journey</span> Today</h2>
+        <h2>Start Your <span class="brand-accent">Driving Journey</span> Today</h2>
         <p>
           Begin your journey with smart simulator training,
           theory preparation and expert guidance.
@@ -495,10 +475,5 @@
   <script src="Services.js"></script>
   <script src="component.js"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script>
-    if (window.lucide) {
-      lucide.createIcons();
-    }
-  </script>
 </body>
 </html>
