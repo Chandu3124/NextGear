@@ -22,6 +22,7 @@
   height: 90vh;
   min-height: 90vh;
   display: flex;
+  margin-top: -15px;
   align-items: center;
   background:
     linear-gradient(rgba(8, 28, 58, 0.58), rgba(8, 28, 58, 0.62)),

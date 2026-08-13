@@ -102,6 +102,7 @@ a {
   background-repeat: no-repeat;
   overflow: hidden;
   position: relative;
+  margin-top: -20px;
 }
 
 .hero-overlay {

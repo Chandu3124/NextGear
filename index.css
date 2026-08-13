@@ -65,6 +65,7 @@ select:focus-visible {
   outline-offset: 3px;
 }
 
+
 .hero {
   height: 90vh;
   min-height: 90vh;
@@ -73,16 +74,18 @@ select:focus-visible {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 110px 8% 70px;
   overflow: hidden;
+  margin-top: -20px;
+  text-align: center;
 }
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("img1.avif");
+  background-image: url("https://images.openai.com/static-rsc-4/yG52R1-Bl-CMeF1c3xknsaMzSITtXHdjiGdGZpaIgl2eqIVbHc1eQJm1G_pkDvGYZ7OYeLzzBK2WfFAiVicE8T3UvkPeoQkPPRLCANw3NGZquM1r-HNBXeUxoR37MLJaJgMTL31ZwMEMctw-QDl-S_HPh1viy_Xach3PjdmvHqVxDqIRo6gizmeawUoRRtvO?purpose=fullsize");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -103,13 +106,13 @@ select:focus-visible {
   max-width: 700px;
   width: 100%;
   animation: fadeUp 1.2s ease;
-  margin-top: 0;
-  margin-left: clamp(8px, 2vw, 36px);
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   min-width: 0;
+  text-align: center;
 }
 
 .hero-tag {
@@ -135,6 +138,8 @@ select:focus-visible {
   min-height: 35px;
   max-width: 620px;
   line-height: 1.7;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-mini-info {
@@ -144,6 +149,7 @@ select:focus-visible {
   margin-top: 24px;
   width: 100%;
   min-width: 0;
+  justify-content: center;
 }
 
 .hero-mini-card {
@@ -154,6 +160,7 @@ select:focus-visible {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 121, 0, 0.22);
   backdrop-filter: blur(4px);
+  text-align: center;
 }
 
 .hero-mini-card strong {
@@ -177,6 +184,7 @@ select:focus-visible {
   flex-wrap: wrap;
   width: 100%;
   min-width: 0;
+  justify-content: center;
 }
 
 .btn,
@@ -917,6 +925,8 @@ body:not(.dark) .btn.secondary:hover {
     border-color 0.35s ease;
   position: relative;
   min-width: 0;
+  text-align: center;
+  align-items: center;
 }
 
 .pricing-card:hover {
@@ -970,6 +980,7 @@ body:not(.dark) .btn.secondary:hover {
   display: grid;
   gap: 14px;
   margin-bottom: 28px;
+  
 }
 
 .pricing-features li {
@@ -978,6 +989,7 @@ body:not(.dark) .btn.secondary:hover {
   gap: 12px;
   color: #555;
   line-height: 1.6;
+  
 }
 
 .pricing-features li svg {
@@ -985,6 +997,7 @@ body:not(.dark) .btn.secondary:hover {
   height: 18px;
   color: var(--primary-color);
   flex-shrink: 0;
+  
 }
 
 .booking-section {
@@ -1428,7 +1441,10 @@ body.dark .booking-input select {
   color: #ffffff;
   border-color: #252525;
 }
-
+body.dark input[type="date"]::-webkit-calendar-picker-indicator{
+  filter: invert(1);
+  opacity: 1;
+}
 body.dark .ts-dot {
   background: #444;
 }

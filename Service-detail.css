@@ -143,6 +143,7 @@ h3{
     padding:0 !important;
     margin:0 !important;
     background:var(--white);
+   
 }
 
 .hero-bg{
@@ -151,6 +152,7 @@ h3{
     display:flex;
     align-items:center;
     margin:0;
+     margin-top: -15px;
     background:
     linear-gradient(90deg, rgba(8,28,58,.88) 0%, rgba(8,28,58,.72) 45%, rgba(8,28,58,.52) 100%),
     url("https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;

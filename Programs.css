@@ -134,6 +134,7 @@ select:focus-visible{
   display:flex;
   align-items:center;
   padding:100px 8% 42px;
+  margin-top: -20px;
   background:
     linear-gradient(115deg, rgba(8,28,58,.80) 0%, rgba(8,28,58,.60) 46%, rgba(8,28,58,.36) 100%),
     url("https://pplx-res.cloudinary.com/image/upload/pplx_search_images/768eab0bd251280896047ccf602afa1662079853.jpg") center/cover no-repeat;
