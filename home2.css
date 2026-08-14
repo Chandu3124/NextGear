@@ -1,4 +1,5 @@
 :root{
+  --page-side-padding: 8%;
   --primary:#ff7900;
   --primary-hover:#e96f00;
   --secondary:#081c3a;
@@ -13,14 +14,15 @@
   --dark-text:#f5f5f5;
   --dark-muted:#d1d5db;
 }
+
 body {
   margin: 0;
   padding: 0;
 }
+
 .home2-page *{
   box-sizing:border-box;
   font-family:Poppins,sans-serif;
-   
 }
 
 .home2-page{
@@ -30,7 +32,6 @@ body {
 .home2-page img{
   max-width:100%;
   display:block;
-  
 }
 
 .home2-page a{
@@ -44,15 +45,29 @@ body {
   font-family:Poppins,sans-serif;
 }
 
-/* 1st section exactly 90vh */
+/* all major sections left-right 8% padding */
+.home2-page .hero,
+.home2-page .dashboard,
+.home2-page .smart-ready,
+.home2-page .sim-section,
+.home2-page .theory-section,
+.home2-page .slot-section,
+.home2-page .perf-section,
+.home2-page .game-section,
+.home2-page .cta-section{
+  padding-left:var(--page-side-padding);
+  padding-right:var(--page-side-padding);
+}
 
- .home2-page .hero{
+/* 1st section exactly 90vh */
+.home2-page .hero{
   height: calc(100vh - 72px);
   min-height: calc(100vh - 72px);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 72px 8% 80px;
+  padding-top:72px;
+  padding-bottom:80px;
   margin-top: 70px;
   background:
     linear-gradient(rgba(8,28,58,.72), rgba(8,28,58,.72)),
@@ -223,7 +238,8 @@ body:not(.dark) .home2-page .hero-primary:hover{
 .home2-page .slot-section,
 .home2-page .perf-section,
 .home2-page .game-section{
-  padding:100px 8%;
+  padding-top:100px;
+  padding-bottom:100px;
   background:linear-gradient(135deg,#fff7ed,#ffffff,#fff2dd);
 }
 
@@ -1196,7 +1212,8 @@ body:not(.dark) .home2-page .hero-primary:hover{
 }
 
 .home2-page .cta-section{
-  padding:72px 8%;
+  padding-top:72px;
+  padding-bottom:72px;
   background:#f8fafc;
 }
 
@@ -1238,7 +1255,6 @@ body:not(.dark) .home2-page .hero-primary:hover{
   background:transparent;
   margin-top:0;
 }
-
 /* DARK MODE */
 body.dark .home2-page{
   background:var(--dark-bg);

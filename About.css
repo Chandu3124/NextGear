@@ -1,4 +1,5 @@
 :root{
+  --page-side-padding:8%;
   --primary:#ff7900;
   --secondary:#081c3a;
   --white:#ffffff;
@@ -84,61 +85,63 @@ body{
 .about-main .cta-section{
   position:relative;
   overflow:hidden;
+  padding-left:var(--page-side-padding);
+  padding-right:var(--page-side-padding);
 }
 
-
- .about-main .story-section{
-  height: 90dvh;
-  min-height: 680px;
-  max-height: 90dvh;
-  padding: 0 8% 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  isolation: isolate;
-  margin-top: -30px;
-  text-align: center;
-  position: relative;
+.about-main .story-section{
+  height:90dvh;
+  min-height:680px;
+  max-height:90dvh;
+  padding-top:0;
+  padding-bottom:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  isolation:isolate;
+  margin-top:-30px;
+  text-align:center;
+  position:relative;
 }
 
 .about-main .hero-backdrop,
 .about-main .hero-overlay{
-  position: absolute;
-  inset: 0;
+  position:absolute;
+  inset:0;
 }
 
 .about-main .hero-backdrop img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
 }
 
 .about-main .hero-overlay{
-  background: linear-gradient(90deg, rgba(8,28,58,.84) 0%, rgba(8,28,58,.74) 42%, rgba(8,28,58,.42) 100%);
-  z-index: 1;
+  background:linear-gradient(90deg, rgba(8,28,58,.84) 0%, rgba(8,28,58,.74) 42%, rgba(8,28,58,.42) 100%);
+  z-index:1;
 }
 
 .about-main .story-wrapper{
-  position: relative;
-  width: 100%;
-  max-width: 1120px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  z-index: 2;
-  padding-top: 0;
+  position:relative;
+  width:100%;
+  max-width:1120px;
+  margin:0 auto;
+  display:flex;
+  justify-content:center;
+  z-index:2;
+  padding-top:0;
 }
 
 .about-main .hero-copy{
-  color: var(--text-light);
-  max-width: 560px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  color:var(--text-light);
+  max-width:560px;
+  width:100%;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
 }
 
 .about-main .story-tag,
@@ -148,17 +151,17 @@ body{
 .about-main .team-show-tag,
 .about-main .impact-tag,
 .about-main .cta-tag{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 7px 16px;
-  border-radius: 999px;
-  background: rgba(255,121,0,.16);
-  border: 1px solid rgba(255,121,0,.26);
-  color: var(--primary);
-  font-weight: 600;
-  margin-bottom: 14px;
-  font-size: 14px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:7px 16px;
+  border-radius:999px;
+  background:rgba(255,121,0,.16);
+  border:1px solid rgba(255,121,0,.26);
+  color:var(--primary);
+  font-weight:600;
+  margin-bottom:14px;
+  font-size:14px;
 }
 
 .about-main .story-intro,
@@ -168,37 +171,37 @@ body{
 .about-main .team-show-heading p,
 .about-main .impact-heading p,
 .about-main .cta-content p{
-  color: var(--text);
-  line-height: 1.75;
+  color:var(--text);
+  line-height:1.75;
 }
 
 .about-main .hero-copy .story-intro{
-  color: var(--muted-light);
-  max-width: 520px;
-  margin: 14px auto 20px;
-  font-size: 15px;
+  color:var(--muted-light);
+  max-width:520px;
+  margin:14px auto 20px;
+  font-size:15px;
 }
 
 .about-main .hero-inline-card{
-  max-width: 320px;
-  margin: 0 auto;
+  max-width:320px;
+  margin:0 auto;
 }
 
 .about-main .hero-copy h2{
-  color: var(--text-light);
+  color:var(--text-light);
 }
 
 .about-main .hero-stats-card{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 20px;
-  border-radius: 24px;
-  background: rgba(255,255,255,.12);
-  border: 1px solid rgba(255,255,255,.14);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 22px 48px rgba(0,0,0,.18);
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  padding:20px;
+  border-radius:24px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.14);
+  backdrop-filter:blur(14px);
+  box-shadow:0 22px 48px rgba(0,0,0,.18);
 }
 
 .about-main .floating-box{
@@ -235,7 +238,8 @@ body{
 .about-main .team-showcase,
 .about-main .impact-section,
 .about-main .cta-section{
-  padding:100px 8%;
+  padding-top:100px;
+  padding-bottom:100px;
 }
 
 .about-main .mission-section{ background:radial-gradient(circle at top left,#fff7ef 0%,#fffdf9 40%,#fdfdfd 100%); }

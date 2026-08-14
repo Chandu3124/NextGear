@@ -13,6 +13,12 @@
   --transition: 0.4s ease;
 }
 
+/* Common container for all sections after hero */
+.container {
+  width: 84%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
 
 /*==================================
         PAGE HERO
@@ -22,12 +28,14 @@
   height: 90vh;
   min-height: 90vh;
   display: flex;
-  margin-top: -15px;
   align-items: center;
+  justify-content: center;
+  margin-top: -15px;
   background:
     linear-gradient(rgba(8, 28, 58, 0.58), rgba(8, 28, 58, 0.62)),
-    url("https://images.unsplash.com/photo-1506610654-064fbba4780c?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center center/cover no-repeat;
+    url("https://images.openai.com/static-rsc-4/QNNNq3MuBLIqHGDHEFmin2I8qI8MEpRygMWjS7bgf-IY6wiYh34ZnMVYWHkeowI2nD6HRl-Aq2vPYAiSCCQ49Ju-qwWR9i6DSvQl57Nq0VrI0i1GVP8LtzX9bBJN2ebVxegwhYNY0u1GnIyxUIEM1U6Gn577zUeyjU34wEHokzK1FN_gaN-w8hhP55NaUQ5D?purpose=fullsize") center center/cover no-repeat;
   overflow: hidden;
+  text-align: center;
 }
 
 .page-hero-overlay {
@@ -39,10 +47,17 @@
 .page-hero .container {
   position: relative;
   z-index: 2;
+  width: min(84%, 1280px);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .page-hero-content {
   max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .page-hero-tag {
@@ -74,8 +89,8 @@
   color: rgba(255, 255, 255, 0.92);
   line-height: 1.9;
   max-width: 580px;
+  margin: 0 auto;
 }
-
 
 /*==================================
         BLOG HERO
@@ -220,7 +235,6 @@
   max-width: 95%;
 }
 
-
 /*==================================
         SECTION TITLE
 ==================================*/
@@ -247,7 +261,6 @@
   font-size: 17px;
   line-height: 1.85;
 }
-
 
 /*==================================
         TOPIC CARDS
@@ -296,7 +309,6 @@
   color: var(--text-light);
   line-height: 1.8;
 }
-
 
 /*==================================
         FEATURED ARTICLE
@@ -365,7 +377,6 @@
   line-height: 1.8;
 }
 
-
 /*==================================
         TIMELINE
 ==================================*/
@@ -431,7 +442,6 @@
   font-size: 17px;
 }
 
-
 /*==================================
         GALLERY
 ==================================*/
@@ -477,7 +487,6 @@
   font-size: 17px;
 }
 
-
 /*==================================
         DARK MODE
 ==================================*/
@@ -489,7 +498,7 @@ body.dark {
 body.dark .page-hero {
   background:
     linear-gradient(rgba(5, 10, 18, 0.62), rgba(5, 10, 18, 0.68)),
-    url("https://images.unsplash.com/photo-1506610654-064fbba4780c?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center center/cover no-repeat;
+    url("https://images.openai.com/static-rsc-4/QNNNq3MuBLIqHGDHEFmin2I8qI8MEpRygMWjS7bgf-IY6wiYh34ZnMVYWHkeowI2nD6HRl-Aq2vPYAiSCCQ49Ju-qwWR9i6DSvQl57Nq0VrI0i1GVP8LtzX9bBJN2ebVxegwhYNY0u1GnIyxUIEM1U6Gn577zUeyjU34wEHokzK1FN_gaN-w8hhP55NaUQ5D?purpose=fullsize") center center/cover no-repeat;
 }
 
 body.dark .page-hero-content p,

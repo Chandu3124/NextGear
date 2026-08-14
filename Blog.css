@@ -973,7 +973,7 @@ body.dark .tip-icon{
   }
 }
 
-/* ipad mini */
+/* ipad mini / 786 tablet version */
 @media (min-width:768px) and (max-width:820px){
   .blog-hero{
     height:90vh;
@@ -1020,8 +1020,43 @@ body.dark .tip-icon{
   .main-feature-card{
     height:480px;
   }
-}
 
+  /* 3rd articles section image fix */
+  .blog-card{
+    height:auto;
+  }
+
+  .blog-image{
+    height:auto;
+    aspect-ratio:16/10;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    background:#f8f8f8;
+  }
+
+  .blog-image img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center;
+  }
+
+  .blog-content{
+    padding:24px;
+  }
+
+  .blog-content h3{
+    font-size:20px;
+    line-height:1.4;
+  }
+
+  .blog-content p{
+    font-size:14px;
+    line-height:1.7;
+  }
+}
 /* samsung galaxy s8+ */
 @media (max-width:370px){
   .blog-hero{

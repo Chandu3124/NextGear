@@ -65,7 +65,6 @@ select:focus-visible {
   outline-offset: 3px;
 }
 
-
 .hero {
   height: 90vh;
   min-height: 90vh;
@@ -454,40 +453,22 @@ body:not(.dark) .btn.secondary:hover {
 
 .service-wrapper {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 35px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 24px;
   position: relative;
-}
-
-.line-progress {
-  position: absolute;
-  top: 55px;
-  left: 10%;
-  width: 0;
-  height: 4px;
-  background: linear-gradient(
-    90deg,
-    var(--primary-color),
-    rgba(255, 121, 0, 0.35)
-  );
-  border-radius: 10px;
-  transition: 1.8s ease;
-}
-
-.service-wrapper.active .line-progress {
-  width: 80%;
+  align-items: stretch;
 }
 
 .service-box {
   background: var(--card-light);
-  padding: 35px 25px;
+  padding: 30px 22px;
   text-align: center;
   border-radius: 22px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
   position: relative;
   overflow: hidden;
-  opacity: 0;
-  transform: translateY(80px);
+  opacity: 1;
+  transform: translateY(0);
   transition:
     transform 0.45s ease,
     box-shadow 0.45s ease,
@@ -496,27 +477,11 @@ body:not(.dark) .btn.secondary:hover {
     opacity 0.8s ease;
   min-width: 0;
   border: 2px solid transparent;
-}
-
-.service-wrapper.active .service-box {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.service-wrapper.active .service-box:nth-child(2) {
-  transition-delay: 0.2s;
-}
-
-.service-wrapper.active .service-box:nth-child(3) {
-  transition-delay: 0.4s;
-}
-
-.service-wrapper.active .service-box:nth-child(4) {
-  transition-delay: 0.6s;
-}
-
-.service-wrapper.active .service-box:nth-child(5) {
-  transition-delay: 0.8s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
 }
 
 .service-box:hover {
@@ -526,9 +491,9 @@ body:not(.dark) .btn.secondary:hover {
 }
 
 .hexagon {
-  width: 90px;
-  height: 90px;
-  margin: auto auto 25px;
+  width: 82px;
+  height: 82px;
+  margin: 0 auto 22px;
   background: var(--primary-color);
   clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0 50%);
   display: flex;
@@ -537,24 +502,36 @@ body:not(.dark) .btn.secondary:hover {
   color: var(--text-light);
   transition: 0.5s;
   max-width: 100%;
+  flex-shrink: 0;
 }
 
 .hexagon svg {
-  width: 40px;
-  height: 40px;
+  width: 34px;
+  height: 34px;
   stroke-width: 2.2;
 }
 
 .service-box h3 {
-  font-size: 24px;
-  margin-bottom: 15px;
+  font-size: 20px;
+  line-height: 1.35;
+  margin-bottom: 12px;
   color: var(--text-dark);
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .service-box p {
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 15px;
+  line-height: 1.7;
   color: #666;
+  margin: 0;
+  max-width: 22ch;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .simx-section {
@@ -980,7 +957,6 @@ body:not(.dark) .btn.secondary:hover {
   display: grid;
   gap: 14px;
   margin-bottom: 28px;
-  
 }
 
 .pricing-features li {
@@ -989,7 +965,6 @@ body:not(.dark) .btn.secondary:hover {
   gap: 12px;
   color: #555;
   line-height: 1.6;
-  
 }
 
 .pricing-features li svg {
@@ -997,7 +972,6 @@ body:not(.dark) .btn.secondary:hover {
   height: 18px;
   color: var(--primary-color);
   flex-shrink: 0;
-  
 }
 
 .booking-section {
@@ -1341,6 +1315,7 @@ body:not(.dark) .btn.secondary:hover {
   margin-bottom: 24px;
   font-size: 17px;
 }
+
 
 body.dark {
   background: var(--dark-bg);
@@ -2588,3 +2563,5 @@ body.dark .ct-btn {
     font-size: 16px;
   }
 }
+
+
