@@ -2291,3 +2291,10 @@ body.dark .home2-page .sim-overlay p{
     scroll-behavior:auto !important;
   }
 }
+
+@media screen and (width: 1920px) and (height: 1080px) {
+  .home2-page .dashboard{
+    padding-left: 355px;
+    padding-right: 355px;
+  }
+}

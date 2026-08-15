@@ -1,4 +1,5 @@
-:root{
+
+ :root{
   --page-side-padding:8%;
   --primary:#ff7900;
   --secondary:#081c3a;
@@ -746,7 +747,13 @@ body{
 
 .about-main .secondary-btn{
   background:#fff;
-  color:var(--secondary);
+  color:var(--primary);
+  border-color:var(--primary);
+}
+
+.about-main .enquire-btn{
+  background:transparent;
+  color:var(--primary);
   border-color:var(--primary);
 }
 
@@ -757,6 +764,13 @@ body{
   background:var(--secondary);
   border-color:var(--secondary);
   color:#fff;
+}
+
+.about-main .enquire-btn:hover,
+.about-main .enquire-btn:focus-visible{
+  background:var(--secondary);
+  color:#fff;
+  border-color:var(--secondary);
 }
 
 body.dark .about-main{
@@ -857,7 +871,8 @@ body.dark .about-main .road-line::before{
 
 body.dark .about-main .progress-bar{ background:#222!important; }
 
-body.dark .about-main .secondary-btn{
+body.dark .about-main .secondary-btn,
+body.dark .about-main .enquire-btn{
   background:transparent!important;
   color:var(--dark-text)!important;
   border-color:var(--dark-text)!important;
@@ -865,13 +880,17 @@ body.dark .about-main .secondary-btn{
 
 body.dark .about-main .primary-btn,
 body.dark .about-main .secondary-btn:hover,
+body.dark .about-main .enquire-btn:hover,
+body.dark .about-main .enquire-btn :focus-visible,
 body.dark .about-main .secondary-btn:focus-visible,
 body.dark .about-main .primary-btn:focus-visible{
   background:var(--primary)!important;
   border-color:transparent;
   color:#fff!important;
 }
-
+body.dark .about-main .enquire-btn:hover{
+  border: none;
+}
 body.dark .about-main .primary-btn:hover{
   background:transparent!important;
   color:var(--dark-text);
