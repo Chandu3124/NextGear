@@ -53,8 +53,11 @@ body{
   opacity:1;
   transform:translateY(0);
 }
+.about-main h1{
+  font-size: 40px;
+  font-weight: 600;
+}
 
-.about-main h1,
 .about-main .story-left h2,
 .about-main .mission-heading h2,
 .about-main .offer-heading h2,
@@ -62,9 +65,10 @@ body{
 .about-main .team-show-heading h2,
 .about-main .impact-heading h2,
 .about-main .cta-content h2{
-  font-size:43px;
+  font-size:40px;
   line-height:1.14;
   color:var(--secondary);
+  font-weight: 500;
 }
 
 .about-main .story-left h2 span,
@@ -339,6 +343,7 @@ body{
 .about-main .team-profile h3,
 .about-main .offer-content h3{
   color:var(--secondary);
+  font-weight:500;
 }
 
 .about-main .mv-card h3{ font-size:28px; margin-bottom:15px; }
@@ -475,6 +480,7 @@ body{
   display:flex;
   align-items:center;
   gap:10px;
+  font-weight:500;
 }
 
 .about-main .offer-number{
@@ -535,6 +541,7 @@ body{
 .about-main .choose-content h3{
   font-size:28px;
   margin-bottom:15px;
+  font-weight:500;
 }
 
 .about-main .choose-content p{
@@ -582,7 +589,7 @@ body{
 }
 
 .about-main .team-profile:hover img{ transform:scale(1.05); }
-.about-main .team-profile h3{ margin-top:28px; font-size:26px; }
+.about-main .team-profile h3{ margin-top:28px; font-size:26px; font-weight:500; }
 .about-main .team-profile span{ display:block; margin:10px 0 15px; color:var(--primary); font-weight:600; }
 
 .about-main .impact-dashboard{

@@ -25,7 +25,7 @@ const safeStorage = {
 const body = document.body;
 const html = document.documentElement;
 
-const menuItems = document.querySelectorAll(".menu li[data-section]");
+const menuItems = document.querySelectorAll(".menu-link[data-section]");
 const sections = document.querySelectorAll(".content-section");
 const sidebar = document.getElementById("sidebar");
 const menuToggle = document.getElementById("menuToggle");
@@ -135,54 +135,44 @@ let seconds = 0;
 let countdown = null;
 let timerStarted = false;
 
-function updateLogoByTheme(isDark) {
+function updateLogo() {
   if (!siteLogo) return;
-
-  const dsrkLogo = siteLogo.dataset.darkLogoLogo;
-  const darkLogo = siteLogo.dataset.darkLogo;
-
-  if (!darkLogo || !darkLogo) return;
-  siteLogo.src = isDark ? darkLogo : darkLogo;
+  const darkLogo = siteLogo.dataset.darkLogo || "logo-dark.png";
+  siteLogo.src = darkLogo;
 }
 
 function updateThemeButton() {
   if (!themeToggle) return;
+
   const icon = themeToggle.querySelector("i");
-  const text = themeToggle.querySelector("span");
   const isDark = body.classList.contains("dark-mode");
 
   if (icon) {
     icon.className = isDark ? "fa-solid fa-sun" : "fa-solid fa-moon";
   }
 
-  if (text) {
-    text.textContent = isDark ? "Light" : "Dark";
-  }
-
-  themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+  themeToggle.setAttribute(
+    "aria-label",
+    isDark ? "Switch to light mode" : "Switch to dark mode"
+  );
   themeToggle.setAttribute("aria-pressed", String(isDark));
 }
 
 function applyTheme(isDark) {
   body.classList.toggle("dark-mode", isDark);
-  body.classList.toggle("dark", isDark);
   html.setAttribute("data-theme", isDark ? "dark" : "light");
-  updateLogoByTheme(isDark);
   updateThemeButton();
+  updateLogo();
   safeStorage.set("theme", isDark ? "dark" : "light");
 }
 
 function updateRTLButton() {
   if (!rtlToggle) return;
-  const icon = rtlToggle.querySelector("i");
+
   const text = rtlToggle.querySelector("span");
   const isRTL = body.classList.contains("rtl-mode");
 
   html.setAttribute("dir", isRTL ? "rtl" : "ltr");
-
-  if (icon) {
-    icon.className = isRTL ? "fa-solid fa-left-right" : "fa-solid fa-right-left";
-  }
 
   if (text) {
     text.textContent = isRTL ? "LTR" : "RTL";
@@ -202,11 +192,54 @@ function applyRTL(enabled) {
   safeStorage.set("direction", enabled ? "rtl" : "ltr");
 }
 
+function closeProfileDropdown() {
+  if (!profileDropdown || !profileTrigger) return;
+  profileDropdown.classList.remove("active");
+  profileTrigger.setAttribute("aria-expanded", "false");
+}
+
+function openProfileDropdown() {
+  if (!profileDropdown || !profileTrigger) return;
+  profileDropdown.classList.add("active");
+  profileTrigger.setAttribute("aria-expanded", "true");
+}
+
+function closeSidebar() {
+  if (!sidebar || !mobileOverlay) return;
+
+  sidebar.classList.remove("open");
+  mobileOverlay.classList.remove("show");
+
+  if (menuToggle) {
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open menu");
+    menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+  }
+}
+
+function openSidebar() {
+  if (!sidebar || !mobileOverlay) return;
+
+  sidebar.classList.add("open");
+  mobileOverlay.classList.add("show");
+
+  if (menuToggle) {
+    menuToggle.setAttribute("aria-expanded", "true");
+    menuToggle.setAttribute("aria-label", "Close menu");
+    menuToggle.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+  }
+}
+
+function toggleSidebar() {
+  if (!sidebar) return;
+  sidebar.classList.contains("open") ? closeSidebar() : openSidebar();
+}
+
 function showSection(sectionId) {
   menuItems.forEach(item => item.classList.remove("active"));
   sections.forEach(section => section.classList.remove("active-section"));
 
-  const activeMenu = document.querySelector(`.menu li[data-section="${sectionId}"]`);
+  const activeMenu = document.querySelector(`.menu-link[data-section="${sectionId}"]`);
   const activeSection = document.getElementById(sectionId);
 
   if (activeMenu) activeMenu.classList.add("active");
@@ -250,31 +283,6 @@ if (startLearningBtn) {
   });
 }
 
-function openSidebar() {
-  if (!sidebar || !mobileOverlay) return;
-  sidebar.classList.add("open");
-  mobileOverlay.classList.add("show");
-  if (menuToggle) {
-    menuToggle.setAttribute("aria-expanded", "true");
-    menuToggle.setAttribute("aria-label", "Close menu");
-  }
-}
-
-function closeSidebar() {
-  if (!sidebar || !mobileOverlay) return;
-  sidebar.classList.remove("open");
-  mobileOverlay.classList.remove("show");
-  if (menuToggle) {
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Open menu");
-  }
-}
-
-function toggleSidebar() {
-  if (!sidebar) return;
-  sidebar.classList.contains("open") ? closeSidebar() : openSidebar();
-}
-
 if (menuToggle) {
   menuToggle.addEventListener("click", toggleSidebar);
 }
@@ -302,20 +310,8 @@ if (confirmLogout) {
   });
 }
 
-function openProfileDropdown() {
-  if (!profileDropdown || !profileTrigger) return;
-  profileDropdown.classList.add("active");
-  profileTrigger.setAttribute("aria-expanded", "true");
-}
-
-function closeProfileDropdown() {
-  if (!profileDropdown || !profileTrigger) return;
-  profileDropdown.classList.remove("active");
-  profileTrigger.setAttribute("aria-expanded", "false");
-}
-
 if (profileTrigger) {
-  profileTrigger.addEventListener("click", (e) => {
+  profileTrigger.addEventListener("click", e => {
     e.stopPropagation();
     const isOpen = profileDropdown.classList.contains("active");
     isOpen ? closeProfileDropdown() : openProfileDropdown();
@@ -462,7 +458,7 @@ if (bookBtn) {
   });
 }
 
-document.addEventListener("click", (e) => {
+document.addEventListener("click", e => {
   const target = e.target;
 
   if (target === logoutModal) {
@@ -487,7 +483,7 @@ document.addEventListener("click", (e) => {
   }
 });
 
-document.addEventListener("keydown", (e) => {
+document.addEventListener("keydown", e => {
   if (e.key === "Escape") {
     closeProfileDropdown();
     closeLogoutModal();
@@ -675,6 +671,7 @@ window.addEventListener("load", () => {
 
   applyTheme(isDark);
   applyRTL(isRTL);
+  updateLogo();
 
   loadBookings();
   loadScore();

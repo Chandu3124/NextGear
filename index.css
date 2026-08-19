@@ -122,8 +122,8 @@ select:focus-visible {
 }
 
 .hero h1 {
-  font-size: 43px;
-  font-weight: 800;
+  font-size: 40px;
+  font-weight: 600;
   color: var(--text-light);
   line-height: 1.12;
   margin-bottom: 22px;
@@ -168,7 +168,7 @@ select:focus-visible {
 .hero-mini-card strong {
   display: block;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 500;
   color: #ffffff;
   margin-bottom: 4px;
 }
@@ -233,13 +233,13 @@ select:focus-visible {
   border: 2px solid var(--primary-color);
 }
 
-
 .pricing-btn-secondary {
   background: var(--secondary-color);
   color: var(--text-light);
   border-color: var(--secondary-color);
 }
-.ct-btn-secondary{
+
+.ct-btn-secondary {
   background-color: var(--primary-color);
   color: var(--secondary-color);
 }
@@ -361,10 +361,11 @@ body:not(.dark) .btn.secondary:hover {
 .booking-left h2,
 .ts-header h2,
 .ct-header h2,
-.section-title,
+.section-title span,
 .pricing-header h2 {
-  font-size: 43px;
+  font-size: 40px;
   color: var(--text-dark);
+  font-weight: 500;
   line-height: 1.2;
   margin-bottom: 25px;
 }
@@ -421,6 +422,7 @@ body:not(.dark) .btn.secondary:hover {
   font-size: 20px;
   margin-bottom: 12px;
   color: var(--text-dark);
+  font-weight: 500;
 }
 
 .feature-card p {
@@ -535,6 +537,7 @@ body:not(.dark) .btn.secondary:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 500;
 }
 
 .service-box p {
@@ -595,7 +598,7 @@ body:not(.dark) .btn.secondary:hover {
   background: var(--card-light);
   padding: 12px 18px;
   border-radius: 40px;
-  font-weight: 600;
+  font-weight: 500;
   color: #16a34a;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   max-width: calc(100% - 40px);
@@ -606,7 +609,7 @@ body:not(.dark) .btn.secondary:hover {
   background: var(--card-light);
   padding: 15px 22px;
   border-radius: 50px;
-  font-weight: 600;
+  font-weight: 500;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
   animation: simxFloat 5s ease-in-out infinite;
   display: flex;
@@ -666,6 +669,7 @@ body:not(.dark) .btn.secondary:hover {
   gap: 14px;
   margin-top: 10px;
   max-width: 100%;
+  font-weight: 500;
 }
 
 .simx-stats {
@@ -683,6 +687,7 @@ body:not(.dark) .btn.secondary:hover {
   align-items: center;
   gap: 2px;
   white-space: nowrap;
+  font-weight: 500;
 }
 
 .stat-number {
@@ -694,7 +699,7 @@ body:not(.dark) .btn.secondary:hover {
   display: inline-block;
   font-size: 0.8em;
   line-height: 1;
-  font-weight: 800;
+  font-weight: 500;
   margin-left: 2px;
   position: relative;
   top: -1px;
@@ -724,7 +729,7 @@ body:not(.dark) .btn.secondary:hover {
 
 .section-title {
   text-align: center;
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 10px;
 }
 
@@ -754,6 +759,10 @@ body:not(.dark) .btn.secondary:hover {
   flex: 1;
 }
 
+.theory-info h3 {
+  font-weight: 500;
+}
+
 .theory-panel {
   display: flex;
   gap: 20px;
@@ -772,6 +781,10 @@ body:not(.dark) .btn.secondary:hover {
   text-align: center;
   width: 150px;
   max-width: 100%;
+}
+
+.panel-card h4 {
+  font-weight: 500;
 }
 
 .panel-card span {
@@ -798,7 +811,7 @@ body:not(.dark) .btn.secondary:hover {
 .pgx-info {
   display: flex;
   justify-content: space-between;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 10px;
   color: var(--text-dark);
   gap: 16px;
@@ -886,11 +899,12 @@ body:not(.dark) .btn.secondary:hover {
   display: block;
   font-size: 28px;
   color: var(--text-dark);
+  font-weight: 500;
 }
 
 .pgx-text small {
   color: #777;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .pricing-section {
@@ -955,6 +969,7 @@ body:not(.dark) .btn.secondary:hover {
   font-size: 28px;
   color: var(--text-dark);
   margin-bottom: 14px;
+  font-weight: 500;
 }
 
 .pricing-price {
@@ -966,7 +981,7 @@ body:not(.dark) .btn.secondary:hover {
 
 .pricing-price small {
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
   color: #666;
 }
 
@@ -1030,6 +1045,7 @@ body:not(.dark) .btn.secondary:hover {
   margin-bottom: 35px;
   font-size: 30px;
   color: var(--text-dark);
+  font-weight: 500;
 }
 
 .booking-input {
@@ -1039,7 +1055,7 @@ body:not(.dark) .btn.secondary:hover {
 .booking-input label {
   display: block;
   margin-bottom: 10px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-dark);
 }
 
@@ -1093,6 +1109,10 @@ body:not(.dark) .btn.secondary:hover {
   text-align: center;
   animation: popupScale 0.5s ease;
   max-width: 100%;
+}
+
+.booking-popup-box h3 {
+  font-weight: 500;
 }
 
 .booking-check {
@@ -1218,6 +1238,7 @@ body:not(.dark) .btn.secondary:hover {
   font-size: 20px;
   color: var(--text-dark);
   margin-bottom: 4px;
+  font-weight: 500;
 }
 
 .ts-user-meta span {
@@ -1299,6 +1320,7 @@ body:not(.dark) .btn.secondary:hover {
   font-size: 20px;
   margin-bottom: 6px;
   color: var(--text-dark);
+  font-weight: 500;
 }
 
 .ct-card p {
@@ -1331,7 +1353,8 @@ body:not(.dark) .btn.secondary:hover {
 }
 
 .ct-cta h3 {
-  font-size: 2.25rem;
+  font-size: 40px;
+  font-weight: 500;
   margin-bottom: 12px;
   color: var(--text-dark);
 }
@@ -1348,8 +1371,6 @@ body:not(.dark) .btn.secondary:hover {
   gap: 16px;
   flex-wrap: wrap;
 }
-
-
 body.dark {
   background: var(--dark-bg);
   color: var(--text-light);
@@ -1976,39 +1997,49 @@ body.dark .ct-btn {
   }
 
   .hero {
-    height: auto;
-    min-height: 82vh;
-    max-height: none;
-    padding-top: 120px;
-    padding-bottom: 70px;
-  }
+  height: auto;
+  min-height: 82vh;
+  max-height: none;
+  padding-top: 120px;
+  padding-bottom: 70px;
 
-  .hero-content {
-    max-width: 620px;
-    margin-left: 0;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: -30px;
+}
 
-  .hero h1 {
-    font-size: 38px;
-  }
+.hero-content {
+  max-width: 620px;
+  margin: 0 auto;
+}
 
-  .hero p {
-    font-size: 16px;
-    min-height: auto;
-  }
+.hero h1 {
+  font-size: 38px;
+}
 
-  .hero-mini-info {
-    gap: 14px;
-  }
+.hero p {
+  font-size: 16px;
+  min-height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  .hero-mini-card {
-    min-width: calc(50% - 7px);
-    max-width: 100%;
-  }
+.hero-mini-info {
+  gap: 14px;
+  justify-content: center;
+}
 
-  .buttons {
-    gap: 16px;
-  }
+.hero-mini-card {
+  min-width: calc(50% - 7px);
+  max-width: 100%;
+}
+
+.buttons {
+  gap: 16px;
+  justify-content: center;
+}
 
   .btn,
   .simx-btn,
@@ -2340,7 +2371,7 @@ body.dark .ct-btn {
 }
 
 @media screen and (width: 1024px) and (height: 600px) {
-  .hero {
+  /* .hero {
     min-height: 100vh;
     height: 100vh;
     max-height: 100vh;
@@ -2387,7 +2418,64 @@ body.dark .ct-btn {
 
   .buttons {
     gap: 12px;
-  }
+  } */
+   .hero {
+  min-height: calc(100vh - 72px);
+  height: calc(100vh - 72px);
+  max-height: calc(100vh - 72px);
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  max-width: 560px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 34px;
+  margin-bottom: 14px;
+}
+
+.hero p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+  min-height: auto;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-mini-info {
+  gap: 10px;
+  margin-top: 16px;
+  justify-content: center;
+}
+
+.hero-mini-card {
+  min-width: 160px;
+  max-width: 100%;
+  padding: 12px 14px;
+}
+
+.hero-mini-card strong {
+  font-size: 13px;
+}
+
+.hero-mini-card span {
+  font-size: 12px;
+}
+
+.buttons {
+  gap: 12px;
+  justify-content: center;
+}
 
   .btn,
   .simx-btn,
@@ -2603,6 +2691,9 @@ body.dark .ct-btn {
 
 @media screen and (width: 1920px) and (height: 1080px) {
 
+  .hero-content{
+    margin-top: -100px;
+  }
   .about-container {
     padding-left: 30px;
     padding-right: 30px;

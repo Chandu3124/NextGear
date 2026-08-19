@@ -1,704 +1,685 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NextGear Student Dashboard</title>
-    <link rel="icon" type="image/png" sizes="184x184" href="logo-light.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    />
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="Dashboard.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NextGear Student Dashboard</title>
+  <link rel="icon" type="image/png" sizes="184x184" href="logo-light.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+  <link rel="stylesheet" href="Dashboard.css" />
 </head>
 <body>
-    <div class="mobile-overlay" id="mobileOverlay"></div>
-
-    <div class="container">
-        <aside class="sidebar" id="sidebar">
-            <div class="logo-wrap">
-                <a href="index.html" class="logo" aria-label="NextGear home">
-                    <img
-                        id="siteLogo"
-                        src="logo-light.png"
-                        alt="NextGear logo"
-                        data-light-logo="logo-light.png"
-                        data-dark-logo="logo-dark.png"
-                    />
-                    <h2>NEXT<span>GEAR</span></h2>
-                </a>
-            </div>
-
-            <ul class="menu">
-                <li class="active" data-section="dashboard">
-                    <i class="fa-solid fa-house"></i>
-                    <span>Dashboard</span>
-                </li>
-
-                <li data-section="booking">
-                    <i class="fa-solid fa-calendar-check"></i>
-                    <span>Book Simulator</span>
-                </li>
-
-                <li data-section="mybookings">
-                    <i class="fa-solid fa-car"></i>
-                    <span>My Bookings</span>
-                </li>
-
-                <li data-section="theory">
-                    <i class="fa-solid fa-book-open"></i>
-                    <span>Theory Mock Test</span>
-                </li>
-
-                <li data-section="scores">
-                    <i class="fa-solid fa-chart-column"></i>
-                    <span>Test Scores</span>
-                </li>
-
-                <li data-section="progress">
-                    <i class="fa-solid fa-chart-line"></i>
-                    <span>Progress Tracker</span>
-                </li>
-
-                <li data-section="profile">
-                    <i class="fa-solid fa-user"></i>
-                    <span>Profile</span>
-                </li>
-
-                <li data-section="settings">
-                    <i class="fa-solid fa-gear"></i>
-                    <span>Settings</span>
-                </li>
-
-                <li id="logoutBtn">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    <span>Logout</span>
-                </li>
-            </ul>
-        </aside>
-
-        <main class="main-content">
-            <header class="topbar">
-                <div class="topbar-left-wrap">
-                    <button
-                        class="icon-btn menu-toggle"
-                        id="menuToggle"
-                        aria-label="Open menu"
-                        aria-expanded="false"
-                        type="button"
-                    >
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-
-                    <div class="top-left">
-                        <h2>Hello Chandra Shekar</h2>
-                        <p>Welcome back. Ready for today's practice?</p>
-                    </div>
-                </div>
-
-                <div class="top-right">
-                    <button
-                        class="top-action-btn"
-                        id="rtlToggle"
-                        type="button"
-                        aria-label="Switch to right to left layout"
-                        aria-pressed="false"
-                    >
-                        <!-- <i class="fa-solid fa-right-left"></i> -->
-                        <span>RTL</span>
-                    </button>
-
-                    <button
-                        class="top-action-btn"
-                        id="themeToggle"
-                        type="button"
-                        aria-label="Switch to dark mode"
-                        aria-pressed="false"
-                    >
-                        <i class="fa-solid fa-moon"></i>
-                        <!-- <span>Dark</span> -->
-                    </button>
-
-                    <div class="notification">
-                        <i class="fa-solid fa-bell"></i>
-                        <span class="badge">3</span>
-                    </div>
-
-                    <div class="profile-dropdown" id="profileDropdown">
-                        <button
-                            class="profile-box profile-trigger"
-                            id="profileTrigger"
-                            type="button"
-                            aria-expanded="false"
-                            aria-controls="profileDropdownMenu"
-                        >
-                            <img src="https://i.pravatar.cc/100?img=12" alt="Student profile photo" />
-                            <div>
-                                <h4>Student</h4>
-                                <small>NextGear Member</small>
-                            </div>
-                            <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
-                        </button>
-
-                        <div class="profile-dropdown-menu" id="profileDropdownMenu">
-                            <button type="button" class="dropdown-item" data-section-target="profile">
-                                <i class="fa-solid fa-user"></i>
-                                <span>Profile</span>
-                            </button>
-
-                            <button type="button" class="dropdown-item" data-section-target="settings">
-                                <i class="fa-solid fa-gear"></i>
-                                <span>Settings</span>
-                            </button>
-
-                            <button type="button" class="dropdown-item" id="dropdownLogoutBtn">
-                                <i class="fa-solid fa-right-from-bracket"></i>
-                                <span>Logout</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </header>
-
-            <section id="dashboard" class="content-section active-section">
-                <div class="welcome-card">
-                    <div>
-                        <h1>Welcome to NextGear</h1>
-                        <p>
-                            Practice smarter, improve faster, and get ready
-                            to pass your driving theory exam with confidence.
-                        </p>
-                    </div>
-
-                    <button class="primary-btn" id="startLearningBtn">Start Learning</button>
-                </div>
-
-                <div class="cards">
-                    <div class="card">
-                        <div class="icon">
-                            <i class="fa-solid fa-car-side"></i>
-                        </div>
-                        <div>
-                            <h2>12</h2>
-                            <p>Simulator Sessions</p>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="icon">
-                            <i class="fa-solid fa-book"></i>
-                        </div>
-                        <div>
-                            <h2>84%</h2>
-                            <p>Theory Average</p>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="icon">
-                            <i class="fa-solid fa-calendar-days"></i>
-                        </div>
-                        <div>
-                            <h2>28 Jul</h2>
-                            <p>Upcoming Session</p>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="icon">
-                            <i class="fa-solid fa-award"></i>
-                        </div>
-                        <div>
-                            <h2>92%</h2>
-                            <p>Exam Readiness</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="dashboard-grid">
-                    <div class="dashboard-box">
-                        <h3>Upcoming Simulator Session</h3>
-                        <hr />
-                        <p><strong>Date :</strong> 28 July 2026</p>
-                        <p><strong>Time :</strong> 10:00 AM</p>
-                        <p><strong>Vehicle :</strong> Manual Car</p>
-                        <p><strong>Instructor :</strong> David Wilson</p>
-                        <button class="primary-btn section-jump-btn" data-target="mybookings">View Booking</button>
-                    </div>
-
-                    <div class="dashboard-box">
-                        <h3>Recent Theory Scores</h3>
-                        <hr />
-                        <table>
-                            <tr>
-                                <th>Test</th>
-                                <th>Score</th>
-                            </tr>
-                            <tr>
-                                <td>Road Signs</td>
-                                <td>18/20</td>
-                            </tr>
-                            <tr>
-                                <td>Traffic Rules</td>
-                                <td>22/25</td>
-                            </tr>
-                            <tr>
-                                <td>Hazard Test</td>
-                                <td>15/20</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="dashboard-grid">
-                    <div class="dashboard-box">
-                        <h3>Learning Progress</h3>
-                        <hr />
-                        <p>Simulator Progress</p>
-                        <div class="progress">
-                            <div class="progress-bar" id="dashboardSimulatorProgress" style="width:75%;">75%</div>
-                        </div>
-
-                        <br />
-
-                        <p>Theory Progress</p>
-                        <div class="progress">
-                            <div class="progress-bar" id="dashboardTheoryProgress" style="width:90%;">90%</div>
-                        </div>
-                    </div>
-
-                    <div class="dashboard-box">
-                        <h3>Announcements</h3>
-                        <hr />
-                        <ul class="announcement-list">
-                            <li><i class="fa-solid fa-car-side list-icon"></i> New Simulator Slots Available</li>
-                            <li><i class="fa-solid fa-book-open list-icon"></i> Theory Mock Test Updated</li>
-                            <li><i class="fa-solid fa-award list-icon"></i> Complete 5 Sessions to earn a Badge</li>
-                            <li><i class="fa-solid fa-calendar-days list-icon"></i> Next Theory Exam: 30 July 2026</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section id="booking" class="content-section">
-                <div class="section-header">
-                    <div>
-                        <h2>Book Simulator Session</h2>
-                        <p>Schedule your next driving simulator practice.</p>
-                    </div>
-                </div>
-
-                <div class="booking-container">
-                    <div class="booking-form">
-                        <h3>Session Details</h3>
-
-                        <div class="input-group">
-                            <label for="vehicle">Vehicle Type</label>
-                            <select id="vehicle">
-                                <option>Manual Car</option>
-                                <option>Automatic Car</option>
-                                <option>Motorcycle</option>
-                            </select>
-                        </div>
-
-                        <div class="input-group">
-                            <label for="bookingDate">Select Date</label>
-                            <input type="date" id="bookingDate" />
-                        </div>
-
-                        <div class="input-group">
-                            <label for="bookingTime">Select Time</label>
-                            <select id="bookingTime">
-                                <option>09:00 AM</option>
-                                <option>10:00 AM</option>
-                                <option>11:00 AM</option>
-                                <option>02:00 PM</option>
-                                <option>03:00 PM</option>
-                                <option>04:00 PM</option>
-                            </select>
-                        </div>
-
-                        <div class="input-group">
-                            <label for="instructor">Instructor</label>
-                            <select id="instructor">
-                                <option>David Wilson</option>
-                                <option>John Smith</option>
-                                <option>Sarah Lee</option>
-                            </select>
-                        </div>
-
-                        <button id="bookBtn" class="primary-btn">Book Session</button>
-                    </div>
-
-                    <div class="booking-info">
-                        <h3>Booking Guidelines</h3>
-                        <ul>
-                            <li><i class="fa-solid fa-circle-check list-icon"></i> Arrive 15 minutes before your session.</li>
-                            <li><i class="fa-solid fa-id-card list-icon"></i> Carry your Student ID.</li>
-                            <li><i class="fa-solid fa-clock list-icon"></i> One booking per time slot.</li>
-                            <li><i class="fa-solid fa-ban list-icon"></i> Cancellation allowed up to 24 hours before.</li>
-                            <li><i class="fa-solid fa-chart-line list-icon"></i> Practice regularly to improve readiness.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section id="mybookings" class="content-section">
-                <div class="section-header">
-                    <div>
-                        <h2>My Bookings</h2>
-                        <p>Your scheduled simulator sessions.</p>
-                    </div>
-                </div>
-
-                <div class="table-container">
-                    <table class="booking-table">
-                        <thead>
-                            <tr>
-                                <th>Vehicle</th>
-                                <th>Date</th>
-                                <th>Time</th>
-                                <th>Instructor</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody id="bookingTable">
-                            <tr>
-                                <td>Manual Car</td>
-                                <td>28 Jul 2026</td>
-                                <td>10:00 AM</td>
-                                <td>David Wilson</td>
-                                <td><span class="status upcoming">Upcoming</span></td>
-                                <td><button class="cancel-btn" type="button">Cancel</button></td>
-                            </tr>
-
-                            <tr>
-                                <td>Automatic Car</td>
-                                <td>18 Jul 2026</td>
-                                <td>02:00 PM</td>
-                                <td>Sarah Lee</td>
-                                <td><span class="status completed">Completed</span></td>
-                                <td><button class="view-btn" type="button">View</button></td>
-                            </tr>
-
-                            <tr>
-                                <td>Motorcycle</td>
-                                <td>10 Jul 2026</td>
-                                <td>11:00 AM</td>
-                                <td>John Smith</td>
-                                <td><span class="status completed">Completed</span></td>
-                                <td><button class="view-btn" type="button">View</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="booking-summary">
-                    <div class="summary-card">
-                        <h2 id="totalSessions">12</h2>
-                        <p>Total Sessions</p>
-                    </div>
-
-                    <div class="summary-card">
-                        <h2 id="upcomingSessions">3</h2>
-                        <p>Upcoming</p>
-                    </div>
-
-                    <div class="summary-card">
-                        <h2 id="completedSessions">9</h2>
-                        <p>Completed</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="theory" class="content-section">
-                <div class="section-header">
-                    <div>
-                        <h2>Theory Mock Test</h2>
-                        <p>Practice driving theory questions before your real exam.</p>
-                    </div>
-                </div>
-
-                <div class="theory-container">
-                    <div class="test-card">
-                        <div class="test-header">
-                            <h3>Question <span id="questionNumber">1</span> of 10</h3>
-
-                            <div class="timer">
-                                <i class="fa-solid fa-clock"></i>
-                                <span id="timer">10:00</span>
-                            </div>
-                        </div>
-
-                        <div class="question-box">
-                            <h2 id="question">What does a RED traffic signal indicate?</h2>
-                        </div>
-
-                        <div class="options">
-                            <button class="option" type="button"></button>
-                            <button class="option" type="button"></button>
-                            <button class="option" type="button"></button>
-                            <button class="option" type="button"></button>
-                        </div>
-
-                        <div class="test-buttons">
-                            <button id="nextQuestion" class="primary-btn" type="button">Next Question</button>
-                            <button id="submitTest" class="secondary-btn" type="button">Submit Test</button>
-                        </div>
-                    </div>
-
-                    <div class="instruction-card">
-                        <h3>Instructions</h3>
-                        <ul>
-                            <li><i class="fa-solid fa-list-check list-icon"></i> Total Questions : 10</li>
-                            <li><i class="fa-solid fa-hourglass-half list-icon"></i> Time : 10 Minutes</li>
-                            <li><i class="fa-solid fa-check list-icon"></i> One mark for every correct answer.</li>
-                            <li><i class="fa-solid fa-minus list-icon"></i> No negative marking.</li>
-                            <li><i class="fa-solid fa-paper-plane list-icon"></i> Click Submit after completing the test.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section id="scores" class="content-section">
-                <div class="section-header">
-                    <div>
-                        <h2>Test Scores</h2>
-                        <p>Your recent theory test performance.</p>
-                    </div>
-                </div>
-
-                <div class="score-cards">
-                    <div class="score-card">
-                        <h1 id="averageScoreCard">84%</h1>
-                        <p>Average Score</p>
-                    </div>
-
-                    <div class="score-card">
-                        <h1>96%</h1>
-                        <p>Highest Score</p>
-                    </div>
-
-                    <div class="score-card">
-                        <h1>12</h1>
-                        <p>Tests Completed</p>
-                    </div>
-                </div>
-
-                <div class="table-container">
-                    <table class="score-table">
-                        <thead>
-                            <tr>
-                                <th>Test</th>
-                                <th>Date</th>
-                                <th>Score</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <td>Road Signs</td>
-                                <td>10 Jul 2026</td>
-                                <td>18 / 20</td>
-                                <td><span class="status completed">Passed</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Traffic Rules</td>
-                                <td>15 Jul 2026</td>
-                                <td>22 / 25</td>
-                                <td><span class="status completed">Passed</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Hazard Perception</td>
-                                <td>18 Jul 2026</td>
-                                <td>15 / 20</td>
-                                <td><span class="status upcoming">Practice Again</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Road Safety</td>
-                                <td>22 Jul 2026</td>
-                                <td>20 / 20</td>
-                                <td><span class="status completed">Excellent</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="performance-card">
-                    <h3>Performance Summary</h3>
-
-                    <div class="progress-item">
-                        <p>Road Signs</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width:90%">90%</div>
-                        </div>
-                    </div>
-
-                    <div class="progress-item">
-                        <p>Traffic Rules</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width:88%">88%</div>
-                        </div>
-                    </div>
-
-                    <div class="progress-item">
-                        <p>Hazard Perception</p>
-                        <div class="progress">
-                            <div class="progress-bar" style="width:75%">75%</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="progress" class="content-section">
-                <div class="section-header">
-                    <div>
-                        <h2>Progress Tracker</h2>
-                        <p>Monitor your overall driving preparation progress.</p>
-                    </div>
-                </div>
-
-                <div class="progress-cards">
-                    <div class="progress-card">
-                        <h3>Simulator Progress</h3>
-                        <div class="circle"><span id="simulatorCircle">75%</span></div>
-                        <div class="progress">
-                            <div class="progress-bar" id="simulatorProgressBar" style="width:75%">75%</div>
-                        </div>
-                    </div>
-
-                    <div class="progress-card">
-                        <h3>Theory Progress</h3>
-                        <div class="circle"><span id="theoryCircle">90%</span></div>
-                        <div class="progress">
-                            <div class="progress-bar" id="theoryProgressBar" style="width:90%">90%</div>
-                        </div>
-                    </div>
-
-                    <div class="progress-card">
-                        <h3>Exam Readiness</h3>
-                        <div class="circle"><span id="overallCircle">92%</span></div>
-                        <div class="progress">
-                            <div class="progress-bar" id="overallProgressBar" style="width:92%">92%</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="dashboard-box">
-                    <h3>Achievements</h3>
-                    <ul class="achievement-list">
-                        <li><i class="fa-solid fa-trophy list-icon"></i> Completed 10 Simulator Sessions</li>
-                        <li><i class="fa-solid fa-medal list-icon"></i> Highest Theory Score : 96%</li>
-                        <li><i class="fa-solid fa-car list-icon"></i> Ready for Final Driving Assessment</li>
-                        <li><i class="fa-solid fa-bullseye list-icon"></i> Overall Progress : Excellent</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="profile" class="content-section">
-                <div class="section-header">
-                    <div>
-                        <h2>Student Profile</h2>
-                        <p>Manage your personal information.</p>
-                    </div>
-                </div>
-
-                <div class="profile-container">
-                    <div class="profile-card">
-                        <img src="https://i.pravatar.cc/180?img=12" alt="Student profile picture" />
-                        <h2>Chandra Shekar</h2>
-                        <p>Student ID : NG1024</p>
-                    </div>
-
-                    <div class="profile-details">
-                        <div class="input-group">
-                            <label for="fullName">Full Name</label>
-                            <input id="fullName" type="text" value="Chandra Shekar" />
-                        </div>
-
-                        <div class="input-group">
-                            <label for="email">Email</label>
-                            <input id="email" type="email" value="chandra@gmail.com" />
-                        </div>
-
-                        <div class="input-group">
-                            <label for="phone">Phone</label>
-                            <input id="phone" type="text" value="+91 9876543210" />
-                        </div>
-
-                        <div class="input-group">
-                            <label for="address">Address</label>
-                            <textarea id="address" rows="4">Hyderabad, Telangana</textarea>
-                        </div>
-
-                        <button class="primary-btn" id="saveProfileBtn" type="button">Save Changes</button>
-                    </div>
-                </div>
-            </section>
-
-            <section id="settings" class="content-section">
-                <div class="section-header">
-                    <div>
-                        <h2>Settings</h2>
-                        <p>Customize your dashboard preferences.</p>
-                    </div>
-                </div>
-
-                <div class="settings-box">
-                    <div class="setting-item">
-                        <div>
-                            <h3>Email Notifications</h3>
-                            <small>Receive booking updates</small>
-                        </div>
-
-                        <label class="switch">
-                            <input type="checkbox" id="emailNotifications" checked />
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="setting-item">
-                        <div>
-                            <h3>SMS Alerts</h3>
-                            <small>Receive reminder messages</small>
-                        </div>
-
-                        <label class="switch">
-                            <input type="checkbox" id="smsAlerts" />
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-
-                    <button class="primary-btn" id="saveSettingsBtn" type="button">Save Settings</button>
-                </div>
-            </section>
-        </main>
-    </div>
-
-    <div class="logout-modal" id="logoutModal">
-        <div class="logout-content">
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <div class="dashboard-layout">
+    <aside class="sidebar" id="sidebar" aria-label="Sidebar navigation">
+      <div class="logo-wrap">
+        <a href="index.html" class="logo" aria-label="NextGear home">
+          <img
+            id="siteLogo"
+            src="logo-light.png"
+            alt="NextGear logo"
+            data-light-logo="logo-light.png"
+            data-dark-logo="logo-dark.png"
+          />
+          <h2>NEXT<span>GEAR</span></h2>
+        </a>
+      </div>
+
+      <ul class="menu" role="list">
+        <li>
+          <button type="button" class="menu-link active" data-section="dashboard">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+          </button>
+        </li>
+
+        <li>
+          <button type="button" class="menu-link" data-section="booking">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Book Simulator</span>
+          </button>
+        </li>
+
+        <li>
+          <button type="button" class="menu-link" data-section="mybookings">
+            <i class="fa-solid fa-car"></i>
+            <span>My Bookings</span>
+          </button>
+        </li>
+
+        <li>
+          <button type="button" class="menu-link" data-section="theory">
+            <i class="fa-solid fa-book-open"></i>
+            <span>Theory Mock Test</span>
+          </button>
+        </li>
+
+        <li>
+          <button type="button" class="menu-link" data-section="scores">
+            <i class="fa-solid fa-chart-column"></i>
+            <span>Test Scores</span>
+          </button>
+        </li>
+
+        <li>
+          <button type="button" class="menu-link" data-section="progress">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Progress Tracker</span>
+          </button>
+        </li>
+
+        <li>
+          <button type="button" class="menu-link" data-section="profile">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+          </button>
+        </li>
+
+        <li>
+          <button type="button" class="menu-link" data-section="settings">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+          </button>
+        </li>
+
+        <li>
+          <button type="button" class="menu-link logout-link" id="logoutBtn">
             <i class="fa-solid fa-right-from-bracket"></i>
-            <h2>Logout</h2>
-            <p>Are you sure you want to logout?</p>
+            <span>Logout</span>
+          </button>
+        </li>
+      </ul>
+    </aside>
 
-            <div class="logout-buttons">
-                <button id="confirmLogout" class="primary-btn" type="button">Yes, Logout</button>
-                <button id="cancelLogout" class="secondary-btn" type="button">Cancel</button>
-            </div>
+    <main class="main-content" id="mainContent">
+      <header class="topbar">
+        <div class="topbar-left-wrap">
+          <button
+            class="icon-btn menu-toggle"
+            id="menuToggle"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="sidebar"
+            type="button"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div class="top-left">
+            <h2>Hello Chandra Shekar</h2>
+            <p>Welcome back. Ready for today's practice?</p>
+          </div>
         </div>
-    </div>
 
-    <script src="Dashboard.js"></script>
+        <div class="top-right">
+          <button
+            class="top-action-btn"
+            id="rtlToggle"
+            type="button"
+            aria-label="Switch to right to left layout"
+            aria-pressed="false"
+          >
+            <span>RTL</span>
+          </button>
+
+          <button
+            class="top-action-btn"
+            id="themeToggle"
+            type="button"
+            aria-label="Switch to dark mode"
+            aria-pressed="false"
+          >
+            <i class="fa-solid fa-moon"></i>
+          </button>
+
+          <div class="notification" aria-label="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="badge">3</span>
+          </div>
+
+          <div class="profile-dropdown" id="profileDropdown">
+            <button
+              class="profile-box profile-trigger"
+              id="profileTrigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="profileDropdownMenu"
+            >
+              <img src="https://i.pravatar.cc/100?img=12" alt="Student profile photo" />
+              <div>
+                <h4>Student</h4>
+                <small>NextGear Member</small>
+              </div>
+              <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+            </button>
+
+            <div class="profile-dropdown-menu" id="profileDropdownMenu">
+              <button type="button" class="dropdown-item" data-section-target="profile">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+              </button>
+
+              <button type="button" class="dropdown-item" data-section-target="settings">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+              </button>
+
+              <button type="button" class="dropdown-item" id="dropdownLogoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section id="dashboard" class="content-section active-section">
+        <div class="welcome-card">
+          <div>
+            <h1>Welcome to NextGear</h1>
+            <p>
+              Practice smarter, improve faster, and get ready to pass your driving
+              theory exam with confidence.
+            </p>
+          </div>
+          <button class="primary-btn" id="startLearningBtn" type="button">Start Learning</button>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="icon"><i class="fa-solid fa-car-side"></i></div>
+            <div>
+              <h2>12</h2>
+              <p>Simulator Sessions</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="icon"><i class="fa-solid fa-book"></i></div>
+            <div>
+              <h2>84%</h2>
+              <p>Theory Average</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="icon"><i class="fa-solid fa-calendar-days"></i></div>
+            <div>
+              <h2>28 Jul</h2>
+              <p>Upcoming Session</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="icon"><i class="fa-solid fa-award"></i></div>
+            <div>
+              <h2>92%</h2>
+              <p>Exam Readiness</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="dashboard-box">
+            <h3>Upcoming Simulator Session</h3>
+            <hr />
+            <p><strong>Date :</strong> 28 July 2026</p>
+            <p><strong>Time :</strong> 10:00 AM</p>
+            <p><strong>Vehicle :</strong> Manual Car</p>
+            <p><strong>Instructor :</strong> David Wilson</p>
+            <button class="primary-btn section-jump-btn" data-target="mybookings" type="button">View Booking</button>
+          </div>
+
+          <div class="dashboard-box">
+            <h3>Recent Theory Scores</h3>
+            <hr />
+            <table>
+              <tr><th>Test</th><th>Score</th></tr>
+              <tr><td>Road Signs</td><td>18/20</td></tr>
+              <tr><td>Traffic Rules</td><td>22/25</td></tr>
+              <tr><td>Hazard Test</td><td>15/20</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="dashboard-box">
+            <h3>Learning Progress</h3>
+            <hr />
+            <p>Simulator Progress</p>
+            <div class="progress">
+              <div class="progress-bar" id="dashboardSimulatorProgress" style="width:75%;">75%</div>
+            </div>
+            <br />
+            <p>Theory Progress</p>
+            <div class="progress">
+              <div class="progress-bar" id="dashboardTheoryProgress" style="width:90%;">90%</div>
+            </div>
+          </div>
+
+          <div class="dashboard-box">
+            <h3>Announcements</h3>
+            <hr />
+            <ul class="announcement-list">
+              <li><i class="fa-solid fa-car-side list-icon"></i> New Simulator Slots Available</li>
+              <li><i class="fa-solid fa-book-open list-icon"></i> Theory Mock Test Updated</li>
+              <li><i class="fa-solid fa-award list-icon"></i> Complete 5 Sessions to earn a Badge</li>
+              <li><i class="fa-solid fa-calendar-days list-icon"></i> Next Theory Exam: 30 July 2026</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="booking" class="content-section">
+        <div class="section-header">
+          <div>
+            <h2>Book Simulator Session</h2>
+            <p>Schedule your next driving simulator practice.</p>
+          </div>
+        </div>
+
+        <div class="booking-container">
+          <div class="booking-form">
+            <h3>Session Details</h3>
+
+            <div class="input-group">
+              <label for="vehicle">Vehicle Type</label>
+              <select id="vehicle">
+                <option>Manual Car</option>
+                <option>Automatic Car</option>
+                <option>Motorcycle</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="bookingDate">Select Date</label>
+              <input type="date" id="bookingDate" />
+            </div>
+
+            <div class="input-group">
+              <label for="bookingTime">Select Time</label>
+              <select id="bookingTime">
+                <option>09:00 AM</option>
+                <option>10:00 AM</option>
+                <option>11:00 AM</option>
+                <option>02:00 PM</option>
+                <option>03:00 PM</option>
+                <option>04:00 PM</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="instructor">Instructor</label>
+              <select id="instructor">
+                <option>David Wilson</option>
+                <option>John Smith</option>
+                <option>Sarah Lee</option>
+              </select>
+            </div>
+
+            <button id="bookBtn" class="primary-btn" type="button">Book Session</button>
+          </div>
+
+          <div class="booking-info">
+            <h3>Booking Guidelines</h3>
+            <ul>
+              <li><i class="fa-solid fa-circle-check list-icon"></i> Arrive 15 minutes before your session.</li>
+              <li><i class="fa-solid fa-id-card list-icon"></i> Carry your Student ID.</li>
+              <li><i class="fa-solid fa-clock list-icon"></i> One booking per time slot.</li>
+              <li><i class="fa-solid fa-ban list-icon"></i> Cancellation allowed up to 24 hours before.</li>
+              <li><i class="fa-solid fa-chart-line list-icon"></i> Practice regularly to improve readiness.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="mybookings" class="content-section">
+        <div class="section-header">
+          <div>
+            <h2>My Bookings</h2>
+            <p>Your scheduled simulator sessions.</p>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table class="booking-table">
+            <thead>
+              <tr>
+                <th>Vehicle</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Instructor</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="bookingTable">
+              <tr>
+                <td>Manual Car</td>
+                <td>28 Jul 2026</td>
+                <td>10:00 AM</td>
+                <td>David Wilson</td>
+                <td><span class="status upcoming">Upcoming</span></td>
+                <td><button class="cancel-btn" type="button">Cancel</button></td>
+              </tr>
+              <tr>
+                <td>Automatic Car</td>
+                <td>18 Jul 2026</td>
+                <td>02:00 PM</td>
+                <td>Sarah Lee</td>
+                <td><span class="status completed">Completed</span></td>
+                <td><button class="view-btn" type="button">View</button></td>
+              </tr>
+              <tr>
+                <td>Motorcycle</td>
+                <td>10 Jul 2026</td>
+                <td>11:00 AM</td>
+                <td>John Smith</td>
+                <td><span class="status completed">Completed</span></td>
+                <td><button class="view-btn" type="button">View</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="booking-summary">
+          <div class="summary-card">
+            <h2 id="totalSessions">12</h2>
+            <p>Total Sessions</p>
+          </div>
+          <div class="summary-card">
+            <h2 id="upcomingSessions">3</h2>
+            <p>Upcoming</p>
+          </div>
+          <div class="summary-card">
+            <h2 id="completedSessions">9</h2>
+            <p>Completed</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="theory" class="content-section">
+        <div class="section-header">
+          <div>
+            <h2>Theory Mock Test</h2>
+            <p>Practice driving theory questions before your real exam.</p>
+          </div>
+        </div>
+
+        <div class="theory-container">
+          <div class="test-card">
+            <div class="test-header">
+              <h3>Question <span id="questionNumber">1</span> of 10</h3>
+              <div class="timer">
+                <i class="fa-solid fa-clock"></i>
+                <span id="timer">10:00</span>
+              </div>
+            </div>
+
+            <div class="question-box">
+              <h2 id="question">What does a RED traffic signal indicate?</h2>
+            </div>
+
+            <div class="options">
+              <button class="option" type="button"></button>
+              <button class="option" type="button"></button>
+              <button class="option" type="button"></button>
+              <button class="option" type="button"></button>
+            </div>
+
+            <div class="test-buttons">
+              <button id="nextQuestion" class="primary-btn" type="button">Next Question</button>
+              <button id="submitTest" class="secondary-btn" type="button">Submit Test</button>
+            </div>
+          </div>
+
+          <div class="instruction-card">
+            <h3>Instructions</h3>
+            <ul>
+              <li><i class="fa-solid fa-list-check list-icon"></i> Total Questions : 10</li>
+              <li><i class="fa-solid fa-hourglass-half list-icon"></i> Time : 10 Minutes</li>
+              <li><i class="fa-solid fa-check list-icon"></i> One mark for every correct answer.</li>
+              <li><i class="fa-solid fa-minus list-icon"></i> No negative marking.</li>
+              <li><i class="fa-solid fa-paper-plane list-icon"></i> Click Submit after completing the test.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="scores" class="content-section">
+        <div class="section-header">
+          <div>
+            <h2>Test Scores</h2>
+            <p>Your recent theory test performance.</p>
+          </div>
+        </div>
+
+        <div class="score-cards">
+          <div class="score-card">
+            <h1 id="averageScoreCard">84%</h1>
+            <p>Average Score</p>
+          </div>
+          <div class="score-card">
+            <h1>96%</h1>
+            <p>Highest Score</p>
+          </div>
+          <div class="score-card">
+            <h1>12</h1>
+            <p>Tests Completed</p>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table class="score-table">
+            <thead>
+              <tr>
+                <th>Test</th>
+                <th>Date</th>
+                <th>Score</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Road Signs</td>
+                <td>10 Jul 2026</td>
+                <td>18 / 20</td>
+                <td><span class="status completed">Passed</span></td>
+              </tr>
+              <tr>
+                <td>Traffic Rules</td>
+                <td>15 Jul 2026</td>
+                <td>22 / 25</td>
+                <td><span class="status completed">Passed</span></td>
+              </tr>
+              <tr>
+                <td>Hazard Perception</td>
+                <td>18 Jul 2026</td>
+                <td>15 / 20</td>
+                <td><span class="status upcoming">Practice Again</span></td>
+              </tr>
+              <tr>
+                <td>Road Safety</td>
+                <td>22 Jul 2026</td>
+                <td>20 / 20</td>
+                <td><span class="status completed">Excellent</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="performance-card">
+          <h3>Performance Summary</h3>
+
+          <div class="progress-item">
+            <p>Road Signs</p>
+            <div class="progress">
+              <div class="progress-bar" style="width:90%">90%</div>
+            </div>
+          </div>
+
+          <div class="progress-item">
+            <p>Traffic Rules</p>
+            <div class="progress">
+              <div class="progress-bar" style="width:88%">88%</div>
+            </div>
+          </div>
+
+          <div class="progress-item">
+            <p>Hazard Perception</p>
+            <div class="progress">
+              <div class="progress-bar" style="width:75%">75%</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="progress" class="content-section">
+        <div class="section-header">
+          <div>
+            <h2>Progress Tracker</h2>
+            <p>Monitor your overall driving preparation progress.</p>
+          </div>
+        </div>
+
+        <div class="progress-cards">
+          <div class="progress-card">
+            <h3>Simulator Progress</h3>
+            <div class="circle"><span id="simulatorCircle">75%</span></div>
+            <div class="progress">
+              <div class="progress-bar" id="simulatorProgressBar" style="width:75%">75%</div>
+            </div>
+          </div>
+
+          <div class="progress-card">
+            <h3>Theory Progress</h3>
+            <div class="circle"><span id="theoryCircle">90%</span></div>
+            <div class="progress">
+              <div class="progress-bar" id="theoryProgressBar" style="width:90%">90%</div>
+            </div>
+          </div>
+
+          <div class="progress-card">
+            <h3>Exam Readiness</h3>
+            <div class="circle"><span id="overallCircle">92%</span></div>
+            <div class="progress">
+              <div class="progress-bar" id="overallProgressBar" style="width:92%">92%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-box">
+          <h3>Achievements</h3>
+          <ul class="achievement-list">
+            <li><i class="fa-solid fa-trophy list-icon"></i> Completed 10 Simulator Sessions</li>
+            <li><i class="fa-solid fa-medal list-icon"></i> Highest Theory Score : 96%</li>
+            <li><i class="fa-solid fa-car list-icon"></i> Ready for Final Driving Assessment</li>
+            <li><i class="fa-solid fa-bullseye list-icon"></i> Overall Progress : Excellent</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="profile" class="content-section">
+        <div class="section-header">
+          <div>
+            <h2>Student Profile</h2>
+            <p>Manage your personal information.</p>
+          </div>
+        </div>
+
+        <div class="profile-container">
+          <div class="profile-card">
+            <img src="https://i.pravatar.cc/180?img=12" alt="Student profile picture" />
+            <h2>Chandra Shekar</h2>
+            <p>Student ID : NG1024</p>
+          </div>
+
+          <div class="profile-details">
+            <div class="input-group">
+              <label for="fullName">Full Name</label>
+              <input id="fullName" type="text" value="Chandra Shekar" />
+            </div>
+
+            <div class="input-group">
+              <label for="email">Email</label>
+              <input id="email" type="email" value="chandra@gmail.com" />
+            </div>
+
+            <div class="input-group">
+              <label for="phone">Phone</label>
+              <input id="phone" type="text" value="+91 9876543210" />
+            </div>
+
+            <div class="input-group">
+              <label for="address">Address</label>
+              <textarea id="address" rows="4">Hyderabad, Telangana</textarea>
+            </div>
+
+            <button class="primary-btn" id="saveProfileBtn" type="button">Save Changes</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="settings" class="content-section">
+        <div class="section-header">
+          <div>
+            <h2>Settings</h2>
+            <p>Customize your dashboard preferences.</p>
+          </div>
+        </div>
+
+        <div class="settings-box">
+          <div class="setting-item">
+            <div>
+              <h3>Email Notifications</h3>
+              <small>Receive booking updates</small>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="emailNotifications" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <div>
+              <h3>SMS Alerts</h3>
+              <small>Receive reminder messages</small>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="smsAlerts" />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <button class="primary-btn" id="saveSettingsBtn" type="button">Save Settings</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="logout-modal" id="logoutModal">
+    <div class="logout-content">
+      <i class="fa-solid fa-right-from-bracket"></i>
+      <h2>Logout</h2>
+      <p>Are you sure you want to logout?</p>
+
+      <div class="logout-buttons">
+        <button id="confirmLogout" class="primary-btn" type="button">Yes, Logout</button>
+        <button id="cancelLogout" class="secondary-btn" type="button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="Dashboard.js"></script>
 </body>
 </html>

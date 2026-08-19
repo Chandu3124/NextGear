@@ -100,7 +100,7 @@ html[dir="rtl"] .top-actions{
 
 .logo h2{
   font-size:24px;
-  font-weight:800;
+  font-weight:500;
   letter-spacing:.4px;
   color:var(--secondary);
   transition:color .35s ease;
@@ -135,7 +135,7 @@ html[dir="rtl"] .top-actions{
   background:rgba(255,121,0,.1);
   color:var(--primary);
   font-size:14px;
-  font-weight:600;
+  font-weight:500;
   padding:8px 14px;
   border-radius:999px;
   margin-bottom:18px;
@@ -143,6 +143,7 @@ html[dir="rtl"] .top-actions{
 
 h1{
   font-size:38px;
+  font-weight:600;
   margin-bottom:16px;
   line-height:1.2;
 }
@@ -161,6 +162,7 @@ h1{
 
 .policy-section h2{
   font-size:20px;
+  font-weight:500;
   margin-bottom:10px;
   color:var(--secondary);
 }

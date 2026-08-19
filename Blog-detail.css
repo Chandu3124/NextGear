@@ -73,11 +73,11 @@
 }
 
 .page-hero-content h1 {
-  font-size: 43px;
+  font-size: 40px;
   line-height: 1.15;
   color: var(--white);
   margin-bottom: 18px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .page-hero-content h1 span {
@@ -145,6 +145,7 @@
 .hero-sidebar-inner h3 {
   font-size: 24px;
   color: var(--secondary);
+  font-weight: 500;
 }
 
 .hero-sidebar-inner ul {
@@ -216,14 +217,19 @@
   margin-bottom: 20px;
 }
 
-.hero-content h2 {
-  font-size: 43px;
+.hero-content h2,
+.section-title h2,
+.article-content h2 {
+  font-size: 40px;
   color: var(--secondary);
   margin-bottom: 20px;
   line-height: 1.15;
+  font-weight: 500;
 }
 
-.hero-content h2 span {
+.hero-content h2 span,
+.section-title h2 span,
+.article-content h2 span {
   color: var(--primary);
 }
 
@@ -241,17 +247,6 @@
 .section-title {
   text-align: center;
   margin-bottom: 60px;
-}
-
-.section-title h2 {
-  font-size: 43px;
-  color: var(--secondary);
-  margin-bottom: 15px;
-  line-height: 1.15;
-}
-
-.section-title span {
-  color: var(--primary);
 }
 
 .section-title p {
@@ -303,6 +298,7 @@
   color: var(--secondary);
   margin-bottom: 15px;
   font-size: 24px;
+  font-weight: 500;
 }
 
 .topic-content p {
@@ -332,17 +328,6 @@
   margin-bottom: 10px;
 }
 
-.article-content h2 {
-  font-size: 43px;
-  color: var(--secondary);
-  margin: 18px 0 25px;
-  line-height: 1.15;
-}
-
-.article-content h2 span {
-  color: var(--primary);
-}
-
 .article-content p {
   color: var(--text-light);
   margin-bottom: 18px;
@@ -370,6 +355,7 @@
 .article-box h3 {
   color: var(--secondary);
   margin-bottom: 12px;
+  font-weight: 500;
 }
 
 .article-box p {
@@ -434,6 +420,7 @@
 .timeline-content h3 {
   color: var(--secondary);
   margin-bottom: 10px;
+  font-weight: 500;
 }
 
 .timeline-content p {
@@ -479,6 +466,7 @@
   color: var(--secondary);
   font-size: 28px;
   margin-bottom: 15px;
+  font-weight: 500;
 }
 
 .gallery-text p {
@@ -486,7 +474,6 @@
   line-height: 1.8;
   font-size: 17px;
 }
-
 /*==================================
         DARK MODE
 ==================================*/
@@ -655,6 +642,7 @@ img {
     min-height: 90vh;
     align-items: center;
     background-position: center;
+    margin-top: -30px;
   }
 
   .page-hero-content {

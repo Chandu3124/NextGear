@@ -158,9 +158,9 @@ a {
 }
 
 .hero-title {
-  font-size: 43px;
+  font-size: 40px;
   line-height: 1.18;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 16px;
   color: var(--white);
 }
@@ -204,6 +204,7 @@ a {
 .hero-points h3 {
   font-size: 28px;
   color: var(--primary);
+  font-weight: 500;
 }
 
 .hero-points p {
@@ -225,8 +226,8 @@ a {
 }
 
 .features-title {
-  font-size: 43px;
-  font-weight: 700;
+  font-size: 40px;
+  font-weight: 500;
   margin-bottom: 15px;
   color: var(--black);
 }
@@ -265,6 +266,7 @@ a {
 .feature-card h3 {
   margin-bottom: 10px;
   color: var(--white);
+  font-weight: 500;
 }
 
 .feature-card p {
@@ -302,8 +304,8 @@ a {
 }
 
 .how-title {
-  font-size: 43px;
-  font-weight: 700;
+  font-size: 40px;
+  font-weight: 500;
   margin-bottom: 15px;
   color: var(--black);
 }
@@ -351,6 +353,7 @@ a {
 .step h3 {
   margin-bottom: 10px;
   color: var(--secondary);
+  font-weight: 500;
 }
 
 .step p {
@@ -378,8 +381,8 @@ a {
 }
 
 .questions-title {
-  font-size: 43px;
-  font-weight: 700;
+  font-size: 40px;
+  font-weight: 500;
   margin-bottom: 30px;
   color: var(--black);
 }
@@ -408,6 +411,7 @@ a {
 .question-text {
   margin-bottom: 20px;
   color: var(--secondary);
+  font-weight: 500;
 }
 
 .options {
@@ -472,7 +476,8 @@ a {
 
 .analysis-title {
   text-align: center;
-  font-size: 43px;
+  font-size: 40px;
+  font-weight: 500;
   margin-bottom: 40px;
   color: var(--black);
 }
@@ -505,6 +510,7 @@ a {
 
 .summary-item h3 {
   font-size: 28px;
+  font-weight: 500;
 }
 
 .report-list {
@@ -586,7 +592,8 @@ a {
 }
 
 .cta-final-container h2 {
-  font-size: 34px;
+  font-size: 40px;
+  font-weight: 500;
   color: var(--secondary);
   margin-bottom: 10px;
 }
@@ -761,6 +768,7 @@ a {
     height: 90vh;
     min-height: 90vh;
     max-height: 90vh;
+    margin-top: -30px;
   }
 
   .hero-overlay {
@@ -1039,7 +1047,7 @@ body.dark .secondary:hover {
 
 body.dark .submit-btn {
   background: var(--secondary);
-  color: var(--white);
+  color: white;
 }
 
 body.dark .submit-btn:hover {

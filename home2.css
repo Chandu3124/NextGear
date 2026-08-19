@@ -59,6 +59,18 @@ body {
   padding-right:var(--page-side-padding);
 }
 
+.home2-page .dashboard h2,
+.home2-page .smart-ready h2,
+.home2-page .sim-section h2,
+.home2-page .theory-section h2,
+.home2-page .slot-section h2,
+.home2-page .perf-section h2,
+.home2-page .game-section h2,
+.home2-page .cta-section h2{
+  font-size: 40px;
+  font-weight: 500;
+}
+
 /* 1st section exactly 90vh */
 .home2-page .hero{
   height: calc(100vh - 72px);
@@ -99,10 +111,11 @@ body {
 }
 
 .home2-page .hero h1{
-  font-size: 43px;
+  font-size: 40px;
   line-height: 1.15;
   margin-bottom: 20px;
   color: #ffffff;
+  font-weight: 600;
 }
 
 .home2-page #typing{
@@ -213,6 +226,7 @@ body:not(.dark) .home2-page .hero-primary:hover{
 .home2-page .stats h2{
   font-size:36px;
   color:var(--primary);
+  font-weight: 500;
 }
 
 .home2-page .stats p{
@@ -263,6 +277,7 @@ body:not(.dark) .home2-page .hero-primary:hover{
   font-size:43px;
   line-height:1.2;
   color:var(--secondary);
+  font-weight: 500;
 }
 
 .home2-page .dashboard h2 span,
@@ -333,6 +348,7 @@ body:not(.dark) .home2-page .hero-primary:hover{
 .home2-page .box h4{
   color:var(--secondary);
   margin-bottom:8px;
+  font-weight: 500;
 }
 
 /* calendar icon alignment fix */
@@ -463,6 +479,7 @@ body:not(.dark) .home2-page .hero-primary:hover{
   font-size:30px;
   color:var(--secondary);
   margin-bottom:10px;
+  font-weight: 500;
 }
 
 .home2-page .smart-panel p{
@@ -612,6 +629,7 @@ body:not(.dark) .home2-page .hero-primary:hover{
 .home2-page .sim-item h3{
   color:var(--secondary);
   margin:10px 0;
+  font-weight: 500;
 }
 
 .home2-page .sim-item p{
@@ -648,6 +666,7 @@ body:not(.dark) .home2-page .hero-primary:hover{
   font-size:22px;
   color:var(--secondary);
   margin-bottom:12px;
+  font-weight: 500;
 }
 
 .home2-page .levels{
@@ -821,6 +840,7 @@ body:not(.dark) .home2-page .hero-primary:hover{
 .home2-page .time-zone h3{
   color:var(--secondary);
   font-size:24px;
+  font-weight: 500;
 }
 
 .home2-page .calendar{
@@ -1006,6 +1026,7 @@ body:not(.dark) .home2-page .hero-primary:hover{
 .home2-page .perf-analysis h3{
   color:var(--secondary);
   margin-top:25px;
+  font-weight: 500;
 }
 
 .home2-page .perf-analysis p{
@@ -1085,6 +1106,7 @@ body:not(.dark) .home2-page .hero-primary:hover{
 .home2-page .trophy-zone h3{
   color:var(--secondary);
   font-size:28px;
+  font-weight: 500;
 }
 
 .home2-page .trophy-zone p{
@@ -1144,6 +1166,7 @@ body:not(.dark) .home2-page .hero-primary:hover{
   color:var(--secondary);
   font-size:18px;
   margin-top:14px;
+  font-weight: 500;
 }
 
 .home2-page .badge p{
@@ -1155,6 +1178,10 @@ body:not(.dark) .home2-page .hero-primary:hover{
 .home2-page .streak-area{
   margin-top:80px;
   text-align:center;
+}
+
+.home2-page .streak-area h3{
+  font-weight: 500;
 }
 
 .home2-page .days{

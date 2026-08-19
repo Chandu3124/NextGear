@@ -47,16 +47,21 @@ a {
   text-decoration: none;
 }
 
-.contact-hero-content h1,
+.contact-hero-content h1 {
+  font-size: 40px;
+  line-height: 1.18;
+  font-weight: 600;
+}
+
 .contact-info-heading h2,
 .form-left h2,
 .booking-text h2,
 .location-content h2,
 .faq-left h2,
 .mini-cta-text h2 {
-  font-size: 43px;
+  font-size: 40px;
   line-height: 1.18;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .contact-hero-content h1 span,
@@ -294,6 +299,7 @@ a {
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
+  font-weight: 500;
 }
 
 .message-card p {
@@ -401,6 +407,7 @@ a {
   color: var(--secondary);
   font-size: 22px;
   margin-bottom: 10px;
+  font-weight: 500;
 }
 
 .contact-details p,
@@ -758,6 +765,7 @@ a {
   color: var(--secondary);
   margin-bottom: 8px;
   font-size: 22px;
+  font-weight: 500;
 }
 
 .location-details p {
@@ -857,6 +865,7 @@ a {
   color: var(--secondary);
   margin-bottom: 8px;
   font-size: 22px;
+  font-weight: 500;
 }
 
 .faq-support span {
@@ -890,7 +899,7 @@ a {
 .faq-question h3 {
   color: var(--secondary);
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
   padding-right: 20px;
 }
 
@@ -1014,7 +1023,6 @@ a {
   opacity: 1;
   transform: translateY(0);
 }
-
 /* dark mode */
 
 body.dark {
@@ -1315,6 +1323,7 @@ body.dark .faq-item.active .faq-question i {
     min-height: 90dvh;
     padding-top: 104px;
     padding-bottom: 48px;
+    margin-top: -30px;
   }
 
   .contact-hero-content h1,
@@ -1376,9 +1385,9 @@ body.dark .faq-item.active .faq-question i {
     min-height: 90svh;
     min-height: 90dvh;
     height: auto;
-    margin-top: 0;
+    margin-top: -30px;
     padding-top: 74px;
-    padding-bottom: 24px;
+     padding-bottom: 24px;  
   }
 
   .contact-hero-container {

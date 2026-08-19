@@ -122,7 +122,7 @@ Promise.all([
       const currentPath = normalizeFile(window.location.pathname) || "index.html";
       let mappedPage = currentPath;
 
-      if (currentPath === "service-detail.html") mappedPage = "services.html";
+      if (currentPath === "programs-detail.html") mappedPage = "programs.html";
       if (currentPath === "blog-detail.html") mappedPage = "blog.html";
 
       const topLevelLinks = document.querySelectorAll(".menu > li > a");

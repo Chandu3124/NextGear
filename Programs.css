@@ -105,13 +105,23 @@ select:focus-visible{
   stroke-width:2.2;
 }
 
+.services-content h1{
+  font-size:40px;
+  font-weight:600;
+  color:var(--text-light);
+  line-height:1.16;
+  margin-bottom:14px;
+  max-width:560px;
+}
+
 .core-heading h2,
 .sim-heading h2,
 .theory-content h2,
 .easy-booking-intro h2,
 .growth-title h2,
 .cta-content h2{
-  font-size:43px;
+  font-size:40px;
+  font-weight:500;
   line-height:1.2;
   color:var(--secondary);
 }
@@ -130,20 +140,21 @@ select:focus-visible{
 .services-hero{
   position:relative;
   overflow:hidden;
+  min-height:90vh;
   min-height:90dvh;
   display:flex;
   align-items:center;
-  padding:100px 8% 42px;
-  margin-top: -20px;
+  padding:92px 8% 42px;
+  margin-top:-20px;
   background:
-    linear-gradient(115deg, rgba(8,28,58,.80) 0%, rgba(8,28,58,.60) 46%, rgba(8,28,58,.36) 100%),
+    linear-gradient(115deg, rgba(8,28,58,.82) 0%, rgba(8,28,58,.62) 46%, rgba(8,28,58,.38) 100%),
     url("https://pplx-res.cloudinary.com/image/upload/pplx_search_images/768eab0bd251280896047ccf602afa1662079853.jpg") center/cover no-repeat;
 }
 
 .hero-overlay{
   position:absolute;
   inset:0;
-  background:linear-gradient(to right, rgba(8,28,58,.80), rgba(8,28,58,.32));
+  background:linear-gradient(to right, rgba(8,28,58,.82), rgba(8,28,58,.30));
   z-index:1;
 }
 
@@ -151,8 +162,8 @@ select:focus-visible{
   max-width:1250px;
   margin:auto;
   display:grid;
-  grid-template-columns:minmax(0,1.1fr) minmax(280px,.85fr);
-  gap:42px;
+  grid-template-columns:minmax(0,1.08fr) minmax(300px,.82fr);
+  gap:54px;
   align-items:center;
   position:relative;
   z-index:2;
@@ -160,7 +171,7 @@ select:focus-visible{
 }
 
 .hero-layout{
-  min-height:calc(90dvh - 142px);
+  min-height:calc(90dvh - 134px);
   align-items:center;
   padding-top:0;
 }
@@ -180,14 +191,6 @@ select:focus-visible{
   margin-bottom:16px;
 }
 
-.services-content h1{
-  font-size:43px;
-  color:var(--text-light);
-  line-height:1.16;
-  margin-bottom:14px;
-  max-width:560px;
-}
-
 .services-content p{
   color:var(--text-light-soft);
   line-height:1.7;
@@ -200,7 +203,7 @@ select:focus-visible{
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:12px;
   max-width:560px;
-  margin-bottom:22px;
+  margin-bottom:24px;
 }
 
 .service-list{
@@ -270,15 +273,16 @@ select:focus-visible{
   position:relative;
   display:flex;
   justify-content:flex-end;
+  align-items:center;
   padding-top:0;
 }
 
 .hero-glass-card{
-  width:min(100%,360px);
+  width:min(100%,370px);
   background:rgba(255,255,255,.14);
   border:1px solid rgba(255,255,255,.16);
   border-radius:28px;
-  padding:24px 22px;
+  padding:26px 24px;
   box-shadow:0 20px 40px rgba(0,0,0,.18);
   -webkit-backdrop-filter:blur(14px);
   backdrop-filter:blur(14px);
@@ -288,7 +292,7 @@ select:focus-visible{
   display:flex;
   align-items:center;
   gap:14px;
-  padding:14px 0;
+  padding:16px 0;
   color:var(--text-light);
   border-bottom:1px solid rgba(255,255,255,.12);
 }
@@ -411,6 +415,7 @@ select:focus-visible{
   font-size:36px;
   color:var(--secondary);
   margin-bottom:20px;
+  font-weight:500;
 }
 
 .service-content p{
@@ -431,7 +436,7 @@ select:focus-visible{
 
 /* section 3 */
 .sim-modern{
-  padding:90px 8%;
+  padding:100px 8%;
   background:linear-gradient(120deg,#fff8ef,#f7fbff,#fffdf8);
   overflow:hidden;
 }
@@ -443,24 +448,25 @@ select:focus-visible{
 
 .sim-heading{
   text-align:center;
-  max-width:750px;
+  max-width:760px;
   margin:auto;
 }
 
 .sim-heading h2{
-  font-weight:700;
   margin-bottom:15px;
 }
 
 .sim-heading p{
   color:var(--muted);
   font-size:17px;
-  line-height:1.7;
+  line-height:1.8;
+  max-width:620px;
+  margin:auto;
 }
 
 .sim-showcase{
-  margin-top:50px;
-  min-height:430px;
+  margin-top:52px;
+  min-height:460px;
   border-radius:35px;
   overflow:hidden;
   position:relative;
@@ -474,41 +480,50 @@ select:focus-visible{
   transition:.4s ease;
 }
 
+.sim-showcase:hover img{
+  transform:scale(1.04);
+}
+
 .sim-overlay{
   position:absolute;
   bottom:30px;
   left:30px;
-  background:rgba(255,255,255,.92);
+  background:rgba(255,255,255,.94);
   padding:22px 30px;
   border-radius:20px;
   max-width:350px;
+  box-shadow:0 16px 35px rgba(8,28,58,.10);
 }
 
 .sim-overlay h3{
   color:var(--secondary);
   font-size:24px;
   margin-bottom:8px;
+  font-weight:500;
 }
 
 .sim-overlay p{
   color:#555;
   margin:0;
+  line-height:1.6;
 }
 
 .sim-steps{
   margin-top:60px;
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(3,minmax(0,1fr));
   gap:30px;
+  align-items:stretch;
 }
 
 .step{
   position:relative;
-  padding:30px;
+  padding:32px 28px;
   background:#ffffff;
   border-radius:25px;
   box-shadow:0 15px 35px rgba(8,28,58,.08);
   transition:.4s ease;
+  min-height:100%;
 }
 
 .step:hover{
@@ -533,11 +548,13 @@ select:focus-visible{
   color:var(--secondary);
   font-size:21px;
   margin-bottom:10px;
+  line-height:1.35;
+  font-weight:500;
 }
 
 .step p{
   color:var(--muted);
-  line-height:1.6;
+  line-height:1.7;
   font-size:15px;
   margin:0;
 }
@@ -614,6 +631,7 @@ select:focus-visible{
 .result-box h3{
   color:var(--secondary);
   margin-bottom:10px;
+  font-weight:500;
 }
 
 .result-box p{
@@ -673,6 +691,7 @@ select:focus-visible{
   color:var(--secondary);
   font-size:20px;
   margin-bottom:8px;
+  font-weight:500;
 }
 
 .theory-service p{
@@ -727,6 +746,7 @@ select:focus-visible{
   color:var(--secondary);
   font-size:20px;
   margin-bottom:6px;
+  font-weight:500;
 }
 
 .booking-benefits p{
@@ -753,6 +773,7 @@ select:focus-visible{
   color:var(--secondary);
   font-size:26px;
   margin-bottom:30px;
+  font-weight:500;
 }
 
 .field{
@@ -847,6 +868,7 @@ select:focus-visible{
   color:var(--secondary);
   font-size:28px;
   margin-bottom:10px;
+  font-weight:500;
 }
 
 .popup-content p{
@@ -938,6 +960,7 @@ select:focus-visible{
   margin-top:20px;
   color:var(--secondary);
   font-size:20px;
+  font-weight:500;
 }
 
 @keyframes circleShow{
@@ -998,7 +1021,6 @@ select:focus-visible{
 }
 
 /* section 7 */
-
 .cta-journey-section{
   padding:90px 8%;
   background:linear-gradient(135deg,#fff8ef,#f7fbff,#fffdf8);
@@ -1081,7 +1103,8 @@ select:focus-visible{
   border:2px solid var(--secondary);
   transform:translateY(-4px);
 }
-/* responsive */
+
+
 @media(max-width:1199px){
   .services-container,
   .service-row,
@@ -1337,6 +1360,10 @@ select:focus-visible{
 @media(max-width:768px){
   .service-content h3{
     font-size:26px;
+
+  }
+  .services-hero{
+    margin-top: -30px;
   }
 
   .sim-showcase{
